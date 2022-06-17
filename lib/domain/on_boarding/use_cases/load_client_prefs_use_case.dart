@@ -12,7 +12,7 @@ import 'package:private_fit/domain/on_boarding/onboarding_failures.dart';
 ///something logic wise from either outcomes
 @injectable
 class LoadAtClientPreferenceUseCase {
-  const LoadAtClientPreferenceUseCase(this._iAtsignOnBoardingFacade);
+  LoadAtClientPreferenceUseCase(this._iAtsignOnBoardingFacade);
 
   final IAtsignOnBoardingFacade _iAtsignOnBoardingFacade;
 

@@ -38,23 +38,23 @@ dependencies:
   json_annotation: ^4.4.0
 
 
-dev_dependencies:
-  bloc_test: ^9.0.3
-  flutter_test:
-    sdk: flutter
-  mocktail: ^0.3.0
-  very_good_analysis: ^3.0.1
-  auto_route_generator: ^3.2.1
-  build_runner: ^2.1.7
-  freezed: ^1.1.1
-  injectable_generator: ^1.5.3
-  json_serializable: ^6.1.4
-
 dependency_overrides:
   file_saver:
     git:
       url: https://github.com/incrediblezayed/file_saver.git
       ref: main
+dev_dependencies:
+  auto_route_generator: ^3.2.1
+  bloc_test: ^9.0.3
+  build_runner: ^2.1.11
+  freezed: ^1.1.1
+  injectable_generator: ^1.5.3
+  json_serializable: ^6.1.4
+  mocktail: ^0.3.0
+  very_good_analysis: ^3.0.1
+
+  flutter_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true

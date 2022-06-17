@@ -34,7 +34,7 @@ class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
   final OnBoardDataWhenSuccessfulUseCase _onBoardDataWhenSuccessfulUseCase;
   final AtContactInitializationUseCase _atContactInitializationUseCase;
 
-  Future _onBoardingEventHandler(
+  FutureOr<void> _onBoardingEventHandler(
     OnBoardingEvent event,
     Emitter<OnBoardingState> emit,
   ) async {
@@ -43,8 +43,8 @@ class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
         final results = await _loadAtClientPreferenceUseCase();
         emit(
           results.fold(
-            (l) => OnBoardingState.failure(l),
-            (r) => OnBoardingState.loading(r),
+            OnBoardingState.failure,
+            OnBoardingState.loading,
           ),
         );
       },

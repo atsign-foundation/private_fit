@@ -1,9 +1,9 @@
-import 'package:at_client/src/service/sync_service.dart';
 import 'package:at_client_mobile/at_client_mobile.dart';
 import 'package:at_onboarding_flutter/at_onboarding_flutter.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
+import 'package:private_fit/application/on_boarding/bloc/on_boarding_bloc.dart';
 import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
 import 'package:private_fit/domain/on_boarding/onboarding_failures.dart';
 import 'package:private_fit/shared/constants.dart';
@@ -13,9 +13,7 @@ import 'package:private_fit/shared/constants.dart';
 @LazySingleton(as: IAtsignOnBoardingFacade)
 class OnboardingAtsignFacade implements IAtsignOnBoardingFacade {
   Map<String?, AtClientService> atClientServiceMap = {};
-  late SyncService syncService;
 
-  // late AtClientPreference atClientPreference;
   @override
   Option<String> getOnBoardedAtSign() {
     final atClient = AtClientManager.getInstance().atClient;

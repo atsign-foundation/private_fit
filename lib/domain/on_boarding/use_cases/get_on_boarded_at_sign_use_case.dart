@@ -1,6 +1,6 @@
-import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
 
 ///This is a usecase of getting Onboarded @sign
 ///it return an [Option] of either a [String] @sign or nothing

@@ -14,7 +14,10 @@ import 'package:private_fit/shared/constants.dart';
 class ContactsFacade implements IContactsFacade {
   @override
   Future<Unit> initializeContactsServices() async {
-    initializeContactsService(rootDomain: Constants.rootDomain);
+    //todo: ask atsign team why this below function doesn't need params
+    //todo: how to handle dev,staging and pro if it assumes rootDomain
+
+    initializeContactsService();
     initializeGroupService(rootDomain: Constants.rootDomain);
     return unit;
   }
