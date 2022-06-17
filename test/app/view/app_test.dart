@@ -12,7 +12,7 @@ import 'package:private_fit/presentation/home/home_page.dart';
 void main() {
   group('App', () {
     testWidgets('renders HomePage', (tester) async {
-      await tester.pumpWidget(const PrivateFitApp());
+      await tester.pumpWidget(PrivateFitApp());
       expect(find.byType(HomePage), findsOneWidget);
     });
   });

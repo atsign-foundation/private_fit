@@ -9,5 +9,5 @@ import 'package:private_fit/app.dart';
 import 'package:private_fit/bootstrap.dart';
 
 void main() {
-  bootstrap(() => const PrivateFitApp());
+  bootstrap(PrivateFitApp.new);
 }
