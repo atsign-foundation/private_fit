@@ -6,14 +6,14 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:private_fit/app/app.dart';
-import 'package:private_fit/counter/counter.dart';
+import 'package:private_fit/app.dart';
+import 'package:private_fit/presentation/home/home_page.dart';
 
 void main() {
   group('App', () {
-    testWidgets('renders CounterPage', (tester) async {
-      await tester.pumpWidget(const App());
-      expect(find.byType(CounterPage), findsOneWidget);
+    testWidgets('renders HomePage', (tester) async {
+      await tester.pumpWidget(const PrivateFitApp());
+      expect(find.byType(HomePage), findsOneWidget);
     });
   });
 }

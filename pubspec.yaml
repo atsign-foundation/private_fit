@@ -7,10 +7,10 @@ environment:
   sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
-  bloc: ^8.0.3
+  # bloc: ^8.0.3
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.0.1
+  # flutter_bloc: ^8.0.1
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
@@ -19,7 +19,23 @@ dependencies:
   path_provider: ^2.0.5
   flutter_dotenv: ^5.0.2
   at_app_flutter: ^5.0.0+1
-  pub_api_client:
+  at_contacts_flutter: ^4.0.5
+  at_contacts_group_flutter: ^4.0.6
+  auto_route: ^3.2.2
+  auto_size_text: ^3.0.0
+  flutter_svg: ^1.1.0
+
+
+
+  #State management and functional programming libraries
+  bloc: ^8.0.3
+  flutter_bloc: ^8.0.1
+  freezed_annotation: ^1.1.0
+  dartz: ^0.10.1
+  get_it: ^7.2.0
+  injectable: ^1.5.3
+  bloc_concurrency: ^0.2.0
+  json_annotation: ^4.4.0
 
 
 dev_dependencies:
@@ -28,6 +44,11 @@ dev_dependencies:
     sdk: flutter
   mocktail: ^0.3.0
   very_good_analysis: ^3.0.1
+  auto_route_generator: ^3.2.1
+  build_runner: ^2.1.7
+  freezed: ^1.1.1
+  injectable_generator: ^1.5.3
+  json_serializable: ^6.1.4
 
 dependency_overrides:
   file_saver:
@@ -40,3 +61,129 @@ flutter:
   generate: true
   assets:
     - .env
+    - assets/images/person1.png
+    - assets/images/person2.png
+    - assets/images/splash_bg.png
+    - assets/images/empty_group.png
+    - assets/images/group_photo.png
+    - assets/images/cool.jpg
+    - assets/images/meditation.png
+        #### Curved
+    - assets/icons/svgs/curved/Activity.svg
+    - assets/icons/svgs/curved/AddUser.svg
+    - assets/icons/svgs/curved/ArrowDown.svg
+    - assets/icons/svgs/curved/ArrowDown2.svg
+    - assets/icons/svgs/curved/ArrowDown3.svg
+    - assets/icons/svgs/curved/ArrowDownCircle.svg
+    - assets/icons/svgs/curved/ArrowDownSquare.svg
+    - assets/icons/svgs/curved/ArrowLeft.svg
+    - assets/icons/svgs/curved/ArrowLeft2.svg
+    - assets/icons/svgs/curved/ArrowLeft3.svg
+    - assets/icons/svgs/curved/ArrowLeftCircle.svg
+    - assets/icons/svgs/curved/ArrowLeftSquare.svg
+    - assets/icons/svgs/curved/ArrowRight.svg
+    - assets/icons/svgs/curved/ArrowRight2.svg
+    - assets/icons/svgs/curved/ArrowRight3.svg
+    - assets/icons/svgs/curved/ArrowRightCircle.svg
+    - assets/icons/svgs/curved/ArrowRightSquare.svg
+    - assets/icons/svgs/curved/ArrowUp.svg
+    - assets/icons/svgs/curved/ArrowUp2.svg
+    - assets/icons/svgs/curved/ArrowUp3.svg
+    - assets/icons/svgs/curved/ArrowUpCircle.svg
+    - assets/icons/svgs/curved/ArrowUpSquare.svg
+    - assets/icons/svgs/curved/Bag.svg
+    - assets/icons/svgs/curved/Bag2.svg
+    - assets/icons/svgs/curved/Bookmark.svg
+    - assets/icons/svgs/curved/Buy.svg
+    - assets/icons/svgs/curved/Calendar.svg
+    - assets/icons/svgs/curved/Call.svg
+    - assets/icons/svgs/curved/CallMissed.svg
+    - assets/icons/svgs/curved/CallSilent.svg
+    - assets/icons/svgs/curved/Calling.svg
+    - assets/icons/svgs/curved/Camera.svg
+    - assets/icons/svgs/curved/Category.svg
+    - assets/icons/svgs/curved/Chart.svg
+    - assets/icons/svgs/curved/Chat.svg
+    - assets/icons/svgs/curved/CloseSquare.svg
+    - assets/icons/svgs/curved/DangerSquare.svg
+    - assets/icons/svgs/curved/DangerTriangle.svg
+    - assets/icons/svgs/curved/Delete.svg
+    - assets/icons/svgs/curved/Discount.svg
+    - assets/icons/svgs/curved/Discovery.svg
+    - assets/icons/svgs/curved/Document.svg
+    - assets/icons/svgs/curved/Download.svg
+    - assets/icons/svgs/curved/Edit.svg
+    - assets/icons/svgs/curved/EditSquare.svg
+    - assets/icons/svgs/curved/Filter.svg
+    - assets/icons/svgs/curved/Filter2.svg
+    - assets/icons/svgs/curved/Folder.svg
+    - assets/icons/svgs/curved/Game.svg
+    - assets/icons/svgs/curved/Graph.svg
+    - assets/icons/svgs/curved/Heart.svg
+    - assets/icons/svgs/curved/Hide.svg
+    - assets/icons/svgs/curved/Home.svg
+    - assets/icons/svgs/curved/Image.svg
+    - assets/icons/svgs/curved/Image2.svg
+    - assets/icons/svgs/curved/InfoSquare.svg
+    - assets/icons/svgs/curved/Location.svg
+    - assets/icons/svgs/curved/Lock.svg
+    - assets/icons/svgs/curved/Login.svg
+    - assets/icons/svgs/curved/Logout.svg
+    - assets/icons/svgs/curved/Message.svg
+    - assets/icons/svgs/curved/MoreCircle.svg
+    - assets/icons/svgs/curved/MoreSquare.svg
+    - assets/icons/svgs/curved/Notification.svg
+    - assets/icons/svgs/curved/Paper.svg
+    - assets/icons/svgs/curved/PaperDownload.svg
+    - assets/icons/svgs/curved/PaperFail.svg
+    - assets/icons/svgs/curved/PaperNegative.svg
+    - assets/icons/svgs/curved/PaperPlus.svg
+    - assets/icons/svgs/curved/PaperUpload.svg
+    - assets/icons/svgs/curved/Password.svg
+    - assets/icons/svgs/curved/Play.svg
+    - assets/icons/svgs/curved/Plus.svg
+    - assets/icons/svgs/curved/Profile.svg
+    - assets/icons/svgs/curved/Scan.svg
+    - assets/icons/svgs/curved/Search.svg
+    - assets/icons/svgs/curved/Send.svg
+    - assets/icons/svgs/curved/Setting.svg
+    - assets/icons/svgs/curved/ShieldDone.svg
+    - assets/icons/svgs/curved/ShieldFail.svg
+    - assets/icons/svgs/curved/Show.svg
+    - assets/icons/svgs/curved/Star.svg
+    - assets/icons/svgs/curved/Swap.svg
+    - assets/icons/svgs/curved/TickSquare.svg
+    - assets/icons/svgs/curved/Ticket.svg
+    - assets/icons/svgs/curved/TicketStar.svg
+    - assets/icons/svgs/curved/TimeCircle.svg
+    - assets/icons/svgs/curved/TimeSquare.svg
+    - assets/icons/svgs/curved/Unlock.svg
+    - assets/icons/svgs/curved/Upload.svg
+    - assets/icons/svgs/curved/User2.svg
+    - assets/icons/svgs/curved/User3.svg
+    - assets/icons/svgs/curved/Video.svg
+    - assets/icons/svgs/curved/Voice.svg
+    - assets/icons/svgs/curved/Voice2.svg
+    - assets/icons/svgs/curved/VolumeDown.svg
+    - assets/icons/svgs/curved/VolumeOff.svg
+    - assets/icons/svgs/curved/VolumeUp.svg
+    - assets/icons/svgs/curved/Wallet.svg
+    - assets/icons/svgs/curved/Work.svg
+    - assets/icons/svgs/curved/Location_bold.svg
+
+  fonts:
+    - family: HelveticaNeu
+      fonts:
+        - asset: assets/fonts/HelveticaLight.ttf
+          weight: 300
+        - asset: assets/fonts/HelveticaMedium.ttf
+          weight: 500
+        - asset: assets/fonts/HelveticaRegular.ttf
+          weight: 400
+        - asset: assets/fonts/HelveticaBold.otf
+          weight: 700
+        - asset: assets/fonts/HelveticaExtraBold.ttf
+          weight: 800
+    - family: PlayfairDisplay
+      fonts:
+        - asset: assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf

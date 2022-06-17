@@ -8,8 +8,13 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:at_utils/at_utils.dart';
 import 'package:bloc/bloc.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:injectable/injectable.dart';
+import 'package:private_fit/injections.dart';
+import 'package:private_fit/shared/constants.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
@@ -29,11 +34,29 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
-
   await runZonedGuarded(
     () async {
+      WidgetsFlutterBinding.ensureInitialized();
+
+      /// Load the environment variables from the .env file.
+      /// Directly calls load from the dotenv package.
+      await Constants.load();
+      configureInjection(Environment.prod);
+      AtSignLogger.root_level = 'all';
+
       await BlocOverrides.runZoned(
-        () async => runApp(await builder()),
+        () async {
+          await SystemChrome.setPreferredOrientations([
+            DeviceOrientation.portraitUp,
+          ]).then(
+            (value) async {
+              await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge)
+                  .then((value) {});
+              return runApp(await builder());
+            },
+          );
+
+        },
         blocObserver: AppBlocObserver(),
       );
     },

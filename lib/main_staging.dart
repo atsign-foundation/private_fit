@@ -5,10 +5,9 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
-import 'package:private_fit/app/app.dart';
+import 'package:private_fit/app.dart';
 import 'package:private_fit/bootstrap.dart';
-import 'package:pub_api_client/pub_api_client.dart';
 
 void main()  {
-  bootstrap(() => const App());
+  bootstrap(() => const PrivateFitApp());
 }

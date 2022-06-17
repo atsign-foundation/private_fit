@@ -1,7 +1,7 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
+    "privateFitAppBarTitle": "Priv@te Fit",
     "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
+        "description": "Text shown in the AppBar of the Home Page"
     }
 }
