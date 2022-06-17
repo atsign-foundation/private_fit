@@ -24,6 +24,7 @@ dependencies:
   auto_route: ^3.2.2
   auto_size_text: ^3.0.0
   flutter_svg: ^1.1.0
+  logger: ^1.1.0
 
 
 
@@ -68,6 +69,7 @@ flutter:
     - assets/images/group_photo.png
     - assets/images/cool.jpg
     - assets/images/meditation.png
+    - assets/images/trainer.jpg
         #### Curved
     - assets/icons/svgs/curved/Activity.svg
     - assets/icons/svgs/curved/AddUser.svg

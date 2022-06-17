@@ -8,13 +8,6 @@ import 'package:private_fit/application/on_boarding/bloc/on_boarding_bloc.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/presentation/on_boarding/on_boarding_form.dart';
 
-// class OnBoardingPage extends StatefulWidget {
-//   const OnBoardingPage({super.key});
-
-//   @override
-//   State<OnBoardingPage> createState() => _OnBoardingPageState();
-// }
-
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({super.key});
 
