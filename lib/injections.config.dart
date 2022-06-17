@@ -31,12 +31,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
     {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   gh.singleton<_i3.$Router>(_i3.$Router());
-  gh.lazySingleton<_i4.IAtsignOnBoardingFacade>(
-      () => _i5.OnboardingAtsignFacade());
+  gh.factory<_i4.IAtsignOnBoardingFacade>(() => _i5.OnBoardingAtsignFacade());
   gh.lazySingleton<_i6.IContactsFacade>(() => _i7.ContactsFacade());
-  gh.factory<_i8.LoadAtClientPreferenceUseCase>(() =>
+  gh.lazySingleton<_i8.LoadAtClientPreferenceUseCase>(() =>
       _i8.LoadAtClientPreferenceUseCase(get<_i4.IAtsignOnBoardingFacade>()));
-  gh.factory<_i9.OnBoardDataWhenSuccessfulUseCase>(() =>
+  gh.lazySingleton<_i9.OnBoardDataWhenSuccessfulUseCase>(() =>
       _i9.OnBoardDataWhenSuccessfulUseCase(get<_i4.IAtsignOnBoardingFacade>()));
   gh.factory<_i10.OnBoardingBloc>(() => _i10.OnBoardingBloc(
       get<_i11.LoadAtClientPreferenceUseCase>(),
@@ -47,7 +46,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i13.AtContactInitializationUseCase(get<_i6.IContactsFacade>()));
   gh.factory<_i14.GetActiveAtsignUseCase>(
       () => _i14.GetActiveAtsignUseCase(get<_i6.IContactsFacade>()));
-  gh.factory<_i15.GetOnBoardedAtSignUseCase>(
+  gh.lazySingleton<_i15.GetOnBoardedAtSignUseCase>(
       () => _i15.GetOnBoardedAtSignUseCase(get<_i4.IAtsignOnBoardingFacade>()));
   return get;
 }

@@ -10,8 +10,9 @@ import 'package:private_fit/shared/constants.dart';
 
 /// Implementation of [IAtsignOnBoardingFacade] interface
 
-@LazySingleton(as: IAtsignOnBoardingFacade)
-class OnboardingAtsignFacade implements IAtsignOnBoardingFacade {
+@Injectable(as: IAtsignOnBoardingFacade)
+class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
+  OnBoardingAtsignFacade();
   Map<String?, AtClientService> atClientServiceMap = {};
 
   @override
