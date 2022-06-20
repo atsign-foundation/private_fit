@@ -3,7 +3,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
 import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/routes/router.gr.dart' as app_router;
 import 'package:private_fit/presentation/routes/routes_observer.dart';
@@ -17,7 +16,6 @@ class PrivateFitApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final _appRouter = app_router.Router();
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
@@ -29,7 +27,7 @@ class PrivateFitApp extends StatelessWidget {
         systemNavigationBarDividerColor: Colors.transparent,
       ),
       child: MaterialApp.router(
-        title: 'Priv@teFit',
+        title: 'Priv@te Fit',
         debugShowCheckedModeBanner: false,
         localizationsDelegates: const [
           AppLocalizations.delegate,
@@ -38,7 +36,7 @@ class PrivateFitApp extends StatelessWidget {
         supportedLocales: AppLocalizations.supportedLocales,
         routerDelegate: AutoRouterDelegate(
           _appRouter,
-          navigatorObservers: () => [ArriveRouteObserver()],
+          navigatorObservers: () => [PrivateFitRouteObserver()],
         ),
         routeInformationParser: _appRouter.defaultRouteParser(),
         builder: (context, router) => router!,

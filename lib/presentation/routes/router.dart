@@ -2,6 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:injectable/injectable.dart';
 import 'package:private_fit/presentation/home/home_page.dart';
 import 'package:private_fit/presentation/on_boarding/on_boarding_page.dart';
+import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_boarding/initial_route.dart';
 
 /*
 Using Auto route helps a lot in  navigation it allows for strongly-typed
@@ -19,7 +20,8 @@ other stuff. AutoRoute does all that for you and much more.
     // AutoRoute<dynamic>(page: OnBoarding),
 
     AutoRoute<dynamic>(page: HomePage),
-    AutoRoute<dynamic>(page: OnBoardingPage, initial: true),
+    AutoRoute<dynamic>(page: OnBoardingPage),
+    AutoRoute<dynamic>(page: OnBoarding, initial: true),
   ],
 )
 class $Router {}

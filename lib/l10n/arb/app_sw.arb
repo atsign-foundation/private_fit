@@ -1,22 +1,22 @@
 {
-  "@@locale": "en",
+  "@@locale": "sw",
   "app_title": "PRIV@TE fit",
   "@app_title": {
     "description": "The title of the App"
   },
-  "on_board_atsign": "ONBOARD @SIGN",
+  "on_board_atsign": "INGIZA @SIGN",
   "@on_board_atsign": {
     "description": "On boarding an atsign"
   },
-  "splash01": "SAFE",
+  "splash01": "SALAMA",
   "@splash01": {
     "description": "the text seen on splash screen page 1"
   },
-  "splash02": "POWERED BY @PLATFORM",
+  "splash02": "INAWEZESHWA NA @PLATFORM",
   "@splash02": {
     "description": "the text seen on splash screen page 2"
   },
-  "splash03": "ENCRYPTED",
+  "splash03": "ILIYOSIMBIWA",
   "@splash03": {
     "description": "the text seen on the splash screen page 3"
   }

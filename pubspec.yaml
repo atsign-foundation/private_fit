@@ -173,6 +173,14 @@ flutter:
     - assets/icons/svgs/curved/Work.svg
     - assets/icons/svgs/curved/Location_bold.svg
 
+    - assets/on_boarding/images/
+    - assets/on_boarding/assets/
+    - assets/on_boarding/assets/torus.obj
+    - assets/on_boarding/assets/cube.obj
+    - assets/on_boarding/assets/star.obj
+
+
+
   fonts:
     - family: HelveticaNeu
       fonts:
