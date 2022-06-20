@@ -7,8 +7,8 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 
-// class OnBoarding extends StatelessWidget {
-//   const OnBoarding({Key? key}) : super(key: key);
+// class AtSignOnBoardingPage extends StatelessWidget {
+//   const AtSignOnBoardingPage({Key? key}) : super(key: key);
 
 //   @override
 //   Widget build(BuildContext context) {
