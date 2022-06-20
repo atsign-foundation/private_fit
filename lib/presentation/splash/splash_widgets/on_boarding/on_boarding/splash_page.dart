@@ -157,7 +157,6 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           onPressed: () => AutoRouter.of(context).replace(
             const OnBoardingPageRoute(),
           ),
-          // TODO(KZAWAD): implement these Strings utilizing i18n.
           bottomTitle: l10n.splash01,
           backgroundColor: const Color(0xFF0DD479),
           image: AssetImage(
