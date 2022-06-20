@@ -1,6 +1,5 @@
 // ignore_for_file: constant_identifier_names
 
-
 class IconlyCurved {
   factory IconlyCurved() => _instance;
   IconlyCurved._();

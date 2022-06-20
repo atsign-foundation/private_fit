@@ -55,7 +55,6 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
               return runApp(await builder());
             },
           );
-
         },
         blocObserver: AppBlocObserver(),
       );
