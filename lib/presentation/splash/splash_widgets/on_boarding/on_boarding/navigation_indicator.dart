@@ -10,8 +10,8 @@ class OnboardNavigationIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const activeColor = Color(0xFFFFFFFF);
-    const defaultColor = Color(0xFFAAAAAA);
+    const activeColor = Color.fromARGB(255, 19, 109, 121); //Color(0xFFFFFFFF);
+    const defaultColor = Color.fromARGB(255, 189, 186, 186);
     const double width = 20;
     const double height = 5;
     return Row(
@@ -21,19 +21,28 @@ class OnboardNavigationIndicator extends StatelessWidget {
           width: width,
           height: height,
           margin: const EdgeInsets.all(2),
-          color: pageIndex == 0 ? activeColor : defaultColor,
+          decoration: BoxDecoration(
+            color: pageIndex == 0 ? activeColor : defaultColor,
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
+          ),
         ),
         Container(
           width: width,
           height: height,
           margin: const EdgeInsets.all(2),
-          color: pageIndex == 1 ? activeColor : defaultColor,
+          decoration: BoxDecoration(
+            color: pageIndex == 1 ? activeColor : defaultColor,
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
+          ),
         ),
         Container(
           width: width,
           height: height,
           margin: const EdgeInsets.all(2),
-          color: pageIndex == 2 ? activeColor : defaultColor,
+          decoration: BoxDecoration(
+            color: pageIndex == 2 ? activeColor : defaultColor,
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
+          ),
         ),
       ],
     );

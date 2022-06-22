@@ -21,10 +21,11 @@ dependencies:
   at_app_flutter: ^5.0.0+1
   at_contacts_flutter: ^4.0.5
   at_contacts_group_flutter: ^4.0.6
-  auto_route: ^3.2.2
+  auto_route: ^4.0.1
   auto_size_text: ^3.0.0
   flutter_svg: ^1.1.0
   logger: ^1.1.0
+  animations: ^2.0.3
 
 
 
@@ -45,7 +46,7 @@ dependency_overrides:
       url: https://github.com/incrediblezayed/file_saver.git
       ref: main
 dev_dependencies:
-  auto_route_generator: ^3.2.1
+  auto_route_generator: ^4.0.0
   bloc_test: ^9.0.3
   build_runner: ^2.1.11
   freezed: ^1.1.1

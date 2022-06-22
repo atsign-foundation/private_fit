@@ -7,7 +7,7 @@ import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_bo
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_boarding/splash3d_widget.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_boarding/splash_3d_model_controller.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_boarding/splash_appbar.dart';
-import 'package:private_fit/shared/images.dart';
+// import 'package:private_fit/shared/images.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -76,6 +76,8 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     if (!_splash3dModelController.initialized) {
       precacheImage(
         const AssetImage(
@@ -84,20 +86,20 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
         context,
       );
       precacheImage(
-        AssetImage(
-          AllImages().cool,
+        const AssetImage(
+          AppAssets.artist2,
         ),
         context,
       );
       precacheImage(
-        AssetImage(
-          AllImages().meditation,
+        const AssetImage(
+          AppAssets.artist3,
         ),
         context,
       );
       precacheImage(
-        AssetImage(
-          AllImages().trainer,
+        const AssetImage(
+          AppAssets.noise,
         ),
         context,
       );
@@ -117,16 +119,51 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
             onTapUp: _handleTap,
             child: _buildPages(),
           ),
-          const SplashAppBar(),
+          const Positioned(
+            top: 20,
+            right: 0,
+            child: SplashAppBar(),
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 32),
+              padding: const EdgeInsets.only(bottom: 60),
               child: OnboardNavigationIndicator(
                 pageIndex: _pageIndex,
               ),
             ),
-          )
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 70),
+              child: TextButton(
+                onPressed: () => AutoRouter.of(context).replace(
+                  const OnBoardingPageRoute(),
+                ),
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 19, 109, 121),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(8),
+                    ),
+                  ),
+                  child: Text(
+                    l10n.on_board_atsign,
+                    style: const TextStyle(
+                      letterSpacing: 1.1,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -154,13 +191,10 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     switch (index) {
       case 0:
         result = Splash3dWidget(
-          onPressed: () => AutoRouter.of(context).replace(
-            const OnBoardingPageRoute(),
-          ),
           bottomTitle: l10n.splash01,
           backgroundColor: const Color(0xFF0DD479),
-          image: AssetImage(
-            AllImages().cool,
+          image: const AssetImage(
+            AppAssets.artist1,
           ),
           controller: _splash3dModelController,
           topTitleClipProgress: 1.0 - _page0TopTitleController.value,
@@ -169,13 +203,10 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
         break;
       case 1:
         result = Splash3dWidget(
-          onPressed: () => AutoRouter.of(context).replace(
-            const OnBoardingPageRoute(),
-          ),
           bottomTitle: l10n.splash02,
           backgroundColor: const Color(0xFFECA6C8),
-          image: AssetImage(
-            AllImages().trainer,
+          image: const AssetImage(
+            AppAssets.artist2,
           ),
           pageIndex: 1,
           controller: _splash3dModelController,
@@ -187,13 +218,10 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
         break;
       case 2:
         result = Splash3dWidget(
-          onPressed: () => AutoRouter.of(context).replace(
-            const OnBoardingPageRoute(),
-          ),
           bottomTitle: l10n.splash03,
           backgroundColor: const Color(0xFFFFD500),
-          image: AssetImage(
-            AllImages().trainer,
+          image: const AssetImage(
+            AppAssets.artist3,
           ),
           pageIndex: 2,
           controller: _splash3dModelController,

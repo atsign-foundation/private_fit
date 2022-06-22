@@ -11,7 +11,6 @@ class Splash3dWidget extends StatelessWidget {
     this.bottomTitle = '',
     this.backgroundColor,
     this.image,
-    this.onPressed,
     this.pageIndex = 0,
     required this.controller,
     this.topTitleClipProgress = 0.0,
@@ -27,8 +26,6 @@ class Splash3dWidget extends StatelessWidget {
   final ImageProvider? image;
   final int pageIndex;
   final double bottomTitleScale;
-  final void Function()? onPressed;
-
   final Splash3dModelController controller;
 
   final double topTitleClipProgress;
@@ -79,20 +76,20 @@ class Splash3dWidget extends StatelessWidget {
                     // mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       _buildClippedText(
-                        topTitle,
-                        topTitleClipProgress,
-                        72 * textScale,
-                        0,
-                        6,
-                        1,
+                        text: topTitle,
+                        progress: topTitleClipProgress,
+                        fontSize: 72 * textScale,
+                        yOffset: 0,
+                        spacing: 6,
+                        height: 1,
                       ),
                       _buildClippedText(
-                        bottomTitle,
-                        bottomTitleClipProgress,
-                        120 * textScale * bottomTitleScale,
-                        -10,
-                        8,
-                        .9,
+                        text: bottomTitle,
+                        progress: bottomTitleClipProgress,
+                        fontSize: 60 * textScale * bottomTitleScale,
+                        yOffset: 0,
+                        spacing: 8,
+                        height: 1,
                       ),
                     ],
                   ),
@@ -137,55 +134,26 @@ class Splash3dWidget extends StatelessWidget {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 60),
-              child: TextButton(
-                onPressed: onPressed,
-                child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(8),
-                    ),
-                  ),
-                  child: Text(
-                    l10n.on_board_atsign,
-                    style: const TextStyle(
-                      letterSpacing: 1.1,
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );
   }
 
-  ClipRect _buildClippedText(
-    String text,
-    double progress,
-    double fontSize,
-    double yOffset,
-    double spacing,
-    double height,
-  ) {
+  ClipRect _buildClippedText({
+    String? text,
+    double? progress,
+    double? fontSize,
+    double? yOffset,
+    double? spacing,
+    double? height,
+  }) {
     return ClipRect(
-      clipper: _3dTextClipper(height: progress * fontSize, y: yOffset),
+      clipper: _3dTextClipper(height: progress! * fontSize!, y: yOffset!),
       child: Text(
-        text,
+        text!,
         textAlign: TextAlign.right,
         style: TextStyle(
-          // package: OnBoarding.pkg,
-          fontSize: fontSize,
+          fontSize: fontSize, //65,
           fontWeight: FontWeight.bold,
           fontFamily: 'Staatliches',
           letterSpacing: spacing,
