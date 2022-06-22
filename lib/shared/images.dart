@@ -13,6 +13,8 @@ class AllImages {
   String fitgirl = 'assets/images/fitgirl.png';
   String fitgirl01 = 'assets/images/fitgirl01.png';
   String fitman01 = 'assets/images/fitman01.png';
+  String fitman = 'assets/images/fitman.png';
+  String running = 'assets/images/running.png';
   // ignore: non_constant_identifier_names
   String PERSON2 = 'assets/images/person2.png';
   // ignore: non_constant_identifier_names

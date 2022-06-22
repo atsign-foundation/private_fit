@@ -82,7 +82,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     if (!_splash3dModelController.initialized) {
       precacheImage(
         AssetImage(
-          AllImages().fitgirl,
+          AllImages().running,
         ),
         context,
       );
@@ -110,7 +110,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     _splash3dModelController.setView(MediaQuery.of(context).size);
     return Scaffold(
       backgroundColor: _pageIndex == 0
-          ? const Color(0xFF0DD479)
+          ? const Color(0xFF0DD479) //const Color(0xFF0DD479),
           : _pageIndex == 1
               ? const Color(0xFFECA6C8)
               : const Color(0xFFFFD500),
@@ -195,7 +195,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           bottomTitle: l10n.splash01,
           backgroundColor: const Color(0xFF0DD479),
           image: AssetImage(
-            AllImages().fitgirl,
+            AllImages().running,
           ),
           controller: _splash3dModelController,
           topTitleClipProgress: 1.0 - _page0TopTitleController.value,
