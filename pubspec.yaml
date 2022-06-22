@@ -71,6 +71,9 @@ flutter:
     - assets/images/cool.jpg
     - assets/images/meditation.png
     - assets/images/trainer.jpg
+    - assets/images/fitgirl.png
+    - assets/images/fitgirl01.png
+    - assets/images/fitman01.png
         #### Curved
     - assets/icons/svgs/curved/Activity.svg
     - assets/icons/svgs/curved/AddUser.svg

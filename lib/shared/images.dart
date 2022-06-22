@@ -10,6 +10,9 @@ class AllImages {
   String cool = 'assets/images/cool.jpg';
   String meditation = 'assets/images/meditation.png';
   String trainer = 'assets/images/trainer.jpg';
+  String fitgirl = 'assets/images/fitgirl.png';
+  String fitgirl01 = 'assets/images/fitgirl01.png';
+  String fitman01 = 'assets/images/fitman01.png';
   // ignore: non_constant_identifier_names
   String PERSON2 = 'assets/images/person2.png';
   // ignore: non_constant_identifier_names
