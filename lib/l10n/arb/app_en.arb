@@ -19,5 +19,9 @@
   "splash03": "ENCRYPTED",
   "@splash03": {
     "description": "the text seen on the splash screen page 3"
+  },
+  "assets_loading": "Loading assets ...",
+  "@assets_loading": {
+    "description": "the text seen on the splash screen when loading assets"
   }
 }

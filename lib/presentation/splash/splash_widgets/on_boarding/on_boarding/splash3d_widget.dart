@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/app_assets.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_boarding/blend_mask.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_boarding/splash_3d_model.dart';
@@ -37,6 +38,8 @@ class Splash3dWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appSize = MediaQuery.of(context).size;
+    final l10n = context.l10n;
+
     final textScale = appSize.aspectRatio > 1 ? 1.15 : .8;
     return Container(
       color: backgroundColor,
@@ -108,10 +111,10 @@ class Splash3dWidget extends StatelessWidget {
               ),
             ),
           } else ...{
-            const Center(
+            Center(
               child: Text(
-                'Loading assets...', //todo implement i18n on these strings
-                style: TextStyle(
+                l10n.on_board_atsign,
+                style: const TextStyle(
                   // package: OnBoarding.pkg,
                   letterSpacing: 1.1,
                   fontFamily: 'Roboto',
@@ -149,10 +152,9 @@ class Splash3dWidget extends StatelessWidget {
                       Radius.circular(8),
                     ),
                   ),
-                  child: const Text(
-                    'ONBOARD @SIGN',
-                    style: TextStyle(
-                      // package: OnBoarding.pkg,
+                  child: Text(
+                    l10n.on_board_atsign,
+                    style: const TextStyle(
                       letterSpacing: 1.1,
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.bold,

@@ -19,5 +19,9 @@
   "splash03": "ILIYOSIMBIWA",
   "@splash03": {
     "description": "the text seen on the splash screen page 3"
+  },
+  "assets_loading": "Inasanikisha ...",
+  "@assets_loading": {
+    "description": "the text seen on the splash screen when loading assets"
   }
 }
