@@ -59,22 +59,22 @@ This repository uses a number of tools, including [melos](https://pub.dev/packag
 
 To prepare your dedicated GitHub repository:
 
-1. Fork in GitHub https://github.com/atsign-foundation/at_app
-2. Clone *your forked repository* (e.g., `git clone git@github.com:atsign-foundation/at_app`)
+1. Fork in GitHub https://github.com/atsign-foundation/private_fit
+2. Clone *your forked repository* (e.g., `git clone git@github.com:atsign-foundation/private_fit`)
 3. Set your remotes as follows:
 
    ```sh
-   cd at_app
-   git remote add upstream git@github.com:atsign-foundation/at_app.git
+   cd private_fit
+   git remote add upstream git@github.com:atsign-foundation/private_fit.git
    git remote set-url upstream --push DISABLED
    ```
 
    Running `git remote -v` should give something similar to:
 
    ```text
-   origin  git@github.com:atsign-foundation/at_app.git (fetch)
-   origin  git@github.com:atsign-foundation/at_app.git (push)
-   upstream        git@github.com:atsign-foundation/at_app.git (fetch)
+   origin  git@github.com:atsign-foundation/private_fit.git (fetch)
+   origin  git@github.com:atsign-foundation/private_fit.git (push)
+   upstream        git@github.com:atsign-foundation/private_fit.git (fetch)
    upstream        DISABLED (push)
    ```
 
