@@ -1,0 +1,27 @@
+{
+  "@@locale": "tr",
+  "app_title": "PRIV@TE fit",
+  "@app_title": {
+    "description": "The title of the App"
+  },
+  "on_board_atsign": "@SIGN YÜKLENİYOR",
+  "@on_board_atsign": {
+    "description": "On boarding an atsign"
+  },
+  "splash01": "GÜVENLİ",
+  "@splash01": {
+    "description": "the text seen on splash screen page 1"
+  },
+  "splash02": "@PLATFORM TARAFINDAN DESTEKLENMEKTEDİR",
+  "@splash02": {
+    "description": "the text seen on splash screen page 2"
+  },
+  "splash03": "ŞİFRELİ",
+  "@splash03": {
+    "description": "the text seen on the splash screen page 3"
+  },
+  "assets_loading": "VARLIKLAR YÜKLENİYOR ...",
+  "@assets_loading": {
+    "description": "the text seen on the splash screen when loading assets"
+  }
+}
