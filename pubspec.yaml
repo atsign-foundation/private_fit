@@ -33,7 +33,7 @@ dependencies:
   #State management and functional programming libraries
   bloc: ^8.0.3
   flutter_bloc: ^8.0.1
-  freezed_annotation: ^1.1.0
+  freezed_annotation: ^2.0.3
   dartz: ^0.10.1
   get_it: ^7.2.0
   injectable: ^1.5.3
@@ -50,7 +50,7 @@ dev_dependencies:
   auto_route_generator: ^4.0.0
   bloc_test: ^9.0.3
   build_runner: ^2.1.11
-  freezed: ^1.1.1
+  freezed: ^2.0.3+1
   injectable_generator: ^1.5.3
   json_serializable: ^6.1.4
   mocktail: ^0.3.0
