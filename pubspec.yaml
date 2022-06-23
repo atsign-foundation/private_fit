@@ -26,6 +26,7 @@ dependencies:
   flutter_svg: ^1.1.0
   logger: ^1.1.0
   animations: ^2.0.3
+  animated_text_kit: ^4.2.2
 
 
 
@@ -71,6 +72,11 @@ flutter:
     - assets/images/cool.jpg
     - assets/images/meditation.png
     - assets/images/trainer.jpg
+    - assets/images/fitgirl.png
+    - assets/images/fitgirl01.png
+    - assets/images/fitman01.png
+    - assets/images/fitman.png
+    - assets/images/running.png
         #### Curved
     - assets/icons/svgs/curved/Activity.svg
     - assets/icons/svgs/curved/AddUser.svg
