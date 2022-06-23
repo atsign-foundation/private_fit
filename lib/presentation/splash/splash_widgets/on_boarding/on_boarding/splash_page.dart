@@ -7,6 +7,7 @@ import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_bo
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_boarding/splash3d_widget.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_boarding/splash_3d_model_controller.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_boarding/splash_appbar.dart';
+import 'package:private_fit/shared/images.dart';
 // import 'package:private_fit/shared/images.dart';
 
 class SplashPage extends StatefulWidget {
@@ -80,20 +81,20 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
     if (!_splash3dModelController.initialized) {
       precacheImage(
-        const AssetImage(
-          AppAssets.artist1,
+        AssetImage(
+          AllImages().running,
         ),
         context,
       );
       precacheImage(
-        const AssetImage(
-          AppAssets.artist2,
+        AssetImage(
+          AllImages().fitgirl01,
         ),
         context,
       );
       precacheImage(
-        const AssetImage(
-          AppAssets.artist3,
+        AssetImage(
+          AllImages().fitman01,
         ),
         context,
       );
@@ -109,7 +110,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     _splash3dModelController.setView(MediaQuery.of(context).size);
     return Scaffold(
       backgroundColor: _pageIndex == 0
-          ? const Color(0xFF0DD479)
+          ? const Color(0xFF0DD479) //const Color(0xFF0DD479),
           : _pageIndex == 1
               ? const Color(0xFFECA6C8)
               : const Color(0xFFFFD500),
@@ -144,20 +145,29 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                 child: Container(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 19, 109, 121),
-                    borderRadius: BorderRadius.all(
+                  decoration: BoxDecoration(
+                    //const Color.fromARGB(255, 19, 109, 121)
+                    color: _pageIndex == 0
+                        ? const Color.fromARGB(255, 72, 171, 128)
+                        : _pageIndex == 1
+                            ? const Color(0xFFECA6C8)
+                            : const Color(0xFFFFD500),
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(8),
                     ),
                   ),
                   child: Text(
                     l10n.on_board_atsign,
-                    style: const TextStyle(
+                    style: TextStyle(
                       letterSpacing: 1.1,
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
-                      color: Colors.white,
+                      color: _pageIndex == 0
+                          ? const Color.fromARGB(255, 228, 237, 211)
+                          : _pageIndex == 1
+                              ? const Color.fromARGB(255, 88, 2, 117)
+                              : const Color.fromARGB(255, 14, 3, 97),
                     ),
                   ),
                 ),
@@ -193,8 +203,8 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
         result = Splash3dWidget(
           bottomTitle: l10n.splash01,
           backgroundColor: const Color(0xFF0DD479),
-          image: const AssetImage(
-            AppAssets.artist1,
+          image: AssetImage(
+            AllImages().running,
           ),
           controller: _splash3dModelController,
           topTitleClipProgress: 1.0 - _page0TopTitleController.value,
@@ -205,8 +215,8 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
         result = Splash3dWidget(
           bottomTitle: l10n.splash02,
           backgroundColor: const Color(0xFFECA6C8),
-          image: const AssetImage(
-            AppAssets.artist2,
+          image: AssetImage(
+            AllImages().fitgirl01,
           ),
           pageIndex: 1,
           controller: _splash3dModelController,
@@ -220,8 +230,8 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
         result = Splash3dWidget(
           bottomTitle: l10n.splash03,
           backgroundColor: const Color(0xFFFFD500),
-          image: const AssetImage(
-            AppAssets.artist3,
+          image: AssetImage(
+            AllImages().fitman01,
           ),
           pageIndex: 2,
           controller: _splash3dModelController,

@@ -41,6 +41,23 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
+          Positioned(
+            bottom: 110,
+            left: 70,
+            child: Transform.rotate(
+              angle: -math.pi / 2,
+              alignment: Alignment.centerLeft,
+              child: const AutoSizeText(
+                'Welcome @22fine90',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Color.fromARGB(255, 5, 99, 98),
+                  fontWeight: FontWeight.w300,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
