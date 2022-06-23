@@ -18,7 +18,7 @@ class OnBoardingForm extends StatelessWidget {
       listener: (context, state) {
         state.mapOrNull(
           failure: (state) {
-            //todo make a snack bar or something to show these errors
+            //TODO(kzawadi):  make a snack bar or something to show these errors
             Logger(printer: PrettyPrinter()).e(
               'On Boarding failed',
               state.onBoardingFailure.map(
@@ -62,27 +62,6 @@ class OnBoardingForm extends StatelessWidget {
           orElse: () => const SizedBox(),
         );
       },
-    );
-  }
-}
-
-class OnboardingWidget extends StatelessWidget {
-  const OnboardingWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: SizedBox(
-        height: 30,
-        width: 30,
-        child: Center(
-          child: CircularProgressIndicator(
-            color: Colors.cyanAccent,
-          ),
-        ),
-      ),
     );
   }
 }

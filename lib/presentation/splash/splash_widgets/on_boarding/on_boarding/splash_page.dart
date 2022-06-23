@@ -145,20 +145,29 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                 child: Container(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 19, 109, 121),
-                    borderRadius: BorderRadius.all(
+                  decoration: BoxDecoration(
+                    //const Color.fromARGB(255, 19, 109, 121)
+                    color: _pageIndex == 0
+                        ? const Color.fromARGB(255, 72, 171, 128)
+                        : _pageIndex == 1
+                            ? const Color(0xFFECA6C8)
+                            : const Color(0xFFFFD500),
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(8),
                     ),
                   ),
                   child: Text(
                     l10n.on_board_atsign,
-                    style: const TextStyle(
+                    style: TextStyle(
                       letterSpacing: 1.1,
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
-                      color: Colors.white,
+                      color: _pageIndex == 0
+                          ? const Color.fromARGB(255, 228, 237, 211)
+                          : _pageIndex == 1
+                              ? const Color.fromARGB(255, 88, 2, 117)
+                              : const Color.fromARGB(255, 14, 3, 97),
                     ),
                   ),
                 ),
