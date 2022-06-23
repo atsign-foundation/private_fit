@@ -52,7 +52,7 @@ class Splash3dModelController extends ChangeNotifier {
     // with the meshs position
 
     // Calculate world space (0, 0, 0) in ndc space
-    double cameraZ = 0;
+    var cameraZ = 0.0;
     {
       final camNDC = matProj!.multiplied(matView!).transform(
             vec32.Vector4(
@@ -80,9 +80,8 @@ class Splash3dModelController extends ChangeNotifier {
       1,
     );
 
-    final vec32.Matrix4 matrix =
-        vec32.Matrix4.inverted(matProj!.multiplied(matView!));
-    final vec32.Vector4 world = matrix.transform(ndc);
+    final matrix = vec32.Matrix4.inverted(matProj!.multiplied(matView!));
+    final world = matrix.transform(ndc);
     if (world.w != 0.0) {
       world
         ..x /= world.w
@@ -92,7 +91,7 @@ class Splash3dModelController extends ChangeNotifier {
     // print(world);
 
     // Apply forces to objects
-    for (int i = page * 12; i < page * 12 + 12; ++i) {
+    for (var i = page * 12; i < page * 12 + 12; ++i) {
       final force =
           _positions![i] - vec32.Vector3(world.x, world.y, _positions![i].z);
       final tangentForce = force.cross(
@@ -178,9 +177,9 @@ class Splash3dModelController extends ChangeNotifier {
         ..z = _rng!.nextDouble() * 4 - 4;
     }
     // Distribute better
-    for (int i = 0; i < 200; ++i) {
-      for (int j = 0; j < _positions!.length; ++j) {
-        for (int k = j + 1; k < _positions!.length; ++k) {
+    for (var i = 0; i < 200; ++i) {
+      for (var j = 0; j < _positions!.length; ++j) {
+        for (var k = j + 1; k < _positions!.length; ++k) {
           final p0 = _positions![j];
           final p1 = _positions![k];
           final p0p1 = p1 - p0;
