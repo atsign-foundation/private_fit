@@ -8,14 +8,15 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/on_boarding/bloc/on_boarding_bloc.dart' as _i10;
+import 'application/open_food/bloc/open_food_bloc.dart' as _i13;
 import 'domain/contacts/i_contacts_facade.dart' as _i6;
 import 'domain/contacts/use_cases/at_contact_initialization_use_case.dart'
-    as _i13;
+    as _i14;
 import 'domain/contacts/use_cases/at_contacts_use_cases.dart' as _i12;
-import 'domain/contacts/use_cases/get_active_atsign_use_case.dart' as _i14;
+import 'domain/contacts/use_cases/get_active_atsign_use_case.dart' as _i15;
 import 'domain/on_boarding/i_atsign_on_boarding_facade.dart' as _i4;
 import 'domain/on_boarding/use_cases/get_on_boarded_at_sign_use_case.dart'
-    as _i15;
+    as _i16;
 import 'domain/on_boarding/use_cases/load_client_prefs_use_case.dart' as _i8;
 import 'domain/on_boarding/use_cases/on_board_data_when_succesful_use_case.dart'
     as _i9;
@@ -42,11 +43,12 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       get<_i11.GetOnBoardedAtSignUseCase>(),
       get<_i11.OnBoardDataWhenSuccessfulUseCase>(),
       get<_i12.AtContactInitializationUseCase>()));
-  gh.factory<_i13.AtContactInitializationUseCase>(
-      () => _i13.AtContactInitializationUseCase(get<_i6.IContactsFacade>()));
-  gh.factory<_i14.GetActiveAtsignUseCase>(
-      () => _i14.GetActiveAtsignUseCase(get<_i6.IContactsFacade>()));
-  gh.lazySingleton<_i15.GetOnBoardedAtSignUseCase>(
-      () => _i15.GetOnBoardedAtSignUseCase(get<_i4.IAtsignOnBoardingFacade>()));
+  gh.factory<_i13.OpenFoodBloc>(() => _i13.OpenFoodBloc());
+  gh.factory<_i14.AtContactInitializationUseCase>(
+      () => _i14.AtContactInitializationUseCase(get<_i6.IContactsFacade>()));
+  gh.factory<_i15.GetActiveAtsignUseCase>(
+      () => _i15.GetActiveAtsignUseCase(get<_i6.IContactsFacade>()));
+  gh.lazySingleton<_i16.GetOnBoardedAtSignUseCase>(
+      () => _i16.GetOnBoardedAtSignUseCase(get<_i4.IAtsignOnBoardingFacade>()));
   return get;
 }
