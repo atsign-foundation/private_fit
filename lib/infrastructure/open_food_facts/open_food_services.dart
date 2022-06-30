@@ -1,27 +1,47 @@
-import 'package:openfoodfacts/model/Product.dart';
+import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
+import 'package:openfoodfacts/openfoodfacts.dart';
+import 'package:private_fit/domain/open_food/i_open_food_facts_facade.dart';
+import 'package:private_fit/domain/open_food/open_food_facts_failures.dart';
+import 'package:private_fit/domain/open_food/open_food_fetched_product.dart';
+import 'package:private_fit/domain/open_food/product_query.dart';
 
-/// Status of a "fetch [Product]" operation
-enum FetchedProductStatus {
-  ok,
-  internetNotFound,
-  internetError,
-  userCancelled,
-  codeInvalid,
-}
+@LazySingleton(as: IOpenFoodFactsFacade)
+class OpenFoodFactsServices extends IOpenFoodFactsFacade {
+  @override
+  Future<Either<OpenFoodFailures, Unit>> justplaceholder() {
+    throw UnimplementedError();
+  }
 
-/// A [Product] that we tried to fetch, but was it successful?..
-class FetchedProduct {
-  // The reason behind the "ignore": I want to force "product" to be not null
-  FetchedProduct(final Product product)
-      // ignore: prefer_initializing_formals
-      : product = product,
-        status = FetchedProductStatus.ok;
+  @override
+  Future<FetchedProduct> getFetchedFood(String barcode) async {
+    ProductQuery.setCountry('us');
+    ProductQuery.setLanguage('en-us');
+    final configuration = ProductQueryConfiguration(
+      barcode,
+      fields: ProductQuery.fields,
+      language: ProductQuery.getLanguage(),
+      country: ProductQuery.getCountry(),
+    );
 
-  /// When the "fetch product" operation didn't go well (no status "ok" here)
-  FetchedProduct.error(this.status)
-      : product = null,
-        assert(status != FetchedProductStatus.ok, '');
+    final ProductResult result;
+    try {
+      result = await OpenFoodAPIClient.getProduct(configuration);
+    } catch (e) {
+      return FetchedProduct.error(FetchedProductStatus.internetError);
+    }
 
-  final Product? product;
-  final FetchedProductStatus status;
+    if (result.status == 1) {
+      final product = result.product;
+      if (product != null) {
+        // await daoProduct.put(product);
+        return FetchedProduct(product);
+      }
+    }
+    if (barcode.trim().isNotEmpty &&
+        (result.barcode == null || result.barcode!.isEmpty)) {
+      return FetchedProduct.error(FetchedProductStatus.codeInvalid);
+    }
+    return FetchedProduct.error(FetchedProductStatus.internetNotFound);
+  }
 }

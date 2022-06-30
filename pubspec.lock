@@ -84,7 +84,7 @@ packages:
       name: at_client
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.27"
+    version: "3.0.28"
   at_client_mobile:
     dependency: "direct main"
     description:
@@ -105,7 +105,7 @@ packages:
       name: at_commons
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.17"
+    version: "3.0.18"
   at_contact:
     dependency: transitive
     description:
@@ -126,14 +126,14 @@ packages:
       name: at_contacts_group_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.6"
+    version: "4.0.7"
   at_lookup:
     dependency: transitive
     description:
       name: at_lookup
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.25"
+    version: "3.0.26"
   at_onboarding_flutter:
     dependency: transitive
     description:
@@ -147,7 +147,7 @@ packages:
       name: at_persistence_secondary_server
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.28"
+    version: "3.0.29"
   at_persistence_spec:
     dependency: transitive
     description:
@@ -231,14 +231,14 @@ packages:
       name: auto_route
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.1"
+    version: "4.2.0"
   auto_route_generator:
     dependency: "direct dev"
     description:
       name: auto_route_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.0"
+    version: "4.2.0"
   auto_size_text:
     dependency: "direct main"
     description:
@@ -342,7 +342,7 @@ packages:
     description:
       path: "packages/camera/camera"
       ref: smooth_camera
-      resolved-ref: bea3b8e065b89ee80f85f2c20ada24e21facf531
+      resolved-ref: d85e1a0df41547cb48c912afc48915dc81a6370a
       url: "https://github.com/g123k/plugins.git"
     source: git
     version: "0.9.6"
@@ -351,7 +351,7 @@ packages:
     description:
       path: "packages/camera/camera_platform_interface"
       ref: smooth_camera
-      resolved-ref: bea3b8e065b89ee80f85f2c20ada24e21facf531
+      resolved-ref: d85e1a0df41547cb48c912afc48915dc81a6370a
       url: "https://github.com/g123k/plugins.git"
     source: git
     version: "2.1.6"
@@ -360,7 +360,7 @@ packages:
     description:
       path: "packages/camera/camera_web"
       ref: smooth_camera
-      resolved-ref: bea3b8e065b89ee80f85f2c20ada24e21facf531
+      resolved-ref: d85e1a0df41547cb48c912afc48915dc81a6370a
       url: "https://github.com/g123k/plugins.git"
     source: git
     version: "0.2.1+6"
@@ -648,7 +648,7 @@ packages:
       name: flutter_svg
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -771,6 +771,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.2.0"
+  image_compression:
+    dependency: transitive
+    description:
+      name: image_compression
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3"
   image_cropper:
     dependency: "direct main"
     description:
@@ -911,6 +918,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.0"
+  native_device_orientation:
+    dependency: transitive
+    description:
+      name: native_device_orientation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.4"
   nested:
     dependency: transitive
     description:
@@ -931,7 +945,7 @@ packages:
       name: openfoodfacts
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.19.0"
+    version: "1.20.0"
   package_config:
     dependency: transitive
     description:
@@ -973,7 +987,7 @@ packages:
       name: path_provider_android
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.15"
+    version: "2.0.16"
   path_provider_ios:
     dependency: transitive
     description:
@@ -1121,6 +1135,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  qr_mobile_vision:
+    dependency: "direct main"
+    description:
+      name: qr_mobile_vision
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.1"
   quiver:
     dependency: transitive
     description:
@@ -1141,7 +1162,7 @@ packages:
       name: share_plus
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.9"
+    version: "4.0.10"
   share_plus_linux:
     dependency: transitive
     description:

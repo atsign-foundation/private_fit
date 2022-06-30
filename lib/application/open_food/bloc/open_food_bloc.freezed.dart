@@ -16,37 +16,42 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$OpenFoodEvent {
+  String get qRdata => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getFoodResult,
+    required TResult Function(String qRdata) qrDataOnSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getFoodResult,
+    TResult Function(String qRdata)? qrDataOnSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getFoodResult,
+    TResult Function(String qRdata)? qrDataOnSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetFoodResult value) getFoodResult,
+    required TResult Function(_QrDataOnSuccess value) qrDataOnSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetFoodResult value)? getFoodResult,
+    TResult Function(_QrDataOnSuccess value)? qrDataOnSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetFoodResult value)? getFoodResult,
+    TResult Function(_QrDataOnSuccess value)? qrDataOnSuccess,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $OpenFoodEventCopyWith<OpenFoodEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -55,6 +60,7 @@ abstract class $OpenFoodEventCopyWith<$Res> {
   factory $OpenFoodEventCopyWith(
           OpenFoodEvent value, $Res Function(OpenFoodEvent) then) =
       _$OpenFoodEventCopyWithImpl<$Res>;
+  $Res call({String qRdata});
 }
 
 /// @nodoc
@@ -65,70 +71,108 @@ class _$OpenFoodEventCopyWithImpl<$Res>
   final OpenFoodEvent _value;
   // ignore: unused_field
   final $Res Function(OpenFoodEvent) _then;
-}
-
-/// @nodoc
-abstract class _$$_GetFoodResultCopyWith<$Res> {
-  factory _$$_GetFoodResultCopyWith(
-          _$_GetFoodResult value, $Res Function(_$_GetFoodResult) then) =
-      __$$_GetFoodResultCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_GetFoodResultCopyWithImpl<$Res>
-    extends _$OpenFoodEventCopyWithImpl<$Res>
-    implements _$$_GetFoodResultCopyWith<$Res> {
-  __$$_GetFoodResultCopyWithImpl(
-      _$_GetFoodResult _value, $Res Function(_$_GetFoodResult) _then)
-      : super(_value, (v) => _then(v as _$_GetFoodResult));
 
   @override
-  _$_GetFoodResult get _value => super._value as _$_GetFoodResult;
+  $Res call({
+    Object? qRdata = freezed,
+  }) {
+    return _then(_value.copyWith(
+      qRdata: qRdata == freezed
+          ? _value.qRdata
+          : qRdata // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_QrDataOnSuccessCopyWith<$Res>
+    implements $OpenFoodEventCopyWith<$Res> {
+  factory _$$_QrDataOnSuccessCopyWith(
+          _$_QrDataOnSuccess value, $Res Function(_$_QrDataOnSuccess) then) =
+      __$$_QrDataOnSuccessCopyWithImpl<$Res>;
+  @override
+  $Res call({String qRdata});
+}
+
+/// @nodoc
+class __$$_QrDataOnSuccessCopyWithImpl<$Res>
+    extends _$OpenFoodEventCopyWithImpl<$Res>
+    implements _$$_QrDataOnSuccessCopyWith<$Res> {
+  __$$_QrDataOnSuccessCopyWithImpl(
+      _$_QrDataOnSuccess _value, $Res Function(_$_QrDataOnSuccess) _then)
+      : super(_value, (v) => _then(v as _$_QrDataOnSuccess));
+
+  @override
+  _$_QrDataOnSuccess get _value => super._value as _$_QrDataOnSuccess;
+
+  @override
+  $Res call({
+    Object? qRdata = freezed,
+  }) {
+    return _then(_$_QrDataOnSuccess(
+      qRdata == freezed
+          ? _value.qRdata
+          : qRdata // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_GetFoodResult implements _GetFoodResult {
-  const _$_GetFoodResult();
+class _$_QrDataOnSuccess implements _QrDataOnSuccess {
+  const _$_QrDataOnSuccess(this.qRdata);
+
+  @override
+  final String qRdata;
 
   @override
   String toString() {
-    return 'OpenFoodEvent.getFoodResult()';
+    return 'OpenFoodEvent.qrDataOnSuccess(qRdata: $qRdata)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GetFoodResult);
+        (other.runtimeType == runtimeType &&
+            other is _$_QrDataOnSuccess &&
+            const DeepCollectionEquality().equals(other.qRdata, qRdata));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(qRdata));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_QrDataOnSuccessCopyWith<_$_QrDataOnSuccess> get copyWith =>
+      __$$_QrDataOnSuccessCopyWithImpl<_$_QrDataOnSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getFoodResult,
+    required TResult Function(String qRdata) qrDataOnSuccess,
   }) {
-    return getFoodResult();
+    return qrDataOnSuccess(qRdata);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getFoodResult,
+    TResult Function(String qRdata)? qrDataOnSuccess,
   }) {
-    return getFoodResult?.call();
+    return qrDataOnSuccess?.call(qRdata);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getFoodResult,
+    TResult Function(String qRdata)? qrDataOnSuccess,
     required TResult orElse(),
   }) {
-    if (getFoodResult != null) {
-      return getFoodResult();
+    if (qrDataOnSuccess != null) {
+      return qrDataOnSuccess(qRdata);
     }
     return orElse();
   }
@@ -136,34 +180,41 @@ class _$_GetFoodResult implements _GetFoodResult {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetFoodResult value) getFoodResult,
+    required TResult Function(_QrDataOnSuccess value) qrDataOnSuccess,
   }) {
-    return getFoodResult(this);
+    return qrDataOnSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetFoodResult value)? getFoodResult,
+    TResult Function(_QrDataOnSuccess value)? qrDataOnSuccess,
   }) {
-    return getFoodResult?.call(this);
+    return qrDataOnSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetFoodResult value)? getFoodResult,
+    TResult Function(_QrDataOnSuccess value)? qrDataOnSuccess,
     required TResult orElse(),
   }) {
-    if (getFoodResult != null) {
-      return getFoodResult(this);
+    if (qrDataOnSuccess != null) {
+      return qrDataOnSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetFoodResult implements OpenFoodEvent {
-  const factory _GetFoodResult() = _$_GetFoodResult;
+abstract class _QrDataOnSuccess implements OpenFoodEvent {
+  const factory _QrDataOnSuccess(final String qRdata) = _$_QrDataOnSuccess;
+
+  @override
+  String get qRdata => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$_QrDataOnSuccessCopyWith<_$_QrDataOnSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -171,56 +222,38 @@ mixin _$OpenFoodState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() failure,
-    required TResult Function() loadSuccess,
-    required TResult Function(Object? object) onBoardingError,
+    required TResult Function(FetchedProduct fetchedProduct) loadSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? failure,
-    TResult Function()? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? failure,
-    TResult Function()? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Failure value) failure,
     required TResult Function(_LoadSuccess value) loadSuccess,
-    required TResult Function(_onBoardingError value) onBoardingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_onBoardingError value)? onBoardingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_onBoardingError value)? onBoardingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -283,10 +316,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() failure,
-    required TResult Function() loadSuccess,
-    required TResult Function(Object? object) onBoardingError,
+    required TResult Function(FetchedProduct fetchedProduct) loadSuccess,
   }) {
     return initial();
   }
@@ -295,10 +325,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? failure,
-    TResult Function()? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
   }) {
     return initial?.call();
   }
@@ -307,10 +334,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? failure,
-    TResult Function()? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -323,10 +347,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Failure value) failure,
     required TResult Function(_LoadSuccess value) loadSuccess,
-    required TResult Function(_onBoardingError value) onBoardingError,
   }) {
     return initial(this);
   }
@@ -335,10 +356,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_onBoardingError value)? onBoardingError,
   }) {
     return initial?.call(this);
   }
@@ -347,10 +365,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_onBoardingError value)? onBoardingError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -365,252 +380,11 @@ abstract class _Initial implements OpenFoodState {
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_LoadingCopyWithImpl<$Res> extends _$OpenFoodStateCopyWithImpl<$Res>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
-      : super(_value, (v) => _then(v as _$_Loading));
-
-  @override
-  _$_Loading get _value => super._value as _$_Loading;
-}
-
-/// @nodoc
-
-class _$_Loading implements _Loading {
-  const _$_Loading();
-
-  @override
-  String toString() {
-    return 'OpenFoodState.loading()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() failure,
-    required TResult Function() loadSuccess,
-    required TResult Function(Object? object) onBoardingError,
-  }) {
-    return loading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? failure,
-    TResult Function()? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
-  }) {
-    return loading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? failure,
-    TResult Function()? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Failure value) failure,
-    required TResult Function(_LoadSuccess value) loadSuccess,
-    required TResult Function(_onBoardingError value) onBoardingError,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_onBoardingError value)? onBoardingError,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_onBoardingError value)? onBoardingError,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Loading implements OpenFoodState {
-  const factory _Loading() = _$_Loading;
-}
-
-/// @nodoc
-abstract class _$$_FailureCopyWith<$Res> {
-  factory _$$_FailureCopyWith(
-          _$_Failure value, $Res Function(_$_Failure) then) =
-      __$$_FailureCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_FailureCopyWithImpl<$Res> extends _$OpenFoodStateCopyWithImpl<$Res>
-    implements _$$_FailureCopyWith<$Res> {
-  __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
-      : super(_value, (v) => _then(v as _$_Failure));
-
-  @override
-  _$_Failure get _value => super._value as _$_Failure;
-}
-
-/// @nodoc
-
-class _$_Failure implements _Failure {
-  const _$_Failure();
-
-  @override
-  String toString() {
-    return 'OpenFoodState.failure()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Failure);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() failure,
-    required TResult Function() loadSuccess,
-    required TResult Function(Object? object) onBoardingError,
-  }) {
-    return failure();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? failure,
-    TResult Function()? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
-  }) {
-    return failure?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? failure,
-    TResult Function()? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Failure value) failure,
-    required TResult Function(_LoadSuccess value) loadSuccess,
-    required TResult Function(_onBoardingError value) onBoardingError,
-  }) {
-    return failure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_onBoardingError value)? onBoardingError,
-  }) {
-    return failure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_onBoardingError value)? onBoardingError,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Failure implements OpenFoodState {
-  const factory _Failure() = _$_Failure;
-}
-
-/// @nodoc
 abstract class _$$_LoadSuccessCopyWith<$Res> {
   factory _$$_LoadSuccessCopyWith(
           _$_LoadSuccess value, $Res Function(_$_LoadSuccess) then) =
       __$$_LoadSuccessCopyWithImpl<$Res>;
+  $Res call({FetchedProduct fetchedProduct});
 }
 
 /// @nodoc
@@ -623,63 +397,78 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
 
   @override
   _$_LoadSuccess get _value => super._value as _$_LoadSuccess;
+
+  @override
+  $Res call({
+    Object? fetchedProduct = freezed,
+  }) {
+    return _then(_$_LoadSuccess(
+      fetchedProduct == freezed
+          ? _value.fetchedProduct
+          : fetchedProduct // ignore: cast_nullable_to_non_nullable
+              as FetchedProduct,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess();
+  const _$_LoadSuccess(this.fetchedProduct);
+
+  @override
+  final FetchedProduct fetchedProduct;
 
   @override
   String toString() {
-    return 'OpenFoodState.loadSuccess()';
+    return 'OpenFoodState.loadSuccess(fetchedProduct: $fetchedProduct)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoadSuccess);
+        (other.runtimeType == runtimeType &&
+            other is _$_LoadSuccess &&
+            const DeepCollectionEquality()
+                .equals(other.fetchedProduct, fetchedProduct));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(fetchedProduct));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
+      __$$_LoadSuccessCopyWithImpl<_$_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() failure,
-    required TResult Function() loadSuccess,
-    required TResult Function(Object? object) onBoardingError,
+    required TResult Function(FetchedProduct fetchedProduct) loadSuccess,
   }) {
-    return loadSuccess();
+    return loadSuccess(fetchedProduct);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? failure,
-    TResult Function()? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
   }) {
-    return loadSuccess?.call();
+    return loadSuccess?.call(fetchedProduct);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? failure,
-    TResult Function()? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess();
+      return loadSuccess(fetchedProduct);
     }
     return orElse();
   }
@@ -688,10 +477,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Failure value) failure,
     required TResult Function(_LoadSuccess value) loadSuccess,
-    required TResult Function(_onBoardingError value) onBoardingError,
   }) {
     return loadSuccess(this);
   }
@@ -700,10 +486,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_onBoardingError value)? onBoardingError,
   }) {
     return loadSuccess?.call(this);
   }
@@ -712,10 +495,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_onBoardingError value)? onBoardingError,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -726,154 +506,11 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements OpenFoodState {
-  const factory _LoadSuccess() = _$_LoadSuccess;
-}
+  const factory _LoadSuccess(final FetchedProduct fetchedProduct) =
+      _$_LoadSuccess;
 
-/// @nodoc
-abstract class _$$_onBoardingErrorCopyWith<$Res> {
-  factory _$$_onBoardingErrorCopyWith(
-          _$_onBoardingError value, $Res Function(_$_onBoardingError) then) =
-      __$$_onBoardingErrorCopyWithImpl<$Res>;
-  $Res call({Object? object});
-}
-
-/// @nodoc
-class __$$_onBoardingErrorCopyWithImpl<$Res>
-    extends _$OpenFoodStateCopyWithImpl<$Res>
-    implements _$$_onBoardingErrorCopyWith<$Res> {
-  __$$_onBoardingErrorCopyWithImpl(
-      _$_onBoardingError _value, $Res Function(_$_onBoardingError) _then)
-      : super(_value, (v) => _then(v as _$_onBoardingError));
-
-  @override
-  _$_onBoardingError get _value => super._value as _$_onBoardingError;
-
-  @override
-  $Res call({
-    Object? object = freezed,
-  }) {
-    return _then(_$_onBoardingError(
-      object == freezed ? _value.object : object,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_onBoardingError implements _onBoardingError {
-  const _$_onBoardingError(this.object);
-
-  @override
-  final Object? object;
-
-  @override
-  String toString() {
-    return 'OpenFoodState.onBoardingError(object: $object)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_onBoardingError &&
-            const DeepCollectionEquality().equals(other.object, object));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(object));
-
+  FetchedProduct get fetchedProduct => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  @override
-  _$$_onBoardingErrorCopyWith<_$_onBoardingError> get copyWith =>
-      __$$_onBoardingErrorCopyWithImpl<_$_onBoardingError>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() failure,
-    required TResult Function() loadSuccess,
-    required TResult Function(Object? object) onBoardingError,
-  }) {
-    return onBoardingError(object);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? failure,
-    TResult Function()? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
-  }) {
-    return onBoardingError?.call(object);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? failure,
-    TResult Function()? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
-    required TResult orElse(),
-  }) {
-    if (onBoardingError != null) {
-      return onBoardingError(object);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Failure value) failure,
-    required TResult Function(_LoadSuccess value) loadSuccess,
-    required TResult Function(_onBoardingError value) onBoardingError,
-  }) {
-    return onBoardingError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_onBoardingError value)? onBoardingError,
-  }) {
-    return onBoardingError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_onBoardingError value)? onBoardingError,
-    required TResult orElse(),
-  }) {
-    if (onBoardingError != null) {
-      return onBoardingError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _onBoardingError implements OpenFoodState {
-  const factory _onBoardingError(final Object? object) = _$_onBoardingError;
-
-  Object? get object => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$_onBoardingErrorCopyWith<_$_onBoardingError> get copyWith =>
+  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }

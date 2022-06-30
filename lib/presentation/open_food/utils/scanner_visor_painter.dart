@@ -1,54 +1,4 @@
-// ignore_for_file: avoid_positional_boolean_parameters
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:private_fit/infrastructure/scan/camera_helper.dart';
-import 'package:private_fit/infrastructure/scan/user_preferences.dart';
-import 'package:provider/provider.dart';
-
-class ScannerFlashToggleWidget extends StatelessWidget {
-  const ScannerFlashToggleWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Selector<UserPreferences, bool>(
-      selector: (_, UserPreferences prefs) => prefs.useFlashWithCamera,
-      builder: (BuildContext context, bool value, _) {
-        return Tooltip(
-          message: 'clickable',
-          decoration: BoxDecoration(
-            color: value ? Colors.red : Colors.green,
-            borderRadius: const BorderRadius.all(Radius.circular(8)),
-          ),
-          child: InkWell(
-            customBorder: const CircleBorder(),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 6,
-                vertical: 8,
-              ),
-              child: Icon(
-                value ? Icons.flash_on : Icons.flash_off,
-                size: 20,
-                color: Colors.white,
-              ),
-            ),
-            onTap: () async {
-              await HapticFeedback.selectionClick();
-              await CameraHelper.controller?.enableFlash(!value);
-            },
-          ),
-        );
-      },
-    );
-  }
-
-  /// Returns the Size of the visor
-  static Size getSize(BuildContext context) => Size(
-        MediaQuery.of(context).size.width * 0.8,
-        150,
-      );
-}
 
 class ScanVisorPainter extends CustomPainter {
   ScanVisorPainter();
@@ -56,11 +6,11 @@ class ScanVisorPainter extends CustomPainter {
   static const double strokeWidth = 3;
   static const double _fullCornerSize = 31;
   static const double _halfCornerSize = _fullCornerSize / 2;
-  static const Radius _borderRadius = Radius.circular(_halfCornerSize);
+  static const Radius _borderRadius = Radius.circular(15);
 
   final Paint _paint = Paint()
     ..strokeWidth = strokeWidth
-    ..color = Colors.white
+    ..color = Colors.yellow
     ..style = PaintingStyle.stroke;
 
   @override
@@ -75,6 +25,7 @@ class ScanVisorPainter extends CustomPainter {
   /// Returns a path to draw the visor
   /// [includeLineBetweenCorners] will draw lines between each corner, instead
   /// of moving the cursor
+  // ignore: avoid_positional_boolean_parameters
   static Path getPath(Rect rect, bool includeLineBetweenCorners) {
     final double bottomPosition;
     if (includeLineBetweenCorners) {
