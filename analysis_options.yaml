@@ -5,20 +5,29 @@ linter:
   rules:
     public_member_api_docs: false
     sort_pub_dependencies: false
+<<<<<<< HEAD
     library_private_types_in_public_api: false
     always_declare_return_types: true
     prefer_const_constructors: true
     omit_local_variable_types: false
     flutter_style_todos: false
+=======
+    # library_private_types_in_public_api: false
+    # always_declare_return_types: true
+    # prefer_const_constructors: true
+    # omit_local_variable_types: false
+    # flutter_style_todos: false
+    # use_super_parameters: true
+>>>>>>> 0293fcd7a498bb0b2972ce5c9075657b5e4b7e3a
 
 
 analyzer:
-  errors:
-    missing_required_param: error
-    missing_return: error
-    must_be_immutable: error
-    sort_unnamed_constructors_first: error
-    invalid_annotation_target: ignore
+  # errors:
+  #   missing_required_param: error
+  #   missing_return: error
+  #   must_be_immutable: error
+  #   sort_unnamed_constructors_first: error
+  #   invalid_annotation_target: ignore
   exclude: 
     - build/**
     - lib/**.freezed.dart

@@ -2,11 +2,13 @@ import 'package:auto_route/annotations.dart';
 import 'package:injectable/injectable.dart';
 import 'package:private_fit/presentation/home/home_page.dart';
 import 'package:private_fit/presentation/on_boarding/on_boarding_page.dart';
+import 'package:private_fit/presentation/open_food/product_details_view.dart';
+import 'package:private_fit/presentation/open_food/scanner_page.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_boarding/initial_route.dart';
 
 /*
 Using Auto route helps a lot in  navigation it allows for strongly-typed
-arguments passing , effortless deep-linking and is uses code generation to
+arguments passing , effortless deep-linking and it uses code generation to
 simplify routes setup
 
 This will eliminated the boilerplate and a need to to use named/generated
@@ -21,7 +23,9 @@ other stuff. AutoRoute does all that for you and much more.
 
     AutoRoute<dynamic>(page: HomePage),
     AutoRoute<dynamic>(page: OnBoardingPage),
-    AutoRoute<dynamic>(page: OnBoarding, initial: true),
+    AutoRoute<dynamic>(page: ProductDetailsView),
+    AutoRoute<dynamic>(page: ScannerPage, initial: true),
+    AutoRoute<dynamic>(page: OnBoarding),
   ],
 )
 class $Router {}

@@ -7,57 +7,76 @@ environment:
   sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
-  # bloc: ^8.0.3
-  flutter:
-    sdk: flutter
-  # flutter_bloc: ^8.0.1
-  flutter_localizations:
-    sdk: flutter
-  intl: ^0.17.0
-  at_client_mobile: ^3.1.17
-  at_utils: ^3.0.10
-  path_provider: ^2.0.5
-  flutter_dotenv: ^5.0.2
+  animated_text_kit: ^4.2.2
+  animations: ^2.0.3
   at_app_flutter: ^5.0.0+1
+  at_client_mobile: ^3.1.17
   at_contacts_flutter: ^4.0.5
   at_contacts_group_flutter: ^4.0.6
+  at_utils: ^3.0.10
+  audioplayers: ^1.0.1
   auto_route: ^4.0.1
   auto_size_text: ^3.0.0
-  flutter_svg: ^1.1.0
-  logger: ^1.1.0
-  animations: ^2.0.3
-  animated_text_kit: ^4.2.2
-
-
-
-  #State management and functional programming libraries
   bloc: ^8.0.3
-  flutter_bloc: ^8.0.1
-  freezed_annotation: ^2.0.3
-  dartz: ^0.10.1
-  get_it: ^7.2.0
-  injectable: ^1.5.3
   bloc_concurrency: ^0.2.0
+  camera:
+    git:
+      url: https://github.com/g123k/plugins.git
+      ref: smooth_camera
+      path: packages/camera/camera
+  camera_platform_interface:
+    git:
+      url: https://github.com/g123k/plugins.git
+      ref: smooth_camera
+      path: packages/camera/camera_platform_interface
+  dartz: ^0.10.1
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.0.1
+  flutter_dotenv: ^5.0.2
+  flutter_isolate: ^2.0.2
+  flutter_localizations:
+    sdk: flutter
+  # flutter_qr_reader: ^1.0.5
+  flutter_svg: ^1.1.0
+  freezed_annotation: ^2.0.3
+  get_it: ^7.2.0
+  google_mlkit_barcode_scanning: ^0.3.0
+  image_cropper: ^2.0.3
+  injectable: ^1.5.3
+  intl: ^0.17.0
   json_annotation: ^4.4.0
-
+  logger: ^1.1.0
+  # mobile_scanner: ^2.0.0
+  openfoodfacts: ^1.19.0
+  path_provider: ^2.0.5
+  # qr_code_scanner: ^1.0.0
+  rxdart: ^0.27.4
+  shared_preferences: ^2.0.15
+  typed_data: ^1.3.0
+  visibility_detector: ^0.3.3
+  qr_mobile_vision: ^3.0.1
+  glassmorphism: ^3.0.0
+  modal_bottom_sheet: ^2.1.0
 
 dependency_overrides:
   file_saver:
     git:
       url: https://github.com/incrediblezayed/file_saver.git
       ref: main
+  permission_handler: ^10.0.0
 dev_dependencies:
   auto_route_generator: ^4.0.0
   bloc_test: ^9.0.3
   build_runner: ^2.1.11
+
+  flutter_test:
+    sdk: flutter
   freezed: ^2.0.3+1
   injectable_generator: ^1.5.3
   json_serializable: ^6.1.4
   mocktail: ^0.3.0
   very_good_analysis: ^3.0.1
-
-  flutter_test:
-    sdk: flutter
 
 flutter:
   uses-material-design: true
@@ -77,7 +96,7 @@ flutter:
     - assets/images/fitman01.png
     - assets/images/fitman.png
     - assets/images/running.png
-        #### Curved
+    #### Curved
     - assets/icons/svgs/curved/Activity.svg
     - assets/icons/svgs/curved/AddUser.svg
     - assets/icons/svgs/curved/ArrowDown.svg
@@ -185,8 +204,6 @@ flutter:
     - assets/on_boarding/assets/torus.obj
     - assets/on_boarding/assets/cube.obj
     - assets/on_boarding/assets/star.obj
-
-
 
   fonts:
     - family: HelveticaNeu

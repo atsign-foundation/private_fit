@@ -8,11 +8,20 @@ import 'package:private_fit/presentation/routes/router.gr.dart' as app_router;
 import 'package:private_fit/presentation/routes/routes_observer.dart';
 import 'package:private_fit/presentation/themes/themes.dart';
 
-class PrivateFitApp extends StatelessWidget {
-  PrivateFitApp({
-    super.key,
-  });
+class PrivateFitApp extends StatefulWidget {
+  const PrivateFitApp({super.key});
+
+  @override
+  State<PrivateFitApp> createState() => _PrivateFitAppState();
+}
+
+class _PrivateFitAppState extends State<PrivateFitApp> {
   final _appRouter = app_router.Router();
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

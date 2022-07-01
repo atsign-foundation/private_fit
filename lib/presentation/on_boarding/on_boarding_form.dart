@@ -18,7 +18,7 @@ class OnBoardingForm extends StatelessWidget {
       listener: (context, state) {
         state.mapOrNull(
           failure: (state) {
-            //TODO(kzawadi):  make a snack bar or something to show these errors
+            // TODO(kzawadi):  make snack bar or something to show these errors
             Logger(printer: PrettyPrinter()).e(
               'On Boarding failed',
               state.onBoardingFailure.map(
