@@ -6,6 +6,7 @@ import 'package:glassmorphism/glassmorphism.dart';
 import 'package:private_fit/application/open_food/bloc/open_food_bloc.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
+import 'package:private_fit/presentation/open_food/product_cards/smooth_product_card_found.dart';
 import 'package:private_fit/presentation/open_food/product_details_view.dart';
 import 'package:private_fit/presentation/open_food/utils/scanner_visor_painter.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/app_styles.dart';
@@ -137,9 +138,14 @@ class ScannerView extends StatelessWidget {
             );
           },
           loadSuccess: (value) {
-            return ProductView(
-              fetchedProduct: value.fetchedProduct,
-            ); //ProductDetailsView(fetchedProduct: value.fetchedProduct);
+            return SmoothProductCardFound(
+              product: value.fetchedProduct.product!,
+              heroTag: value.fetchedProduct.product!.barcode!,
+              backgroundColor: Colors.white,
+            );
+            // ProductView(
+            //   fetchedProduct: value.fetchedProduct,
+            // ); //ProductDetailsView(fetchedProduct: value.fetchedProduct);
           },
         );
       },
