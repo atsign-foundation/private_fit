@@ -23,5 +23,13 @@
   "assets_loading": "Loading assets ...",
   "@assets_loading": {
     "description": "the text seen on the splash screen when loading assets"
+  },
+  "scanner_title": "Food Scanner",
+  "@scanner_title": {
+    "description": "the text seen on the scanner screen as a title"
+  },
+  "scanning_instructions": "Locate a barcode of the Drink or Food you have taken and scann it to get Nutritional informations",
+  "@scanning_instructions": {
+    "description": "the text seen on the barcode scanning screen to guide on how to scan"
   }
 }

@@ -14,7 +14,7 @@ class WebsiteScreen extends StatefulWidget {
   final String title;
   final String url;
   @override
-  _WebsiteScreenState createState() => _WebsiteScreenState();
+  State createState() => _WebsiteScreenState();
 }
 
 class _WebsiteScreenState extends State<WebsiteScreen> {

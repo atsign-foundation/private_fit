@@ -22,7 +22,7 @@ class _OnBoardingState extends State<OnBoarding> {
   Future<void> loadNewLaunch() async {
     await SharedPreferences.getInstance().then((value) {
       setState(() {
-        final bool _newLaunch = value.getBool('newLaunch') ?? true;
+        final _newLaunch = value.getBool('newLaunch') ?? true;
         newLaunch = _newLaunch;
       });
     });

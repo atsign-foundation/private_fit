@@ -12,32 +12,7 @@ part of 'onboarding_failures.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$OnBoardingFailureTearOff {
-  const _$OnBoardingFailureTearOff();
-
-  CancelledByUser cancelledByUser() {
-    return const CancelledByUser();
-  }
-
-  FailedToGetgetApplicationSupportDirectory
-      failedToGetgetApplicationSupportDirectory() {
-    return const FailedToGetgetApplicationSupportDirectory();
-  }
-
-  ServerError serverError() {
-    return const ServerError();
-  }
-
-  FailToSetOnBoardData failToSetOnBoardData() {
-    return const FailToSetOnBoardData();
-  }
-}
-
-/// @nodoc
-const $OnBoardingFailure = _$OnBoardingFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$OnBoardingFailure {
@@ -114,22 +89,22 @@ class _$OnBoardingFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $CancelledByUserCopyWith<$Res> {
-  factory $CancelledByUserCopyWith(
-          CancelledByUser value, $Res Function(CancelledByUser) then) =
-      _$CancelledByUserCopyWithImpl<$Res>;
+abstract class _$$CancelledByUserCopyWith<$Res> {
+  factory _$$CancelledByUserCopyWith(
+          _$CancelledByUser value, $Res Function(_$CancelledByUser) then) =
+      __$$CancelledByUserCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CancelledByUserCopyWithImpl<$Res>
+class __$$CancelledByUserCopyWithImpl<$Res>
     extends _$OnBoardingFailureCopyWithImpl<$Res>
-    implements $CancelledByUserCopyWith<$Res> {
-  _$CancelledByUserCopyWithImpl(
-      CancelledByUser _value, $Res Function(CancelledByUser) _then)
-      : super(_value, (v) => _then(v as CancelledByUser));
+    implements _$$CancelledByUserCopyWith<$Res> {
+  __$$CancelledByUserCopyWithImpl(
+      _$CancelledByUser _value, $Res Function(_$CancelledByUser) _then)
+      : super(_value, (v) => _then(v as _$CancelledByUser));
 
   @override
-  CancelledByUser get _value => super._value as CancelledByUser;
+  _$CancelledByUser get _value => super._value as _$CancelledByUser;
 }
 
 /// @nodoc
@@ -145,7 +120,7 @@ class _$CancelledByUser implements CancelledByUser {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is CancelledByUser);
+        (other.runtimeType == runtimeType && other is _$CancelledByUser);
   }
 
   @override
@@ -234,26 +209,26 @@ abstract class CancelledByUser implements OnBoardingFailure {
 }
 
 /// @nodoc
-abstract class $FailedToGetgetApplicationSupportDirectoryCopyWith<$Res> {
-  factory $FailedToGetgetApplicationSupportDirectoryCopyWith(
-          FailedToGetgetApplicationSupportDirectory value,
-          $Res Function(FailedToGetgetApplicationSupportDirectory) then) =
-      _$FailedToGetgetApplicationSupportDirectoryCopyWithImpl<$Res>;
+abstract class _$$FailedToGetgetApplicationSupportDirectoryCopyWith<$Res> {
+  factory _$$FailedToGetgetApplicationSupportDirectoryCopyWith(
+          _$FailedToGetgetApplicationSupportDirectory value,
+          $Res Function(_$FailedToGetgetApplicationSupportDirectory) then) =
+      __$$FailedToGetgetApplicationSupportDirectoryCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FailedToGetgetApplicationSupportDirectoryCopyWithImpl<$Res>
+class __$$FailedToGetgetApplicationSupportDirectoryCopyWithImpl<$Res>
     extends _$OnBoardingFailureCopyWithImpl<$Res>
-    implements $FailedToGetgetApplicationSupportDirectoryCopyWith<$Res> {
-  _$FailedToGetgetApplicationSupportDirectoryCopyWithImpl(
-      FailedToGetgetApplicationSupportDirectory _value,
-      $Res Function(FailedToGetgetApplicationSupportDirectory) _then)
+    implements _$$FailedToGetgetApplicationSupportDirectoryCopyWith<$Res> {
+  __$$FailedToGetgetApplicationSupportDirectoryCopyWithImpl(
+      _$FailedToGetgetApplicationSupportDirectory _value,
+      $Res Function(_$FailedToGetgetApplicationSupportDirectory) _then)
       : super(_value,
-            (v) => _then(v as FailedToGetgetApplicationSupportDirectory));
+            (v) => _then(v as _$FailedToGetgetApplicationSupportDirectory));
 
   @override
-  FailedToGetgetApplicationSupportDirectory get _value =>
-      super._value as FailedToGetgetApplicationSupportDirectory;
+  _$FailedToGetgetApplicationSupportDirectory get _value =>
+      super._value as _$FailedToGetgetApplicationSupportDirectory;
 }
 
 /// @nodoc
@@ -271,7 +246,7 @@ class _$FailedToGetgetApplicationSupportDirectory
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is FailedToGetgetApplicationSupportDirectory);
+            other is _$FailedToGetgetApplicationSupportDirectory);
   }
 
   @override
@@ -362,22 +337,22 @@ abstract class FailedToGetgetApplicationSupportDirectory
 }
 
 /// @nodoc
-abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(
-          ServerError value, $Res Function(ServerError) then) =
-      _$ServerErrorCopyWithImpl<$Res>;
+abstract class _$$ServerErrorCopyWith<$Res> {
+  factory _$$ServerErrorCopyWith(
+          _$ServerError value, $Res Function(_$ServerError) then) =
+      __$$ServerErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ServerErrorCopyWithImpl<$Res>
+class __$$ServerErrorCopyWithImpl<$Res>
     extends _$OnBoardingFailureCopyWithImpl<$Res>
-    implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(
-      ServerError _value, $Res Function(ServerError) _then)
-      : super(_value, (v) => _then(v as ServerError));
+    implements _$$ServerErrorCopyWith<$Res> {
+  __$$ServerErrorCopyWithImpl(
+      _$ServerError _value, $Res Function(_$ServerError) _then)
+      : super(_value, (v) => _then(v as _$ServerError));
 
   @override
-  ServerError get _value => super._value as ServerError;
+  _$ServerError get _value => super._value as _$ServerError;
 }
 
 /// @nodoc
@@ -393,7 +368,7 @@ class _$ServerError implements ServerError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ServerError);
+        (other.runtimeType == runtimeType && other is _$ServerError);
   }
 
   @override
@@ -482,22 +457,22 @@ abstract class ServerError implements OnBoardingFailure {
 }
 
 /// @nodoc
-abstract class $FailToSetOnBoardDataCopyWith<$Res> {
-  factory $FailToSetOnBoardDataCopyWith(FailToSetOnBoardData value,
-          $Res Function(FailToSetOnBoardData) then) =
-      _$FailToSetOnBoardDataCopyWithImpl<$Res>;
+abstract class _$$FailToSetOnBoardDataCopyWith<$Res> {
+  factory _$$FailToSetOnBoardDataCopyWith(_$FailToSetOnBoardData value,
+          $Res Function(_$FailToSetOnBoardData) then) =
+      __$$FailToSetOnBoardDataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FailToSetOnBoardDataCopyWithImpl<$Res>
+class __$$FailToSetOnBoardDataCopyWithImpl<$Res>
     extends _$OnBoardingFailureCopyWithImpl<$Res>
-    implements $FailToSetOnBoardDataCopyWith<$Res> {
-  _$FailToSetOnBoardDataCopyWithImpl(
-      FailToSetOnBoardData _value, $Res Function(FailToSetOnBoardData) _then)
-      : super(_value, (v) => _then(v as FailToSetOnBoardData));
+    implements _$$FailToSetOnBoardDataCopyWith<$Res> {
+  __$$FailToSetOnBoardDataCopyWithImpl(_$FailToSetOnBoardData _value,
+      $Res Function(_$FailToSetOnBoardData) _then)
+      : super(_value, (v) => _then(v as _$FailToSetOnBoardData));
 
   @override
-  FailToSetOnBoardData get _value => super._value as FailToSetOnBoardData;
+  _$FailToSetOnBoardData get _value => super._value as _$FailToSetOnBoardData;
 }
 
 /// @nodoc
@@ -513,7 +488,7 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is FailToSetOnBoardData);
+        (other.runtimeType == runtimeType && other is _$FailToSetOnBoardData);
   }
 
   @override

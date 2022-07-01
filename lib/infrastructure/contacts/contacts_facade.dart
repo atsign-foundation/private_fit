@@ -24,7 +24,7 @@ class ContactsFacade implements IContactsFacade {
 
   @override
   Option<String> getOnBoardedAtSign() {
-    final AtClient atClient = AtClientManager.getInstance().atClient;
+    final atClient = AtClientManager.getInstance().atClient;
     return optionOf(atClient.getCurrentAtSign());
   }
 }

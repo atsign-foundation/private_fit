@@ -12,33 +12,7 @@ part of 'on_boarding_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$OnBoardingEventTearOff {
-  const _$OnBoardingEventTearOff();
-
-  _OnBoardingAtSign onBoardingAtSign() {
-    return const _OnBoardingAtSign();
-  }
-
-  _AtSignOnBoardingSucces atSignOnBoardingSucces(
-      Map<String?, AtClientService> value, String? atsign) {
-    return _AtSignOnBoardingSucces(
-      value,
-      atsign,
-    );
-  }
-
-  _OnBoardingError onBoardingError(Object? object) {
-    return _OnBoardingError(
-      object,
-    );
-  }
-}
-
-/// @nodoc
-const $OnBoardingEvent = _$OnBoardingEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$OnBoardingEvent {
@@ -111,22 +85,22 @@ class _$OnBoardingEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$OnBoardingAtSignCopyWith<$Res> {
-  factory _$OnBoardingAtSignCopyWith(
-          _OnBoardingAtSign value, $Res Function(_OnBoardingAtSign) then) =
-      __$OnBoardingAtSignCopyWithImpl<$Res>;
+abstract class _$$_OnBoardingAtSignCopyWith<$Res> {
+  factory _$$_OnBoardingAtSignCopyWith(
+          _$_OnBoardingAtSign value, $Res Function(_$_OnBoardingAtSign) then) =
+      __$$_OnBoardingAtSignCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$OnBoardingAtSignCopyWithImpl<$Res>
+class __$$_OnBoardingAtSignCopyWithImpl<$Res>
     extends _$OnBoardingEventCopyWithImpl<$Res>
-    implements _$OnBoardingAtSignCopyWith<$Res> {
-  __$OnBoardingAtSignCopyWithImpl(
-      _OnBoardingAtSign _value, $Res Function(_OnBoardingAtSign) _then)
-      : super(_value, (v) => _then(v as _OnBoardingAtSign));
+    implements _$$_OnBoardingAtSignCopyWith<$Res> {
+  __$$_OnBoardingAtSignCopyWithImpl(
+      _$_OnBoardingAtSign _value, $Res Function(_$_OnBoardingAtSign) _then)
+      : super(_value, (v) => _then(v as _$_OnBoardingAtSign));
 
   @override
-  _OnBoardingAtSign get _value => super._value as _OnBoardingAtSign;
+  _$_OnBoardingAtSign get _value => super._value as _$_OnBoardingAtSign;
 }
 
 /// @nodoc
@@ -151,7 +125,7 @@ class _$_OnBoardingAtSign
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _OnBoardingAtSign);
+        (other.runtimeType == runtimeType && other is _$_OnBoardingAtSign);
   }
 
   @override
@@ -236,32 +210,33 @@ abstract class _OnBoardingAtSign implements OnBoardingEvent {
 }
 
 /// @nodoc
-abstract class _$AtSignOnBoardingSuccesCopyWith<$Res> {
-  factory _$AtSignOnBoardingSuccesCopyWith(_AtSignOnBoardingSucces value,
-          $Res Function(_AtSignOnBoardingSucces) then) =
-      __$AtSignOnBoardingSuccesCopyWithImpl<$Res>;
+abstract class _$$_AtSignOnBoardingSuccesCopyWith<$Res> {
+  factory _$$_AtSignOnBoardingSuccesCopyWith(_$_AtSignOnBoardingSucces value,
+          $Res Function(_$_AtSignOnBoardingSucces) then) =
+      __$$_AtSignOnBoardingSuccesCopyWithImpl<$Res>;
   $Res call({Map<String?, AtClientService> value, String? atsign});
 }
 
 /// @nodoc
-class __$AtSignOnBoardingSuccesCopyWithImpl<$Res>
+class __$$_AtSignOnBoardingSuccesCopyWithImpl<$Res>
     extends _$OnBoardingEventCopyWithImpl<$Res>
-    implements _$AtSignOnBoardingSuccesCopyWith<$Res> {
-  __$AtSignOnBoardingSuccesCopyWithImpl(_AtSignOnBoardingSucces _value,
-      $Res Function(_AtSignOnBoardingSucces) _then)
-      : super(_value, (v) => _then(v as _AtSignOnBoardingSucces));
+    implements _$$_AtSignOnBoardingSuccesCopyWith<$Res> {
+  __$$_AtSignOnBoardingSuccesCopyWithImpl(_$_AtSignOnBoardingSucces _value,
+      $Res Function(_$_AtSignOnBoardingSucces) _then)
+      : super(_value, (v) => _then(v as _$_AtSignOnBoardingSucces));
 
   @override
-  _AtSignOnBoardingSucces get _value => super._value as _AtSignOnBoardingSucces;
+  _$_AtSignOnBoardingSucces get _value =>
+      super._value as _$_AtSignOnBoardingSucces;
 
   @override
   $Res call({
     Object? value = freezed,
     Object? atsign = freezed,
   }) {
-    return _then(_AtSignOnBoardingSucces(
+    return _then(_$_AtSignOnBoardingSucces(
       value == freezed
-          ? _value.value
+          ? _value._value
           : value // ignore: cast_nullable_to_non_nullable
               as Map<String?, AtClientService>,
       atsign == freezed
@@ -277,10 +252,17 @@ class __$AtSignOnBoardingSuccesCopyWithImpl<$Res>
 class _$_AtSignOnBoardingSucces
     with DiagnosticableTreeMixin
     implements _AtSignOnBoardingSucces {
-  const _$_AtSignOnBoardingSucces(this.value, this.atsign);
+  const _$_AtSignOnBoardingSucces(
+      final Map<String?, AtClientService> value, this.atsign)
+      : _value = value;
 
+  final Map<String?, AtClientService> _value;
   @override
-  final Map<String?, AtClientService> value;
+  Map<String?, AtClientService> get value {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_value);
+  }
+
   @override
   final String? atsign;
 
@@ -303,21 +285,21 @@ class _$_AtSignOnBoardingSucces
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AtSignOnBoardingSucces &&
-            const DeepCollectionEquality().equals(other.value, value) &&
+            other is _$_AtSignOnBoardingSucces &&
+            const DeepCollectionEquality().equals(other._value, _value) &&
             const DeepCollectionEquality().equals(other.atsign, atsign));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(value),
+      const DeepCollectionEquality().hash(_value),
       const DeepCollectionEquality().hash(atsign));
 
   @JsonKey(ignore: true)
   @override
-  _$AtSignOnBoardingSuccesCopyWith<_AtSignOnBoardingSucces> get copyWith =>
-      __$AtSignOnBoardingSuccesCopyWithImpl<_AtSignOnBoardingSucces>(
+  _$$_AtSignOnBoardingSuccesCopyWith<_$_AtSignOnBoardingSucces> get copyWith =>
+      __$$_AtSignOnBoardingSuccesCopyWithImpl<_$_AtSignOnBoardingSucces>(
           this, _$identity);
 
   @override
@@ -396,40 +378,40 @@ class _$_AtSignOnBoardingSucces
 
 abstract class _AtSignOnBoardingSucces implements OnBoardingEvent {
   const factory _AtSignOnBoardingSucces(
-          Map<String?, AtClientService> value, String? atsign) =
+          final Map<String?, AtClientService> value, final String? atsign) =
       _$_AtSignOnBoardingSucces;
 
-  Map<String?, AtClientService> get value;
-  String? get atsign;
+  Map<String?, AtClientService> get value => throw _privateConstructorUsedError;
+  String? get atsign => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$AtSignOnBoardingSuccesCopyWith<_AtSignOnBoardingSucces> get copyWith =>
+  _$$_AtSignOnBoardingSuccesCopyWith<_$_AtSignOnBoardingSucces> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$OnBoardingErrorCopyWith<$Res> {
-  factory _$OnBoardingErrorCopyWith(
-          _OnBoardingError value, $Res Function(_OnBoardingError) then) =
-      __$OnBoardingErrorCopyWithImpl<$Res>;
+abstract class _$$_OnBoardingErrorCopyWith<$Res> {
+  factory _$$_OnBoardingErrorCopyWith(
+          _$_OnBoardingError value, $Res Function(_$_OnBoardingError) then) =
+      __$$_OnBoardingErrorCopyWithImpl<$Res>;
   $Res call({Object? object});
 }
 
 /// @nodoc
-class __$OnBoardingErrorCopyWithImpl<$Res>
+class __$$_OnBoardingErrorCopyWithImpl<$Res>
     extends _$OnBoardingEventCopyWithImpl<$Res>
-    implements _$OnBoardingErrorCopyWith<$Res> {
-  __$OnBoardingErrorCopyWithImpl(
-      _OnBoardingError _value, $Res Function(_OnBoardingError) _then)
-      : super(_value, (v) => _then(v as _OnBoardingError));
+    implements _$$_OnBoardingErrorCopyWith<$Res> {
+  __$$_OnBoardingErrorCopyWithImpl(
+      _$_OnBoardingError _value, $Res Function(_$_OnBoardingError) _then)
+      : super(_value, (v) => _then(v as _$_OnBoardingError));
 
   @override
-  _OnBoardingError get _value => super._value as _OnBoardingError;
+  _$_OnBoardingError get _value => super._value as _$_OnBoardingError;
 
   @override
   $Res call({
     Object? object = freezed,
   }) {
-    return _then(_OnBoardingError(
+    return _then(_$_OnBoardingError(
       object == freezed ? _value.object : object,
     ));
   }
@@ -462,7 +444,7 @@ class _$_OnBoardingError
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _OnBoardingError &&
+            other is _$_OnBoardingError &&
             const DeepCollectionEquality().equals(other.object, object));
   }
 
@@ -472,8 +454,8 @@ class _$_OnBoardingError
 
   @JsonKey(ignore: true)
   @override
-  _$OnBoardingErrorCopyWith<_OnBoardingError> get copyWith =>
-      __$OnBoardingErrorCopyWithImpl<_OnBoardingError>(this, _$identity);
+  _$$_OnBoardingErrorCopyWith<_$_OnBoardingError> get copyWith =>
+      __$$_OnBoardingErrorCopyWithImpl<_$_OnBoardingError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -550,49 +532,13 @@ class _$_OnBoardingError
 }
 
 abstract class _OnBoardingError implements OnBoardingEvent {
-  const factory _OnBoardingError(Object? object) = _$_OnBoardingError;
+  const factory _OnBoardingError(final Object? object) = _$_OnBoardingError;
 
-  Object? get object;
+  Object? get object => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$OnBoardingErrorCopyWith<_OnBoardingError> get copyWith =>
+  _$$_OnBoardingErrorCopyWith<_$_OnBoardingError> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$OnBoardingStateTearOff {
-  const _$OnBoardingStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _Loading loading(AtClientPreference atClientPreference) {
-    return _Loading(
-      atClientPreference,
-    );
-  }
-
-  _Failure failure(OnBoardingFailure onBoardingFailure) {
-    return _Failure(
-      onBoardingFailure,
-    );
-  }
-
-  _LoadSuccess loadSuccess(Option<String> atSign) {
-    return _LoadSuccess(
-      atSign,
-    );
-  }
-
-  _onBoardingError onBoardingError(Object? object) {
-    return _onBoardingError(
-      object,
-    );
-  }
-}
-
-/// @nodoc
-const $OnBoardingState = _$OnBoardingStateTearOff();
 
 /// @nodoc
 mixin _$OnBoardingState {
@@ -672,19 +618,20 @@ class _$OnBoardingStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$OnBoardingStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$_InitialCopyWithImpl<$Res> extends _$OnBoardingStateCopyWithImpl<$Res>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 }
 
 /// @nodoc
@@ -706,7 +653,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -798,26 +745,27 @@ abstract class _Initial implements OnBoardingState {
 }
 
 /// @nodoc
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-      __$LoadingCopyWithImpl<$Res>;
+abstract class _$$_LoadingCopyWith<$Res> {
+  factory _$$_LoadingCopyWith(
+          _$_Loading value, $Res Function(_$_Loading) then) =
+      __$$_LoadingCopyWithImpl<$Res>;
   $Res call({AtClientPreference atClientPreference});
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$OnBoardingStateCopyWithImpl<$Res>
-    implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-      : super(_value, (v) => _then(v as _Loading));
+class __$$_LoadingCopyWithImpl<$Res> extends _$OnBoardingStateCopyWithImpl<$Res>
+    implements _$$_LoadingCopyWith<$Res> {
+  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+      : super(_value, (v) => _then(v as _$_Loading));
 
   @override
-  _Loading get _value => super._value as _Loading;
+  _$_Loading get _value => super._value as _$_Loading;
 
   @override
   $Res call({
     Object? atClientPreference = freezed,
   }) {
-    return _then(_Loading(
+    return _then(_$_Loading(
       atClientPreference == freezed
           ? _value.atClientPreference
           : atClientPreference // ignore: cast_nullable_to_non_nullable
@@ -851,7 +799,7 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Loading &&
+            other is _$_Loading &&
             const DeepCollectionEquality()
                 .equals(other.atClientPreference, atClientPreference));
   }
@@ -862,8 +810,8 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadingCopyWith<_Loading> get copyWith =>
-      __$LoadingCopyWithImpl<_Loading>(this, _$identity);
+  _$$_LoadingCopyWith<_$_Loading> get copyWith =>
+      __$$_LoadingCopyWithImpl<_$_Loading>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -947,37 +895,40 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
 }
 
 abstract class _Loading implements OnBoardingState {
-  const factory _Loading(AtClientPreference atClientPreference) = _$_Loading;
+  const factory _Loading(final AtClientPreference atClientPreference) =
+      _$_Loading;
 
-  AtClientPreference get atClientPreference;
+  AtClientPreference get atClientPreference =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$LoadingCopyWith<_Loading> get copyWith =>
+  _$$_LoadingCopyWith<_$_Loading> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FailureCopyWith<$Res> {
-  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) =
-      __$FailureCopyWithImpl<$Res>;
+abstract class _$$_FailureCopyWith<$Res> {
+  factory _$$_FailureCopyWith(
+          _$_Failure value, $Res Function(_$_Failure) then) =
+      __$$_FailureCopyWithImpl<$Res>;
   $Res call({OnBoardingFailure onBoardingFailure});
 
   $OnBoardingFailureCopyWith<$Res> get onBoardingFailure;
 }
 
 /// @nodoc
-class __$FailureCopyWithImpl<$Res> extends _$OnBoardingStateCopyWithImpl<$Res>
-    implements _$FailureCopyWith<$Res> {
-  __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then)
-      : super(_value, (v) => _then(v as _Failure));
+class __$$_FailureCopyWithImpl<$Res> extends _$OnBoardingStateCopyWithImpl<$Res>
+    implements _$$_FailureCopyWith<$Res> {
+  __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
+      : super(_value, (v) => _then(v as _$_Failure));
 
   @override
-  _Failure get _value => super._value as _Failure;
+  _$_Failure get _value => super._value as _$_Failure;
 
   @override
   $Res call({
     Object? onBoardingFailure = freezed,
   }) {
-    return _then(_Failure(
+    return _then(_$_Failure(
       onBoardingFailure == freezed
           ? _value.onBoardingFailure
           : onBoardingFailure // ignore: cast_nullable_to_non_nullable
@@ -1018,7 +969,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Failure &&
+            other is _$_Failure &&
             const DeepCollectionEquality()
                 .equals(other.onBoardingFailure, onBoardingFailure));
   }
@@ -1029,8 +980,8 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
 
   @JsonKey(ignore: true)
   @override
-  _$FailureCopyWith<_Failure> get copyWith =>
-      __$FailureCopyWithImpl<_Failure>(this, _$identity);
+  _$$_FailureCopyWith<_$_Failure> get copyWith =>
+      __$$_FailureCopyWithImpl<_$_Failure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1114,38 +1065,39 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
 }
 
 abstract class _Failure implements OnBoardingState {
-  const factory _Failure(OnBoardingFailure onBoardingFailure) = _$_Failure;
+  const factory _Failure(final OnBoardingFailure onBoardingFailure) =
+      _$_Failure;
 
-  OnBoardingFailure get onBoardingFailure;
+  OnBoardingFailure get onBoardingFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$FailureCopyWith<_Failure> get copyWith =>
+  _$$_FailureCopyWith<_$_Failure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(
-          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
-      __$LoadSuccessCopyWithImpl<$Res>;
+abstract class _$$_LoadSuccessCopyWith<$Res> {
+  factory _$$_LoadSuccessCopyWith(
+          _$_LoadSuccess value, $Res Function(_$_LoadSuccess) then) =
+      __$$_LoadSuccessCopyWithImpl<$Res>;
   $Res call({Option<String> atSign});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res>
+class __$$_LoadSuccessCopyWithImpl<$Res>
     extends _$OnBoardingStateCopyWithImpl<$Res>
-    implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(
-      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
-      : super(_value, (v) => _then(v as _LoadSuccess));
+    implements _$$_LoadSuccessCopyWith<$Res> {
+  __$$_LoadSuccessCopyWithImpl(
+      _$_LoadSuccess _value, $Res Function(_$_LoadSuccess) _then)
+      : super(_value, (v) => _then(v as _$_LoadSuccess));
 
   @override
-  _LoadSuccess get _value => super._value as _LoadSuccess;
+  _$_LoadSuccess get _value => super._value as _$_LoadSuccess;
 
   @override
   $Res call({
     Object? atSign = freezed,
   }) {
-    return _then(_LoadSuccess(
+    return _then(_$_LoadSuccess(
       atSign == freezed
           ? _value.atSign
           : atSign // ignore: cast_nullable_to_non_nullable
@@ -1179,7 +1131,7 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadSuccess &&
+            other is _$_LoadSuccess &&
             const DeepCollectionEquality().equals(other.atSign, atSign));
   }
 
@@ -1189,8 +1141,8 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
-      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
+      __$$_LoadSuccessCopyWithImpl<_$_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1274,38 +1226,38 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements OnBoardingState {
-  const factory _LoadSuccess(Option<String> atSign) = _$_LoadSuccess;
+  const factory _LoadSuccess(final Option<String> atSign) = _$_LoadSuccess;
 
-  Option<String> get atSign;
+  Option<String> get atSign => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$onBoardingErrorCopyWith<$Res> {
-  factory _$onBoardingErrorCopyWith(
-          _onBoardingError value, $Res Function(_onBoardingError) then) =
-      __$onBoardingErrorCopyWithImpl<$Res>;
+abstract class _$$_onBoardingErrorCopyWith<$Res> {
+  factory _$$_onBoardingErrorCopyWith(
+          _$_onBoardingError value, $Res Function(_$_onBoardingError) then) =
+      __$$_onBoardingErrorCopyWithImpl<$Res>;
   $Res call({Object? object});
 }
 
 /// @nodoc
-class __$onBoardingErrorCopyWithImpl<$Res>
+class __$$_onBoardingErrorCopyWithImpl<$Res>
     extends _$OnBoardingStateCopyWithImpl<$Res>
-    implements _$onBoardingErrorCopyWith<$Res> {
-  __$onBoardingErrorCopyWithImpl(
-      _onBoardingError _value, $Res Function(_onBoardingError) _then)
-      : super(_value, (v) => _then(v as _onBoardingError));
+    implements _$$_onBoardingErrorCopyWith<$Res> {
+  __$$_onBoardingErrorCopyWithImpl(
+      _$_onBoardingError _value, $Res Function(_$_onBoardingError) _then)
+      : super(_value, (v) => _then(v as _$_onBoardingError));
 
   @override
-  _onBoardingError get _value => super._value as _onBoardingError;
+  _$_onBoardingError get _value => super._value as _$_onBoardingError;
 
   @override
   $Res call({
     Object? object = freezed,
   }) {
-    return _then(_onBoardingError(
+    return _then(_$_onBoardingError(
       object == freezed ? _value.object : object,
     ));
   }
@@ -1338,7 +1290,7 @@ class _$_onBoardingError
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _onBoardingError &&
+            other is _$_onBoardingError &&
             const DeepCollectionEquality().equals(other.object, object));
   }
 
@@ -1348,8 +1300,8 @@ class _$_onBoardingError
 
   @JsonKey(ignore: true)
   @override
-  _$onBoardingErrorCopyWith<_onBoardingError> get copyWith =>
-      __$onBoardingErrorCopyWithImpl<_onBoardingError>(this, _$identity);
+  _$$_onBoardingErrorCopyWith<_$_onBoardingError> get copyWith =>
+      __$$_onBoardingErrorCopyWithImpl<_$_onBoardingError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1433,10 +1385,10 @@ class _$_onBoardingError
 }
 
 abstract class _onBoardingError implements OnBoardingState {
-  const factory _onBoardingError(Object? object) = _$_onBoardingError;
+  const factory _onBoardingError(final Object? object) = _$_onBoardingError;
 
-  Object? get object;
+  Object? get object => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$onBoardingErrorCopyWith<_onBoardingError> get copyWith =>
+  _$$_onBoardingErrorCopyWith<_$_onBoardingError> get copyWith =>
       throw _privateConstructorUsedError;
 }
