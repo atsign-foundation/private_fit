@@ -18,54 +18,60 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$OpenFoodFailures {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() cancelledByUser,
+    required TResult Function() internetNotFound,
     required TResult Function() failedToGetCameraPermissions,
-    required TResult Function() serverError,
-    required TResult Function() failToSetOnBoardData,
+    required TResult Function() internetError,
+    required TResult Function() userCancelled,
+    required TResult Function() codeInvalid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
+    TResult Function()? internetNotFound,
     TResult Function()? failedToGetCameraPermissions,
-    TResult Function()? serverError,
-    TResult Function()? failToSetOnBoardData,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
+    TResult Function()? internetNotFound,
     TResult Function()? failedToGetCameraPermissions,
-    TResult Function()? serverError,
-    TResult Function()? failToSetOnBoardData,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(FailedToGetCameraPermissions value)
+    required TResult Function(_InternetNotFound value) internetNotFound,
+    required TResult Function(_FailedToGetCameraPermissions value)
         failedToGetCameraPermissions,
-    required TResult Function(ServerError value) serverError,
-    required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
+    required TResult Function(_InternetError value) internetError,
+    required TResult Function(_UserCancelled value) userCancelled,
+    required TResult Function(_codeInvalid value) codeInvalid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetCameraPermissions value)?
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
         failedToGetCameraPermissions,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetCameraPermissions value)?
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
         failedToGetCameraPermissions,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -89,38 +95,38 @@ class _$OpenFoodFailuresCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$CancelledByUserCopyWith<$Res> {
-  factory _$$CancelledByUserCopyWith(
-          _$CancelledByUser value, $Res Function(_$CancelledByUser) then) =
-      __$$CancelledByUserCopyWithImpl<$Res>;
+abstract class _$$_InternetNotFoundCopyWith<$Res> {
+  factory _$$_InternetNotFoundCopyWith(
+          _$_InternetNotFound value, $Res Function(_$_InternetNotFound) then) =
+      __$$_InternetNotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CancelledByUserCopyWithImpl<$Res>
+class __$$_InternetNotFoundCopyWithImpl<$Res>
     extends _$OpenFoodFailuresCopyWithImpl<$Res>
-    implements _$$CancelledByUserCopyWith<$Res> {
-  __$$CancelledByUserCopyWithImpl(
-      _$CancelledByUser _value, $Res Function(_$CancelledByUser) _then)
-      : super(_value, (v) => _then(v as _$CancelledByUser));
+    implements _$$_InternetNotFoundCopyWith<$Res> {
+  __$$_InternetNotFoundCopyWithImpl(
+      _$_InternetNotFound _value, $Res Function(_$_InternetNotFound) _then)
+      : super(_value, (v) => _then(v as _$_InternetNotFound));
 
   @override
-  _$CancelledByUser get _value => super._value as _$CancelledByUser;
+  _$_InternetNotFound get _value => super._value as _$_InternetNotFound;
 }
 
 /// @nodoc
 
-class _$CancelledByUser implements CancelledByUser {
-  const _$CancelledByUser();
+class _$_InternetNotFound implements _InternetNotFound {
+  const _$_InternetNotFound();
 
   @override
   String toString() {
-    return 'OpenFoodFailures.cancelledByUser()';
+    return 'OpenFoodFailures.internetNotFound()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CancelledByUser);
+        (other.runtimeType == runtimeType && other is _$_InternetNotFound);
   }
 
   @override
@@ -129,36 +135,39 @@ class _$CancelledByUser implements CancelledByUser {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() cancelledByUser,
+    required TResult Function() internetNotFound,
     required TResult Function() failedToGetCameraPermissions,
-    required TResult Function() serverError,
-    required TResult Function() failToSetOnBoardData,
+    required TResult Function() internetError,
+    required TResult Function() userCancelled,
+    required TResult Function() codeInvalid,
   }) {
-    return cancelledByUser();
+    return internetNotFound();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
+    TResult Function()? internetNotFound,
     TResult Function()? failedToGetCameraPermissions,
-    TResult Function()? serverError,
-    TResult Function()? failToSetOnBoardData,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
   }) {
-    return cancelledByUser?.call();
+    return internetNotFound?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
+    TResult Function()? internetNotFound,
     TResult Function()? failedToGetCameraPermissions,
-    TResult Function()? serverError,
-    TResult Function()? failToSetOnBoardData,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
     required TResult orElse(),
   }) {
-    if (cancelledByUser != null) {
-      return cancelledByUser();
+    if (internetNotFound != null) {
+      return internetNotFound();
     }
     return orElse();
   }
@@ -166,74 +175,77 @@ class _$CancelledByUser implements CancelledByUser {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(FailedToGetCameraPermissions value)
+    required TResult Function(_InternetNotFound value) internetNotFound,
+    required TResult Function(_FailedToGetCameraPermissions value)
         failedToGetCameraPermissions,
-    required TResult Function(ServerError value) serverError,
-    required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
+    required TResult Function(_InternetError value) internetError,
+    required TResult Function(_UserCancelled value) userCancelled,
+    required TResult Function(_codeInvalid value) codeInvalid,
   }) {
-    return cancelledByUser(this);
+    return internetNotFound(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetCameraPermissions value)?
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
         failedToGetCameraPermissions,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
   }) {
-    return cancelledByUser?.call(this);
+    return internetNotFound?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetCameraPermissions value)?
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
         failedToGetCameraPermissions,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
     required TResult orElse(),
   }) {
-    if (cancelledByUser != null) {
-      return cancelledByUser(this);
+    if (internetNotFound != null) {
+      return internetNotFound(this);
     }
     return orElse();
   }
 }
 
-abstract class CancelledByUser implements OpenFoodFailures {
-  const factory CancelledByUser() = _$CancelledByUser;
+abstract class _InternetNotFound implements OpenFoodFailures {
+  const factory _InternetNotFound() = _$_InternetNotFound;
 }
 
 /// @nodoc
-abstract class _$$FailedToGetCameraPermissionsCopyWith<$Res> {
-  factory _$$FailedToGetCameraPermissionsCopyWith(
-          _$FailedToGetCameraPermissions value,
-          $Res Function(_$FailedToGetCameraPermissions) then) =
-      __$$FailedToGetCameraPermissionsCopyWithImpl<$Res>;
+abstract class _$$_FailedToGetCameraPermissionsCopyWith<$Res> {
+  factory _$$_FailedToGetCameraPermissionsCopyWith(
+          _$_FailedToGetCameraPermissions value,
+          $Res Function(_$_FailedToGetCameraPermissions) then) =
+      __$$_FailedToGetCameraPermissionsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FailedToGetCameraPermissionsCopyWithImpl<$Res>
+class __$$_FailedToGetCameraPermissionsCopyWithImpl<$Res>
     extends _$OpenFoodFailuresCopyWithImpl<$Res>
-    implements _$$FailedToGetCameraPermissionsCopyWith<$Res> {
-  __$$FailedToGetCameraPermissionsCopyWithImpl(
-      _$FailedToGetCameraPermissions _value,
-      $Res Function(_$FailedToGetCameraPermissions) _then)
-      : super(_value, (v) => _then(v as _$FailedToGetCameraPermissions));
+    implements _$$_FailedToGetCameraPermissionsCopyWith<$Res> {
+  __$$_FailedToGetCameraPermissionsCopyWithImpl(
+      _$_FailedToGetCameraPermissions _value,
+      $Res Function(_$_FailedToGetCameraPermissions) _then)
+      : super(_value, (v) => _then(v as _$_FailedToGetCameraPermissions));
 
   @override
-  _$FailedToGetCameraPermissions get _value =>
-      super._value as _$FailedToGetCameraPermissions;
+  _$_FailedToGetCameraPermissions get _value =>
+      super._value as _$_FailedToGetCameraPermissions;
 }
 
 /// @nodoc
 
-class _$FailedToGetCameraPermissions implements FailedToGetCameraPermissions {
-  const _$FailedToGetCameraPermissions();
+class _$_FailedToGetCameraPermissions implements _FailedToGetCameraPermissions {
+  const _$_FailedToGetCameraPermissions();
 
   @override
   String toString() {
@@ -244,7 +256,7 @@ class _$FailedToGetCameraPermissions implements FailedToGetCameraPermissions {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FailedToGetCameraPermissions);
+            other is _$_FailedToGetCameraPermissions);
   }
 
   @override
@@ -253,10 +265,11 @@ class _$FailedToGetCameraPermissions implements FailedToGetCameraPermissions {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() cancelledByUser,
+    required TResult Function() internetNotFound,
     required TResult Function() failedToGetCameraPermissions,
-    required TResult Function() serverError,
-    required TResult Function() failToSetOnBoardData,
+    required TResult Function() internetError,
+    required TResult Function() userCancelled,
+    required TResult Function() codeInvalid,
   }) {
     return failedToGetCameraPermissions();
   }
@@ -264,10 +277,11 @@ class _$FailedToGetCameraPermissions implements FailedToGetCameraPermissions {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
+    TResult Function()? internetNotFound,
     TResult Function()? failedToGetCameraPermissions,
-    TResult Function()? serverError,
-    TResult Function()? failToSetOnBoardData,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
   }) {
     return failedToGetCameraPermissions?.call();
   }
@@ -275,10 +289,11 @@ class _$FailedToGetCameraPermissions implements FailedToGetCameraPermissions {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
+    TResult Function()? internetNotFound,
     TResult Function()? failedToGetCameraPermissions,
-    TResult Function()? serverError,
-    TResult Function()? failToSetOnBoardData,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
     required TResult orElse(),
   }) {
     if (failedToGetCameraPermissions != null) {
@@ -290,11 +305,12 @@ class _$FailedToGetCameraPermissions implements FailedToGetCameraPermissions {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(FailedToGetCameraPermissions value)
+    required TResult Function(_InternetNotFound value) internetNotFound,
+    required TResult Function(_FailedToGetCameraPermissions value)
         failedToGetCameraPermissions,
-    required TResult Function(ServerError value) serverError,
-    required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
+    required TResult Function(_InternetError value) internetError,
+    required TResult Function(_UserCancelled value) userCancelled,
+    required TResult Function(_codeInvalid value) codeInvalid,
   }) {
     return failedToGetCameraPermissions(this);
   }
@@ -302,11 +318,12 @@ class _$FailedToGetCameraPermissions implements FailedToGetCameraPermissions {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetCameraPermissions value)?
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
         failedToGetCameraPermissions,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
   }) {
     return failedToGetCameraPermissions?.call(this);
   }
@@ -314,11 +331,12 @@ class _$FailedToGetCameraPermissions implements FailedToGetCameraPermissions {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetCameraPermissions value)?
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
         failedToGetCameraPermissions,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
     required TResult orElse(),
   }) {
     if (failedToGetCameraPermissions != null) {
@@ -328,43 +346,44 @@ class _$FailedToGetCameraPermissions implements FailedToGetCameraPermissions {
   }
 }
 
-abstract class FailedToGetCameraPermissions implements OpenFoodFailures {
-  const factory FailedToGetCameraPermissions() = _$FailedToGetCameraPermissions;
+abstract class _FailedToGetCameraPermissions implements OpenFoodFailures {
+  const factory _FailedToGetCameraPermissions() =
+      _$_FailedToGetCameraPermissions;
 }
 
 /// @nodoc
-abstract class _$$ServerErrorCopyWith<$Res> {
-  factory _$$ServerErrorCopyWith(
-          _$ServerError value, $Res Function(_$ServerError) then) =
-      __$$ServerErrorCopyWithImpl<$Res>;
+abstract class _$$_InternetErrorCopyWith<$Res> {
+  factory _$$_InternetErrorCopyWith(
+          _$_InternetError value, $Res Function(_$_InternetError) then) =
+      __$$_InternetErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ServerErrorCopyWithImpl<$Res>
+class __$$_InternetErrorCopyWithImpl<$Res>
     extends _$OpenFoodFailuresCopyWithImpl<$Res>
-    implements _$$ServerErrorCopyWith<$Res> {
-  __$$ServerErrorCopyWithImpl(
-      _$ServerError _value, $Res Function(_$ServerError) _then)
-      : super(_value, (v) => _then(v as _$ServerError));
+    implements _$$_InternetErrorCopyWith<$Res> {
+  __$$_InternetErrorCopyWithImpl(
+      _$_InternetError _value, $Res Function(_$_InternetError) _then)
+      : super(_value, (v) => _then(v as _$_InternetError));
 
   @override
-  _$ServerError get _value => super._value as _$ServerError;
+  _$_InternetError get _value => super._value as _$_InternetError;
 }
 
 /// @nodoc
 
-class _$ServerError implements ServerError {
-  const _$ServerError();
+class _$_InternetError implements _InternetError {
+  const _$_InternetError();
 
   @override
   String toString() {
-    return 'OpenFoodFailures.serverError()';
+    return 'OpenFoodFailures.internetError()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ServerError);
+        (other.runtimeType == runtimeType && other is _$_InternetError);
   }
 
   @override
@@ -373,36 +392,39 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() cancelledByUser,
+    required TResult Function() internetNotFound,
     required TResult Function() failedToGetCameraPermissions,
-    required TResult Function() serverError,
-    required TResult Function() failToSetOnBoardData,
+    required TResult Function() internetError,
+    required TResult Function() userCancelled,
+    required TResult Function() codeInvalid,
   }) {
-    return serverError();
+    return internetError();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
+    TResult Function()? internetNotFound,
     TResult Function()? failedToGetCameraPermissions,
-    TResult Function()? serverError,
-    TResult Function()? failToSetOnBoardData,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
   }) {
-    return serverError?.call();
+    return internetError?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
+    TResult Function()? internetNotFound,
     TResult Function()? failedToGetCameraPermissions,
-    TResult Function()? serverError,
-    TResult Function()? failToSetOnBoardData,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
     required TResult orElse(),
   }) {
-    if (serverError != null) {
-      return serverError();
+    if (internetError != null) {
+      return internetError();
     }
     return orElse();
   }
@@ -410,81 +432,84 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(FailedToGetCameraPermissions value)
+    required TResult Function(_InternetNotFound value) internetNotFound,
+    required TResult Function(_FailedToGetCameraPermissions value)
         failedToGetCameraPermissions,
-    required TResult Function(ServerError value) serverError,
-    required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
+    required TResult Function(_InternetError value) internetError,
+    required TResult Function(_UserCancelled value) userCancelled,
+    required TResult Function(_codeInvalid value) codeInvalid,
   }) {
-    return serverError(this);
+    return internetError(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetCameraPermissions value)?
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
         failedToGetCameraPermissions,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
   }) {
-    return serverError?.call(this);
+    return internetError?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetCameraPermissions value)?
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
         failedToGetCameraPermissions,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
     required TResult orElse(),
   }) {
-    if (serverError != null) {
-      return serverError(this);
+    if (internetError != null) {
+      return internetError(this);
     }
     return orElse();
   }
 }
 
-abstract class ServerError implements OpenFoodFailures {
-  const factory ServerError() = _$ServerError;
+abstract class _InternetError implements OpenFoodFailures {
+  const factory _InternetError() = _$_InternetError;
 }
 
 /// @nodoc
-abstract class _$$FailToSetOnBoardDataCopyWith<$Res> {
-  factory _$$FailToSetOnBoardDataCopyWith(_$FailToSetOnBoardData value,
-          $Res Function(_$FailToSetOnBoardData) then) =
-      __$$FailToSetOnBoardDataCopyWithImpl<$Res>;
+abstract class _$$_UserCancelledCopyWith<$Res> {
+  factory _$$_UserCancelledCopyWith(
+          _$_UserCancelled value, $Res Function(_$_UserCancelled) then) =
+      __$$_UserCancelledCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FailToSetOnBoardDataCopyWithImpl<$Res>
+class __$$_UserCancelledCopyWithImpl<$Res>
     extends _$OpenFoodFailuresCopyWithImpl<$Res>
-    implements _$$FailToSetOnBoardDataCopyWith<$Res> {
-  __$$FailToSetOnBoardDataCopyWithImpl(_$FailToSetOnBoardData _value,
-      $Res Function(_$FailToSetOnBoardData) _then)
-      : super(_value, (v) => _then(v as _$FailToSetOnBoardData));
+    implements _$$_UserCancelledCopyWith<$Res> {
+  __$$_UserCancelledCopyWithImpl(
+      _$_UserCancelled _value, $Res Function(_$_UserCancelled) _then)
+      : super(_value, (v) => _then(v as _$_UserCancelled));
 
   @override
-  _$FailToSetOnBoardData get _value => super._value as _$FailToSetOnBoardData;
+  _$_UserCancelled get _value => super._value as _$_UserCancelled;
 }
 
 /// @nodoc
 
-class _$FailToSetOnBoardData implements FailToSetOnBoardData {
-  const _$FailToSetOnBoardData();
+class _$_UserCancelled implements _UserCancelled {
+  const _$_UserCancelled();
 
   @override
   String toString() {
-    return 'OpenFoodFailures.failToSetOnBoardData()';
+    return 'OpenFoodFailures.userCancelled()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FailToSetOnBoardData);
+        (other.runtimeType == runtimeType && other is _$_UserCancelled);
   }
 
   @override
@@ -493,36 +518,39 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() cancelledByUser,
+    required TResult Function() internetNotFound,
     required TResult Function() failedToGetCameraPermissions,
-    required TResult Function() serverError,
-    required TResult Function() failToSetOnBoardData,
+    required TResult Function() internetError,
+    required TResult Function() userCancelled,
+    required TResult Function() codeInvalid,
   }) {
-    return failToSetOnBoardData();
+    return userCancelled();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
+    TResult Function()? internetNotFound,
     TResult Function()? failedToGetCameraPermissions,
-    TResult Function()? serverError,
-    TResult Function()? failToSetOnBoardData,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
   }) {
-    return failToSetOnBoardData?.call();
+    return userCancelled?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
+    TResult Function()? internetNotFound,
     TResult Function()? failedToGetCameraPermissions,
-    TResult Function()? serverError,
-    TResult Function()? failToSetOnBoardData,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
     required TResult orElse(),
   }) {
-    if (failToSetOnBoardData != null) {
-      return failToSetOnBoardData();
+    if (userCancelled != null) {
+      return userCancelled();
     }
     return orElse();
   }
@@ -530,44 +558,173 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(FailedToGetCameraPermissions value)
+    required TResult Function(_InternetNotFound value) internetNotFound,
+    required TResult Function(_FailedToGetCameraPermissions value)
         failedToGetCameraPermissions,
-    required TResult Function(ServerError value) serverError,
-    required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
+    required TResult Function(_InternetError value) internetError,
+    required TResult Function(_UserCancelled value) userCancelled,
+    required TResult Function(_codeInvalid value) codeInvalid,
   }) {
-    return failToSetOnBoardData(this);
+    return userCancelled(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetCameraPermissions value)?
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
         failedToGetCameraPermissions,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
   }) {
-    return failToSetOnBoardData?.call(this);
+    return userCancelled?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetCameraPermissions value)?
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
         failedToGetCameraPermissions,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
     required TResult orElse(),
   }) {
-    if (failToSetOnBoardData != null) {
-      return failToSetOnBoardData(this);
+    if (userCancelled != null) {
+      return userCancelled(this);
     }
     return orElse();
   }
 }
 
-abstract class FailToSetOnBoardData implements OpenFoodFailures {
-  const factory FailToSetOnBoardData() = _$FailToSetOnBoardData;
+abstract class _UserCancelled implements OpenFoodFailures {
+  const factory _UserCancelled() = _$_UserCancelled;
+}
+
+/// @nodoc
+abstract class _$$_codeInvalidCopyWith<$Res> {
+  factory _$$_codeInvalidCopyWith(
+          _$_codeInvalid value, $Res Function(_$_codeInvalid) then) =
+      __$$_codeInvalidCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_codeInvalidCopyWithImpl<$Res>
+    extends _$OpenFoodFailuresCopyWithImpl<$Res>
+    implements _$$_codeInvalidCopyWith<$Res> {
+  __$$_codeInvalidCopyWithImpl(
+      _$_codeInvalid _value, $Res Function(_$_codeInvalid) _then)
+      : super(_value, (v) => _then(v as _$_codeInvalid));
+
+  @override
+  _$_codeInvalid get _value => super._value as _$_codeInvalid;
+}
+
+/// @nodoc
+
+class _$_codeInvalid implements _codeInvalid {
+  const _$_codeInvalid();
+
+  @override
+  String toString() {
+    return 'OpenFoodFailures.codeInvalid()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_codeInvalid);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() internetNotFound,
+    required TResult Function() failedToGetCameraPermissions,
+    required TResult Function() internetError,
+    required TResult Function() userCancelled,
+    required TResult Function() codeInvalid,
+  }) {
+    return codeInvalid();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? internetNotFound,
+    TResult Function()? failedToGetCameraPermissions,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
+  }) {
+    return codeInvalid?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? internetNotFound,
+    TResult Function()? failedToGetCameraPermissions,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
+    required TResult orElse(),
+  }) {
+    if (codeInvalid != null) {
+      return codeInvalid();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InternetNotFound value) internetNotFound,
+    required TResult Function(_FailedToGetCameraPermissions value)
+        failedToGetCameraPermissions,
+    required TResult Function(_InternetError value) internetError,
+    required TResult Function(_UserCancelled value) userCancelled,
+    required TResult Function(_codeInvalid value) codeInvalid,
+  }) {
+    return codeInvalid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
+        failedToGetCameraPermissions,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
+  }) {
+    return codeInvalid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
+        failedToGetCameraPermissions,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
+    required TResult orElse(),
+  }) {
+    if (codeInvalid != null) {
+      return codeInvalid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _codeInvalid implements OpenFoodFailures {
+  const factory _codeInvalid() = _$_codeInvalid;
 }

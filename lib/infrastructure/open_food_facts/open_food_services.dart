@@ -14,7 +14,9 @@ class OpenFoodFactsServices extends IOpenFoodFactsFacade {
   }
 
   @override
-  Future<FetchedProduct> getFetchedFood(String barcode) async {
+  Future<Either<OpenFoodFailures, FetchedProduct>> getFetchedFood(
+    String barcode,
+  ) async {
     ProductQuery.setCountry('us');
     ProductQuery.setLanguage('en_Us');
     final configuration = ProductQueryConfiguration(
@@ -28,20 +30,20 @@ class OpenFoodFactsServices extends IOpenFoodFactsFacade {
     try {
       result = await OpenFoodAPIClient.getProduct(configuration);
     } catch (e) {
-      return FetchedProduct.error(FetchedProductStatus.internetError);
+      return left(const OpenFoodFailures.internetError());
     }
 
     if (result.status == 1) {
       final product = result.product;
       if (product != null) {
         // await daoProduct.put(product);
-        return FetchedProduct(product);
+        return right(FetchedProduct(product));
       }
     }
     if (barcode.trim().isNotEmpty &&
         (result.barcode == null || result.barcode!.isEmpty)) {
-      return FetchedProduct.error(FetchedProductStatus.codeInvalid);
+      return left(const OpenFoodFailures.codeInvalid());
     }
-    return FetchedProduct.error(FetchedProductStatus.internetNotFound);
+    return left(const OpenFoodFailures.internetNotFound());
   }
 }
