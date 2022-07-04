@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:openfoodfacts/model/Product.dart';
-import 'package:private_fit/domain/open_food/product_image_data.dart';
 // import 'package:smooth_app/cards/data_cards/image_upload_card.dart';
 // import 'package:smooth_app/data_models/product_image_data.dart';
 // import 'package:smooth_app/helpers/product_cards_helper.dart';
@@ -9,6 +7,7 @@ import 'package:private_fit/domain/open_food/product_image_data.dart';
 class ProductImageCarousel extends StatelessWidget {
   const ProductImageCarousel(
     this.product, {
+    super.key,
     required this.height,
     required this.onUpload,
   });

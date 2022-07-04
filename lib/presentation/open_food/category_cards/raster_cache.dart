@@ -7,6 +7,7 @@ import 'package:private_fit/presentation/open_food/category_cards/raster_async_a
 class RasterCache extends AbstractCache {
   const RasterCache(
     super.iconUrl, {
+    super.key,
     super.width,
     super.height,
     super.displayAssetWhileWaiting = true,
@@ -14,7 +15,7 @@ class RasterCache extends AbstractCache {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> fullFilenames = getCachedFilenames();
+    final fullFilenames = getCachedFilenames();
     if (fullFilenames.isEmpty) {
       return getDefaultUnknown();
     }

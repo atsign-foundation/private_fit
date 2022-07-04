@@ -1,3 +1,5 @@
+// ignore_for_file: comment_references
+
 import 'package:flutter/material.dart';
 import 'package:private_fit/presentation/open_food/product_cards/design_constants.dart';
 
@@ -10,29 +12,32 @@ import 'package:private_fit/presentation/open_food/product_cards/design_constant
 /// and set the padding explicitly in the desired element.
 class SmoothCard extends StatelessWidget {
   const SmoothCard({
+    super.key,
     required this.child,
     this.color,
     this.margin = const EdgeInsets.symmetric(
       horizontal: SMALL_SPACE,
       vertical: VERY_SMALL_SPACE,
     ),
-    this.padding = const EdgeInsets.all(5.0),
+    this.padding = const EdgeInsets.all(5),
     this.elevation = 8,
     this.borderRadius,
   });
 
   const SmoothCard.angular({
+    super.key,
     required this.child,
     this.color,
     this.margin = const EdgeInsets.symmetric(
       horizontal: SMALL_SPACE,
       vertical: VERY_SMALL_SPACE,
     ),
-    this.padding = const EdgeInsets.all(5.0),
+    this.padding = const EdgeInsets.all(5),
     this.elevation = 8,
   }) : borderRadius = ANGULAR_BORDER_RADIUS;
 
   const SmoothCard.flat({
+    super.key,
     required this.child,
     this.color,
     this.margin = const EdgeInsets.only(
@@ -41,7 +46,7 @@ class SmoothCard extends StatelessWidget {
       top: VERY_SMALL_SPACE,
       bottom: VERY_SMALL_SPACE,
     ),
-    this.padding = const EdgeInsets.all(5.0),
+    this.padding = const EdgeInsets.all(5),
     this.elevation = 0,
     this.borderRadius,
   });

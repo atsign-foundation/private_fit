@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:openfoodfacts/model/Attribute.dart';
@@ -5,7 +7,7 @@ import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:private_fit/domain/open_food/product_image_data.dart';
 import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/open_food/product_cards/design_constants.dart';
-import 'package:private_fit/presentation/open_food/product_cards/smooth_card.dart';
+import 'package:private_fit/presentation/open_food/product_cards/open_food_card.dart';
 
 String getProductName(Product product, AppLocalizations appLocalizations) =>
     product.productName ?? appLocalizations.app_title;
@@ -49,7 +51,8 @@ List<Attribute> getPopulatedAttributes(
       continue;
     }
     var attribute = attributes[attributeId];
-// Some attributes selected in the user preferences might be unavailable for some products
+// Some attributes selected in the user preferences
+// might be unavailable for some products
     if (attribute == null) {
       continue;
     } else if (attribute.id == Attribute.ATTRIBUTE_ADDITIVES) {
@@ -88,7 +91,9 @@ Widget addPanelButton(
     );
 
 List<ProductImageData> getAllProductImagesData(
-    Product product, AppLocalizations appLocalizations) {
+  Product product,
+  AppLocalizations appLocalizations,
+) {
   final allProductImagesData = <ProductImageData>[
     ProductImageData(
       imageField: ImageField.FRONT,
@@ -116,7 +121,6 @@ List<ProductImageData> getAllProductImagesData(
     ),
     ProductImageData(
       imageField: ImageField.OTHER,
-      imageUrl: null,
       title: appLocalizations.app_title,
       buttonText: appLocalizations.app_title,
     ),

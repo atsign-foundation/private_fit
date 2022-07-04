@@ -5,6 +5,7 @@ import 'package:private_fit/presentation/open_food/product_cards/design_constant
 
 class SmoothProductImage extends StatelessWidget {
   const SmoothProductImage({
+    super.key,
     required this.product,
     required this.height,
     required this.width,
@@ -55,8 +56,11 @@ class SmoothProductImage extends StatelessWidget {
             child: Image.network(
               url,
               fit: BoxFit.contain,
-              loadingBuilder: (BuildContext context, Widget child,
-                      ImageChunkEvent? progress) =>
+              loadingBuilder: (
+                BuildContext context,
+                Widget child,
+                ImageChunkEvent? progress,
+              ) =>
                   progress == null
                       ? child
                       : Center(

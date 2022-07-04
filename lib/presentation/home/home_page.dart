@@ -1,8 +1,10 @@
 import 'dart:math' as math;
 
+import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:private_fit/l10n/l10n.dart';
+import 'package:private_fit/presentation/routes/router.gr.dart';
 import 'package:private_fit/shared/images.dart';
 
 class HomePage extends StatelessWidget {
@@ -55,6 +57,17 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.w300,
                   fontStyle: FontStyle.italic,
                 ),
+              ),
+            ),
+          ),
+          Align(
+            child: ElevatedButton(
+              onPressed: () {
+                AutoRouter.of(context).replace(const ScannerPageRoute());
+              },
+              child: const Icon(
+                Icons.search_off_outlined,
+                size: 20,
               ),
             ),
           ),

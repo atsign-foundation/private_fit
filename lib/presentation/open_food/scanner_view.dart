@@ -1,13 +1,15 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_qr_reader/flutter_qr_reader.dart';
 import 'package:glassmorphism/glassmorphism.dart';
+import 'package:openfoodfacts/model/OrderedNutrients.dart';
 import 'package:private_fit/application/open_food/bloc/open_food_bloc.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
-import 'package:private_fit/presentation/open_food/product_cards/smooth_product_card_found.dart';
-import 'package:private_fit/presentation/open_food/product_details_view.dart';
+import 'package:private_fit/presentation/open_food/product_cards/nutrition_page_loaded.dart';
+import 'package:private_fit/presentation/open_food/product_cards/ordered_nutrients_cache.dart';
 import 'package:private_fit/presentation/open_food/utils/scanner_visor_painter.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/app_styles.dart';
 
@@ -15,12 +17,20 @@ import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/app_s
 class ScannerView extends StatelessWidget {
   ScannerView({Key? key}) : super(key: key);
   late QrReaderViewController qrReaderViewController;
-
+  late OrderedNutrients nu;
   @override
   Widget build(BuildContext context) {
+    // OrderedNutrients nu;
     SizeConfig().init(context);
     final i10n = context.l10n;
-    return BlocBuilder<OpenFoodBloc, OpenFoodState>(
+    return BlocConsumer<OpenFoodBloc, OpenFoodState>(
+      listener: (context, state) async {
+        await state.mapOrNull(
+          loadSuccess: (_) async {
+            // nu = await OrderedNutrientsCache().download(context);
+          },
+        );
+      },
       bloc: getIt<OpenFoodBloc>(),
       builder: (context, state) {
         return state.map(
@@ -138,17 +148,55 @@ class ScannerView extends StatelessWidget {
             );
           },
           loadSuccess: (value) {
-            return SmoothProductCardFound(
-              product: value.fetchedProduct.product!,
-              heroTag: value.fetchedProduct.product!.barcode!,
-              backgroundColor: Colors.white,
+            // nu = await OrderedNutrientsCache().download(context);
+
+            return FutureBuilder<OrderedNutrients>(
+              future: OrderedNutrientsCache().download(context),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return NutritionPageLoaded(
+                    value.fetchedProduct.product!,
+                    snapshot.data!,
+                    // OrderedNutrients.fromJson(
+                    //   jsonDecode(string) as Map<String, dynamic>,
+                    // ),
+                  );
+                }
+                return const Scaffold(
+                  backgroundColor: Colors.cyan,
+                  body: Center(
+                    child: CupertinoActivityIndicator(),
+                  ),
+                );
+              },
             );
-            // ProductView(
-            //   fetchedProduct: value.fetchedProduct,
-            // ); //ProductDetailsView(fetchedProduct: value.fetchedProduct);
           },
+          // child: NutritionPageLoaded(
+          //   value.fetchedProduct.product!,
+          //   nu,
+          //   // OrderedNutrients.fromJson(
+          //   //   jsonDecode(string) as Map<String, dynamic>,
+          //   // ),
+          // ),
         );
+        // ProductQueryPage(
+        //   heroTag: value.fetchedProduct.product!.barcode!,
+        //   name: 'name',
+        //   product: value.fetchedProduct.product!,
+        // );
+
+        // SmoothProductCardFound(
+        //   product: value.fetchedProduct.product!,
+        //   heroTag: value.fetchedProduct.product!.barcode!,
+        //   backgroundColor: Colors.white,
+        // );
+        // ProductView(
+        //   fetchedProduct: value.fetchedProduct,
+        // ); //ProductDetailsView(fetchedProduct: value.fetchedProduct);
       },
     );
   }
 }
+    // );
+  // }
+// }

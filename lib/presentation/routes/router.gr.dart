@@ -11,9 +11,10 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i6;
+import 'package:flutter/cupertino.dart' as _i8;
 import 'package:flutter/material.dart' as _i7;
 
-import '../../domain/open_food/open_food_fetched_product.dart' as _i8;
+import '../../domain/open_food/open_food_fetched_product.dart' as _i9;
 import '../home/home_page.dart' as _i1;
 import '../on_boarding/on_boarding_page.dart' as _i2;
 import '../open_food/product_details_view.dart' as _i3;
@@ -58,8 +59,8 @@ class Router extends _i6.RootStackRouter {
         _i6.RouteConfig(OnBoardingPageRoute.name, path: '/on-boarding-page'),
         _i6.RouteConfig(ProductDetailsViewRoute.name,
             path: '/product-details-view'),
-        _i6.RouteConfig(ScannerPageRoute.name, path: '/'),
-        _i6.RouteConfig(OnBoardingRoute.name, path: '/on-boarding')
+        _i6.RouteConfig(ScannerPageRoute.name, path: '/scanner-page'),
+        _i6.RouteConfig(OnBoardingRoute.name, path: '/')
       ];
 }
 
@@ -85,7 +86,7 @@ class OnBoardingPageRoute extends _i6.PageRouteInfo<void> {
 class ProductDetailsViewRoute
     extends _i6.PageRouteInfo<ProductDetailsViewRouteArgs> {
   ProductDetailsViewRoute(
-      {_i7.Key? key, required _i8.FetchedProduct fetchedProduct})
+      {_i8.Key? key, required _i9.FetchedProduct fetchedProduct})
       : super(ProductDetailsViewRoute.name,
             path: '/product-details-view',
             args: ProductDetailsViewRouteArgs(
@@ -97,9 +98,9 @@ class ProductDetailsViewRoute
 class ProductDetailsViewRouteArgs {
   const ProductDetailsViewRouteArgs({this.key, required this.fetchedProduct});
 
-  final _i7.Key? key;
+  final _i8.Key? key;
 
-  final _i8.FetchedProduct fetchedProduct;
+  final _i9.FetchedProduct fetchedProduct;
 
   @override
   String toString() {
@@ -110,7 +111,8 @@ class ProductDetailsViewRouteArgs {
 /// generated route for
 /// [_i4.ScannerPage]
 class ScannerPageRoute extends _i6.PageRouteInfo<void> {
-  const ScannerPageRoute() : super(ScannerPageRoute.name, path: '/');
+  const ScannerPageRoute()
+      : super(ScannerPageRoute.name, path: '/scanner-page');
 
   static const String name = 'ScannerPageRoute';
 }
@@ -118,7 +120,7 @@ class ScannerPageRoute extends _i6.PageRouteInfo<void> {
 /// generated route for
 /// [_i5.OnBoarding]
 class OnBoardingRoute extends _i6.PageRouteInfo<void> {
-  const OnBoardingRoute() : super(OnBoardingRoute.name, path: '/on-boarding');
+  const OnBoardingRoute() : super(OnBoardingRoute.name, path: '/');
 
   static const String name = 'OnBoardingRoute';
 }

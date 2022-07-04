@@ -30,6 +30,9 @@ abstract class ProductQuery {
   static void setCountry(final String? isoCode) =>
       OpenFoodAPIConfiguration.globalCountry = CountryHelper.fromJson(isoCode);
 
+  /// Returns the global locale string (e.g. 'pt_BR')
+  static String getLocaleString() => 'en_US';
+
   // static const String _UUID_NAME = 'UUID_NAME_REV_1';
 
   static User getUser() =>

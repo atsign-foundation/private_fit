@@ -9,6 +9,7 @@ abstract class AbstractCache extends StatelessWidget {
   @protected
   const AbstractCache(
     this.iconUrl, {
+    super.key,
     this.width,
     this.height,
     this.displayAssetWhileWaiting = true,
@@ -38,8 +39,8 @@ abstract class AbstractCache extends StatelessWidget {
   /// Returns a list of possible related cached filenames.
   @protected
   List<String> getCachedFilenames() {
-    final List<String> result = <String>[];
-    final String? filename = getFilename();
+    final result = <String>[];
+    final filename = getFilename();
     if (filename == null) {
       return result;
     }
@@ -62,7 +63,7 @@ abstract class AbstractCache extends StatelessWidget {
     if (iconUrl == null) {
       return null;
     }
-    final int position = iconUrl!.lastIndexOf('/');
+    final position = iconUrl!.lastIndexOf('/');
     if (position == -1) {
       return null;
     }

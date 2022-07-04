@@ -4,6 +4,7 @@ import 'package:private_fit/presentation/open_food/category_cards/abstract_cache
 /// Empty image cache: the url was null, there is not much we can display.
 class NullCache extends AbstractCache {
   const NullCache({
+    super.key,
     super.width,
     super.height,
   }) : super(null);

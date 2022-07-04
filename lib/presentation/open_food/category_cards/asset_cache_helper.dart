@@ -26,7 +26,8 @@ class AssetCacheHelper {
       );
 
   void notFound() => debugPrint(
-      'please download $url and put it in asset somewhere like $cachedFilenames');
+        'please download $url and put it in asset  like $cachedFilenames',
+      );
 
   Exception loadException() =>
       Exception('could not load any cached file ($cachedFilenames)');

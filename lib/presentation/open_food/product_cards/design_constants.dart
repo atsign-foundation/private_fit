@@ -1,34 +1,36 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 const String APP_NAME = 'OpenFoodFacts';
 
 const Widget EMPTY_WIDGET = SizedBox.shrink();
 
-const double VERY_SMALL_SPACE = 4.0;
-const double SMALL_SPACE = 8.0;
-const double MEDIUM_SPACE = 12.0;
-const double LARGE_SPACE = 16.0;
-const double VERY_LARGE_SPACE = 20.0;
-const double MINIMUM_TOUCH_SIZE = 48.0;
+const double VERY_SMALL_SPACE = 4;
+const double SMALL_SPACE = 8;
+const double MEDIUM_SPACE = 12;
+const double LARGE_SPACE = 16;
+const double VERY_LARGE_SPACE = 20;
+const double MINIMUM_TOUCH_SIZE = 48;
 
 /// Default icon size, cf. [Icon]
-const double DEFAULT_ICON_SIZE = 24.0;
+const double DEFAULT_ICON_SIZE = 24;
 
 /// Default icon size, cf. goldens.dart
-const double MINIMUM_TARGET_SIZE = 48.0;
+const double MINIMUM_TARGET_SIZE = 48;
 
 /// Background, e.g SmoothCard
-const Radius ROUNDED_RADIUS = Radius.circular(20.0);
+const Radius ROUNDED_RADIUS = Radius.circular(20);
 //ignore: non_constant_identifier_names
 const BorderRadius ROUNDED_BORDER_RADIUS = BorderRadius.all(ROUNDED_RADIUS);
 
 /// Full screen button, e.g. KnowledgePanel
-const Radius ANGULAR_RADIUS = Radius.circular(8.0);
+const Radius ANGULAR_RADIUS = Radius.circular(8);
 //ignore: non_constant_identifier_names
 const BorderRadius ANGULAR_BORDER_RADIUS = BorderRadius.all(ANGULAR_RADIUS);
 
 /// Buttons & TextFields
-const Radius CIRCULAR_RADIUS = Radius.circular(40.0);
+const Radius CIRCULAR_RADIUS = Radius.circular(40);
 //ignore: non_constant_identifier_names
 const BorderRadius CIRCULAR_BORDER_RADIUS = BorderRadius.all(CIRCULAR_RADIUS);
 

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/open_food/product_cards/design_constants.dart';
 import 'package:private_fit/presentation/open_food/product_cards/product_image_carousel.dart';
-import 'package:provider/provider.dart';
 
 class AddBasicDetailsPage extends StatefulWidget {
-  const AddBasicDetailsPage(this.product);
+  const AddBasicDetailsPage(this.product, {super.key});
 
   final Product product;
 
@@ -41,8 +39,7 @@ class _AddBasicDetailsPageState extends State<AddBasicDetailsPage> {
   @override
   Widget build(BuildContext context) {
     final i10n = context.l10n;
-    final AppLocalizations appLocalizations = AppLocalizations.of(context);
-    final Size size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     // final LocalDatabase localDatabase = context.read<LocalDatabase>();
     return Scaffold(
       appBar: AppBar(
