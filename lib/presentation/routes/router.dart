@@ -24,8 +24,13 @@ other stuff. AutoRoute does all that for you and much more.
     AutoRoute<dynamic>(page: HomePage),
     AutoRoute<dynamic>(page: OnBoardingPage),
     AutoRoute<dynamic>(page: ProductDetailsView),
+<<<<<<< HEAD
     AutoRoute<dynamic>(page: ScannerPage, initial: true),
     AutoRoute<dynamic>(page: OnBoarding),
+=======
+    AutoRoute<dynamic>(page: ScannerPage),
+    AutoRoute<dynamic>(page: OnBoarding, initial: true),
+>>>>>>> feature/openfoodfacts
   ],
 )
 class $Router {}

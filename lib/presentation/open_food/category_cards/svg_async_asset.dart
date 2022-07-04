@@ -15,7 +15,11 @@ import 'package:private_fit/presentation/open_food/category_cards/asset_cache_he
 /// E.g. with https://jakearchibald.github.io/svgomg/
 /// C.f. https://github.com/openfoodfacts/smooth-app/issues/52
 class SvgAsyncAsset extends StatefulWidget {
+<<<<<<< HEAD
   const SvgAsyncAsset(this.assetCacheHelper);
+=======
+  const SvgAsyncAsset(this.assetCacheHelper, {super.key});
+>>>>>>> feature/openfoodfacts
 
   final AssetCacheHelper assetCacheHelper;
 
@@ -27,8 +31,12 @@ class _SvgAsyncAssetState extends State<SvgAsyncAsset> {
   late final Future<String> _loading = _load();
 
   Future<String> _load() async {
+<<<<<<< HEAD
     for (final String cachedFilename
         in widget.assetCacheHelper.cachedFilenames) {
+=======
+    for (final cachedFilename in widget.assetCacheHelper.cachedFilenames) {
+>>>>>>> feature/openfoodfacts
       try {
         return await rootBundle.loadString(cachedFilename);
       } catch (e) {
@@ -49,7 +57,10 @@ class _SvgAsyncAssetState extends State<SvgAsyncAsset> {
                 width: widget.assetCacheHelper.width,
                 height: widget.assetCacheHelper.height,
                 color: widget.assetCacheHelper.color,
+<<<<<<< HEAD
                 fit: BoxFit.contain,
+=======
+>>>>>>> feature/openfoodfacts
                 placeholderBuilder: (BuildContext context) =>
                     widget.assetCacheHelper.getEmptySpace(),
               );

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+// ignore_for_file: constant_identifier_names
+
+>>>>>>> feature/openfoodfacts
 import 'package:flutter/material.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:openfoodfacts/model/Attribute.dart';
@@ -5,7 +10,11 @@ import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:private_fit/domain/open_food/product_image_data.dart';
 import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/open_food/product_cards/design_constants.dart';
+<<<<<<< HEAD
 import 'package:private_fit/presentation/open_food/product_cards/smooth_card.dart';
+=======
+import 'package:private_fit/presentation/open_food/product_cards/open_food_card.dart';
+>>>>>>> feature/openfoodfacts
 
 String getProductName(Product product, AppLocalizations appLocalizations) =>
     product.productName ?? appLocalizations.app_title;
@@ -23,7 +32,11 @@ Widget buildProductSmoothCard({
     horizontal: SMALL_SPACE,
   ),
 }) {
+<<<<<<< HEAD
   return SmoothCard(
+=======
+  return OpenFoodCard(
+>>>>>>> feature/openfoodfacts
     margin: margin,
     padding: padding,
     child: Column(
@@ -49,7 +62,12 @@ List<Attribute> getPopulatedAttributes(
       continue;
     }
     var attribute = attributes[attributeId];
+<<<<<<< HEAD
 // Some attributes selected in the user preferences might be unavailable for some products
+=======
+// Some attributes selected in the user preferences
+// might be unavailable for some products
+>>>>>>> feature/openfoodfacts
     if (attribute == null) {
       continue;
     } else if (attribute.id == Attribute.ATTRIBUTE_ADDITIVES) {
@@ -88,7 +106,13 @@ Widget addPanelButton(
     );
 
 List<ProductImageData> getAllProductImagesData(
+<<<<<<< HEAD
     Product product, AppLocalizations appLocalizations) {
+=======
+  Product product,
+  AppLocalizations appLocalizations,
+) {
+>>>>>>> feature/openfoodfacts
   final allProductImagesData = <ProductImageData>[
     ProductImageData(
       imageField: ImageField.FRONT,
@@ -116,7 +140,10 @@ List<ProductImageData> getAllProductImagesData(
     ),
     ProductImageData(
       imageField: ImageField.OTHER,
+<<<<<<< HEAD
       imageUrl: null,
+=======
+>>>>>>> feature/openfoodfacts
       title: appLocalizations.app_title,
       buttonText: appLocalizations.app_title,
     ),

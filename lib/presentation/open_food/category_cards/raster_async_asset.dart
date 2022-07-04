@@ -4,7 +4,11 @@ import 'package:private_fit/presentation/open_food/category_cards/asset_cache_he
 
 /// Widget with async load of raster asset file (png, jpeg).
 class RasterAsyncAsset extends StatefulWidget {
+<<<<<<< HEAD
   const RasterAsyncAsset(this.assetCacheHelper);
+=======
+  const RasterAsyncAsset(this.assetCacheHelper, {super.key});
+>>>>>>> feature/openfoodfacts
 
   final AssetCacheHelper assetCacheHelper;
 
@@ -16,8 +20,12 @@ class _RasterAsyncAssetState extends State<RasterAsyncAsset> {
   late final Future<ByteData> _loading = _load();
 
   Future<ByteData> _load() {
+<<<<<<< HEAD
     for (final String cachedFilename
         in widget.assetCacheHelper.cachedFilenames) {
+=======
+    for (final cachedFilename in widget.assetCacheHelper.cachedFilenames) {
+>>>>>>> feature/openfoodfacts
       try {
         return rootBundle.load(cachedFilename);
       } catch (e) {

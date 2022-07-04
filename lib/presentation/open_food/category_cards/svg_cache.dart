@@ -8,6 +8,10 @@ import 'package:private_fit/presentation/open_food/category_cards/svg_async_asse
 class SvgCache extends AbstractCache {
   const SvgCache(
     super.iconUrl, {
+<<<<<<< HEAD
+=======
+    super.key,
+>>>>>>> feature/openfoodfacts
     super.width,
     super.height,
     this.color,
@@ -26,11 +30,21 @@ class SvgCache extends AbstractCache {
     final cacheFilename = getCacheFilename(filename);
     final cacheTintableFilename = getCacheTintableFilename(filename);
     if (color == null) {
+<<<<<<< HEAD
       result.add(cacheFilename);
       result.add(cacheTintableFilename);
     } else {
       result.add(cacheTintableFilename);
       result.add(cacheFilename);
+=======
+      result
+        ..add(cacheFilename)
+        ..add(cacheTintableFilename);
+    } else {
+      result
+        ..add(cacheTintableFilename)
+        ..add(cacheFilename);
+>>>>>>> feature/openfoodfacts
     }
     return result;
   }
@@ -57,7 +71,10 @@ class SvgCache extends AbstractCache {
       color: forcedColor,
       width: width,
       height: height,
+<<<<<<< HEAD
       fit: BoxFit.contain,
+=======
+>>>>>>> feature/openfoodfacts
       placeholderBuilder: (BuildContext context) => displayAssetWhileWaiting
           ? SvgAsyncAsset(
               AssetCacheHelper(

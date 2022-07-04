@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:openfoodfacts/model/Product.dart';
@@ -11,11 +12,24 @@ import 'package:provider/provider.dart';
 // import 'package:smooth_app/helpers/extension_on_text_helper.dart';
 // import 'package:smooth_app/helpers/product_cards_helper.dart';
 // import 'package:smooth_app/pages/product/add_basic_details_page.dart';
+=======
+// ignore_for_file: avoid_positional_boolean_parameters
+
+import 'package:flutter/material.dart';
+import 'package:openfoodfacts/model/Product.dart';
+import 'package:private_fit/l10n/l10n.dart';
+import 'package:private_fit/presentation/open_food/product_cards/extension_on_text_helper.dart';
+import 'package:private_fit/presentation/open_food/product_cards/product_cards_helper.dart';
+>>>>>>> feature/openfoodfacts
 
 class ProductTitleCard extends StatelessWidget {
   const ProductTitleCard(
     this.product,
     this.isSelectable, {
+<<<<<<< HEAD
+=======
+    super.key,
+>>>>>>> feature/openfoodfacts
     this.dense = false,
     this.isRemovable = true,
   });
@@ -27,6 +41,7 @@ class ProductTitleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     // final appLocalizations = AppLocalizations.of(context);
     final i10n = context.l10n;
 
@@ -52,11 +67,18 @@ class ProductTitleCard extends StatelessWidget {
     //     style: themeData.textTheme.headline3,
     //   ).selectable(isSelectable: isSelectable);
     // }
+=======
+    final i10n = context.l10n;
+
+    final themeData = Theme.of(context);
+
+>>>>>>> feature/openfoodfacts
     return Align(
       alignment: Alignment.topLeft,
       child: InkWell(
         onTap: (getProductName(product, i10n) == i10n.app_title)
             ? () async {
+<<<<<<< HEAD
                 await Navigator.push<Product?>(
                   context,
                   MaterialPageRoute<Product>(
@@ -64,6 +86,15 @@ class ProductTitleCard extends StatelessWidget {
                         AddBasicDetailsPage(product),
                   ),
                 );
+=======
+                // await Navigator.push<Product?>(
+                //   context,
+                //   MaterialPageRoute<Product>(
+                //     builder: (BuildContext context) =>
+                //         AddBasicDetailsPage(product),
+                //   ),
+                // );
+>>>>>>> feature/openfoodfacts
               }
             : null,
         child: ListTile(

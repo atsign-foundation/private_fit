@@ -1,4 +1,9 @@
 /// Contains UI related constant that are shared across the entire app.
+<<<<<<< HEAD
+=======
+// ignore_for_file: constant_identifier_names
+
+>>>>>>> feature/openfoodfacts
 import 'package:flutter/material.dart';
 import 'package:openfoodfacts/model/Attribute.dart';
 import 'package:openfoodfacts/model/KnowledgePanel.dart';
@@ -17,7 +22,11 @@ class IconWidgetSizer {
   static const double _ICON_WIDGET_SIZE_RATIO = 1 / 10;
 
   static double getIconSizeFromContext(BuildContext context) {
+<<<<<<< HEAD
     final Size screenSize = MediaQuery.of(context).size;
+=======
+    final screenSize = MediaQuery.of(context).size;
+>>>>>>> feature/openfoodfacts
     return screenSize.width * _ICON_WIDGET_SIZE_RATIO;
   }
 
