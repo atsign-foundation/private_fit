@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:openfoodfacts/model/Product.dart';
 import 'package:private_fit/presentation/open_food/product_cards/design_constants.dart';
 
-class SmoothProductImage extends StatelessWidget {
-  const SmoothProductImage({
+class OpenFoodProductImage extends StatelessWidget {
+  const OpenFoodProductImage({
     super.key,
     required this.product,
     required this.height,

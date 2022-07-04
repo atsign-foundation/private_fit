@@ -17,20 +17,11 @@ import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/app_s
 class ScannerView extends StatelessWidget {
   ScannerView({Key? key}) : super(key: key);
   late QrReaderViewController qrReaderViewController;
-  late OrderedNutrients nu;
   @override
   Widget build(BuildContext context) {
-    // OrderedNutrients nu;
     SizeConfig().init(context);
     final i10n = context.l10n;
-    return BlocConsumer<OpenFoodBloc, OpenFoodState>(
-      listener: (context, state) async {
-        await state.mapOrNull(
-          loadSuccess: (_) async {
-            // nu = await OrderedNutrientsCache().download(context);
-          },
-        );
-      },
+    return BlocBuilder<OpenFoodBloc, OpenFoodState>(
       bloc: getIt<OpenFoodBloc>(),
       builder: (context, state) {
         return state.map(
@@ -148,8 +139,6 @@ class ScannerView extends StatelessWidget {
             );
           },
           loadSuccess: (value) {
-            // nu = await OrderedNutrientsCache().download(context);
-
             return FutureBuilder<OrderedNutrients>(
               future: OrderedNutrientsCache().download(context),
               builder: (context, snapshot) {
@@ -157,13 +146,10 @@ class ScannerView extends StatelessWidget {
                   return NutritionPageLoaded(
                     value.fetchedProduct.product!,
                     snapshot.data!,
-                    // OrderedNutrients.fromJson(
-                    //   jsonDecode(string) as Map<String, dynamic>,
-                    // ),
                   );
                 }
                 return const Scaffold(
-                  backgroundColor: Colors.cyan,
+                  backgroundColor: Colors.white,
                   body: Center(
                     child: CupertinoActivityIndicator(),
                   ),
@@ -171,32 +157,8 @@ class ScannerView extends StatelessWidget {
               },
             );
           },
-          // child: NutritionPageLoaded(
-          //   value.fetchedProduct.product!,
-          //   nu,
-          //   // OrderedNutrients.fromJson(
-          //   //   jsonDecode(string) as Map<String, dynamic>,
-          //   // ),
-          // ),
         );
-        // ProductQueryPage(
-        //   heroTag: value.fetchedProduct.product!.barcode!,
-        //   name: 'name',
-        //   product: value.fetchedProduct.product!,
-        // );
-
-        // SmoothProductCardFound(
-        //   product: value.fetchedProduct.product!,
-        //   heroTag: value.fetchedProduct.product!.barcode!,
-        //   backgroundColor: Colors.white,
-        // );
-        // ProductView(
-        //   fetchedProduct: value.fetchedProduct,
-        // ); //ProductDetailsView(fetchedProduct: value.fetchedProduct);
       },
     );
   }
 }
-    // );
-  // }
-// }

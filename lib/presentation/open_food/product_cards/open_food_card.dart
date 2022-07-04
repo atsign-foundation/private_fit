@@ -10,8 +10,8 @@ import 'package:private_fit/presentation/open_food/product_cards/design_constant
 /// Note: [padding] applies to both header and body, if you want to have a
 /// padding only for body and not for header (or vice versa) set it to zero here
 /// and set the padding explicitly in the desired element.
-class SmoothCard extends StatelessWidget {
-  const SmoothCard({
+class OpenFoodCard extends StatelessWidget {
+  const OpenFoodCard({
     super.key,
     required this.child,
     this.color,
@@ -24,7 +24,7 @@ class SmoothCard extends StatelessWidget {
     this.borderRadius,
   });
 
-  const SmoothCard.angular({
+  const OpenFoodCard.angular({
     super.key,
     required this.child,
     this.color,
@@ -36,7 +36,7 @@ class SmoothCard extends StatelessWidget {
     this.elevation = 8,
   }) : borderRadius = ANGULAR_BORDER_RADIUS;
 
-  const SmoothCard.flat({
+  const OpenFoodCard.flat({
     super.key,
     required this.child,
     this.color,

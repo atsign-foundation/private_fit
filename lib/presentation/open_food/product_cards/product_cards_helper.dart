@@ -25,7 +25,7 @@ Widget buildProductSmoothCard({
     horizontal: SMALL_SPACE,
   ),
 }) {
-  return SmoothCard(
+  return OpenFoodCard(
     margin: margin,
     padding: padding,
     child: Column(

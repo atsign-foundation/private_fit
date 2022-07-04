@@ -79,7 +79,6 @@ class _NutritionPageLoadedState extends State<NutritionPageLoaded> {
   @override
   Widget build(BuildContext context) {
     final localizations = context.l10n;
-    // final LocalDatabase localDatabase = context.read<LocalDatabase>();
     final children = <Widget>[_switchNoNutrition(localizations)];
     if (!_unspecified) {
       children
@@ -91,7 +90,6 @@ class _NutritionPageLoadedState extends State<NutritionPageLoaded> {
           _getNutrientRow(localizations, orderedNutrient),
         );
       }
-      children.add(_addNutrientButton(localizations));
     }
 
     return WillPopScope(
@@ -110,6 +108,7 @@ class _NutritionPageLoadedState extends State<NutritionPageLoaded> {
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.cyan,
+          //todo (kzawadi): store the data to atsign secondary server
           // actions: <Widget>[
           //   IconButton(
           //     onPressed: () {
@@ -242,6 +241,7 @@ class _NutritionPageLoadedState extends State<NutritionPageLoaded> {
         controller: controller,
         decoration: const InputDecoration(
           enabledBorder: UnderlineInputBorder(),
+          //todo(kzawadi): clean these string by re-implementing them in i10n
           labelText: 'nutrition_page_serving_size',
         ),
         textInputAction: TextInputAction.next,
@@ -263,7 +263,8 @@ class _NutritionPageLoadedState extends State<NutritionPageLoaded> {
         ],
       );
 
-  Widget _switchNoNutrition(final AppLocalizations localizations) => SmoothCard(
+  Widget _switchNoNutrition(final AppLocalizations localizations) =>
+      OpenFoodCard(
         color: Theme.of(context).colorScheme.primary,
         padding: const EdgeInsets.symmetric(
           horizontal: MEDIUM_SPACE,
@@ -295,173 +296,4 @@ class _NutritionPageLoadedState extends State<NutritionPageLoaded> {
           ],
         ),
       );
-
-  Widget _addNutrientButton(final AppLocalizations appLocalizations) =>
-      ElevatedButton.icon(
-        onPressed: () async {
-          final selected = await showDialog<OrderedNutrient>(
-            context: context,
-            builder: (BuildContext context) {
-              return StatefulBuilder(
-                builder: (
-                  BuildContext context,
-                  void Function(VoidCallback fn) setState,
-                ) {
-                  return const Text('OpenFoodAlertDialog');
-                  // SmoothAlertDialog(
-                  //   close: true,
-                  //   title: appLocalizations.nutrition_page_add_nutrient,
-                  //   body: Column(
-                  //     children: <Widget>[
-                  //       TextField(
-                  //         decoration: InputDecoration(
-                  //           prefixIcon: const Icon(Icons.search),
-                  //           enabledBorder: const UnderlineInputBorder(),
-                  //           labelText: appLocalizations.search,
-                  //         ),
-                  //         onChanged: (String query) {
-                  //           setState(
-                  //             () {
-                  //               filteredList = leftovers
-                  //                   .where((OrderedNutrient item) => item
-                  //                       .name!
-                  //                       .toLowerCase()
-                  //                       .contains(query.toLowerCase()))
-                  //                   .toList();
-                  //             },
-                  //           );
-                  //         },
-                  //       ),
-                  //       ...List<ListTile>.generate(
-                  //         filteredList.length,
-                  //         (int index) {
-                  //           final nutrient = filteredList[index];
-                  //           return ListTile(
-                  //             title: Text(nutrient.name!),
-                  //             onTap: () =>
-                  //                 Navigator.of(context).pop(nutrient),
-                  //           );
-                  //         },
-                  //       ),
-                  //     ],
-                  //   ),
-                  //   negativeAction: SmoothActionButton(
-                  //     onPressed: () => Navigator.pop(context),
-                  //     text: appLocalizations.cancel,
-                  //   ),
-                  // );
-                },
-              );
-            },
-          );
-          if (selected != null) {
-            setState(() => _nutritionContainer.add(selected));
-          }
-        },
-        style: ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            const RoundedRectangleBorder(
-              borderRadius: ROUNDED_BORDER_RADIUS,
-            ),
-          ),
-        ),
-        icon: const Icon(Icons.add),
-        label: const Text('nutrition_page_add_nutrient'),
-      );
-
-  // Future<bool> _sh
-  //owCancelPopup(final AppLocalizations appLocalizations) async {
-  //   //if no changes made then returns true to the onWillPop
-  //   // allowing it to let the user return back to previous screen
-  //   if (!_isEdited()) {
-  //     return true;
-  //   }
-  //   return await showDialog<bool>(
-  //         context: context,
-  //         builder: (BuildContext context) => SmoothAlertDialog(
-  //           title: appLocalizations.general_confirmation,
-  //           body: Text(appLocalizations.nutrition_page_close_confirmation),
-  //           negativeAction: SmoothActionButton(
-  //             text: appLocalizations.cancel,
-  //             // returns false to onWillPop after the alert dialog is closed with cancel button
-  //             //blocking return to the previous screen
-  //             onPressed: () => Navigator.pop(context),
-  //           ),
-  //           positiveAction: SmoothActionButton(
-  //             text: appLocalizations.okay,
-  //             // returns true to onWillPop after the alert dialog is closed with close button
-  //             //letting return to the previous screen
-  //             onPressed: () => Navigator.pop(context, true),
-  //           ),
-  //         ),
-  //       ) ??
-  //       // in case alert dialog is closed, a false is return
-  //       // blocking the return to the previous screen
-  //       false;
-  // }
-
-  // Future<void> _validateAndSave(final AppLocalizations localizations,
-  //     final LocalDatabase localDatabase) async {
-  //   if (!_formKey.currentState!.validate()) {
-  //     return;
-  //   }
-
-  //   await _showSavePopup(localizations, localDatabase);
-  // }
-
-  // Future<void> _showSavePopup(
-  //   final AppLocalizations appLocalizations,
-  //   final LocalDatabase localDatabase,
-  // ) async {
-  //   final shouldSave = await showDialog<bool>(
-  //         context: context,
-  //         builder: (BuildContext context) => SmoothAlertDialog(
-  //           title: appLocalizations.general_confirmation,
-  //           body: Text(appLocalizations.save_confirmation),
-  //           negativeAction: SmoothActionButton(
-  //             text: appLocalizations.cancel,
-  //             onPressed: () => Navigator.pop(context, false),
-  //           ),
-  //           positiveAction: SmoothActionButton(
-  //             text: appLocalizations.save.toUpperCase(),
-  //             onPressed: () => Navigator.pop(context, true),
-  //           ),
-  //         ),
-  //       ) ??
-  //       false;
-
-  //   if (shouldSave) {
-  //     await _save(localDatabase);
-  //   }
-  // }
-
-  // Future<void> _save(final LocalDatabase localDatabase) async {
-  //   for (final key in _controllers.keys) {
-  //     final controller = _controllers[key]!;
-  //     _nutritionContainer.setControllerText(key, controller.text);
-  //   }
-  //   // minimal product: we only want to save the nutrients
-  //   final inputProduct = _nutritionContainer.getProduct();
-  //   await ProductRefresher().saveAndRefresh(
-  //     context: context,
-  //     localDatabase: localDatabase,
-  //     product: inputProduct,
-  //   );
-  // }
-
-  // bool _isEdited() {
-  //   for (final key in _controllers.keys) {
-  //     final controller = _controllers[key]!;
-  //     if (_nutritionContainer.getValue(key) != null) {
-  //       if (_numberFormat.format(_nutritionContainer.getValue(key)) !=
-  //           controller.value.text) {
-  //         //if any controller is not equal to the value in the container
-  //         // then the form is edited, return true
-  //         return true;
-  //       }
-  //     }
-  //   }
-  //   //else form is not edited just return false
-  //   return false;
-  // }
 }
