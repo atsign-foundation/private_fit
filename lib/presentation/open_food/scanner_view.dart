@@ -31,7 +31,22 @@ class ScannerView extends StatelessWidget {
             return OnInitialState(i10n: i10n);
           },
           loadSuccess: (value) {
-            return OnLoadSuccess(fetchedProduct: value.fetchedProduct);
+            return FutureBuilder<OrderedNutrients>(
+              future: OrderedNutrientsCache().download(context),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return FDA(
+                    fetchedProduct: value.fetchedProduct.product!,
+                  );
+                }
+                return const Scaffold(
+                  backgroundColor: Colors.white,
+                  body: Center(
+                    child: CupertinoActivityIndicator(),
+                  ),
+                );
+              },
+            ); //OnLoadSuccess(fetchedProduct: value.fetchedProduct);
           },
           failureGettingFood: (failures) {
             return OnFailures(openFoodFailures: failures.openFoodfailures);
@@ -67,33 +82,33 @@ class OnFailures extends StatelessWidget {
   }
 }
 
-class OnLoadSuccess extends StatelessWidget {
-  const OnLoadSuccess({
-    Key? key,
-    required this.fetchedProduct,
-  }) : super(key: key);
-  final FetchedProduct fetchedProduct;
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder<OrderedNutrients>(
-      future: OrderedNutrientsCache().download(context),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return NutritionPageLoaded(
-            fetchedProduct.product!,
-            snapshot.data!,
-          );
-        }
-        return const Scaffold(
-          backgroundColor: Colors.white,
-          body: Center(
-            child: CupertinoActivityIndicator(),
-          ),
-        );
-      },
-    );
-  }
-}
+// class OnLoadSuccess extends StatelessWidget {
+//   const OnLoadSuccess({
+//     Key? key,
+//     required this.fetchedProduct,
+//   }) : super(key: key);
+//   final FetchedProduct fetchedProduct;
+//   @override
+//   Widget build(BuildContext context) {
+//     return FutureBuilder<OrderedNutrients>(
+//       future: OrderedNutrientsCache().download(context),
+//       builder: (context, snapshot) {
+//         if (snapshot.hasData) {
+//           return NutritionPageLoaded(
+//             fetchedProduct.product!,
+//             snapshot.data!,
+//           );
+//         }
+//         return const Scaffold(
+//           backgroundColor: Colors.white,
+//           body: Center(
+//             child: CupertinoActivityIndicator(),
+//           ),
+//         );
+//       },
+//     );
+//   }
+// }
 
 // ignore: must_be_immutable
 class OnInitialState extends StatelessWidget {
