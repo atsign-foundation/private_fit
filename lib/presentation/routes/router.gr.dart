@@ -12,6 +12,7 @@
 
 import 'package:auto_route/auto_route.dart' as _i6;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:flutter/material.dart' as _i7;
 
 import '../../domain/open_food/open_food_fetched_product.dart' as _i8;
@@ -20,6 +21,11 @@ import 'package:flutter/cupertino.dart' as _i8;
 import 'package:flutter/material.dart' as _i7;
 
 import '../../domain/open_food/open_food_fetched_product.dart' as _i9;
+>>>>>>> feature/openfoodfacts
+=======
+import 'package:flutter/material.dart' as _i7;
+
+import '../../domain/open_food/open_food_fetched_product.dart' as _i8;
 >>>>>>> feature/openfoodfacts
 import '../home/home_page.dart' as _i1;
 import '../on_boarding/on_boarding_page.dart' as _i2;
@@ -98,9 +104,13 @@ class ProductDetailsViewRoute
     extends _i6.PageRouteInfo<ProductDetailsViewRouteArgs> {
   ProductDetailsViewRoute(
 <<<<<<< HEAD
+<<<<<<< HEAD
       {_i7.Key? key, required _i8.FetchedProduct fetchedProduct})
 =======
       {_i8.Key? key, required _i9.FetchedProduct fetchedProduct})
+>>>>>>> feature/openfoodfacts
+=======
+      {_i7.Key? key, required _i8.FetchedProduct fetchedProduct})
 >>>>>>> feature/openfoodfacts
       : super(ProductDetailsViewRoute.name,
             path: '/product-details-view',
@@ -114,6 +124,7 @@ class ProductDetailsViewRouteArgs {
   const ProductDetailsViewRouteArgs({this.key, required this.fetchedProduct});
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   final _i7.Key? key;
 
   final _i8.FetchedProduct fetchedProduct;
@@ -121,6 +132,11 @@ class ProductDetailsViewRouteArgs {
   final _i8.Key? key;
 
   final _i9.FetchedProduct fetchedProduct;
+>>>>>>> feature/openfoodfacts
+=======
+  final _i7.Key? key;
+
+  final _i8.FetchedProduct fetchedProduct;
 >>>>>>> feature/openfoodfacts
 
   @override

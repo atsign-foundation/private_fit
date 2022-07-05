@@ -50,6 +50,7 @@ dependencies:
   # mobile_scanner: ^2.0.0
   openfoodfacts: ^1.19.0
   path_provider: ^2.0.5
+  flex_color_scheme: ^5.0.1
   # qr_code_scanner: ^1.0.0
   rxdart: ^0.27.4
   shared_preferences: ^2.0.15
@@ -58,6 +59,7 @@ dependencies:
   qr_mobile_vision: ^3.0.1
   glassmorphism: ^3.0.0
   modal_bottom_sheet: ^2.1.0
+  cupertino_icons: ^1.0.5
 
 dependency_overrides:
   file_saver:

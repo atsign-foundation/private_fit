@@ -1,5 +1,7 @@
 // import 'package:atsign_location_app/l10n/l10n.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -35,21 +37,24 @@ class _PrivateFitAppState extends State<PrivateFitApp> {
         // systemNavigationBarContrastEnforced: false,
         systemNavigationBarDividerColor: Colors.transparent,
       ),
-      child: MaterialApp.router(
-        title: 'Priv@te Fit',
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-        ],
-        supportedLocales: AppLocalizations.supportedLocales,
-        routerDelegate: AutoRouterDelegate(
-          _appRouter,
-          navigatorObservers: () => [PrivateFitRouteObserver()],
+      child: Theme(
+        data: FlexThemeData.light(scheme: FlexScheme.blueWhale),
+        child: CupertinoApp.router(
+          title: 'Priv@te Fit',
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+          ],
+          supportedLocales: AppLocalizations.supportedLocales,
+          routerDelegate: AutoRouterDelegate(
+            _appRouter,
+            navigatorObservers: () => [PrivateFitRouteObserver()],
+          ),
+          routeInformationParser: _appRouter.defaultRouteParser(),
+          builder: (context, router) => router!,
+          // theme: FlexThemeData.light(scheme: FlexScheme.blue),
         ),
-        routeInformationParser: _appRouter.defaultRouteParser(),
-        builder: (context, router) => router!,
-        theme: Themes.lightTheme,
       ),
     );
   }

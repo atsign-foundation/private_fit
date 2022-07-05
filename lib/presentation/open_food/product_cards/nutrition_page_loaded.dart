@@ -1,299 +1,477 @@
-import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
-import 'package:openfoodfacts/model/OrderedNutrient.dart';
-import 'package:openfoodfacts/model/OrderedNutrients.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
-import 'package:openfoodfacts/utils/UnitHelper.dart';
-
-import 'package:private_fit/domain/open_food/product_query.dart';
-import 'package:private_fit/l10n/l10n.dart';
-import 'package:private_fit/presentation/open_food/product_cards/design_constants.dart';
-import 'package:private_fit/presentation/open_food/product_cards/nutrition_container.dart';
-import 'package:private_fit/presentation/open_food/product_cards/open_food_card.dart';
-import 'package:private_fit/presentation/open_food/product_cards/text_input_formatters_helper.dart';
 
 /// Actual nutrition page, with data already loaded.
-class NutritionPageLoaded extends StatefulWidget {
-  const NutritionPageLoaded(
-    this.product,
-    this.orderedNutrients, {
-    super.key,
-  });
 
-  final Product product;
-  final OrderedNutrients orderedNutrients;
+class FDA extends StatelessWidget {
+  const FDA({
+    Key? key,
+    required this.fetchedProduct,
+  }) : super(key: key);
 
-  @override
-  State<NutritionPageLoaded> createState() => _NutritionPageLoadedState();
-}
-
-class _NutritionPageLoadedState extends State<NutritionPageLoaded> {
-  // we admit both decimal points
-  // anyway, the keyboard will only show one
-  //todo (kzawadi): the regex was (r'[0-9,.]')
-
-  static final RegExp _decimalRegExp = RegExp('[0-9,.]');
-
-  late final NumberFormat _numberFormat;
-  late final NutritionContainer _nutritionContainer;
-
-  bool _unspecified = false;
-  // If true then serving, if false then 100g.
-  bool _servingOr100g = false;
-
-  double getColumnSizeFromContext(
-    BuildContext context,
-    double adjustmentFactor,
-  ) {
-    final columnSize = MediaQuery.of(context).size.width;
-    return columnSize * adjustmentFactor;
-  }
-
-  final Map<String, TextEditingController> _controllers =
-      <String, TextEditingController>{};
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  late Product _product;
-
-  @override
-  void initState() {
-    super.initState();
-    _product = widget.product;
-
-    _nutritionContainer = NutritionContainer(
-      orderedNutrients: widget.orderedNutrients,
-      product: _product,
-    );
-    _numberFormat = NumberFormat('####0.#####', ProductQuery.getLocaleString());
-  }
-
-  @override
-  void dispose() {
-    for (final controller in _controllers.values) {
-      controller.dispose();
-    }
-    super.dispose();
-  }
+  final Product fetchedProduct;
 
   @override
   Widget build(BuildContext context) {
-    final localizations = context.l10n;
-    final children = <Widget>[_switchNoNutrition(localizations)];
-    if (!_unspecified) {
-      children
-        ..add(_getServingField(localizations))
-        ..add(_getServingSwitch(localizations));
-      for (final orderedNutrient
-          in _nutritionContainer.getDisplayableNutrients()) {
-        children.add(
-          _getNutrientRow(localizations, orderedNutrient),
-        );
-      }
-    }
+    return CupertinoPageScaffold(
+      // navigationBar: CupertinoNavigationBar(
+      //   leading: CupertinoNavigationBarBackButton(
+      //     onPressed: () {},
+      //   ),
+      //   middle: const Text('Nutrition Facts'),
+      // ),
+      // backgroundColor: Colors.white,
 
-    return WillPopScope(
-      //return a boolean to decide whether to return to previous page or not
-      onWillPop: () async {
-        return Future<bool>.delayed(const Duration(milliseconds: 100))
-            .then((_) => true);
-      },
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          centerTitle: true,
-          title: const AutoSizeText(
-            'NUTRITION',
-            maxLines: 2,
-            style: TextStyle(color: Colors.black),
-          ),
-          backgroundColor: Colors.cyan,
-          //todo (kzawadi): store the data to atsign secondary server
-          // actions: <Widget>[
-          //   IconButton(
-          //     onPressed: () {
-          //       // _validateAndSave(localizations, localDatabase);
-          //     },
-          //     icon: const Icon(Icons.check),
-          //   )
-          // ],
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarIconBrightness: Brightness.light,
-            statusBarBrightness: Brightness.dark,
-          ),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: LARGE_SPACE,
-            vertical: SMALL_SPACE,
-          ),
-          child: Form(
-            key: _formKey,
-            child: ListView(children: children),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _getNutrientRow(
-    final AppLocalizations appLocalizations,
-    final OrderedNutrient orderedNutrient,
-  ) =>
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          SizedBox(
-            width: getColumnSizeFromContext(context, 0.6),
-            child: _getNutrientCell(
-              appLocalizations,
-              orderedNutrient,
-              _servingOr100g,
-            ),
-          ),
-          SizedBox(
-            width: getColumnSizeFromContext(context, 0.3),
-            child: _getUnitCell(orderedNutrient),
-          ),
-        ],
-      );
-
-  Widget _getNutrientCell(
-    final AppLocalizations appLocalizations,
-    final OrderedNutrient orderedNutrient,
-    final bool perServing,
-  ) {
-    final valueKey = NutritionContainer.getValueKey(
-      orderedNutrient.id,
-      perServing,
-    );
-    final TextEditingController controller;
-    if (_controllers[valueKey] != null) {
-      controller = _controllers[valueKey]!;
-    } else {
-      final value = _nutritionContainer.getValue(valueKey);
-      controller = TextEditingController()
-        ..text = value == null ? '' : _numberFormat.format(value);
-      _controllers[valueKey] = controller;
-    }
-    return TextFormField(
-      controller: controller,
-      decoration: InputDecoration(
-        enabledBorder: const UnderlineInputBorder(),
-        labelText: orderedNutrient.name,
-      ),
-      keyboardType: const TextInputType.numberWithOptions(
-        decimal: true,
-      ),
-      textInputAction: TextInputAction.next,
-      inputFormatters: <TextInputFormatter>[
-        FilteringTextInputFormatter.allow(_decimalRegExp),
-        DecimalSeparatorRewriter(_numberFormat),
-      ],
-      validator: (String? value) {
-        if (value == null || value.trim().isEmpty) {
-          return null;
-        }
-        try {
-          _numberFormat.parse(value);
-          return null;
-        } catch (e) {
-          return 'nutrition_page_invalid_number';
-        }
-      },
-    );
-  }
-
-  static const Map<Unit, String> _unitLabels = <Unit, String>{
-    Unit.G: 'g',
-    Unit.MILLI_G: 'mg',
-    Unit.MICRO_G: 'mcg/µg',
-    Unit.KJ: 'kJ',
-    Unit.KCAL: 'kcal',
-    Unit.PERCENT: '%',
-  };
-
-  static String _getUnitLabel(final Unit unit) =>
-      _unitLabels[unit] ?? UnitHelper.unitToString(unit)!;
-
-  Widget _getUnitCell(final OrderedNutrient orderedNutrient) {
-    final unit = _nutritionContainer.getUnit(orderedNutrient.id);
-    return ElevatedButton(
-      onPressed: NutritionContainer.isEditableWeight(orderedNutrient)
-          ? () => setState(
-                () => _nutritionContainer.setNextWeightUnit(orderedNutrient),
-              )
-          : null,
-      child: Text(
-        _getUnitLabel(unit),
-        style: const TextStyle(fontWeight: FontWeight.bold),
-      ),
-    );
-  }
-
-  Widget _getServingField(final AppLocalizations appLocalizations) {
-    final controller = TextEditingController()
-      ..text = _nutritionContainer.servingSize ?? '';
-    _controllers[NutritionContainer.fakeNutrientIdServingSize] = controller;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: VERY_LARGE_SPACE),
-      child: TextFormField(
-        controller: controller,
-        decoration: const InputDecoration(
-          enabledBorder: UnderlineInputBorder(),
-          //todo(kzawadi): clean these string by re-implementing them in i10n
-          labelText: 'nutrition_page_serving_size',
-        ),
-        textInputAction: TextInputAction.next,
-        validator: (String? value) => null, // free text
-      ),
-    );
-  }
-
-  Widget _getServingSwitch(final AppLocalizations appLocalizations) => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Text('nutrition_page_per_100g'),
-          Switch(
-            value: _servingOr100g,
-            onChanged: (final bool value) =>
-                setState(() => _servingOr100g = !_servingOr100g),
-          ),
-          const Text('nutrition_page_per_serving')
-        ],
-      );
-
-  Widget _switchNoNutrition(final AppLocalizations localizations) =>
-      OpenFoodCard(
-        color: Theme.of(context).colorScheme.primary,
-        padding: const EdgeInsets.symmetric(
-          horizontal: MEDIUM_SPACE,
-          vertical: SMALL_SPACE,
-        ),
-        margin: EdgeInsets.zero,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Switch(
-              value: _unspecified,
-              onChanged: (final bool value) =>
-                  setState(() => _unspecified = !_unspecified),
-              trackColor: MaterialStateProperty.all(
-                Theme.of(context).colorScheme.onPrimary,
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              height: 70,
+              child: const Text(
+                'Nutrition Facts',
+                style: TextStyle(
+                  color: Colors.teal,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-            SizedBox(
-              width: getColumnSizeFromContext(context, 0.6),
-              child: AutoSizeText(
-                'nutrition_page_unspecified',
-                style: Theme.of(context).primaryTextTheme.bodyText2?.copyWith(
-                      color: Theme.of(context).colorScheme.onPrimary,
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Theme.of(context).primaryColor,
+                ),
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(4),
+                ),
+              ),
+              child: Column(
+                children: [
+                  // const Text(
+                  //   'Nutrition Facts ',
+                  //   style: TextStyle(
+                  //     fontWeight: FontWeight.w900,
+                  //     fontSize: 40,
+                  //     color: _color,
+                  //   ),
+                  // ),
+                  // Divider(
+                  //   thickness: 10,
+                  //   color: Theme.of(context).dividerColor,
+                  // ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: const Text(
+                      'The Coca Cola Company',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w800,
+                        fontSize: 32,
+                        // color: Theme.of(context).cardColor,
+                      ),
                     ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+                  ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    margin: const EdgeInsets.only(top: 4, bottom: 4),
+                    child: const Text(
+                      'Coca Cola',
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 4),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Serving size',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 14,
+                          ),
+                        ),
+                        Text(
+                          fetchedProduct.servingSize!,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 18,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 4,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'Amount per serving ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            'Calories',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 37,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                        fetchedProduct.nutriments!.energyServing.toString(),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 60,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    child: const Text(
+                      '% Daily Value*',
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 10,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 4),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Total Fat',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 30,
+                          ),
+                        ),
+                        Text(
+                          fetchedProduct.nutriments!.fat.toString(),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 30,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Saturated Fat ',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 20,
+                          ),
+                        ),
+                        Text(
+                          fetchedProduct.nutriments!.saturatedFatServing
+                              .toString(),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 27,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Trans Fat ',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 20,
+                          ),
+                        ),
+                        Text(
+                          fetchedProduct.nutriments!.transFat.toString(),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Cholesterol ',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 25,
+                          ),
+                        ),
+                        Text(
+                          fetchedProduct.nutriments!.cholesterolServing
+                              .toString(),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 27,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Sodium ${fetchedProduct.nutriments!.sodiumUnit}',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 25,
+                          ),
+                        ),
+                        Text(
+                          fetchedProduct.nutriments!.sodium.toString(),
+                          style: const TextStyle(
+                              fontWeight: FontWeight.w900, fontSize: 27),
+                        )
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'Total Carbonhydrate ' '50',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 25,
+                          ),
+                        ),
+                        Text(
+                          '5%',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 27,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'Dietary Fiber ' '8g',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 25,
+                          ),
+                        ),
+                        Text(
+                          '55',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 27,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'Total Sugar ' '40g',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 25,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'Protein ' '5g',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 37,
+                          ),
+                        ),
+                        Text(
+                          '40',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 27,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'Calcium ' '20mg',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 25,
+                          ),
+                        ),
+                        Text(
+                          '2',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 27,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'Iron ' '30g',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300, fontSize: 25),
+                        ),
+                        Text(
+                          '8',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w900, fontSize: 25),
+                        )
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Theme.of(context).dividerColor,
+                  ),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'Potassium ' '50mg',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 25,
+                          ),
+                        ),
+                        Text(
+                          '90',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w900, fontSize: 27),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    margin: const EdgeInsets.only(top: 16),
+                    child: const Text(
+                      '*Percent Daily Values are based on a 2000 calorie diet',
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 10,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
+            Container(
+              padding: const EdgeInsets.only(bottom: 64),
+            )
           ],
         ),
-      );
+      ),
+    );
+  }
 }

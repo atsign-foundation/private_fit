@@ -222,18 +222,22 @@ mixin _$OpenFoodState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(OpenFoodFailures openFoodfailures)
+        failureGettingFood,
     required TResult Function(FetchedProduct fetchedProduct) loadSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
     required TResult orElse(),
   }) =>
@@ -241,18 +245,21 @@ mixin _$OpenFoodState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_FailureGettingFood value) failureGettingFood,
     required TResult Function(_LoadSuccess value) loadSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
     required TResult orElse(),
   }) =>
@@ -316,6 +323,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(OpenFoodFailures openFoodfailures)
+        failureGettingFood,
     required TResult Function(FetchedProduct fetchedProduct) loadSuccess,
   }) {
     return initial();
@@ -325,6 +334,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
   }) {
     return initial?.call();
@@ -334,6 +344,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
     required TResult orElse(),
   }) {
@@ -347,6 +358,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_FailureGettingFood value) failureGettingFood,
     required TResult Function(_LoadSuccess value) loadSuccess,
   }) {
     return initial(this);
@@ -356,6 +368,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
   }) {
     return initial?.call(this);
@@ -365,6 +378,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
     required TResult orElse(),
   }) {
@@ -377,6 +391,159 @@ class _$_Initial implements _Initial {
 
 abstract class _Initial implements OpenFoodState {
   const factory _Initial() = _$_Initial;
+}
+
+/// @nodoc
+abstract class _$$_FailureGettingFoodCopyWith<$Res> {
+  factory _$$_FailureGettingFoodCopyWith(_$_FailureGettingFood value,
+          $Res Function(_$_FailureGettingFood) then) =
+      __$$_FailureGettingFoodCopyWithImpl<$Res>;
+  $Res call({OpenFoodFailures openFoodfailures});
+
+  $OpenFoodFailuresCopyWith<$Res> get openFoodfailures;
+}
+
+/// @nodoc
+class __$$_FailureGettingFoodCopyWithImpl<$Res>
+    extends _$OpenFoodStateCopyWithImpl<$Res>
+    implements _$$_FailureGettingFoodCopyWith<$Res> {
+  __$$_FailureGettingFoodCopyWithImpl(
+      _$_FailureGettingFood _value, $Res Function(_$_FailureGettingFood) _then)
+      : super(_value, (v) => _then(v as _$_FailureGettingFood));
+
+  @override
+  _$_FailureGettingFood get _value => super._value as _$_FailureGettingFood;
+
+  @override
+  $Res call({
+    Object? openFoodfailures = freezed,
+  }) {
+    return _then(_$_FailureGettingFood(
+      openFoodfailures == freezed
+          ? _value.openFoodfailures
+          : openFoodfailures // ignore: cast_nullable_to_non_nullable
+              as OpenFoodFailures,
+    ));
+  }
+
+  @override
+  $OpenFoodFailuresCopyWith<$Res> get openFoodfailures {
+    return $OpenFoodFailuresCopyWith<$Res>(_value.openFoodfailures, (value) {
+      return _then(_value.copyWith(openFoodfailures: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_FailureGettingFood implements _FailureGettingFood {
+  const _$_FailureGettingFood(this.openFoodfailures);
+
+  @override
+  final OpenFoodFailures openFoodfailures;
+
+  @override
+  String toString() {
+    return 'OpenFoodState.failureGettingFood(openFoodfailures: $openFoodfailures)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_FailureGettingFood &&
+            const DeepCollectionEquality()
+                .equals(other.openFoodfailures, openFoodfailures));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(openFoodfailures));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_FailureGettingFoodCopyWith<_$_FailureGettingFood> get copyWith =>
+      __$$_FailureGettingFoodCopyWithImpl<_$_FailureGettingFood>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(OpenFoodFailures openFoodfailures)
+        failureGettingFood,
+    required TResult Function(FetchedProduct fetchedProduct) loadSuccess,
+  }) {
+    return failureGettingFood(openFoodfailures);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
+    TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
+  }) {
+    return failureGettingFood?.call(openFoodfailures);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
+    TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
+    required TResult orElse(),
+  }) {
+    if (failureGettingFood != null) {
+      return failureGettingFood(openFoodfailures);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_FailureGettingFood value) failureGettingFood,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+  }) {
+    return failureGettingFood(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FailureGettingFood value)? failureGettingFood,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+  }) {
+    return failureGettingFood?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FailureGettingFood value)? failureGettingFood,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    required TResult orElse(),
+  }) {
+    if (failureGettingFood != null) {
+      return failureGettingFood(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FailureGettingFood implements OpenFoodState {
+  const factory _FailureGettingFood(final OpenFoodFailures openFoodfailures) =
+      _$_FailureGettingFood;
+
+  OpenFoodFailures get openFoodfailures => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_FailureGettingFoodCopyWith<_$_FailureGettingFood> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -446,6 +613,8 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(OpenFoodFailures openFoodfailures)
+        failureGettingFood,
     required TResult Function(FetchedProduct fetchedProduct) loadSuccess,
   }) {
     return loadSuccess(fetchedProduct);
@@ -455,6 +624,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
   }) {
     return loadSuccess?.call(fetchedProduct);
@@ -464,6 +634,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
     required TResult orElse(),
   }) {
@@ -477,6 +648,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_FailureGettingFood value) failureGettingFood,
     required TResult Function(_LoadSuccess value) loadSuccess,
   }) {
     return loadSuccess(this);
@@ -486,6 +658,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
   }) {
     return loadSuccess?.call(this);
@@ -495,6 +668,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
     required TResult orElse(),
   }) {
