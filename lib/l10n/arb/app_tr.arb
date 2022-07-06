@@ -4,7 +4,7 @@
   "@app_title": {
     "description": "The title of the App"
   },
-  "on_board_atsign": "@SIGN YÜKLENİYOR",
+  "on_board_atsign": "@SIGN GİRİŞ",
   "@on_board_atsign": {
     "description": "On boarding an atsign"
   },
