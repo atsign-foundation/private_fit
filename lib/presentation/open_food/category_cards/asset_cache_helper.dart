@@ -26,12 +26,8 @@ class AssetCacheHelper {
       );
 
   void notFound() => debugPrint(
-<<<<<<< HEAD
-      'please download $url and put it in asset somewhere like $cachedFilenames');
-=======
         'please download $url and put it in asset  like $cachedFilenames',
       );
->>>>>>> feature/openfoodfacts
 
   Exception loadException() =>
       Exception('could not load any cached file ($cachedFilenames)');

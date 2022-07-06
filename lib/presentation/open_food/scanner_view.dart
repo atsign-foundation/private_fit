@@ -1,19 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
-<<<<<<< HEAD
-=======
 import 'package:flutter/cupertino.dart';
->>>>>>> feature/openfoodfacts
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_qr_reader/flutter_qr_reader.dart';
 import 'package:glassmorphism/glassmorphism.dart';
-<<<<<<< HEAD
-import 'package:private_fit/application/open_food/bloc/open_food_bloc.dart';
-import 'package:private_fit/injections.dart';
-import 'package:private_fit/l10n/l10n.dart';
-import 'package:private_fit/presentation/open_food/product_cards/smooth_product_card_found.dart';
-import 'package:private_fit/presentation/open_food/product_details_view.dart';
-=======
 import 'package:openfoodfacts/model/OrderedNutrients.dart';
 import 'package:private_fit/application/open_food/bloc/open_food_bloc.dart';
 import 'package:private_fit/domain/open_food/open_food_facts_failures.dart';
@@ -22,23 +12,14 @@ import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/open_food/product_cards/nutrition_page_loaded.dart';
 import 'package:private_fit/presentation/open_food/product_cards/ordered_nutrients_cache.dart';
->>>>>>> feature/openfoodfacts
 import 'package:private_fit/presentation/open_food/utils/scanner_visor_painter.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/app_styles.dart';
 
 // ignore: must_be_immutable
 class ScannerView extends StatelessWidget {
-<<<<<<< HEAD
-  ScannerView({Key? key}) : super(key: key);
-  late QrReaderViewController qrReaderViewController;
-<<<<<<< HEAD
 
-=======
->>>>>>> feature/openfoodfacts
-=======
   const ScannerView({Key? key}) : super(key: key);
 
->>>>>>> feature/openfoodfacts
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -51,16 +32,6 @@ class ScannerView extends StatelessWidget {
             return OnInitialState(i10n: i10n);
           },
           loadSuccess: (value) {
-<<<<<<< HEAD
-            return SmoothProductCardFound(
-              product: value.fetchedProduct.product!,
-              heroTag: value.fetchedProduct.product!.barcode!,
-              backgroundColor: Colors.white,
-            );
-            // ProductView(
-            //   fetchedProduct: value.fetchedProduct,
-            // ); //ProductDetailsView(fetchedProduct: value.fetchedProduct);
-=======
             return FutureBuilder<OrderedNutrients>(
               future: OrderedNutrientsCache().download(context),
               builder: (context, snapshot) {
@@ -76,15 +47,11 @@ class ScannerView extends StatelessWidget {
                   ),
                 );
               },
-<<<<<<< HEAD
-            );
->>>>>>> feature/openfoodfacts
-=======
             ); //OnLoadSuccess(fetchedProduct: value.fetchedProduct);
           },
           failureGettingFood: (failures) {
             return OnFailures(openFoodFailures: failures.openFoodfailures);
->>>>>>> feature/openfoodfacts
+
           },
         );
       },
