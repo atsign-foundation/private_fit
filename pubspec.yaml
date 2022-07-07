@@ -50,6 +50,7 @@ dependencies:
   injectable: ^1.5.3
   intl: ^0.17.0
   json_annotation: ^4.4.0
+  loading_animation_widget: ^1.2.0+2
   logger: ^1.1.0
   modal_bottom_sheet: ^2.1.0
   openfoodfacts: ^1.19.0

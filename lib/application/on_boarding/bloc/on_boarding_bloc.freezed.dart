@@ -23,6 +23,7 @@ mixin _$OnBoardingEvent {
             Map<String?, AtClientService> value, String? atsign)
         atSignOnBoardingSucces,
     required TResult Function(Object? object) onBoardingError,
+    required TResult Function(String username) setUserName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,6 +32,7 @@ mixin _$OnBoardingEvent {
     TResult Function(Map<String?, AtClientService> value, String? atsign)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(String username)? setUserName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,6 +41,7 @@ mixin _$OnBoardingEvent {
     TResult Function(Map<String?, AtClientService> value, String? atsign)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(String username)? setUserName,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +51,7 @@ mixin _$OnBoardingEvent {
     required TResult Function(_AtSignOnBoardingSucces value)
         atSignOnBoardingSucces,
     required TResult Function(_OnBoardingError value) onBoardingError,
+    required TResult Function(_SetUserName value) setUserName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$OnBoardingEvent {
     TResult Function(_OnBoardingAtSign value)? onBoardingAtSign,
     TResult Function(_AtSignOnBoardingSucces value)? atSignOnBoardingSucces,
     TResult Function(_OnBoardingError value)? onBoardingError,
+    TResult Function(_SetUserName value)? setUserName,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +67,7 @@ mixin _$OnBoardingEvent {
     TResult Function(_OnBoardingAtSign value)? onBoardingAtSign,
     TResult Function(_AtSignOnBoardingSucces value)? atSignOnBoardingSucces,
     TResult Function(_OnBoardingError value)? onBoardingError,
+    TResult Function(_SetUserName value)? setUserName,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +145,7 @@ class _$_OnBoardingAtSign
             Map<String?, AtClientService> value, String? atsign)
         atSignOnBoardingSucces,
     required TResult Function(Object? object) onBoardingError,
+    required TResult Function(String username) setUserName,
   }) {
     return onBoardingAtSign();
   }
@@ -150,6 +157,7 @@ class _$_OnBoardingAtSign
     TResult Function(Map<String?, AtClientService> value, String? atsign)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(String username)? setUserName,
   }) {
     return onBoardingAtSign?.call();
   }
@@ -161,6 +169,7 @@ class _$_OnBoardingAtSign
     TResult Function(Map<String?, AtClientService> value, String? atsign)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(String username)? setUserName,
     required TResult orElse(),
   }) {
     if (onBoardingAtSign != null) {
@@ -176,6 +185,7 @@ class _$_OnBoardingAtSign
     required TResult Function(_AtSignOnBoardingSucces value)
         atSignOnBoardingSucces,
     required TResult Function(_OnBoardingError value) onBoardingError,
+    required TResult Function(_SetUserName value) setUserName,
   }) {
     return onBoardingAtSign(this);
   }
@@ -186,6 +196,7 @@ class _$_OnBoardingAtSign
     TResult Function(_OnBoardingAtSign value)? onBoardingAtSign,
     TResult Function(_AtSignOnBoardingSucces value)? atSignOnBoardingSucces,
     TResult Function(_OnBoardingError value)? onBoardingError,
+    TResult Function(_SetUserName value)? setUserName,
   }) {
     return onBoardingAtSign?.call(this);
   }
@@ -196,6 +207,7 @@ class _$_OnBoardingAtSign
     TResult Function(_OnBoardingAtSign value)? onBoardingAtSign,
     TResult Function(_AtSignOnBoardingSucces value)? atSignOnBoardingSucces,
     TResult Function(_OnBoardingError value)? onBoardingError,
+    TResult Function(_SetUserName value)? setUserName,
     required TResult orElse(),
   }) {
     if (onBoardingAtSign != null) {
@@ -310,6 +322,7 @@ class _$_AtSignOnBoardingSucces
             Map<String?, AtClientService> value, String? atsign)
         atSignOnBoardingSucces,
     required TResult Function(Object? object) onBoardingError,
+    required TResult Function(String username) setUserName,
   }) {
     return atSignOnBoardingSucces(value, atsign);
   }
@@ -321,6 +334,7 @@ class _$_AtSignOnBoardingSucces
     TResult Function(Map<String?, AtClientService> value, String? atsign)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(String username)? setUserName,
   }) {
     return atSignOnBoardingSucces?.call(value, atsign);
   }
@@ -332,6 +346,7 @@ class _$_AtSignOnBoardingSucces
     TResult Function(Map<String?, AtClientService> value, String? atsign)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(String username)? setUserName,
     required TResult orElse(),
   }) {
     if (atSignOnBoardingSucces != null) {
@@ -347,6 +362,7 @@ class _$_AtSignOnBoardingSucces
     required TResult Function(_AtSignOnBoardingSucces value)
         atSignOnBoardingSucces,
     required TResult Function(_OnBoardingError value) onBoardingError,
+    required TResult Function(_SetUserName value) setUserName,
   }) {
     return atSignOnBoardingSucces(this);
   }
@@ -357,6 +373,7 @@ class _$_AtSignOnBoardingSucces
     TResult Function(_OnBoardingAtSign value)? onBoardingAtSign,
     TResult Function(_AtSignOnBoardingSucces value)? atSignOnBoardingSucces,
     TResult Function(_OnBoardingError value)? onBoardingError,
+    TResult Function(_SetUserName value)? setUserName,
   }) {
     return atSignOnBoardingSucces?.call(this);
   }
@@ -367,6 +384,7 @@ class _$_AtSignOnBoardingSucces
     TResult Function(_OnBoardingAtSign value)? onBoardingAtSign,
     TResult Function(_AtSignOnBoardingSucces value)? atSignOnBoardingSucces,
     TResult Function(_OnBoardingError value)? onBoardingError,
+    TResult Function(_SetUserName value)? setUserName,
     required TResult orElse(),
   }) {
     if (atSignOnBoardingSucces != null) {
@@ -465,6 +483,7 @@ class _$_OnBoardingError
             Map<String?, AtClientService> value, String? atsign)
         atSignOnBoardingSucces,
     required TResult Function(Object? object) onBoardingError,
+    required TResult Function(String username) setUserName,
   }) {
     return onBoardingError(object);
   }
@@ -476,6 +495,7 @@ class _$_OnBoardingError
     TResult Function(Map<String?, AtClientService> value, String? atsign)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(String username)? setUserName,
   }) {
     return onBoardingError?.call(object);
   }
@@ -487,6 +507,7 @@ class _$_OnBoardingError
     TResult Function(Map<String?, AtClientService> value, String? atsign)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(String username)? setUserName,
     required TResult orElse(),
   }) {
     if (onBoardingError != null) {
@@ -502,6 +523,7 @@ class _$_OnBoardingError
     required TResult Function(_AtSignOnBoardingSucces value)
         atSignOnBoardingSucces,
     required TResult Function(_OnBoardingError value) onBoardingError,
+    required TResult Function(_SetUserName value) setUserName,
   }) {
     return onBoardingError(this);
   }
@@ -512,6 +534,7 @@ class _$_OnBoardingError
     TResult Function(_OnBoardingAtSign value)? onBoardingAtSign,
     TResult Function(_AtSignOnBoardingSucces value)? atSignOnBoardingSucces,
     TResult Function(_OnBoardingError value)? onBoardingError,
+    TResult Function(_SetUserName value)? setUserName,
   }) {
     return onBoardingError?.call(this);
   }
@@ -522,6 +545,7 @@ class _$_OnBoardingError
     TResult Function(_OnBoardingAtSign value)? onBoardingAtSign,
     TResult Function(_AtSignOnBoardingSucces value)? atSignOnBoardingSucces,
     TResult Function(_OnBoardingError value)? onBoardingError,
+    TResult Function(_SetUserName value)? setUserName,
     required TResult orElse(),
   }) {
     if (onBoardingError != null) {
@@ -541,6 +565,165 @@ abstract class _OnBoardingError implements OnBoardingEvent {
 }
 
 /// @nodoc
+abstract class _$$_SetUserNameCopyWith<$Res> {
+  factory _$$_SetUserNameCopyWith(
+          _$_SetUserName value, $Res Function(_$_SetUserName) then) =
+      __$$_SetUserNameCopyWithImpl<$Res>;
+  $Res call({String username});
+}
+
+/// @nodoc
+class __$$_SetUserNameCopyWithImpl<$Res>
+    extends _$OnBoardingEventCopyWithImpl<$Res>
+    implements _$$_SetUserNameCopyWith<$Res> {
+  __$$_SetUserNameCopyWithImpl(
+      _$_SetUserName _value, $Res Function(_$_SetUserName) _then)
+      : super(_value, (v) => _then(v as _$_SetUserName));
+
+  @override
+  _$_SetUserName get _value => super._value as _$_SetUserName;
+
+  @override
+  $Res call({
+    Object? username = freezed,
+  }) {
+    return _then(_$_SetUserName(
+      username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SetUserName with DiagnosticableTreeMixin implements _SetUserName {
+  const _$_SetUserName(this.username);
+
+  @override
+  final String username;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'OnBoardingEvent.setUserName(username: $username)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'OnBoardingEvent.setUserName'))
+      ..add(DiagnosticsProperty('username', username));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SetUserName &&
+            const DeepCollectionEquality().equals(other.username, username));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(username));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SetUserNameCopyWith<_$_SetUserName> get copyWith =>
+      __$$_SetUserNameCopyWithImpl<_$_SetUserName>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onBoardingAtSign,
+    required TResult Function(
+            Map<String?, AtClientService> value, String? atsign)
+        atSignOnBoardingSucces,
+    required TResult Function(Object? object) onBoardingError,
+    required TResult Function(String username) setUserName,
+  }) {
+    return setUserName(username);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? onBoardingAtSign,
+    TResult Function(Map<String?, AtClientService> value, String? atsign)?
+        atSignOnBoardingSucces,
+    TResult Function(Object? object)? onBoardingError,
+    TResult Function(String username)? setUserName,
+  }) {
+    return setUserName?.call(username);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onBoardingAtSign,
+    TResult Function(Map<String?, AtClientService> value, String? atsign)?
+        atSignOnBoardingSucces,
+    TResult Function(Object? object)? onBoardingError,
+    TResult Function(String username)? setUserName,
+    required TResult orElse(),
+  }) {
+    if (setUserName != null) {
+      return setUserName(username);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnBoardingAtSign value) onBoardingAtSign,
+    required TResult Function(_AtSignOnBoardingSucces value)
+        atSignOnBoardingSucces,
+    required TResult Function(_OnBoardingError value) onBoardingError,
+    required TResult Function(_SetUserName value) setUserName,
+  }) {
+    return setUserName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_OnBoardingAtSign value)? onBoardingAtSign,
+    TResult Function(_AtSignOnBoardingSucces value)? atSignOnBoardingSucces,
+    TResult Function(_OnBoardingError value)? onBoardingError,
+    TResult Function(_SetUserName value)? setUserName,
+  }) {
+    return setUserName?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnBoardingAtSign value)? onBoardingAtSign,
+    TResult Function(_AtSignOnBoardingSucces value)? atSignOnBoardingSucces,
+    TResult Function(_OnBoardingError value)? onBoardingError,
+    TResult Function(_SetUserName value)? setUserName,
+    required TResult orElse(),
+  }) {
+    if (setUserName != null) {
+      return setUserName(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetUserName implements OnBoardingEvent {
+  const factory _SetUserName(final String username) = _$_SetUserName;
+
+  String get username => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_SetUserNameCopyWith<_$_SetUserName> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$OnBoardingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -549,6 +732,8 @@ mixin _$OnBoardingState {
     required TResult Function(OnBoardingFailure onBoardingFailure) failure,
     required TResult Function(Option<String> atSign) loadSuccess,
     required TResult Function(Object? object) onBoardingError,
+    required TResult Function(Either<OnBoardingFailure, bool> result)
+        settingUsername,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -558,6 +743,7 @@ mixin _$OnBoardingState {
     TResult Function(OnBoardingFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -567,6 +753,7 @@ mixin _$OnBoardingState {
     TResult Function(OnBoardingFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -577,6 +764,7 @@ mixin _$OnBoardingState {
     required TResult Function(_Failure value) failure,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_onBoardingError value) onBoardingError,
+    required TResult Function(_settingUsername value) settingUsername,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -586,6 +774,7 @@ mixin _$OnBoardingState {
     TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -595,6 +784,7 @@ mixin _$OnBoardingState {
     TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -667,6 +857,8 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(OnBoardingFailure onBoardingFailure) failure,
     required TResult Function(Option<String> atSign) loadSuccess,
     required TResult Function(Object? object) onBoardingError,
+    required TResult Function(Either<OnBoardingFailure, bool> result)
+        settingUsername,
   }) {
     return initial();
   }
@@ -679,6 +871,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function(OnBoardingFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
   }) {
     return initial?.call();
   }
@@ -691,6 +884,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function(OnBoardingFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -707,6 +901,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(_Failure value) failure,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_onBoardingError value) onBoardingError,
+    required TResult Function(_settingUsername value) settingUsername,
   }) {
     return initial(this);
   }
@@ -719,6 +914,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
   }) {
     return initial?.call(this);
   }
@@ -731,6 +927,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -821,6 +1018,8 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
     required TResult Function(OnBoardingFailure onBoardingFailure) failure,
     required TResult Function(Option<String> atSign) loadSuccess,
     required TResult Function(Object? object) onBoardingError,
+    required TResult Function(Either<OnBoardingFailure, bool> result)
+        settingUsername,
   }) {
     return loading(atClientPreference);
   }
@@ -833,6 +1032,7 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
     TResult Function(OnBoardingFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
   }) {
     return loading?.call(atClientPreference);
   }
@@ -845,6 +1045,7 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
     TResult Function(OnBoardingFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -861,6 +1062,7 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
     required TResult Function(_Failure value) failure,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_onBoardingError value) onBoardingError,
+    required TResult Function(_settingUsername value) settingUsername,
   }) {
     return loading(this);
   }
@@ -873,6 +1075,7 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
     TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
   }) {
     return loading?.call(this);
   }
@@ -885,6 +1088,7 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
     TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -991,6 +1195,8 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     required TResult Function(OnBoardingFailure onBoardingFailure) failure,
     required TResult Function(Option<String> atSign) loadSuccess,
     required TResult Function(Object? object) onBoardingError,
+    required TResult Function(Either<OnBoardingFailure, bool> result)
+        settingUsername,
   }) {
     return failure(onBoardingFailure);
   }
@@ -1003,6 +1209,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function(OnBoardingFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
   }) {
     return failure?.call(onBoardingFailure);
   }
@@ -1015,6 +1222,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function(OnBoardingFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -1031,6 +1239,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     required TResult Function(_Failure value) failure,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_onBoardingError value) onBoardingError,
+    required TResult Function(_settingUsername value) settingUsername,
   }) {
     return failure(this);
   }
@@ -1043,6 +1252,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
   }) {
     return failure?.call(this);
   }
@@ -1055,6 +1265,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -1152,6 +1363,8 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
     required TResult Function(OnBoardingFailure onBoardingFailure) failure,
     required TResult Function(Option<String> atSign) loadSuccess,
     required TResult Function(Object? object) onBoardingError,
+    required TResult Function(Either<OnBoardingFailure, bool> result)
+        settingUsername,
   }) {
     return loadSuccess(atSign);
   }
@@ -1164,6 +1377,7 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
     TResult Function(OnBoardingFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
   }) {
     return loadSuccess?.call(atSign);
   }
@@ -1176,6 +1390,7 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
     TResult Function(OnBoardingFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -1192,6 +1407,7 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
     required TResult Function(_Failure value) failure,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_onBoardingError value) onBoardingError,
+    required TResult Function(_settingUsername value) settingUsername,
   }) {
     return loadSuccess(this);
   }
@@ -1204,6 +1420,7 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
     TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
   }) {
     return loadSuccess?.call(this);
   }
@@ -1216,6 +1433,7 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
     TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -1311,6 +1529,8 @@ class _$_onBoardingError
     required TResult Function(OnBoardingFailure onBoardingFailure) failure,
     required TResult Function(Option<String> atSign) loadSuccess,
     required TResult Function(Object? object) onBoardingError,
+    required TResult Function(Either<OnBoardingFailure, bool> result)
+        settingUsername,
   }) {
     return onBoardingError(object);
   }
@@ -1323,6 +1543,7 @@ class _$_onBoardingError
     TResult Function(OnBoardingFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
   }) {
     return onBoardingError?.call(object);
   }
@@ -1335,6 +1556,7 @@ class _$_onBoardingError
     TResult Function(OnBoardingFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
     required TResult orElse(),
   }) {
     if (onBoardingError != null) {
@@ -1351,6 +1573,7 @@ class _$_onBoardingError
     required TResult Function(_Failure value) failure,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_onBoardingError value) onBoardingError,
+    required TResult Function(_settingUsername value) settingUsername,
   }) {
     return onBoardingError(this);
   }
@@ -1363,6 +1586,7 @@ class _$_onBoardingError
     TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
   }) {
     return onBoardingError?.call(this);
   }
@@ -1375,6 +1599,7 @@ class _$_onBoardingError
     TResult Function(_Failure value)? failure,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
     required TResult orElse(),
   }) {
     if (onBoardingError != null) {
@@ -1390,5 +1615,176 @@ abstract class _onBoardingError implements OnBoardingState {
   Object? get object => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_onBoardingErrorCopyWith<_$_onBoardingError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_settingUsernameCopyWith<$Res> {
+  factory _$$_settingUsernameCopyWith(
+          _$_settingUsername value, $Res Function(_$_settingUsername) then) =
+      __$$_settingUsernameCopyWithImpl<$Res>;
+  $Res call({Either<OnBoardingFailure, bool> result});
+}
+
+/// @nodoc
+class __$$_settingUsernameCopyWithImpl<$Res>
+    extends _$OnBoardingStateCopyWithImpl<$Res>
+    implements _$$_settingUsernameCopyWith<$Res> {
+  __$$_settingUsernameCopyWithImpl(
+      _$_settingUsername _value, $Res Function(_$_settingUsername) _then)
+      : super(_value, (v) => _then(v as _$_settingUsername));
+
+  @override
+  _$_settingUsername get _value => super._value as _$_settingUsername;
+
+  @override
+  $Res call({
+    Object? result = freezed,
+  }) {
+    return _then(_$_settingUsername(
+      result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as Either<OnBoardingFailure, bool>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_settingUsername
+    with DiagnosticableTreeMixin
+    implements _settingUsername {
+  const _$_settingUsername(this.result);
+
+  @override
+  final Either<OnBoardingFailure, bool> result;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'OnBoardingState.settingUsername(result: $result)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'OnBoardingState.settingUsername'))
+      ..add(DiagnosticsProperty('result', result));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_settingUsername &&
+            const DeepCollectionEquality().equals(other.result, result));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_settingUsernameCopyWith<_$_settingUsername> get copyWith =>
+      __$$_settingUsernameCopyWithImpl<_$_settingUsername>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(AtClientPreference atClientPreference) loading,
+    required TResult Function(OnBoardingFailure onBoardingFailure) failure,
+    required TResult Function(Option<String> atSign) loadSuccess,
+    required TResult Function(Object? object) onBoardingError,
+    required TResult Function(Either<OnBoardingFailure, bool> result)
+        settingUsername,
+  }) {
+    return settingUsername(result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(AtClientPreference atClientPreference)? loading,
+    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(Option<String> atSign)? loadSuccess,
+    TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
+  }) {
+    return settingUsername?.call(result);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(AtClientPreference atClientPreference)? loading,
+    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(Option<String> atSign)? loadSuccess,
+    TResult Function(Object? object)? onBoardingError,
+    TResult Function(Either<OnBoardingFailure, bool> result)? settingUsername,
+    required TResult orElse(),
+  }) {
+    if (settingUsername != null) {
+      return settingUsername(result);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Failure value) failure,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_onBoardingError value) onBoardingError,
+    required TResult Function(_settingUsername value) settingUsername,
+  }) {
+    return settingUsername(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
+  }) {
+    return settingUsername?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_onBoardingError value)? onBoardingError,
+    TResult Function(_settingUsername value)? settingUsername,
+    required TResult orElse(),
+  }) {
+    if (settingUsername != null) {
+      return settingUsername(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _settingUsername implements OnBoardingState {
+  const factory _settingUsername(final Either<OnBoardingFailure, bool> result) =
+      _$_settingUsername;
+
+  Either<OnBoardingFailure, bool> get result =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_settingUsernameCopyWith<_$_settingUsername> get copyWith =>
       throw _privateConstructorUsedError;
 }

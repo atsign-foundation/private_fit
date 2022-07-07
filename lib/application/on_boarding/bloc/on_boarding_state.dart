@@ -11,4 +11,8 @@ class OnBoardingState with _$OnBoardingState {
       _LoadSuccess;
   const factory OnBoardingState.onBoardingError(Object? object) =
       _onBoardingError;
+
+  const factory OnBoardingState.settingUsername(
+    Either<OnBoardingFailure, bool> result,
+  ) = _settingUsername;
 }

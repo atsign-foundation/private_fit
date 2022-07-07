@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:at_base2e15/at_base2e15.dart';
 import 'package:at_client_mobile/at_client_mobile.dart';
 import 'package:at_onboarding_flutter/at_onboarding_flutter.dart';
 import 'package:at_server_status/at_server_status.dart';
@@ -13,8 +14,12 @@ import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:private_fit/application/on_boarding/bloc/on_boarding_bloc.dart';
+import 'package:private_fit/domain/core/key_model.dart';
+import 'package:private_fit/domain/core/keys.dart';
+import 'package:private_fit/domain/core/value_model.dart';
 import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
-import 'package:private_fit/domain/on_boarding/onboarding_failures.dart';
+import 'package:private_fit/domain/core/onboarding_failures.dart';
+import 'package:private_fit/infrastructure/atplatform/platform_services.dart';
 import 'package:private_fit/shared/constants.dart';
 
 /// Implementation of [IAtsignOnBoardingFacade] interface
@@ -25,14 +30,16 @@ class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
   Map<String?, AtClientService> atClientServiceMap = {};
   AtClientManager atClientManager = AtClientManager.getInstance();
 
-  late String? _currentAtSign;
+  final SdkServices _sdkServices = SdkServices.getInstance();
+
+  late String _currentAtSign;
 
   @override
   Option<String> getOnBoardedAtSign() {
-    final currentAtSign =
+    final _currentAtSign =
         AtClientManager.getInstance().atClient.getCurrentAtSign();
-    _currentAtSign = currentAtSign;
-    return optionOf(currentAtSign);
+    // _currentAtSign = currentAtSign!;
+    return optionOf(_currentAtSign);
   }
 
   ///This Functional (using functinal programming Haskel like) function
@@ -61,23 +68,25 @@ class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
   Future<Either<OnBoardingFailure, Unit>> onBoardDataWhenSuccessful(
     Map<String?, AtClientService> v,
     String? atSign,
-  ) async =>
-      loadAtClientPreference().then(
-        (value) => value.fold(
-          (l) => left(const OnBoardingFailure.failToSetOnBoardData()),
-          (atClientPreference) async {
-            await AtClientManager.getInstance().setCurrentAtSign(
-              atSign!,
-              Constants.appNamespace,
-              atClientPreference,
-            );
-            atClientServiceMap = v;
-            await KeychainUtil.makeAtSignPrimary(atSign);
-            AtClientManager.getInstance().syncService.sync();
-            return right(unit);
-          },
-        ),
-      );
+  ) async {
+    return loadAtClientPreference().then(
+      (value) => value.fold(
+        (l) => left(const OnBoardingFailure.failToSetOnBoardData()),
+        (atClientPreference) async {
+          await AtClientManager.getInstance().setCurrentAtSign(
+            atSign!,
+            Constants.appNamespace,
+            atClientPreference,
+          );
+          atClientServiceMap = v;
+          await KeychainUtil.makeAtSignPrimary(atSign);
+          AtClientManager.getInstance().syncService.sync();
+          _currentAtSign = atSign;
+          return right(unit);
+        },
+      ),
+    );
+  }
 
   /// Get @sign status
   Future<AtStatus> getAtSignStatus(String atSign) async => AtStatusImpl(
@@ -169,70 +178,108 @@ class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
   }
 
   // startMonitor needs to be called at the beginning of session
-  // Future<void> startMonitor() async {
-  //   _logger.finer('Starting app notification monitor');
-  //   atClientManager.notificationService
-  //       .subscribe(regex: Constants.syncRegex)
-  //       .listen((AtNotification monitorNotification) async {
-  //     try {
-  //       _logger.finer('Listening to notification: ${monitorNotification.id}');
-  //       if (!(await atClientManager.syncService.isInSync())) {
-  //         syncData();
-  //       }
-  //       await _listenToNotifications(monitorNotification);
-  //       await getReports();
-  //     } catch (e) {
-  //       _logger.severe(e.toString());
-  //     }
-  //   });
-  // }
+  Future<void> startMonitor() async {
+    _logger.finer('Starting app notification monitor');
+    atClientManager.notificationService
+        .subscribe(regex: Constants.syncRegex)
+        .listen((AtNotification monitorNotification) async {
+      try {
+        _logger.finer('Listening to notification: ${monitorNotification.id}');
+        if (!(await atClientManager.syncService.isInSync())) {
+          syncData();
+        }
+        await _listenToNotifications(monitorNotification);
+        // await getReports();
+      } catch (e) {
+        _logger.severe(e.toString());
+      }
+    });
+  }
 
-  /// Sync the data to the server
-  // static void syncData([Function? onSyncDone]) {
-  //   Future<void> _onSyncData(SyncResult synRes) async {
-  //     await _onSuccessCallback(synRes);
-  //     if (onSyncDone != null) {
-  //       onSyncDone();
-  //     }
-  //     if (_userData.isAdmin) await AppServices.getReports();
-  //   }
+  //Sync the data to the server
+  void syncData([Function? onSyncDone]) {
+    Future<void> _onSyncData(SyncResult synRes) async {
+      await _onSuccessCallback(synRes);
+      if (onSyncDone != null) {
+        onSyncDone();
+      }
+      // if (_userData.isAdmin) await AppServices.getReports();
+    }
 
-  //   _userData.setSyncStatus = SyncStatus.started;
-  //   sdkServices.atClientManager.syncService.setOnDone(_onSyncData);
-  //   sdkServices.atClientManager.syncService.sync(onDone: _onSyncData);
-  // }
+    // _userData.setSyncStatus = SyncStatus.started;
+    atClientManager.syncService.setOnDone(_onSyncData);
+    atClientManager.syncService.sync(onDone: _onSyncData);
+  }
 
-  // static Future<void> _listenToNotifications(
-  //   AtNotification monitorNotification,
-  // ) async {
-  //   _logger.finer('Listening to notification: ${monitorNotification.id}');
-  //   await _showNotification(monitorNotification);
-  // }
+  /// Function to be called when sync is done
+  Future<void> _onSuccessCallback(SyncResult syncResult) async {
+    _logger.finer(
+      '===================== ${syncResult.syncStatus.name} ===================',
+    );
+    await HapticFeedback.lightImpact();
+  }
 
-  // Future<void> _showNotification(AtNotification atNotification) async {
-  //   _logger.finer('inside show notification...');
-  //   const platformChannelSpecifics = NotificationDetails(
-  //     android: AndroidNotificationDetails(
-  //       'CHANNEL_ID',
-  //       'CHANNEL_NAME',
-  //       channelDescription: 'CHANNEL_DESCRIPTION',
-  //       importance: Importance.max,
-  //       priority: Priority.high,
-  //       showWhen: false,
-  //     ),
-  //     iOS: IOSNotificationDetails(),
-  //   );
+  Future<void> _listenToNotifications(
+    AtNotification monitorNotification,
+  ) async {
+    _logger.finer('Listening to notification: ${monitorNotification.id}');
+    await _showNotification(monitorNotification);
+  }
 
-  //   if (atNotification.key.contains('report')) {
-  //     await _notificationsPlugin.show(
-  //       0,
-  //       'Report',
-  //       atNotification.from + ' submitted feedback.',
-  //       platformChannelSpecifics,
-  //       payload: jsonEncode(atNotification.toJson()),
-  //     );
-  //   }
-  // }
+  Future<void> _showNotification(AtNotification atNotification) async {
+    _logger.finer('inside show notification...');
+    const platformChannelSpecifics = NotificationDetails(
+      android: AndroidNotificationDetails(
+        'CHANNEL_ID',
+        'CHANNEL_NAME',
+        channelDescription: 'CHANNEL_DESCRIPTION',
+        importance: Importance.max,
+        priority: Priority.high,
+        showWhen: false,
+      ),
+      iOS: IOSNotificationDetails(),
+    );
+    // if (atNotification.key.contains('report')) {
+    //   await _notificationsPlugin.show(
+    //     0,//todo(kzawadi): This need to wait for admin to be configured
+    //     'Report',
+    //     atNotification.from + ' submitted feedback.',
+    //     platformChannelSpecifics,
+    //     payload: jsonEncode(atNotification.toJson()),
+    //   );
+    // }
+  }
+
+  /// Fetches the master image key from secondary.
+  Future<Either<Unit, Uint8List>> getMasterImage() async {
+    _logger.finer('Getting master image');
+    final _keys =
+        await atClientManager.atClient.getAtKeys(regex: Keys.masterImgKey.key);
+    try {
+      late Uint8List value;
+      for (final _key in _keys) {
+        value = await atClientManager.atClient.get(_key).then(
+              (value) => Uint8List.fromList(
+                Base2e15.decode(
+                  // ignore: avoid_dynamic_calls
+                  json.decode(value.value.toString())['value'] as String,
+                ),
+              ),
+            );
+        // final masterImage = Uint8List.fromList(
+        //   Base2e15.decode(
+        //     json.decode(value.value.toString())['value'] as String,
+        //   ),
+        // );
+        // return right(value);
+      }
+      _logger.finer('Fetched master image successfully');
+      return right(value);
+    } on Exception catch (e, s) {
+      _logger.severe('Error getting master image', e, s);
+      return left(unit);
+    }
+  }
 
   // Future<void> getReports() async {
   //   _logger.finer('Fetching Reports');
@@ -258,4 +305,25 @@ class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
   //     return;
   //   }
   // }
+
+  @override
+  Future<Either<OnBoardingFailure, bool>> setUsername(String userName) async {
+    final _nameKey = Keys.nameKey
+      ..sharedWith = atClientManager.atClient.getCurrentAtSign()
+      ..sharedBy = atClientManager.atClient.getCurrentAtSign()
+      ..value = Value(
+        value: userName,
+        type: 'username',
+        labelName: 'User name',
+      );
+
+    try {
+      _logger.info('Setting a username $userName');
+      await _sdkServices.put(_nameKey);
+
+      return right(true);
+    } catch (e) {
+      return left(const OnBoardingFailure.failToSetUsername());
+    }
+  }
 }
