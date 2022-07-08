@@ -13,5 +13,5 @@ abstract class IAtsignOnBoardingFacade {
     String? atSign,
   );
 
-  Future<Either<OnBoardingFailure, bool>> setUsername(String username);
+  // Future<Either<OnBoardingFailure, bool>> setUsername(String username);
 }

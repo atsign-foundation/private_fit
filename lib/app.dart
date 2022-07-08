@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:private_fit/application/home/bloc/home_bloc.dart';
 import 'package:private_fit/application/on_boarding/bloc/on_boarding_bloc.dart';
 import 'package:private_fit/application/open_food/bloc/open_food_bloc.dart';
 import 'package:private_fit/injections.dart';
@@ -46,12 +47,18 @@ class PrivateFitApp extends StatelessWidget {
           BlocProvider(
             create: (context) => getIt<OpenFoodBloc>(),
           ),
+          BlocProvider(
+            create: (context) => getIt<HomeBloc>(),
+          ),
         ],
         child: AnimatedTheme(
           curve: Curves.easeInOut,
           duration: const Duration(milliseconds: 300),
-          data: FlexThemeData.light(scheme: FlexScheme.blueWhale),
-          child: CupertinoApp.router(
+          data: FlexThemeData.light(
+            scheme: FlexScheme.blueWhale,
+            useMaterial3: true,
+          ),
+          child: MaterialApp.router(
             title: 'Priv@te Fit',
             debugShowCheckedModeBanner: false,
             localizationsDelegates: const [

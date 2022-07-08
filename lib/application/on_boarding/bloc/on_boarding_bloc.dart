@@ -9,7 +9,6 @@ import 'package:injectable/injectable.dart';
 import 'package:private_fit/domain/contacts/use_cases/at_contacts_use_cases.dart';
 import 'package:private_fit/domain/core/onboarding_failures.dart';
 import 'package:private_fit/domain/on_boarding/use_cases/on_boarding_use_cases.dart';
-import 'package:private_fit/domain/on_boarding/use_cases/set_username_use_case.dart';
 
 part 'on_boarding_event.dart';
 part 'on_boarding_state.dart';
@@ -26,7 +25,6 @@ class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
     this._getOnBoardedAtSignUseCase,
     this._onBoardDataWhenSuccessfulUseCase,
     this._atContactInitializationUseCase,
-    this._setUserNameUseCase,
   ) : super(const OnBoardingState.initial()) {
     on<OnBoardingEvent>(_onBoardingEventHandler);
   }
@@ -35,7 +33,6 @@ class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
   final GetOnBoardedAtSignUseCase _getOnBoardedAtSignUseCase;
   final OnBoardDataWhenSuccessfulUseCase _onBoardDataWhenSuccessfulUseCase;
   final AtContactInitializationUseCase _atContactInitializationUseCase;
-  final SetUserNameUseCase _setUserNameUseCase;
 
   FutureOr<void> _onBoardingEventHandler(
     OnBoardingEvent event,
@@ -63,11 +60,6 @@ class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
         emit(
           OnBoardingState.onBoardingError(error),
         );
-      },
-      setUserName: (username) async {
-        await _setUserNameUseCase
-            .call(username)
-            .then((value) => emit(OnBoardingState.settingUsername(value)));
       },
     );
   }

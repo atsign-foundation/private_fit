@@ -11,5 +11,5 @@ class OnBoardingEvent with _$OnBoardingEvent {
   const factory OnBoardingEvent.onBoardingError(Object? object) =
       _OnBoardingError;
 
-  const factory OnBoardingEvent.setUserName(String username) = _SetUserName;
+  // const factory OnBoardingEvent.setUserName(String username) = _SetUserName;
 }

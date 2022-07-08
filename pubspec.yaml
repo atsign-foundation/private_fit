@@ -86,19 +86,19 @@ flutter:
   generate: true
   assets:
     - .env
-    - assets/images/person1.png
-    - assets/images/person2.png
-    - assets/images/splash_bg.png
-    - assets/images/empty_group.png
-    - assets/images/group_photo.png
-    - assets/images/cool.jpg
-    - assets/images/meditation.png
-    - assets/images/trainer.jpg
-    - assets/images/fitgirl.png
-    - assets/images/fitgirl01.png
-    - assets/images/fitman01.png
-    - assets/images/fitman.png
-    - assets/images/running.png
+    - assets/images/
+    - assets/images/
+    - assets/images/
+    - assets/images/
+    - assets/images/
+    - assets/images/
+    - assets/images/
+    - assets/images/
+    - assets/images/
+    - assets/images/
+    - assets/images/
+    - assets/images/
+    - assets/images/
     #### Curved
     - assets/icons/svgs/curved/Activity.svg
     - assets/icons/svgs/curved/AddUser.svg
@@ -204,9 +204,9 @@ flutter:
 
     - assets/on_boarding/images/
     - assets/on_boarding/assets/
-    - assets/on_boarding/assets/torus.obj
-    - assets/on_boarding/assets/cube.obj
-    - assets/on_boarding/assets/star.obj
+    - assets/on_boarding/assets/
+    - assets/on_boarding/assets/
+    - assets/on_boarding/assets/
 
   fonts:
     - family: HelveticaNeu

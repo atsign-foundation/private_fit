@@ -1,14 +1,14 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:private_fit/domain/core/onboarding_failures.dart';
-import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
+import 'package:private_fit/domain/home/i_home_facade.dart';
 
 @injectable
 class SetUserNameUseCase {
-  SetUserNameUseCase(this._atsignOnBoardingFacade);
+  SetUserNameUseCase(this._iHomeFacade);
 
-  final IAtsignOnBoardingFacade _atsignOnBoardingFacade;
+  final IHomeFacade _iHomeFacade;
 
   Future<Either<OnBoardingFailure, bool>> call(String username) =>
-      _atsignOnBoardingFacade.setUsername(username);
+      _iHomeFacade.setUsername(username);
 }
