@@ -38,7 +38,8 @@ class _PrivateFitAppState extends State<PrivateFitApp> {
         systemNavigationBarDividerColor: Colors.transparent,
       ),
       child: Theme(
-        data: FlexThemeData.light(scheme: FlexScheme.blueWhale),
+        data: FlexThemeData.light(
+            scheme: FlexScheme.blueWhale, useMaterial3: true,),
         child: CupertinoApp.router(
           title: 'Priv@te Fit',
           debugShowCheckedModeBanner: false,
