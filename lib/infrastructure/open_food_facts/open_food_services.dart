@@ -48,11 +48,7 @@ class OpenFoodFactsServices extends IOpenFoodFactsFacade {
   ) async {
     _logger.info('Got The Barcode from camera $barcode');
     ProductQuery.setCountry('us');
-<<<<<<< HEAD
-    ProductQuery.setLanguage('en-us');
-=======
     ProductQuery.setLanguage('en_Us');
->>>>>>> feature/openfoodfacts
     final configuration = ProductQueryConfiguration(
       barcode,
       fields: ProductQuery.fields,

@@ -14,7 +14,7 @@ import 'package:auto_route/auto_route.dart' as _i6;
 import 'package:flutter/material.dart' as _i7;
 
 import '../../domain/open_food/open_food_fetched_product.dart' as _i8;
-import '../home/home_page.dart' as _i1;
+import '../home/home_navigator.dart' as _i1;
 import '../on_boarding/on_boarding_page.dart' as _i2;
 import '../open_food/product_details_view.dart' as _i3;
 import '../open_food/scanner_page.dart' as _i4;
@@ -27,9 +27,9 @@ class Router extends _i6.RootStackRouter {
 
   @override
   final Map<String, _i6.PageFactory> pagesMap = {
-    HomePageRoute.name: (routeData) {
+    HomeNavigatorRoute.name: (routeData) {
       return _i6.CupertinoPageX<dynamic>(
-          routeData: routeData, child: const _i1.HomePage());
+          routeData: routeData, child: const _i1.HomeNavigator());
     },
     OnBoardingPageRoute.name: (routeData) {
       return _i6.CupertinoPageX<dynamic>(
@@ -54,7 +54,7 @@ class Router extends _i6.RootStackRouter {
 
   @override
   List<_i6.RouteConfig> get routes => [
-        _i6.RouteConfig(HomePageRoute.name, path: '/home-page'),
+        _i6.RouteConfig(HomeNavigatorRoute.name, path: '/home-navigator'),
         _i6.RouteConfig(OnBoardingPageRoute.name, path: '/on-boarding-page'),
         _i6.RouteConfig(ProductDetailsViewRoute.name,
             path: '/product-details-view'),
@@ -64,11 +64,12 @@ class Router extends _i6.RootStackRouter {
 }
 
 /// generated route for
-/// [_i1.HomePage]
-class HomePageRoute extends _i6.PageRouteInfo<void> {
-  const HomePageRoute() : super(HomePageRoute.name, path: '/home-page');
+/// [_i1.HomeNavigator]
+class HomeNavigatorRoute extends _i6.PageRouteInfo<void> {
+  const HomeNavigatorRoute()
+      : super(HomeNavigatorRoute.name, path: '/home-navigator');
 
-  static const String name = 'HomePageRoute';
+  static const String name = 'HomeNavigatorRoute';
 }
 
 /// generated route for
