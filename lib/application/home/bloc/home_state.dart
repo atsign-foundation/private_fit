@@ -5,4 +5,6 @@ class HomeState with _$HomeState {
   const factory HomeState.initial() = _Initial;
   const factory HomeState.username(Either<OnBoardingFailure, bool> result) =
       _Username;
+
+  const factory HomeState.keysFetched(List<AtKey> allKeys) = _KeysFetched;
 }

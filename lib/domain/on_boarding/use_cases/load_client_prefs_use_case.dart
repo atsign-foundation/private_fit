@@ -10,7 +10,7 @@ import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart'
 ///the failure by emitting appropriate [OnBoardingState]'s
 ///this way it made it very easier to handle success and failures and do
 ///something logic wise from either outcomes
-@injectable
+@lazySingleton
 class LoadAtClientPreferenceUseCase {
   LoadAtClientPreferenceUseCase(this._iAtsignOnBoardingFacade);
 

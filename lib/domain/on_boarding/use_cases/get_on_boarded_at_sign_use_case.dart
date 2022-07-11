@@ -5,7 +5,7 @@ import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart'
 ///This is a usecase of getting Onboarded @sign
 ///it return an [Option] of either a [String] @sign or nothing
 ///using functional programing make it easier to handle its return in UI
-@injectable
+@lazySingleton
 class GetOnBoardedAtSignUseCase {
   const GetOnBoardedAtSignUseCase(this._iAtsignOnBoardingFacade);
 
