@@ -17,6 +17,7 @@ import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/app_s
 
 // ignore: must_be_immutable
 class ScannerView extends StatelessWidget {
+
   const ScannerView({Key? key}) : super(key: key);
 
   @override
@@ -50,6 +51,7 @@ class ScannerView extends StatelessWidget {
           },
           failureGettingFood: (failures) {
             return OnFailures(openFoodFailures: failures.openFoodfailures);
+
           },
         );
       },
