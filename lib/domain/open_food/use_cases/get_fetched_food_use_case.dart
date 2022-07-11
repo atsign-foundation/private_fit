@@ -4,7 +4,7 @@ import 'package:private_fit/domain/open_food/i_open_food_facts_facade.dart';
 import 'package:private_fit/domain/open_food/open_food_facts_failures.dart';
 import 'package:private_fit/domain/open_food/open_food_fetched_product.dart';
 
-@lazySingleton
+@injectable
 class GetFetchedFood {
   GetFetchedFood(this._iOpenFoodFactsFacade);
 

@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 import 'package:private_fit/application/on_boarding/bloc/on_boarding_bloc.dart';
-import 'package:private_fit/injections.dart';
-import 'package:private_fit/presentation/components/toast.dart';
 import 'package:private_fit/presentation/routes/router.gr.dart';
 import 'package:private_fit/shared/constants.dart';
 import 'package:private_fit/shared/images.dart';
@@ -17,10 +15,10 @@ class OnBoardingForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<OnBoardingBloc, OnBoardingState>(
-      bloc: getIt<OnBoardingBloc>(),
       listener: (context, state) {
         state.mapOrNull(
           failure: (state) {
+            // TODO(kzawadi):  make snack bar or something to show these errors
             Logger(printer: PrettyPrinter()).e(
               'On Boarding failed',
               state.onBoardingFailure.mapOrNull(
@@ -29,18 +27,6 @@ class OnBoardingForm extends StatelessWidget {
                     TextStrings.failuireSupportDirectory,
                 serverError: (_) => TextStrings.serverError,
                 failToSetOnBoardData: (_) => TextStrings.failureSettingData,
-              ),
-            );
-
-            showToast(
-              context,
-              state.onBoardingFailure.when(
-                cancelledByUser: () => TextStrings.cancelledByUser,
-                failedToGetgetApplicationSupportDirectory: () =>
-                    TextStrings.failuireSupportDirectory,
-                serverError: () => TextStrings.serverError,
-                failToSetOnBoardData: () => TextStrings.failureSettingData,
-                failToSetUsername: () => TextStrings.appName,
               ),
             );
           },

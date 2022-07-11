@@ -17,7 +17,7 @@ import 'package:private_fit/domain/home/i_home_facade.dart';
 import 'package:private_fit/infrastructure/atplatform/platform_services.dart';
 import 'package:private_fit/shared/constants.dart';
 
-@LazySingleton(as: IHomeFacade)
+@Injectable(as: IHomeFacade)
 class HomeFacade extends IHomeFacade {
   final AtSignLogger _logger = AtSignLogger('Home services');
   Map<String?, AtClientService> atClientServiceMap = {};
@@ -34,19 +34,21 @@ class HomeFacade extends IHomeFacade {
   }
 
   @override
-  Future<Either<OnBoardingFailure, bool>> setUsername(String username) async {
+  Future<Either<OnBoardingFailure, bool>> setUsername(String userName) async {
     final _nameKey = Keys.nameKey
       ..sharedWith = atClientManager.atClient.getCurrentAtSign()
       ..sharedBy = atClientManager.atClient.getCurrentAtSign()
       ..value = Value(
-        value: username,
+        value: userName,
         type: 'username',
         labelName: 'User name',
       );
 
     try {
-      _logger.info('Setting a username $username');
-      return await _sdkServices.put(_nameKey).then(right);
+      _logger.info('Setting a username $userName');
+      await _sdkServices.put(_nameKey);
+
+      return right(true);
     } catch (e) {
       return left(const OnBoardingFailure.failToSetUsername());
     }
@@ -214,15 +216,5 @@ class HomeFacade extends IHomeFacade {
       _logger.severe('Error getting profile pic', e, s);
       return null;
     }
-  }
-
-  @override
-  Future<List<AtKey>> getAllKeys({
-    String? regex,
-    String? sharedBy,
-    String? sharedWith,
-  }) {
-    return _sdkServices.getAllKeys(
-        regex: 'profilepic'); //todo(kzawadi): pass the params
   }
 }

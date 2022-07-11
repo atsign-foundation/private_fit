@@ -313,21 +313,18 @@ mixin _$HomeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(Either<OnBoardingFailure, bool> result) username,
-    required TResult Function(List<AtKey> allKeys) keysFetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(Either<OnBoardingFailure, bool> result)? username,
-    TResult Function(List<AtKey> allKeys)? keysFetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(Either<OnBoardingFailure, bool> result)? username,
-    TResult Function(List<AtKey> allKeys)? keysFetched,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -335,21 +332,18 @@ mixin _$HomeState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Username value) username,
-    required TResult Function(_KeysFetched value) keysFetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Username value)? username,
-    TResult Function(_KeysFetched value)? keysFetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Username value)? username,
-    TResult Function(_KeysFetched value)? keysFetched,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -411,7 +405,6 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(Either<OnBoardingFailure, bool> result) username,
-    required TResult Function(List<AtKey> allKeys) keysFetched,
   }) {
     return initial();
   }
@@ -421,7 +414,6 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(Either<OnBoardingFailure, bool> result)? username,
-    TResult Function(List<AtKey> allKeys)? keysFetched,
   }) {
     return initial?.call();
   }
@@ -431,7 +423,6 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(Either<OnBoardingFailure, bool> result)? username,
-    TResult Function(List<AtKey> allKeys)? keysFetched,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -445,7 +436,6 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Username value) username,
-    required TResult Function(_KeysFetched value) keysFetched,
   }) {
     return initial(this);
   }
@@ -455,7 +445,6 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Username value)? username,
-    TResult Function(_KeysFetched value)? keysFetched,
   }) {
     return initial?.call(this);
   }
@@ -465,7 +454,6 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Username value)? username,
-    TResult Function(_KeysFetched value)? keysFetched,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -545,7 +533,6 @@ class _$_Username implements _Username {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(Either<OnBoardingFailure, bool> result) username,
-    required TResult Function(List<AtKey> allKeys) keysFetched,
   }) {
     return username(result);
   }
@@ -555,7 +542,6 @@ class _$_Username implements _Username {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(Either<OnBoardingFailure, bool> result)? username,
-    TResult Function(List<AtKey> allKeys)? keysFetched,
   }) {
     return username?.call(result);
   }
@@ -565,7 +551,6 @@ class _$_Username implements _Username {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(Either<OnBoardingFailure, bool> result)? username,
-    TResult Function(List<AtKey> allKeys)? keysFetched,
     required TResult orElse(),
   }) {
     if (username != null) {
@@ -579,7 +564,6 @@ class _$_Username implements _Username {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Username value) username,
-    required TResult Function(_KeysFetched value) keysFetched,
   }) {
     return username(this);
   }
@@ -589,7 +573,6 @@ class _$_Username implements _Username {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Username value)? username,
-    TResult Function(_KeysFetched value)? keysFetched,
   }) {
     return username?.call(this);
   }
@@ -599,7 +582,6 @@ class _$_Username implements _Username {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Username value)? username,
-    TResult Function(_KeysFetched value)? keysFetched,
     required TResult orElse(),
   }) {
     if (username != null) {
@@ -617,148 +599,5 @@ abstract class _Username implements HomeState {
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_UsernameCopyWith<_$_Username> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_KeysFetchedCopyWith<$Res> {
-  factory _$$_KeysFetchedCopyWith(
-          _$_KeysFetched value, $Res Function(_$_KeysFetched) then) =
-      __$$_KeysFetchedCopyWithImpl<$Res>;
-  $Res call({List<AtKey> allKeys});
-}
-
-/// @nodoc
-class __$$_KeysFetchedCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
-    implements _$$_KeysFetchedCopyWith<$Res> {
-  __$$_KeysFetchedCopyWithImpl(
-      _$_KeysFetched _value, $Res Function(_$_KeysFetched) _then)
-      : super(_value, (v) => _then(v as _$_KeysFetched));
-
-  @override
-  _$_KeysFetched get _value => super._value as _$_KeysFetched;
-
-  @override
-  $Res call({
-    Object? allKeys = freezed,
-  }) {
-    return _then(_$_KeysFetched(
-      allKeys == freezed
-          ? _value._allKeys
-          : allKeys // ignore: cast_nullable_to_non_nullable
-              as List<AtKey>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_KeysFetched implements _KeysFetched {
-  const _$_KeysFetched(final List<AtKey> allKeys) : _allKeys = allKeys;
-
-  final List<AtKey> _allKeys;
-  @override
-  List<AtKey> get allKeys {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_allKeys);
-  }
-
-  @override
-  String toString() {
-    return 'HomeState.keysFetched(allKeys: $allKeys)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_KeysFetched &&
-            const DeepCollectionEquality().equals(other._allKeys, _allKeys));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_allKeys));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_KeysFetchedCopyWith<_$_KeysFetched> get copyWith =>
-      __$$_KeysFetchedCopyWithImpl<_$_KeysFetched>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(Either<OnBoardingFailure, bool> result) username,
-    required TResult Function(List<AtKey> allKeys) keysFetched,
-  }) {
-    return keysFetched(allKeys);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(Either<OnBoardingFailure, bool> result)? username,
-    TResult Function(List<AtKey> allKeys)? keysFetched,
-  }) {
-    return keysFetched?.call(allKeys);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(Either<OnBoardingFailure, bool> result)? username,
-    TResult Function(List<AtKey> allKeys)? keysFetched,
-    required TResult orElse(),
-  }) {
-    if (keysFetched != null) {
-      return keysFetched(allKeys);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Username value) username,
-    required TResult Function(_KeysFetched value) keysFetched,
-  }) {
-    return keysFetched(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Username value)? username,
-    TResult Function(_KeysFetched value)? keysFetched,
-  }) {
-    return keysFetched?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Username value)? username,
-    TResult Function(_KeysFetched value)? keysFetched,
-    required TResult orElse(),
-  }) {
-    if (keysFetched != null) {
-      return keysFetched(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _KeysFetched implements HomeState {
-  const factory _KeysFetched(final List<AtKey> allKeys) = _$_KeysFetched;
-
-  List<AtKey> get allKeys => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$_KeysFetchedCopyWith<_$_KeysFetched> get copyWith =>
       throw _privateConstructorUsedError;
 }
