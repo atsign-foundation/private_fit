@@ -9,4 +9,5 @@ class OnBoardingFailure with _$OnBoardingFailure {
       FailedToGetgetApplicationSupportDirectory;
   const factory OnBoardingFailure.serverError() = ServerError;
   const factory OnBoardingFailure.failToSetOnBoardData() = FailToSetOnBoardData;
+  const factory OnBoardingFailure.failToSetUsername() = _FailToSetUsername;
 }

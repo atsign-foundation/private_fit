@@ -10,4 +10,6 @@ class OnBoardingEvent with _$OnBoardingEvent {
   ) = _AtSignOnBoardingSucces;
   const factory OnBoardingEvent.onBoardingError(Object? object) =
       _OnBoardingError;
+
+  // const factory OnBoardingEvent.setUserName(String username) = _SetUserName;
 }
