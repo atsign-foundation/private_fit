@@ -18,7 +18,7 @@ part 'on_boarding_bloc.freezed.dart';
 ///It takes [OnBoardingEvent] as event and [OnBoardingState]
 ///and fetch its data from the individual use cases and emit the
 ///corespoding states [OnBoardingState].
-@injectable
+@lazySingleton
 class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
   OnBoardingBloc(
     this._loadAtClientPreferenceUseCase,

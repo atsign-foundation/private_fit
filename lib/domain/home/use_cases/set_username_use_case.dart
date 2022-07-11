@@ -3,12 +3,12 @@ import 'package:injectable/injectable.dart';
 import 'package:private_fit/domain/core/onboarding_failures.dart';
 import 'package:private_fit/domain/home/i_home_facade.dart';
 
-@injectable
+@lazySingleton
 class SetUserNameUseCase {
   SetUserNameUseCase(this._iHomeFacade);
 
   final IHomeFacade _iHomeFacade;
 
-  Future<Either<OnBoardingFailure, bool>> call(String username) =>
+  Future<Either<OnBoardingFailure, bool>> call(String username) async =>
       _iHomeFacade.setUsername(username);
 }

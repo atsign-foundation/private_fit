@@ -13,7 +13,7 @@ import 'package:private_fit/shared/constants.dart';
 
 /// Implementation of [IAtsignOnBoardingFacade] interface
 
-@Injectable(as: IAtsignOnBoardingFacade)
+@LazySingleton(as: IAtsignOnBoardingFacade)
 class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
   final AtSignLogger _logger = AtSignLogger('SDK services');
   Map<String?, AtClientService> atClientServiceMap = {};
