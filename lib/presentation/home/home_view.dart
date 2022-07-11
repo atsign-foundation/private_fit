@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:private_fit/application/bot_nav_bar/bloc/bot_nav_bar_bloc.dart';
+import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/home/widgets/bot_nav_bar.dart';
 import 'package:private_fit/presentation/open_food/scanner_page.dart';
@@ -17,6 +18,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return BlocBuilder<BotNavBarBloc, int>(
+      bloc: getIt<BotNavBarBloc>(),
       builder: (context, i) {
         return Scaffold(
           floatingActionButton: FloatingActionButton.extended(
@@ -39,7 +41,7 @@ class HomeView extends StatelessWidget {
                 ),
                 elevation: 1.5,
               ),
-              child: const BotNavBar()),
+              child: const BotNavBar(),),
           backgroundColor: Colors.cyan,
           body: i == 0
               ? Stack(

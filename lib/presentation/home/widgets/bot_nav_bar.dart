@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:private_fit/application/bot_nav_bar/bloc/bot_nav_bar_bloc.dart';
+import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
 
 class BotNavBar extends StatelessWidget {
@@ -14,12 +15,12 @@ class BotNavBar extends StatelessWidget {
     final l10n = context.l10n;
 
     return BlocBuilder<BotNavBarBloc, int>(
+      bloc: getIt<BotNavBarBloc>(),
       builder: (context, index) {
         return NavigationBar(
           selectedIndex: index,
-          onDestinationSelected: (newIndex) => context
-              .read<BotNavBarBloc>()
-              .add(BotNavBarEvent.change(newIndex)),
+          onDestinationSelected: (newIndex) =>
+              getIt<BotNavBarBloc>().add(BotNavBarEvent.change(newIndex)),
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           animationDuration: const Duration(milliseconds: 1000),
           destinations: const [

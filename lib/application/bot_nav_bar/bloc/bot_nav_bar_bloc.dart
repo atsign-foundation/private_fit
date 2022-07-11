@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 part 'bot_nav_bar_event.dart';
 part 'bot_nav_bar_bloc.freezed.dart';
 
-@injectable
+@lazySingleton
 class BotNavBarBloc extends Bloc<BotNavBarEvent, int> {
   BotNavBarBloc() : super(0) {
     on<BotNavBarEvent>((event, emit) {

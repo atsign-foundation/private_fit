@@ -36,7 +36,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
     {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   gh.singleton<_i3.$Router>(_i3.$Router());
-  gh.factory<_i4.BotNavBarBloc>(() => _i4.BotNavBarBloc());
+  gh.lazySingleton<_i4.BotNavBarBloc>(() => _i4.BotNavBarBloc());
   gh.factory<_i5.IAtsignOnBoardingFacade>(() => _i6.OnBoardingAtsignFacade());
   gh.lazySingleton<_i7.IContactsFacade>(() => _i8.ContactsFacade());
   gh.lazySingleton<_i9.IOpenFoodFactsFacade>(
