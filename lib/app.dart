@@ -15,13 +15,6 @@ import 'package:private_fit/presentation/routes/router.gr.dart' as app_router;
 import 'package:private_fit/presentation/routes/routes_observer.dart';
 import 'package:private_fit/presentation/themes/themes.dart';
 
-// class PrivateFitApp extends StatefulWidget {
-//   const PrivateFitApp({super.key});
-
-//   @override
-//   State<PrivateFitApp> createState() => _PrivateFitAppState();
-// }
-
 class PrivateFitApp extends StatelessWidget {
   PrivateFitApp({super.key});
 
@@ -47,9 +40,9 @@ class PrivateFitApp extends StatelessWidget {
           BlocProvider(
             create: (context) => getIt<OpenFoodBloc>(),
           ),
-          BlocProvider(
-            create: (context) => getIt<HomeBloc>(),
-          ),
+          // BlocProvider(
+          //   create: (context) => getIt<HomeBloc>(),
+          // ),
         ],
         child: AnimatedTheme(
           curve: Curves.easeInOut,

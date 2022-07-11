@@ -51,7 +51,7 @@ class OnBoardingForm extends StatelessWidget {
             );
           },
           loadSuccess: (state) {
-            AutoRouter.of(context).replace(const HomePageRoute());
+            AutoRouter.of(context).replace(const HomeNavigatorRoute());
           },
         );
       },

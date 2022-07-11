@@ -4,9 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:private_fit/application/home/bloc/home_bloc.dart';
-import 'package:private_fit/application/on_boarding/bloc/on_boarding_bloc.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/components/toast.dart';
@@ -21,6 +19,7 @@ class HomePage extends StatelessWidget {
     final l10n = context.l10n;
     return Scaffold(
       body: BlocConsumer<HomeBloc, HomeState>(
+        bloc: getIt<HomeBloc>(),
         listener: (context, state) {
           state.whenOrNull(
             username: (result) {
@@ -43,29 +42,7 @@ class HomePage extends StatelessWidget {
           );
         },
         builder: (context, state) {
-          return
-              // state.maybeMap(
-              //   orElse: () => Center(
-              //     child: LoadingAnimationWidget.staggeredDotsWave(
-              //       color: Theme.of(context).primaryColor,
-              //       size: 200,
-              //     ),
-              //   ),
-              // username: (result) => Scaffold(
-              //   body: AutoSizeText(
-              //     result.result.fold(
-              //       (l) {
-              //         return l.maybeWhen(
-              //           failToSetUsername: () => 'Failed to set Username',
-              //           orElse: () => '',
-              //         );
-              //       },
-              //       (r) => 'Succesful updated Username',
-              //     ),
-              //   ),
-              // ),
-              // initial: (value) =>
-              Scaffold(
+          return Scaffold(
             backgroundColor: Colors.cyan,
             body: Stack(
               children: [
