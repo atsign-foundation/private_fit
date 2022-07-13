@@ -12,7 +12,7 @@ part 'open_food_event.dart';
 part 'open_food_state.dart';
 part 'open_food_bloc.freezed.dart';
 
-@LazySingleton()
+@lazySingleton
 class OpenFoodBloc extends Bloc<OpenFoodEvent, OpenFoodState> {
   OpenFoodBloc(this._getFetchedFood) : super(const OpenFoodState.initial()) {
     on<OpenFoodEvent>(_openFoodHandler, transformer: sequential());

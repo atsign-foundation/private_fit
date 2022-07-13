@@ -21,7 +21,7 @@ class OnBoardingForm extends StatelessWidget {
             // TODO(kzawadi):  make snack bar or something to show these errors
             Logger(printer: PrettyPrinter()).e(
               'On Boarding failed',
-              state.onBoardingFailure.map(
+              state.onBoardingFailure.mapOrNull(
                 cancelledByUser: (_) => TextStrings.cancelledByUser,
                 failedToGetgetApplicationSupportDirectory: (_) =>
                     TextStrings.failuireSupportDirectory,
@@ -51,7 +51,7 @@ class OnBoardingForm extends StatelessWidget {
             );
           },
           loadSuccess: (state) {
-            AutoRouter.of(context).replace(const HomePageRoute());
+            AutoRouter.of(context).replace(const HomeNavigatorRoute());
           },
         );
       },

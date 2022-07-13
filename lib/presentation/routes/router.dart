@@ -1,6 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:injectable/injectable.dart';
-import 'package:private_fit/presentation/home/home_page.dart';
+import 'package:private_fit/presentation/home/home_navigator.dart';
 import 'package:private_fit/presentation/on_boarding/on_boarding_page.dart';
 import 'package:private_fit/presentation/open_food/product_details_view.dart';
 import 'package:private_fit/presentation/open_food/scanner_page.dart';
@@ -21,16 +21,11 @@ other stuff. AutoRoute does all that for you and much more.
   routes: <AutoRoute>[
     // AutoRoute<dynamic>(page: OnBoarding),
 
-    AutoRoute<dynamic>(page: HomePage),
+    AutoRoute<dynamic>(page: HomeNavigator),
     AutoRoute<dynamic>(page: OnBoardingPage),
     AutoRoute<dynamic>(page: ProductDetailsView),
-<<<<<<< HEAD
-    AutoRoute<dynamic>(page: ScannerPage, initial: true),
-    AutoRoute<dynamic>(page: OnBoarding),
-=======
     AutoRoute<dynamic>(page: ScannerPage),
     AutoRoute<dynamic>(page: OnBoarding, initial: true),
->>>>>>> feature/openfoodfacts
   ],
 )
 class $Router {}

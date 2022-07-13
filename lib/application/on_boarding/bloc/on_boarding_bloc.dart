@@ -7,7 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:private_fit/domain/contacts/use_cases/at_contacts_use_cases.dart';
-import 'package:private_fit/domain/on_boarding/onboarding_failures.dart';
+import 'package:private_fit/domain/core/onboarding_failures.dart';
 import 'package:private_fit/domain/on_boarding/use_cases/on_boarding_use_cases.dart';
 
 part 'on_boarding_event.dart';
@@ -18,7 +18,7 @@ part 'on_boarding_bloc.freezed.dart';
 ///It takes [OnBoardingEvent] as event and [OnBoardingState]
 ///and fetch its data from the individual use cases and emit the
 ///corespoding states [OnBoardingState].
-@injectable
+@lazySingleton
 class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
   OnBoardingBloc(
     this._loadAtClientPreferenceUseCase,
