@@ -26,6 +26,7 @@ analyzer:
   #   must_be_immutable: error
   #   sort_unnamed_constructors_first: error
       invalid_annotation_target: ignore
+      implicit_dynamic_variable: ignore
   exclude: 
     - build/**
     - lib/**.freezed.dart
