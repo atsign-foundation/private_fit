@@ -7,7 +7,7 @@ class SettingsState with _$SettingsState {
     required bool showErrorMessages,
     required bool isEditing,
     required bool isSaving,
-    required Option<Either<OnBoardingFailure, Unit>> saveFailureOrSuccessOption,
+    required Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption,
   }) = _SettingsState;
   factory SettingsState.initial() => SettingsState(
         userNameModel: UserNameModel.empty(),

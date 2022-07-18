@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'onboarding_failures.dart';
+part of 'at_platform_failures.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$OnBoardingFailure {
+mixin _$AtPlatformFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
@@ -78,20 +78,20 @@ mixin _$OnBoardingFailure {
 }
 
 /// @nodoc
-abstract class $OnBoardingFailureCopyWith<$Res> {
-  factory $OnBoardingFailureCopyWith(
-          OnBoardingFailure value, $Res Function(OnBoardingFailure) then) =
-      _$OnBoardingFailureCopyWithImpl<$Res>;
+abstract class $AtPlatformFailureCopyWith<$Res> {
+  factory $AtPlatformFailureCopyWith(
+          AtPlatformFailure value, $Res Function(AtPlatformFailure) then) =
+      _$AtPlatformFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$OnBoardingFailureCopyWithImpl<$Res>
-    implements $OnBoardingFailureCopyWith<$Res> {
-  _$OnBoardingFailureCopyWithImpl(this._value, this._then);
+class _$AtPlatformFailureCopyWithImpl<$Res>
+    implements $AtPlatformFailureCopyWith<$Res> {
+  _$AtPlatformFailureCopyWithImpl(this._value, this._then);
 
-  final OnBoardingFailure _value;
+  final AtPlatformFailure _value;
   // ignore: unused_field
-  final $Res Function(OnBoardingFailure) _then;
+  final $Res Function(AtPlatformFailure) _then;
 }
 
 /// @nodoc
@@ -103,7 +103,7 @@ abstract class _$$CancelledByUserCopyWith<$Res> {
 
 /// @nodoc
 class __$$CancelledByUserCopyWithImpl<$Res>
-    extends _$OnBoardingFailureCopyWithImpl<$Res>
+    extends _$AtPlatformFailureCopyWithImpl<$Res>
     implements _$$CancelledByUserCopyWith<$Res> {
   __$$CancelledByUserCopyWithImpl(
       _$CancelledByUser _value, $Res Function(_$CancelledByUser) _then)
@@ -120,7 +120,7 @@ class _$CancelledByUser implements CancelledByUser {
 
   @override
   String toString() {
-    return 'OnBoardingFailure.cancelledByUser()';
+    return 'AtPlatformFailure.cancelledByUser()';
   }
 
   @override
@@ -216,7 +216,7 @@ class _$CancelledByUser implements CancelledByUser {
   }
 }
 
-abstract class CancelledByUser implements OnBoardingFailure {
+abstract class CancelledByUser implements AtPlatformFailure {
   const factory CancelledByUser() = _$CancelledByUser;
 }
 
@@ -230,7 +230,7 @@ abstract class _$$FailedToGetgetApplicationSupportDirectoryCopyWith<$Res> {
 
 /// @nodoc
 class __$$FailedToGetgetApplicationSupportDirectoryCopyWithImpl<$Res>
-    extends _$OnBoardingFailureCopyWithImpl<$Res>
+    extends _$AtPlatformFailureCopyWithImpl<$Res>
     implements _$$FailedToGetgetApplicationSupportDirectoryCopyWith<$Res> {
   __$$FailedToGetgetApplicationSupportDirectoryCopyWithImpl(
       _$FailedToGetgetApplicationSupportDirectory _value,
@@ -251,7 +251,7 @@ class _$FailedToGetgetApplicationSupportDirectory
 
   @override
   String toString() {
-    return 'OnBoardingFailure.failedToGetgetApplicationSupportDirectory()';
+    return 'AtPlatformFailure.failedToGetgetApplicationSupportDirectory()';
   }
 
   @override
@@ -349,7 +349,7 @@ class _$FailedToGetgetApplicationSupportDirectory
 }
 
 abstract class FailedToGetgetApplicationSupportDirectory
-    implements OnBoardingFailure {
+    implements AtPlatformFailure {
   const factory FailedToGetgetApplicationSupportDirectory() =
       _$FailedToGetgetApplicationSupportDirectory;
 }
@@ -363,7 +363,7 @@ abstract class _$$ServerErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$ServerErrorCopyWithImpl<$Res>
-    extends _$OnBoardingFailureCopyWithImpl<$Res>
+    extends _$AtPlatformFailureCopyWithImpl<$Res>
     implements _$$ServerErrorCopyWith<$Res> {
   __$$ServerErrorCopyWithImpl(
       _$ServerError _value, $Res Function(_$ServerError) _then)
@@ -380,7 +380,7 @@ class _$ServerError implements ServerError {
 
   @override
   String toString() {
-    return 'OnBoardingFailure.serverError()';
+    return 'AtPlatformFailure.serverError()';
   }
 
   @override
@@ -476,7 +476,7 @@ class _$ServerError implements ServerError {
   }
 }
 
-abstract class ServerError implements OnBoardingFailure {
+abstract class ServerError implements AtPlatformFailure {
   const factory ServerError() = _$ServerError;
 }
 
@@ -489,7 +489,7 @@ abstract class _$$FailToSetOnBoardDataCopyWith<$Res> {
 
 /// @nodoc
 class __$$FailToSetOnBoardDataCopyWithImpl<$Res>
-    extends _$OnBoardingFailureCopyWithImpl<$Res>
+    extends _$AtPlatformFailureCopyWithImpl<$Res>
     implements _$$FailToSetOnBoardDataCopyWith<$Res> {
   __$$FailToSetOnBoardDataCopyWithImpl(_$FailToSetOnBoardData _value,
       $Res Function(_$FailToSetOnBoardData) _then)
@@ -506,7 +506,7 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
 
   @override
   String toString() {
-    return 'OnBoardingFailure.failToSetOnBoardData()';
+    return 'AtPlatformFailure.failToSetOnBoardData()';
   }
 
   @override
@@ -602,7 +602,7 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
   }
 }
 
-abstract class FailToSetOnBoardData implements OnBoardingFailure {
+abstract class FailToSetOnBoardData implements AtPlatformFailure {
   const factory FailToSetOnBoardData() = _$FailToSetOnBoardData;
 }
 
@@ -615,7 +615,7 @@ abstract class _$$_FailToSetUsernameCopyWith<$Res> {
 
 /// @nodoc
 class __$$_FailToSetUsernameCopyWithImpl<$Res>
-    extends _$OnBoardingFailureCopyWithImpl<$Res>
+    extends _$AtPlatformFailureCopyWithImpl<$Res>
     implements _$$_FailToSetUsernameCopyWith<$Res> {
   __$$_FailToSetUsernameCopyWithImpl(
       _$_FailToSetUsername _value, $Res Function(_$_FailToSetUsername) _then)
@@ -632,7 +632,7 @@ class _$_FailToSetUsername implements _FailToSetUsername {
 
   @override
   String toString() {
-    return 'OnBoardingFailure.failToSetUsername()';
+    return 'AtPlatformFailure.failToSetUsername()';
   }
 
   @override
@@ -728,6 +728,6 @@ class _$_FailToSetUsername implements _FailToSetUsername {
   }
 }
 
-abstract class _FailToSetUsername implements OnBoardingFailure {
+abstract class _FailToSetUsername implements AtPlatformFailure {
   const factory _FailToSetUsername() = _$_FailToSetUsername;
 }

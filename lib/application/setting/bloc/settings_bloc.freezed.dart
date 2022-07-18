@@ -620,7 +620,7 @@ mixin _$SettingsState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isEditing => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
-  Option<Either<OnBoardingFailure, Unit>> get saveFailureOrSuccessOption =>
+  Option<Either<AtPlatformFailure, Unit>> get saveFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -638,7 +638,7 @@ abstract class $SettingsStateCopyWith<$Res> {
       bool showErrorMessages,
       bool isEditing,
       bool isSaving,
-      Option<Either<OnBoardingFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption});
 
   $UserNameModelCopyWith<$Res> get userNameModel;
 }
@@ -680,7 +680,7 @@ class _$SettingsStateCopyWithImpl<$Res>
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<OnBoardingFailure, Unit>>,
+              as Option<Either<AtPlatformFailure, Unit>>,
     ));
   }
 
@@ -704,7 +704,7 @@ abstract class _$$_SettingsStateCopyWith<$Res>
       bool showErrorMessages,
       bool isEditing,
       bool isSaving,
-      Option<Either<OnBoardingFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption});
 
   @override
   $UserNameModelCopyWith<$Res> get userNameModel;
@@ -749,7 +749,7 @@ class __$$_SettingsStateCopyWithImpl<$Res>
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<OnBoardingFailure, Unit>>,
+              as Option<Either<AtPlatformFailure, Unit>>,
     ));
   }
 }
@@ -773,7 +773,7 @@ class _$_SettingsState implements _SettingsState {
   @override
   final bool isSaving;
   @override
-  final Option<Either<OnBoardingFailure, Unit>> saveFailureOrSuccessOption;
+  final Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption;
 
   @override
   String toString() {
@@ -816,7 +816,7 @@ abstract class _SettingsState implements SettingsState {
       required final bool showErrorMessages,
       required final bool isEditing,
       required final bool isSaving,
-      required final Option<Either<OnBoardingFailure, Unit>>
+      required final Option<Either<AtPlatformFailure, Unit>>
           saveFailureOrSuccessOption}) = _$_SettingsState;
 
   @override
@@ -828,7 +828,7 @@ abstract class _SettingsState implements SettingsState {
   @override
   bool get isSaving => throw _privateConstructorUsedError;
   @override
-  Option<Either<OnBoardingFailure, Unit>> get saveFailureOrSuccessOption =>
+  Option<Either<AtPlatformFailure, Unit>> get saveFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

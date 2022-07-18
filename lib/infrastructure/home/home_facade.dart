@@ -11,7 +11,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:injectable/injectable.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:private_fit/domain/core/keys.dart';
-import 'package:private_fit/domain/core/onboarding_failures.dart';
+import 'package:private_fit/domain/core/at_platform_failures.dart';
 import 'package:private_fit/domain/core/value_model.dart';
 import 'package:private_fit/domain/home/i_home_facade.dart';
 import 'package:private_fit/infrastructure/atplatform/platform_services.dart';
@@ -34,7 +34,7 @@ class HomeFacade implements IHomeFacade {
   }
 
   @override
-  Future<Either<OnBoardingFailure, bool>> setUsername(String userName) async {
+  Future<Either<AtPlatformFailure, bool>> setUsername(String userName) async {
     final _nameKey = Keys.nameKey
       ..sharedWith = atClientManager.atClient.getCurrentAtSign()
       ..sharedBy = atClientManager.atClient.getCurrentAtSign()
@@ -50,7 +50,7 @@ class HomeFacade implements IHomeFacade {
 
       return right(true);
     } catch (e) {
-      return left(const OnBoardingFailure.failToSetUsername());
+      return left(const AtPlatformFailure.failToSetUsername());
     }
   }
 

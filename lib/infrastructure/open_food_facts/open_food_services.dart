@@ -3,7 +3,7 @@ import 'package:at_utils/at_utils.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
-import 'package:private_fit/domain/core/onboarding_failures.dart';
+import 'package:private_fit/domain/core/at_platform_failures.dart';
 import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
 import 'package:private_fit/domain/open_food/i_open_food_facts_facade.dart';
 import 'package:private_fit/domain/open_food/open_food_facts_failures.dart';
@@ -26,7 +26,7 @@ class OpenFoodFactsServices implements IOpenFoodFactsFacade {
   Future<String?> getAtSign() async {
     await onBoardFacade.loadAtClientPreference().then((value) {
       value.fold(
-        (l) => const OnBoardingFailure.serverError(),
+        (l) => const AtPlatformFailure.serverError(),
         (r) => atClientPreference = r,
       );
     });

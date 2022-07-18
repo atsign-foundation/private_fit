@@ -10,7 +10,7 @@ import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 
 import 'package:private_fit/application/on_boarding/bloc/on_boarding_bloc.dart';
-import 'package:private_fit/domain/core/onboarding_failures.dart';
+import 'package:private_fit/domain/core/at_platform_failures.dart';
 import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
 import 'package:private_fit/infrastructure/atplatform/platform_services.dart';
 import 'package:private_fit/shared/constants.dart';
@@ -39,7 +39,7 @@ class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
   /// at this stage we delivery them to the [OnBoardingBloc] so it can be party
   /// of App logic
   @override
-  Future<Either<OnBoardingFailure, AtClientPreference>>
+  Future<Either<AtPlatformFailure, AtClientPreference>>
       loadAtClientPreference() async {
     final appDocumentDirectory =
         await path_provider.getApplicationSupportDirectory();
@@ -55,13 +55,13 @@ class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
   }
 
   @override
-  Future<Either<OnBoardingFailure, Unit>> onBoardDataWhenSuccessful(
+  Future<Either<AtPlatformFailure, Unit>> onBoardDataWhenSuccessful(
     Map<String?, AtClientService> v,
     String? atSign,
   ) async {
     return loadAtClientPreference().then(
       (value) => value.fold(
-        (l) => left(const OnBoardingFailure.failToSetOnBoardData()),
+        (l) => left(const AtPlatformFailure.failToSetOnBoardData()),
         (atClientPreference) async {
           await AtClientManager.getInstance().setCurrentAtSign(
             atSign!,

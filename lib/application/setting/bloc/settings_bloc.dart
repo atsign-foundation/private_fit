@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:private_fit/domain/core/onboarding_failures.dart';
+import 'package:private_fit/domain/core/at_platform_failures.dart';
 import 'package:private_fit/domain/settings/use_cases/get_name_use_case.dart';
 import 'package:private_fit/domain/settings/use_cases/user_name_use_case.dart';
 import 'package:private_fit/domain/settings/user_name_model.dart';

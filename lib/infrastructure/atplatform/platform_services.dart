@@ -118,7 +118,7 @@ class SdkServices {
     }
   }
 
-  Future<String?> getName() async {
+  Future<String?> getUserName() async {
     _logger.finer('Getting name');
     try {
       final _names = await getAllKeys(regex: 'name.${Constants.appNamespace}');
