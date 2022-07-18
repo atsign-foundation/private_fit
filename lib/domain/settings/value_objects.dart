@@ -6,7 +6,9 @@ import 'package:private_fit/domain/core/value_validators.dart';
 class UserName extends ValueObject<String> {
   factory UserName(String input) {
     return UserName._(
-      validateMaxStringLength(input, maxLength).flatMap(validateStringNotEmpty),
+      validateMaxStringLength(input, maxLength)
+          .flatMap(validateStringNotEmpty)
+          .flatMap(validateSingleLine),
     );
   }
 
