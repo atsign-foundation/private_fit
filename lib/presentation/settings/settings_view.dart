@@ -1,19 +1,12 @@
 // 🎯 Dart imports:
-
-// 🎯 Dart imports:
 import 'dart:async';
-import 'dart:typed_data';
 
 // 🐦 Flutter imports:
 import 'package:at_utils/at_utils.dart';
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:private_fit/application/setting/bloc/settings_bloc.dart';
-import 'package:private_fit/domain/settings/user_name_model.dart';
-import 'package:private_fit/domain/settings/value_objects.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/presentation/components/adaptive_loading.dart';
 import 'package:private_fit/presentation/components/global.dart';
@@ -21,8 +14,6 @@ import 'package:private_fit/presentation/settings/widgets/category.settings.dart
 import 'package:private_fit/presentation/settings/widgets/tile.settings.dart';
 import 'package:private_fit/shared/iconly_icon.dart';
 import 'package:private_fit/shared/icons_curved.dart';
-// 📦 Package imports:
-import 'package:url_launcher/url_launcher.dart';
 
 class SettingsPageView extends StatefulWidget {
   const SettingsPageView({Key? key}) : super(key: key);
@@ -160,31 +151,37 @@ class _SettingsPageViewState extends State<SettingsPageView> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                GestureDetector(
-                                  onLongPress: () async {
-                                    setState(_nameFocusNode.unfocus);
-                                  },
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(50),
-                                    child: Image(
-                                      height: 70,
-                                      width: 70,
-                                      fit: BoxFit.cover,
-                                      gaplessPlayback: true,
-                                      image: Image.asset(
-                                        'assets/on_boarding/images/artist_1.png',
-                                      ).image,
+                                SizedBox(
+                                  height: 70,
+                                  width: 70,
+                                  child: GestureDetector(
+                                    onLongPress: () async {
+                                      setState(_nameFocusNode.unfocus);
+                                    },
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(50),
+                                      child: Image(
+                                        height: 70,
+                                        width: 70,
+                                        fit: BoxFit.cover,
+                                        gaplessPlayback: true,
+                                        image: Image.asset(
+                                          'assets/on_boarding/images/artist_1.png',
+                                        ).image,
+                                      ),
                                     ),
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 250,
+                                  width: MediaQuery.of(context).size.width / 2,
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: <Widget>[
                                       TextFormField(
-                                        maxLength: UserName.maxLength,
+                                        autovalidateMode:
+                                            AutovalidateMode.onUserInteraction,
+                                        enabled: !state.isSaving,
                                         controller: _userNameController,
                                         minLines: 1,
                                         focusNode: _nameFocusNode,
@@ -194,7 +191,6 @@ class _SettingsPageViewState extends State<SettingsPageView> {
                                                 BorderRadius.circular(8),
                                             borderSide: BorderSide.none,
                                           ),
-                                          // labelText: 'username',
                                           floatingLabelStyle: TextStyle(
                                             height: 4,
                                             color:
@@ -203,9 +199,6 @@ class _SettingsPageViewState extends State<SettingsPageView> {
                                           floatingLabelAlignment:
                                               FloatingLabelAlignment.center,
                                           focusColor: Colors.grey[200],
-                                          // filled: true,
-                                          // fillColor: Colors.grey[200],
-                                          prefixIcon: const Icon(Icons.person),
                                         ),
                                         style: Theme.of(context)
                                             .textTheme
@@ -221,11 +214,11 @@ class _SettingsPageViewState extends State<SettingsPageView> {
                                             .value
                                             .fold(
                                               (l) => l.maybeMap(
-                                                  empty: (f) =>
-                                                      'Cannot be empty',
-                                                  exceedingLength: (f) =>
-                                                      'Exceeding Length, max: ${f.max}',
-                                                  orElse: () => null),
+                                                empty: (f) => 'Cannot be empty',
+                                                exceedingLength: (f) =>
+                                                    'Exceeding Length, max: ${f.max}',
+                                                orElse: () => null,
+                                              ),
                                               (r) => null,
                                             ),
                                         onChanged: (v) {
@@ -252,8 +245,6 @@ class _SettingsPageViewState extends State<SettingsPageView> {
                                 ),
                               ],
                             ),
-                            // },
-                            // ),
                           ),
                           SettingsCategory(
                             category: 'General',
