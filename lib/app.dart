@@ -28,8 +28,8 @@ class PrivateFitApp extends StatelessWidget {
         statusBarBrightness: Brightness.dark,
         statusBarIconBrightness: Brightness.dark,
         systemNavigationBarColor: Colors.transparent,
-        systemNavigationBarIconBrightness: Brightness.light,
-        // systemNavigationBarContrastEnforced: false,
+        systemNavigationBarIconBrightness: Brightness.dark,
+        systemNavigationBarContrastEnforced: false,
         systemNavigationBarDividerColor: Colors.transparent,
       ),
       child: MultiBlocProvider(
@@ -49,6 +49,7 @@ class PrivateFitApp extends StatelessWidget {
           duration: const Duration(milliseconds: 300),
           data: FlexThemeData.light(
             scheme: FlexScheme.blueWhale,
+            visualDensity: VisualDensity.standard,
             useMaterial3: true,
           ),
           child: MaterialApp.router(

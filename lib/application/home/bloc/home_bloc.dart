@@ -13,11 +13,11 @@ part 'home_bloc.freezed.dart';
 
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc(this._setUserNameUseCase) : super(const _Initial()) {
+  HomeBloc() : super(const _Initial()) {
     on<HomeEvent>(_homeEventHandler);
   }
 
-  final SetUserNameUseCase _setUserNameUseCase;
+  // final SetUserNameUseCase _setUserNameUseCase;
 
   FutureOr<void> _homeEventHandler(
     HomeEvent event,
@@ -26,11 +26,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     await event.map(
       started: (_) {},
       setUserName: (u) async {
-        await _setUserNameUseCase.call(u.username).then(
-              (c) => emit(
-                HomeState.username(c),
-              ),
-            );
+        // await _setUserNameUseCase.call(u.username).then(
+        //       (c) => emit(
+        //         HomeState.username(c),
+        //       ),
+        //     );
         emit(const HomeState.initial());
       },
     );

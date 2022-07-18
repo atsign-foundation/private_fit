@@ -18,7 +18,7 @@ import 'package:private_fit/infrastructure/atplatform/platform_services.dart';
 import 'package:private_fit/shared/constants.dart';
 
 @Injectable(as: IHomeFacade)
-class HomeFacade extends IHomeFacade {
+class HomeFacade implements IHomeFacade {
   final AtSignLogger _logger = AtSignLogger('Home services');
   Map<String?, AtClientService> atClientServiceMap = {};
   AtClientManager atClientManager = AtClientManager.getInstance();
@@ -91,7 +91,7 @@ class HomeFacade extends IHomeFacade {
       try {
         _logger.finer('Listening to notification: ${monitorNotification.id}');
         if (!(await atClientManager.syncService.isInSync())) {
-          syncData();
+          // syncData();
         }
         await _listenToNotifications(monitorNotification);
         // await getReports();
@@ -99,29 +99,6 @@ class HomeFacade extends IHomeFacade {
         _logger.severe(e.toString());
       }
     });
-  }
-
-  //Sync the data to the server
-  void syncData([Function? onSyncDone]) {
-    Future<void> _onSyncData(SyncResult synRes) async {
-      await _onSuccessCallback(synRes);
-      if (onSyncDone != null) {
-        onSyncDone();
-      }
-      // if (_userData.isAdmin) await AppServices.getReports();
-    }
-
-    // _userData.setSyncStatus = SyncStatus.started;
-    atClientManager.syncService.setOnDone(_onSyncData);
-    atClientManager.syncService.sync(onDone: _onSyncData);
-  }
-
-  /// Function to be called when sync is done
-  Future<void> _onSuccessCallback(SyncResult syncResult) async {
-    _logger.finer(
-      '===================== ${syncResult.syncStatus.name} ===================',
-    );
-    await HapticFeedback.lightImpact();
   }
 
   Future<void> _listenToNotifications(
