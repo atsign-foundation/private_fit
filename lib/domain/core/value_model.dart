@@ -17,12 +17,13 @@
 // }
 
 class Value {
-  Value(
-      {this.value,
-      this.type,
-      this.createdDate,
-      this.labelName,
-      this.isHidden}) {
+  Value({
+    this.value,
+    this.type,
+    this.createdDate,
+    this.labelName,
+    this.isHidden,
+  }) {
     createdDate = createdDate ?? DateTime.now().toString();
     isHidden = isHidden ?? false;
   }

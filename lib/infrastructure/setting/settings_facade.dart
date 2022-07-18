@@ -8,6 +8,7 @@ import 'package:private_fit/domain/core/value_model.dart';
 import 'package:private_fit/domain/settings/i_settings_facade.dart';
 import 'package:private_fit/domain/settings/user_name_model.dart';
 import 'package:private_fit/infrastructure/atplatform/platform_services.dart';
+import 'package:private_fit/infrastructure/setting/user_name_dto.dart';
 
 @LazySingleton(as: ISettingsFacade)
 class SettingsFacade implements ISettingsFacade {
@@ -17,12 +18,14 @@ class SettingsFacade implements ISettingsFacade {
 
   @override
   Future<Either<OnBoardingFailure, Unit>> setUsername(
-      UserNameModel userName) async {
+    UserNameModel userName,
+  ) async {
+    final _userNameDto = UserNameDto.fromDomain(userName);
     final _nameKey = Keys.nameKey
       ..sharedWith = atClientManager.atClient.getCurrentAtSign()
       ..sharedBy = atClientManager.atClient.getCurrentAtSign()
       ..value = Value(
-        value: userName.username.getOrCrash(),
+        value: _userNameDto.toJson(),
         type: 'username',
         labelName: 'User name',
       );
