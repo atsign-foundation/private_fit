@@ -5,5 +5,5 @@ import 'package:private_fit/domain/settings/user_name_model.dart';
 
 abstract class ISettingsFacade {
   Future<Either<AtPlatformFailure, Unit>> setUsername(UserNameModel username);
-  Future<Either<AtPlatformFailure, AtValue>> getUserName();
+  Future<Either<AtPlatformFailure, UserNameModel>> getUserName();
 }

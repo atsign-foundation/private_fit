@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:at_client_mobile/at_client_mobile.dart';
 import 'package:at_utils/at_utils.dart';
 import 'package:dartz/dartz.dart';
@@ -20,9 +22,9 @@ class SettingsFacade implements ISettingsFacade {
 
   @override
   Future<Either<AtPlatformFailure, Unit>> setUsername(
-    UserNameModel userName,
+    UserNameModel userNameModel,
   ) async {
-    final _userNameDto = UserNameDto.fromDomain(userName);
+    final _userNameDto = UserNameDto.fromDomain(userNameModel);
     final _nameKey = Keys.nameKey
       ..sharedWith = atClientManager.atClient.getCurrentAtSign()
       ..sharedBy = atClientManager.atClient.getCurrentAtSign()
@@ -33,7 +35,7 @@ class SettingsFacade implements ISettingsFacade {
       );
 
     try {
-      _logger.info('Setting a username $userName');
+      _logger.info('Setting a username $userNameModel');
       await _sdkServices.put(_nameKey);
 
       return right(unit);
@@ -43,14 +45,22 @@ class SettingsFacade implements ISettingsFacade {
   }
 
   @override
-  Future<Either<AtPlatformFailure, AtValue>> getUserName() async {
+  Future<Either<AtPlatformFailure, UserNameModel>> getUserName() async {
     _logger.finer('Getting name');
 
     return getAllKeys(regex: 'name.${Constants.appNamespace}').then(
-      (value) => get(PassKey.fromAtKey(value.first)),
+      (value) => get(PassKey.fromAtKey(value.first)).then((value) {
+        return value.fold(
+          left,
+          (r) {
+            final d = jsonDecode(r.value as String)['value'];
+            return right(
+              UserNameDto.fromJson(d as Map<String, dynamic>).toDomain(),
+            );
+          },
+        );
+      }),
     );
-
-    // return get(PassKey.fromAtKey(_atkeys.first));
   }
 
   Future<List<AtKey>> getAllKeys({

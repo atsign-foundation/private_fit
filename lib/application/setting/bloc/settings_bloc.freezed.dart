@@ -622,6 +622,8 @@ mixin _$SettingsState {
   bool get isSaving => throw _privateConstructorUsedError;
   Option<Either<AtPlatformFailure, Unit>> get saveFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
+  Option<AtPlatformFailure> get getFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SettingsStateCopyWith<SettingsState> get copyWith =>
@@ -638,7 +640,8 @@ abstract class $SettingsStateCopyWith<$Res> {
       bool showErrorMessages,
       bool isEditing,
       bool isSaving,
-      Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption,
+      Option<AtPlatformFailure> getFailureOrSuccessOption});
 
   $UserNameModelCopyWith<$Res> get userNameModel;
 }
@@ -659,6 +662,7 @@ class _$SettingsStateCopyWithImpl<$Res>
     Object? isEditing = freezed,
     Object? isSaving = freezed,
     Object? saveFailureOrSuccessOption = freezed,
+    Object? getFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       userNameModel: userNameModel == freezed
@@ -681,6 +685,10 @@ class _$SettingsStateCopyWithImpl<$Res>
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AtPlatformFailure, Unit>>,
+      getFailureOrSuccessOption: getFailureOrSuccessOption == freezed
+          ? _value.getFailureOrSuccessOption
+          : getFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<AtPlatformFailure>,
     ));
   }
 
@@ -704,7 +712,8 @@ abstract class _$$_SettingsStateCopyWith<$Res>
       bool showErrorMessages,
       bool isEditing,
       bool isSaving,
-      Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption,
+      Option<AtPlatformFailure> getFailureOrSuccessOption});
 
   @override
   $UserNameModelCopyWith<$Res> get userNameModel;
@@ -728,6 +737,7 @@ class __$$_SettingsStateCopyWithImpl<$Res>
     Object? isEditing = freezed,
     Object? isSaving = freezed,
     Object? saveFailureOrSuccessOption = freezed,
+    Object? getFailureOrSuccessOption = freezed,
   }) {
     return _then(_$_SettingsState(
       userNameModel: userNameModel == freezed
@@ -750,6 +760,10 @@ class __$$_SettingsStateCopyWithImpl<$Res>
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AtPlatformFailure, Unit>>,
+      getFailureOrSuccessOption: getFailureOrSuccessOption == freezed
+          ? _value.getFailureOrSuccessOption
+          : getFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<AtPlatformFailure>,
     ));
   }
 }
@@ -762,7 +776,8 @@ class _$_SettingsState implements _SettingsState {
       required this.showErrorMessages,
       required this.isEditing,
       required this.isSaving,
-      required this.saveFailureOrSuccessOption});
+      required this.saveFailureOrSuccessOption,
+      required this.getFailureOrSuccessOption});
 
   @override
   final UserNameModel userNameModel;
@@ -774,10 +789,12 @@ class _$_SettingsState implements _SettingsState {
   final bool isSaving;
   @override
   final Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption;
+  @override
+  final Option<AtPlatformFailure> getFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'SettingsState(userNameModel: $userNameModel, showErrorMessages: $showErrorMessages, isEditing: $isEditing, isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'SettingsState(userNameModel: $userNameModel, showErrorMessages: $showErrorMessages, isEditing: $isEditing, isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption, getFailureOrSuccessOption: $getFailureOrSuccessOption)';
   }
 
   @override
@@ -792,7 +809,9 @@ class _$_SettingsState implements _SettingsState {
             const DeepCollectionEquality().equals(other.isEditing, isEditing) &&
             const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
             const DeepCollectionEquality().equals(
-                other.saveFailureOrSuccessOption, saveFailureOrSuccessOption));
+                other.saveFailureOrSuccessOption, saveFailureOrSuccessOption) &&
+            const DeepCollectionEquality().equals(
+                other.getFailureOrSuccessOption, getFailureOrSuccessOption));
   }
 
   @override
@@ -802,7 +821,8 @@ class _$_SettingsState implements _SettingsState {
       const DeepCollectionEquality().hash(showErrorMessages),
       const DeepCollectionEquality().hash(isEditing),
       const DeepCollectionEquality().hash(isSaving),
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption));
+      const DeepCollectionEquality().hash(saveFailureOrSuccessOption),
+      const DeepCollectionEquality().hash(getFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -812,12 +832,14 @@ class _$_SettingsState implements _SettingsState {
 
 abstract class _SettingsState implements SettingsState {
   const factory _SettingsState(
-      {required final UserNameModel userNameModel,
-      required final bool showErrorMessages,
-      required final bool isEditing,
-      required final bool isSaving,
-      required final Option<Either<AtPlatformFailure, Unit>>
-          saveFailureOrSuccessOption}) = _$_SettingsState;
+          {required final UserNameModel userNameModel,
+          required final bool showErrorMessages,
+          required final bool isEditing,
+          required final bool isSaving,
+          required final Option<Either<AtPlatformFailure, Unit>>
+              saveFailureOrSuccessOption,
+          required final Option<AtPlatformFailure> getFailureOrSuccessOption}) =
+      _$_SettingsState;
 
   @override
   UserNameModel get userNameModel => throw _privateConstructorUsedError;
@@ -829,6 +851,9 @@ abstract class _SettingsState implements SettingsState {
   bool get isSaving => throw _privateConstructorUsedError;
   @override
   Option<Either<AtPlatformFailure, Unit>> get saveFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
+  @override
+  Option<AtPlatformFailure> get getFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

@@ -28,6 +28,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
     SettingsEvent event,
     Emitter<SettingsState> emit,
   ) async {
+    Either<AtPlatformFailure, Unit> failureOrSuccess;
     await event.map(
       initialized: (e) {
         emit(
@@ -69,18 +70,27 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         }
       },
       started: (_) async {
-        await _gettgUserNameUseCase.call().then(
-              (value) => emit(
+        return _gettgUserNameUseCase.call().then(
+          (value) {
+            value.fold(
+              (l) => emit(
                 state.copyWith(
-                  userNameModel: state.userNameModel
-                      .copyWith(username: UserName(value ?? 'user name')),
+                  showErrorMessages: true,
+                  getFailureOrSuccessOption: optionOf(l),
+                ),
+              ),
+              (r) => emit(
+                state.copyWith(
+                  userNameModel: state.userNameModel.copyWith(
+                    username: UserName(
+                      r.username.getOrCrash(),
+                    ),
+                  ),
                 ),
               ),
             );
-
-        // emit(
-        //   SettingsState.initial(),
-        // );
+          },
+        );
       },
     );
   }
