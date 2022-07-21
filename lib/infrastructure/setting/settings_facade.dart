@@ -48,7 +48,8 @@ class SettingsFacade implements ISettingsFacade {
   Future<Either<AtPlatformFailure, UserNameModel>> getUserName() async {
     _logger.finer('Getting name');
 
-    return getAllKeys(regex: 'name.${Constants.appNamespace}').then(
+    return getAllKeys(regex: '${Keys.nameKey.key}.${Constants.appNamespace}')
+        .then(
       (value) => get(PassKey.fromAtKey(value.first)).then((value) {
         return value.fold(
           left,

@@ -9,7 +9,7 @@ class MenstrualPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<MenstrualBloc>(
       create: (context) => getIt<MenstrualBloc>(),
       child: const MenstrualView(),
     );

@@ -324,7 +324,8 @@ mixin _$MenstrualState {
       throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
-  Option<Either<ValueFailure, Unit>> get saveFailureOrSuccessOption =>
+  bool get liveData => throw _privateConstructorUsedError;
+  Option<Either<AtPlatformFailure, Unit>> get saveFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -341,7 +342,8 @@ abstract class $MenstrualStateCopyWith<$Res> {
       {MenstrualDataModel menstrualDataModel,
       bool showErrorMessages,
       bool isSaving,
-      Option<Either<ValueFailure, Unit>> saveFailureOrSuccessOption});
+      bool liveData,
+      Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption});
 
   $MenstrualDataModelCopyWith<$Res> get menstrualDataModel;
 }
@@ -360,6 +362,7 @@ class _$MenstrualStateCopyWithImpl<$Res>
     Object? menstrualDataModel = freezed,
     Object? showErrorMessages = freezed,
     Object? isSaving = freezed,
+    Object? liveData = freezed,
     Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
@@ -375,10 +378,14 @@ class _$MenstrualStateCopyWithImpl<$Res>
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
+      liveData: liveData == freezed
+          ? _value.liveData
+          : liveData // ignore: cast_nullable_to_non_nullable
+              as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<ValueFailure, Unit>>,
+              as Option<Either<AtPlatformFailure, Unit>>,
     ));
   }
 
@@ -402,7 +409,8 @@ abstract class _$$_MenstrualStateCopyWith<$Res>
       {MenstrualDataModel menstrualDataModel,
       bool showErrorMessages,
       bool isSaving,
-      Option<Either<ValueFailure, Unit>> saveFailureOrSuccessOption});
+      bool liveData,
+      Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption});
 
   @override
   $MenstrualDataModelCopyWith<$Res> get menstrualDataModel;
@@ -424,6 +432,7 @@ class __$$_MenstrualStateCopyWithImpl<$Res>
     Object? menstrualDataModel = freezed,
     Object? showErrorMessages = freezed,
     Object? isSaving = freezed,
+    Object? liveData = freezed,
     Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_$_MenstrualState(
@@ -439,10 +448,14 @@ class __$$_MenstrualStateCopyWithImpl<$Res>
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
+      liveData: liveData == freezed
+          ? _value.liveData
+          : liveData // ignore: cast_nullable_to_non_nullable
+              as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<ValueFailure, Unit>>,
+              as Option<Either<AtPlatformFailure, Unit>>,
     ));
   }
 }
@@ -454,6 +467,7 @@ class _$_MenstrualState implements _MenstrualState {
       {required this.menstrualDataModel,
       required this.showErrorMessages,
       required this.isSaving,
+      required this.liveData,
       required this.saveFailureOrSuccessOption});
 
   @override
@@ -463,11 +477,13 @@ class _$_MenstrualState implements _MenstrualState {
   @override
   final bool isSaving;
   @override
-  final Option<Either<ValueFailure, Unit>> saveFailureOrSuccessOption;
+  final bool liveData;
+  @override
+  final Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'MenstrualState(menstrualDataModel: $menstrualDataModel, showErrorMessages: $showErrorMessages, isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'MenstrualState(menstrualDataModel: $menstrualDataModel, showErrorMessages: $showErrorMessages, isSaving: $isSaving, liveData: $liveData, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -480,6 +496,7 @@ class _$_MenstrualState implements _MenstrualState {
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
             const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
+            const DeepCollectionEquality().equals(other.liveData, liveData) &&
             const DeepCollectionEquality().equals(
                 other.saveFailureOrSuccessOption, saveFailureOrSuccessOption));
   }
@@ -490,6 +507,7 @@ class _$_MenstrualState implements _MenstrualState {
       const DeepCollectionEquality().hash(menstrualDataModel),
       const DeepCollectionEquality().hash(showErrorMessages),
       const DeepCollectionEquality().hash(isSaving),
+      const DeepCollectionEquality().hash(liveData),
       const DeepCollectionEquality().hash(saveFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
@@ -503,7 +521,8 @@ abstract class _MenstrualState implements MenstrualState {
       {required final MenstrualDataModel menstrualDataModel,
       required final bool showErrorMessages,
       required final bool isSaving,
-      required final Option<Either<ValueFailure, Unit>>
+      required final bool liveData,
+      required final Option<Either<AtPlatformFailure, Unit>>
           saveFailureOrSuccessOption}) = _$_MenstrualState;
 
   @override
@@ -514,7 +533,9 @@ abstract class _MenstrualState implements MenstrualState {
   @override
   bool get isSaving => throw _privateConstructorUsedError;
   @override
-  Option<Either<ValueFailure, Unit>> get saveFailureOrSuccessOption =>
+  bool get liveData => throw _privateConstructorUsedError;
+  @override
+  Option<Either<AtPlatformFailure, Unit>> get saveFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

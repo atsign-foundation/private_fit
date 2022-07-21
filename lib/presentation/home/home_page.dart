@@ -1,16 +1,14 @@
 import 'dart:math' as math;
 
 import 'package:at_sync_ui_flutter/services/at_sync_ui_services.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:private_fit/application/home/bloc/home_bloc.dart';
-import 'package:private_fit/presentation/components/custom_sync_widget.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
+import 'package:private_fit/presentation/components/custom_sync_widget.dart';
 import 'package:private_fit/presentation/components/toast.dart';
-import 'package:private_fit/presentation/routes/router.gr.dart';
 import 'package:private_fit/shared/images.dart';
 
 class HomePage extends StatelessWidget {
@@ -89,33 +87,6 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              // Align(
-              //   child: Column(
-              //     children: [
-              //       ElevatedButton(
-              //         onPressed: () {
-              //           AutoRouter.of(context)
-              //               .replace(const ScannerPageRoute());
-              //         },
-              //         child: const Icon(
-              //           Icons.search_off_outlined,
-              //           size: 20,
-              //         ),
-              //       ),
-              //       ElevatedButton(
-              //         onPressed: () {
-              //           context.read<HomeBloc>().add(
-              //                 const HomeEvent.setUserName('kZawadi'),
-              //               );
-              //         },
-              //         child: const Icon(
-              //           Icons.people,
-              //           size: 20,
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
               Align(
                 alignment: Alignment.topRight,
                 child: StreamBuilder<AtSyncUIStatus>(
@@ -139,8 +110,6 @@ class HomePage extends StatelessWidget {
               ),
             ],
           );
-          // );
-          // );
         },
       ),
     );
