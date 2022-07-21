@@ -322,6 +322,7 @@ class FloatingButton extends StatelessWidget {
           periodStartDate: PeriodStartDate(
             DateTime(2022, 06, 28),
           ),
+          bleedingDays: 4,
         );
 
         context.read<MenstrualBloc>().add(

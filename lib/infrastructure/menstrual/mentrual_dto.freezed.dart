@@ -22,9 +22,9 @@ MenstrualDto _$MenstrualDtoFromJson(Map<String, dynamic> json) {
 mixin _$MenstrualDto {
   int get periodCycleDays => throw _privateConstructorUsedError;
   int get bleedingDays => throw _privateConstructorUsedError;
-  int? get fertilephaseStart => throw _privateConstructorUsedError;
-  int? get fertilephaseEnd => throw _privateConstructorUsedError;
-  int? get ovulation => throw _privateConstructorUsedError;
+  DateTime? get fertilephaseStart => throw _privateConstructorUsedError;
+  DateTime? get fertilephaseEnd => throw _privateConstructorUsedError;
+  DateTime? get ovulation => throw _privateConstructorUsedError;
   DateTime get periodStartDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,9 +41,9 @@ abstract class $MenstrualDtoCopyWith<$Res> {
   $Res call(
       {int periodCycleDays,
       int bleedingDays,
-      int? fertilephaseStart,
-      int? fertilephaseEnd,
-      int? ovulation,
+      DateTime? fertilephaseStart,
+      DateTime? fertilephaseEnd,
+      DateTime? ovulation,
       DateTime periodStartDate});
 }
 
@@ -76,15 +76,15 @@ class _$MenstrualDtoCopyWithImpl<$Res> implements $MenstrualDtoCopyWith<$Res> {
       fertilephaseStart: fertilephaseStart == freezed
           ? _value.fertilephaseStart
           : fertilephaseStart // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       fertilephaseEnd: fertilephaseEnd == freezed
           ? _value.fertilephaseEnd
           : fertilephaseEnd // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       ovulation: ovulation == freezed
           ? _value.ovulation
           : ovulation // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       periodStartDate: periodStartDate == freezed
           ? _value.periodStartDate
           : periodStartDate // ignore: cast_nullable_to_non_nullable
@@ -103,9 +103,9 @@ abstract class _$$_MenstrualDtoCopyWith<$Res>
   $Res call(
       {int periodCycleDays,
       int bleedingDays,
-      int? fertilephaseStart,
-      int? fertilephaseEnd,
-      int? ovulation,
+      DateTime? fertilephaseStart,
+      DateTime? fertilephaseEnd,
+      DateTime? ovulation,
       DateTime periodStartDate});
 }
 
@@ -141,15 +141,15 @@ class __$$_MenstrualDtoCopyWithImpl<$Res>
       fertilephaseStart: fertilephaseStart == freezed
           ? _value.fertilephaseStart
           : fertilephaseStart // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       fertilephaseEnd: fertilephaseEnd == freezed
           ? _value.fertilephaseEnd
           : fertilephaseEnd // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       ovulation: ovulation == freezed
           ? _value.ovulation
           : ovulation // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       periodStartDate: periodStartDate == freezed
           ? _value.periodStartDate
           : periodStartDate // ignore: cast_nullable_to_non_nullable
@@ -180,11 +180,11 @@ class _$_MenstrualDto extends _MenstrualDto {
   @JsonKey()
   final int bleedingDays;
   @override
-  final int? fertilephaseStart;
+  final DateTime? fertilephaseStart;
   @override
-  final int? fertilephaseEnd;
+  final DateTime? fertilephaseEnd;
   @override
-  final int? ovulation;
+  final DateTime? ovulation;
   @override
   final DateTime periodStartDate;
 
@@ -237,9 +237,9 @@ abstract class _MenstrualDto extends MenstrualDto {
   factory _MenstrualDto(
       {final int periodCycleDays,
       final int bleedingDays,
-      final int? fertilephaseStart,
-      final int? fertilephaseEnd,
-      final int? ovulation,
+      final DateTime? fertilephaseStart,
+      final DateTime? fertilephaseEnd,
+      final DateTime? ovulation,
       required final DateTime periodStartDate}) = _$_MenstrualDto;
   _MenstrualDto._() : super._();
 
@@ -251,11 +251,11 @@ abstract class _MenstrualDto extends MenstrualDto {
   @override
   int get bleedingDays => throw _privateConstructorUsedError;
   @override
-  int? get fertilephaseStart => throw _privateConstructorUsedError;
+  DateTime? get fertilephaseStart => throw _privateConstructorUsedError;
   @override
-  int? get fertilephaseEnd => throw _privateConstructorUsedError;
+  DateTime? get fertilephaseEnd => throw _privateConstructorUsedError;
   @override
-  int? get ovulation => throw _privateConstructorUsedError;
+  DateTime? get ovulation => throw _privateConstructorUsedError;
   @override
   DateTime get periodStartDate => throw _privateConstructorUsedError;
   @override

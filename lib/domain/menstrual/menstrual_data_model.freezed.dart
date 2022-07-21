@@ -18,9 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$MenstrualDataModel {
   int get periodCycleDays => throw _privateConstructorUsedError;
   int get bleedingDays => throw _privateConstructorUsedError;
-  int? get fertilephaseStart => throw _privateConstructorUsedError;
-  int? get fertilephaseEnd => throw _privateConstructorUsedError;
-  int? get ovulation => throw _privateConstructorUsedError;
+  DateTime? get fertilephaseStart => throw _privateConstructorUsedError;
+  DateTime? get fertilephaseEnd => throw _privateConstructorUsedError;
+  DateTime? get ovulation => throw _privateConstructorUsedError;
   PeriodStartDate get periodStartDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -36,9 +36,9 @@ abstract class $MenstrualDataModelCopyWith<$Res> {
   $Res call(
       {int periodCycleDays,
       int bleedingDays,
-      int? fertilephaseStart,
-      int? fertilephaseEnd,
-      int? ovulation,
+      DateTime? fertilephaseStart,
+      DateTime? fertilephaseEnd,
+      DateTime? ovulation,
       PeriodStartDate periodStartDate});
 }
 
@@ -72,15 +72,15 @@ class _$MenstrualDataModelCopyWithImpl<$Res>
       fertilephaseStart: fertilephaseStart == freezed
           ? _value.fertilephaseStart
           : fertilephaseStart // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       fertilephaseEnd: fertilephaseEnd == freezed
           ? _value.fertilephaseEnd
           : fertilephaseEnd // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       ovulation: ovulation == freezed
           ? _value.ovulation
           : ovulation // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       periodStartDate: periodStartDate == freezed
           ? _value.periodStartDate
           : periodStartDate // ignore: cast_nullable_to_non_nullable
@@ -99,9 +99,9 @@ abstract class _$$_MenstrualDataModelCopyWith<$Res>
   $Res call(
       {int periodCycleDays,
       int bleedingDays,
-      int? fertilephaseStart,
-      int? fertilephaseEnd,
-      int? ovulation,
+      DateTime? fertilephaseStart,
+      DateTime? fertilephaseEnd,
+      DateTime? ovulation,
       PeriodStartDate periodStartDate});
 }
 
@@ -137,15 +137,15 @@ class __$$_MenstrualDataModelCopyWithImpl<$Res>
       fertilephaseStart: fertilephaseStart == freezed
           ? _value.fertilephaseStart
           : fertilephaseStart // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       fertilephaseEnd: fertilephaseEnd == freezed
           ? _value.fertilephaseEnd
           : fertilephaseEnd // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       ovulation: ovulation == freezed
           ? _value.ovulation
           : ovulation // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as DateTime?,
       periodStartDate: periodStartDate == freezed
           ? _value.periodStartDate
           : periodStartDate // ignore: cast_nullable_to_non_nullable
@@ -173,11 +173,11 @@ class _$_MenstrualDataModel extends _MenstrualDataModel {
   @JsonKey()
   final int bleedingDays;
   @override
-  final int? fertilephaseStart;
+  final DateTime? fertilephaseStart;
   @override
-  final int? fertilephaseEnd;
+  final DateTime? fertilephaseEnd;
   @override
-  final int? ovulation;
+  final DateTime? ovulation;
   @override
   final PeriodStartDate periodStartDate;
 
@@ -225,9 +225,9 @@ abstract class _MenstrualDataModel extends MenstrualDataModel {
   factory _MenstrualDataModel(
       {final int periodCycleDays,
       final int bleedingDays,
-      final int? fertilephaseStart,
-      final int? fertilephaseEnd,
-      final int? ovulation,
+      final DateTime? fertilephaseStart,
+      final DateTime? fertilephaseEnd,
+      final DateTime? ovulation,
       required final PeriodStartDate periodStartDate}) = _$_MenstrualDataModel;
   _MenstrualDataModel._() : super._();
 
@@ -236,11 +236,11 @@ abstract class _MenstrualDataModel extends MenstrualDataModel {
   @override
   int get bleedingDays => throw _privateConstructorUsedError;
   @override
-  int? get fertilephaseStart => throw _privateConstructorUsedError;
+  DateTime? get fertilephaseStart => throw _privateConstructorUsedError;
   @override
-  int? get fertilephaseEnd => throw _privateConstructorUsedError;
+  DateTime? get fertilephaseEnd => throw _privateConstructorUsedError;
   @override
-  int? get ovulation => throw _privateConstructorUsedError;
+  DateTime? get ovulation => throw _privateConstructorUsedError;
   @override
   PeriodStartDate get periodStartDate => throw _privateConstructorUsedError;
   @override

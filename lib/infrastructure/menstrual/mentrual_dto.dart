@@ -10,9 +10,9 @@ class MenstrualDto with _$MenstrualDto {
   factory MenstrualDto({
     @Default(28) int periodCycleDays,
     @Default(3) int bleedingDays,
-    int? fertilephaseStart,
-    int? fertilephaseEnd,
-    int? ovulation,
+    DateTime? fertilephaseStart,
+    DateTime? fertilephaseEnd,
+    DateTime? ovulation,
     required DateTime periodStartDate,
   }) = _MenstrualDto;
 

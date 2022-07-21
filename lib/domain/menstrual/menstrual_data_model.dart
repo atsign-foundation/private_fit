@@ -12,9 +12,9 @@ abstract class MenstrualDataModel with _$MenstrualDataModel {
   factory MenstrualDataModel({
     @Default(28) int periodCycleDays,
     @Default(3) int bleedingDays,
-    int? fertilephaseStart,
-    int? fertilephaseEnd,
-    int? ovulation,
+    DateTime? fertilephaseStart,
+    DateTime? fertilephaseEnd,
+    DateTime? ovulation,
     required PeriodStartDate periodStartDate,
   }) = _MenstrualDataModel;
 
