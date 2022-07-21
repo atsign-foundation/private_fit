@@ -11,7 +11,7 @@ class MenstrualPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<MenstrualBloc>(
       create: (context) => getIt<MenstrualBloc>(),
-      child: const MenstrualView(),
+      child: MenstrualView(),
     );
   }
 }

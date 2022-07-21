@@ -9,6 +9,7 @@ import 'package:private_fit/domain/core/failures.dart';
 import 'package:private_fit/domain/menstrual/menstrual_data_model.dart';
 import 'package:private_fit/domain/menstrual/use_cases/get_mentrual_data_use_case.dart';
 import 'package:private_fit/domain/menstrual/use_cases/save_menstrual_data_use_case.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 part 'menstrual_event.dart';
 part 'menstrual_state.dart';
@@ -53,14 +54,16 @@ class MenstrualBloc extends Bloc<MenstrualEvent, MenstrualState> {
                     saveFailureOrSuccessOption: optionOf(value),
                   ),
                 ),
-                (r) => emit(
-                  state.copyWith(
-                    menstrualDataModel: s.menstrualDataModel,
-                    liveData: true,
-                  ),
-                ),
+                (r) => const MenstrualEvent.started(),
               ),
             );
+      },
+      calendarFormatChange: (format) {
+        emit(
+          state.copyWith(
+            calendarFormat: format.format,
+          ),
+        );
       },
     );
   }

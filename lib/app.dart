@@ -6,14 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:private_fit/application/home/bloc/home_bloc.dart';
 import 'package:private_fit/application/on_boarding/bloc/on_boarding_bloc.dart';
 import 'package:private_fit/application/open_food/bloc/open_food_bloc.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/routes/router.gr.dart' as app_router;
 import 'package:private_fit/presentation/routes/routes_observer.dart';
-import 'package:private_fit/presentation/themes/themes.dart';
 
 class PrivateFitApp extends StatelessWidget {
   PrivateFitApp({super.key});
@@ -40,9 +38,6 @@ class PrivateFitApp extends StatelessWidget {
           BlocProvider(
             create: (context) => getIt<OpenFoodBloc>(),
           ),
-          // BlocProvider(
-          //   create: (context) => getIt<HomeBloc>(),
-          // ),
         ],
         child: AnimatedTheme(
           curve: Curves.easeInOut,
@@ -66,7 +61,6 @@ class PrivateFitApp extends StatelessWidget {
             ),
             routeInformationParser: _appRouter.defaultRouteParser(),
             builder: (context, router) => router!,
-            // theme: FlexThemeData.light(scheme: FlexScheme.blue),
           ),
         ),
       ),

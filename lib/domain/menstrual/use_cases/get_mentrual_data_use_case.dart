@@ -18,20 +18,18 @@ class GetMenstrualDataUseCase {
           (a) {
             DateTime _addDays(DateTime dates, Duration days) => dates.add(days);
 
-            final fertilePhaseStart = a.periodCycleDays - 20;
-            final fertilePhaseEnd = a.periodCycleDays - 11;
+            final fertilePhaseStart = a.periodCycleDays - 19;
+            final fertilePhaseEnd = a.periodCycleDays - 13;
             final ovulation = (fertilePhaseStart - 1) +
                 (fertilePhaseEnd - fertilePhaseStart) / 2;
 
             final periodStartDate = a.periodStartDate.getOrCrash();
 
-            // void createEventForDate() {
-            final timeBetween =
-                (Duration(days: periodStartDate.millisecondsSinceEpoch).inDays -
-                        periodStartDate.millisecondsSinceEpoch)
-                    .abs();
+            final timeBetween = (Duration(days: periodStartDate.day) -
+                    Duration(days: periodStartDate.day))
+                .inDays;
             final daysBetween = timeBetween / (1000 * 60 * 60 * 24);
-            final circleBetween = timeBetween / a.periodCycleDays.floor();
+            final circleBetween = daysBetween / a.periodCycleDays;
 
             var events;
             late DateTime _fertilePhaseStartDate;
@@ -55,17 +53,6 @@ class GetMenstrualDataUseCase {
                   _addDays(_nextPeriod, Duration(days: fertilePhaseEnd));
               _ovulationDayStart =
                   _addDays(_nextPeriod, Duration(days: ovulation.toInt()));
-
-              // var ovulationDayEnd = DateTime(ovulationDayStart);
-              print('The period is P $_nextPeriod');
-              print('The period start date is  $periodStartDate');
-              print('The bleeding will end on  bleedingEnd $bleedingEnd');
-              print(
-                'The ovulation Day Start on ovulationDayStart $_ovulationDayStart',
-              );
-              print(
-                'fertilePhaseEndDate start fertilePhaseEndDate $_fertilePhaseEndDate',
-              );
             }
 
             return optionOf(
@@ -82,7 +69,5 @@ class GetMenstrualDataUseCase {
         );
       },
     );
-
-    // createEventForDate(Duration(days: periodStartDate.millisecondsSinceEpoch));
   }
 }

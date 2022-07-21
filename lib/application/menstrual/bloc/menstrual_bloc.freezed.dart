@@ -20,18 +20,21 @@ mixin _$MenstrualEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(MenstrualDataModel menstrualDataModel) save,
+    required TResult Function(CalendarFormat format) calendarFormatChange,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(MenstrualDataModel menstrualDataModel)? save,
+    TResult Function(CalendarFormat format)? calendarFormatChange,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(MenstrualDataModel menstrualDataModel)? save,
+    TResult Function(CalendarFormat format)? calendarFormatChange,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$MenstrualEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_save value) save,
+    required TResult Function(_CalendarFormatChange value) calendarFormatChange,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_save value)? save,
+    TResult Function(_CalendarFormatChange value)? calendarFormatChange,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_save value)? save,
+    TResult Function(_CalendarFormatChange value)? calendarFormatChange,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +120,7 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(MenstrualDataModel menstrualDataModel) save,
+    required TResult Function(CalendarFormat format) calendarFormatChange,
   }) {
     return started();
   }
@@ -123,6 +130,7 @@ class _$_Started implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(MenstrualDataModel menstrualDataModel)? save,
+    TResult Function(CalendarFormat format)? calendarFormatChange,
   }) {
     return started?.call();
   }
@@ -132,6 +140,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(MenstrualDataModel menstrualDataModel)? save,
+    TResult Function(CalendarFormat format)? calendarFormatChange,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -145,6 +154,7 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_save value) save,
+    required TResult Function(_CalendarFormatChange value) calendarFormatChange,
   }) {
     return started(this);
   }
@@ -154,6 +164,7 @@ class _$_Started implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_save value)? save,
+    TResult Function(_CalendarFormatChange value)? calendarFormatChange,
   }) {
     return started?.call(this);
   }
@@ -163,6 +174,7 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_save value)? save,
+    TResult Function(_CalendarFormatChange value)? calendarFormatChange,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -251,6 +263,7 @@ class _$_save implements _save {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(MenstrualDataModel menstrualDataModel) save,
+    required TResult Function(CalendarFormat format) calendarFormatChange,
   }) {
     return save(menstrualDataModel);
   }
@@ -260,6 +273,7 @@ class _$_save implements _save {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(MenstrualDataModel menstrualDataModel)? save,
+    TResult Function(CalendarFormat format)? calendarFormatChange,
   }) {
     return save?.call(menstrualDataModel);
   }
@@ -269,6 +283,7 @@ class _$_save implements _save {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(MenstrualDataModel menstrualDataModel)? save,
+    TResult Function(CalendarFormat format)? calendarFormatChange,
     required TResult orElse(),
   }) {
     if (save != null) {
@@ -282,6 +297,7 @@ class _$_save implements _save {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_save value) save,
+    required TResult Function(_CalendarFormatChange value) calendarFormatChange,
   }) {
     return save(this);
   }
@@ -291,6 +307,7 @@ class _$_save implements _save {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_save value)? save,
+    TResult Function(_CalendarFormatChange value)? calendarFormatChange,
   }) {
     return save?.call(this);
   }
@@ -300,6 +317,7 @@ class _$_save implements _save {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_save value)? save,
+    TResult Function(_CalendarFormatChange value)? calendarFormatChange,
     required TResult orElse(),
   }) {
     if (save != null) {
@@ -319,6 +337,148 @@ abstract class _save implements MenstrualEvent {
 }
 
 /// @nodoc
+abstract class _$$_CalendarFormatChangeCopyWith<$Res> {
+  factory _$$_CalendarFormatChangeCopyWith(_$_CalendarFormatChange value,
+          $Res Function(_$_CalendarFormatChange) then) =
+      __$$_CalendarFormatChangeCopyWithImpl<$Res>;
+  $Res call({CalendarFormat format});
+}
+
+/// @nodoc
+class __$$_CalendarFormatChangeCopyWithImpl<$Res>
+    extends _$MenstrualEventCopyWithImpl<$Res>
+    implements _$$_CalendarFormatChangeCopyWith<$Res> {
+  __$$_CalendarFormatChangeCopyWithImpl(_$_CalendarFormatChange _value,
+      $Res Function(_$_CalendarFormatChange) _then)
+      : super(_value, (v) => _then(v as _$_CalendarFormatChange));
+
+  @override
+  _$_CalendarFormatChange get _value => super._value as _$_CalendarFormatChange;
+
+  @override
+  $Res call({
+    Object? format = freezed,
+  }) {
+    return _then(_$_CalendarFormatChange(
+      format == freezed
+          ? _value.format
+          : format // ignore: cast_nullable_to_non_nullable
+              as CalendarFormat,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CalendarFormatChange implements _CalendarFormatChange {
+  const _$_CalendarFormatChange(this.format);
+
+  @override
+  final CalendarFormat format;
+
+  @override
+  String toString() {
+    return 'MenstrualEvent.calendarFormatChange(format: $format)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CalendarFormatChange &&
+            const DeepCollectionEquality().equals(other.format, format));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(format));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_CalendarFormatChangeCopyWith<_$_CalendarFormatChange> get copyWith =>
+      __$$_CalendarFormatChangeCopyWithImpl<_$_CalendarFormatChange>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(MenstrualDataModel menstrualDataModel) save,
+    required TResult Function(CalendarFormat format) calendarFormatChange,
+  }) {
+    return calendarFormatChange(format);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(MenstrualDataModel menstrualDataModel)? save,
+    TResult Function(CalendarFormat format)? calendarFormatChange,
+  }) {
+    return calendarFormatChange?.call(format);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(MenstrualDataModel menstrualDataModel)? save,
+    TResult Function(CalendarFormat format)? calendarFormatChange,
+    required TResult orElse(),
+  }) {
+    if (calendarFormatChange != null) {
+      return calendarFormatChange(format);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_save value) save,
+    required TResult Function(_CalendarFormatChange value) calendarFormatChange,
+  }) {
+    return calendarFormatChange(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_save value)? save,
+    TResult Function(_CalendarFormatChange value)? calendarFormatChange,
+  }) {
+    return calendarFormatChange?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_save value)? save,
+    TResult Function(_CalendarFormatChange value)? calendarFormatChange,
+    required TResult orElse(),
+  }) {
+    if (calendarFormatChange != null) {
+      return calendarFormatChange(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CalendarFormatChange implements MenstrualEvent {
+  const factory _CalendarFormatChange(final CalendarFormat format) =
+      _$_CalendarFormatChange;
+
+  CalendarFormat get format => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_CalendarFormatChangeCopyWith<_$_CalendarFormatChange> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$MenstrualState {
   MenstrualDataModel get menstrualDataModel =>
       throw _privateConstructorUsedError;
@@ -327,6 +487,7 @@ mixin _$MenstrualState {
   bool get liveData => throw _privateConstructorUsedError;
   Option<Either<AtPlatformFailure, Unit>> get saveFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
+  CalendarFormat get calendarFormat => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MenstrualStateCopyWith<MenstrualState> get copyWith =>
@@ -343,7 +504,8 @@ abstract class $MenstrualStateCopyWith<$Res> {
       bool showErrorMessages,
       bool isSaving,
       bool liveData,
-      Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption,
+      CalendarFormat calendarFormat});
 
   $MenstrualDataModelCopyWith<$Res> get menstrualDataModel;
 }
@@ -364,6 +526,7 @@ class _$MenstrualStateCopyWithImpl<$Res>
     Object? isSaving = freezed,
     Object? liveData = freezed,
     Object? saveFailureOrSuccessOption = freezed,
+    Object? calendarFormat = freezed,
   }) {
     return _then(_value.copyWith(
       menstrualDataModel: menstrualDataModel == freezed
@@ -386,6 +549,10 @@ class _$MenstrualStateCopyWithImpl<$Res>
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AtPlatformFailure, Unit>>,
+      calendarFormat: calendarFormat == freezed
+          ? _value.calendarFormat
+          : calendarFormat // ignore: cast_nullable_to_non_nullable
+              as CalendarFormat,
     ));
   }
 
@@ -410,7 +577,8 @@ abstract class _$$_MenstrualStateCopyWith<$Res>
       bool showErrorMessages,
       bool isSaving,
       bool liveData,
-      Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption,
+      CalendarFormat calendarFormat});
 
   @override
   $MenstrualDataModelCopyWith<$Res> get menstrualDataModel;
@@ -434,6 +602,7 @@ class __$$_MenstrualStateCopyWithImpl<$Res>
     Object? isSaving = freezed,
     Object? liveData = freezed,
     Object? saveFailureOrSuccessOption = freezed,
+    Object? calendarFormat = freezed,
   }) {
     return _then(_$_MenstrualState(
       menstrualDataModel: menstrualDataModel == freezed
@@ -456,6 +625,10 @@ class __$$_MenstrualStateCopyWithImpl<$Res>
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AtPlatformFailure, Unit>>,
+      calendarFormat: calendarFormat == freezed
+          ? _value.calendarFormat
+          : calendarFormat // ignore: cast_nullable_to_non_nullable
+              as CalendarFormat,
     ));
   }
 }
@@ -468,7 +641,8 @@ class _$_MenstrualState implements _MenstrualState {
       required this.showErrorMessages,
       required this.isSaving,
       required this.liveData,
-      required this.saveFailureOrSuccessOption});
+      required this.saveFailureOrSuccessOption,
+      required this.calendarFormat});
 
   @override
   final MenstrualDataModel menstrualDataModel;
@@ -480,10 +654,12 @@ class _$_MenstrualState implements _MenstrualState {
   final bool liveData;
   @override
   final Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption;
+  @override
+  final CalendarFormat calendarFormat;
 
   @override
   String toString() {
-    return 'MenstrualState(menstrualDataModel: $menstrualDataModel, showErrorMessages: $showErrorMessages, isSaving: $isSaving, liveData: $liveData, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'MenstrualState(menstrualDataModel: $menstrualDataModel, showErrorMessages: $showErrorMessages, isSaving: $isSaving, liveData: $liveData, saveFailureOrSuccessOption: $saveFailureOrSuccessOption, calendarFormat: $calendarFormat)';
   }
 
   @override
@@ -498,7 +674,9 @@ class _$_MenstrualState implements _MenstrualState {
             const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
             const DeepCollectionEquality().equals(other.liveData, liveData) &&
             const DeepCollectionEquality().equals(
-                other.saveFailureOrSuccessOption, saveFailureOrSuccessOption));
+                other.saveFailureOrSuccessOption, saveFailureOrSuccessOption) &&
+            const DeepCollectionEquality()
+                .equals(other.calendarFormat, calendarFormat));
   }
 
   @override
@@ -508,7 +686,8 @@ class _$_MenstrualState implements _MenstrualState {
       const DeepCollectionEquality().hash(showErrorMessages),
       const DeepCollectionEquality().hash(isSaving),
       const DeepCollectionEquality().hash(liveData),
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption));
+      const DeepCollectionEquality().hash(saveFailureOrSuccessOption),
+      const DeepCollectionEquality().hash(calendarFormat));
 
   @JsonKey(ignore: true)
   @override
@@ -523,7 +702,8 @@ abstract class _MenstrualState implements MenstrualState {
       required final bool isSaving,
       required final bool liveData,
       required final Option<Either<AtPlatformFailure, Unit>>
-          saveFailureOrSuccessOption}) = _$_MenstrualState;
+          saveFailureOrSuccessOption,
+      required final CalendarFormat calendarFormat}) = _$_MenstrualState;
 
   @override
   MenstrualDataModel get menstrualDataModel =>
@@ -537,6 +717,8 @@ abstract class _MenstrualState implements MenstrualState {
   @override
   Option<Either<AtPlatformFailure, Unit>> get saveFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
+  @override
+  CalendarFormat get calendarFormat => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_MenstrualStateCopyWith<_$_MenstrualState> get copyWith =>

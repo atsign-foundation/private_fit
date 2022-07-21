@@ -8,6 +8,7 @@ class MenstrualState with _$MenstrualState {
     required bool isSaving,
     required bool liveData,
     required Option<Either<AtPlatformFailure, Unit>> saveFailureOrSuccessOption,
+    required CalendarFormat calendarFormat,
   }) = _MenstrualState;
   factory MenstrualState.initial() => MenstrualState(
         menstrualDataModel: MenstrualDataModel.initialState(),
@@ -15,5 +16,6 @@ class MenstrualState with _$MenstrualState {
         isSaving: false,
         showErrorMessages: false,
         liveData: false,
+        calendarFormat: CalendarFormat.month,
       );
 }
