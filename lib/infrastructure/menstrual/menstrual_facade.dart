@@ -12,7 +12,6 @@ import 'package:private_fit/domain/menstrual/i_menstrual_facade.dart';
 import 'package:private_fit/domain/menstrual/menstrual_data_model.dart';
 import 'package:private_fit/infrastructure/atplatform/platform_services.dart';
 import 'package:private_fit/infrastructure/menstrual/mentrual_dto.dart';
-import 'package:private_fit/infrastructure/setting/user_name_dto.dart';
 import 'package:private_fit/shared/constants.dart';
 
 @LazySingleton(as: IMenstrualFacade)

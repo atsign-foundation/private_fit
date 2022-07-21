@@ -22,7 +22,7 @@ Either<ValueFailure<DateTime>, DateTime> validateDateIsNotGreater(
     return right(input);
   } else {
     return left(
-      ValueFailure.DateIsGreater(failedValue: input, max: comparisonValue),
+      ValueFailure.dateIsGreater(failedValue: input, max: comparisonValue),
     );
   }
 }

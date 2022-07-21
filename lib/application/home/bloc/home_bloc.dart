@@ -5,7 +5,6 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:private_fit/domain/core/at_platform_failures.dart';
-import 'package:private_fit/domain/home/use_cases/set_username_use_case.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';

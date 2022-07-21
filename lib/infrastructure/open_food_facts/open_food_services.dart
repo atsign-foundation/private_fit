@@ -20,7 +20,7 @@ class OpenFoodFactsServices implements IOpenFoodFactsFacade {
   late AtClientPreference atClientPreference;
   late AtClientService atClientServiceInstance;
 
-  var onBoardFacade = getIt<IAtsignOnBoardingFacade>();
+  IAtsignOnBoardingFacade onBoardFacade = getIt<IAtsignOnBoardingFacade>();
 
   ///Fetches atsign from device keychain.
   Future<String?> getAtSign() async {

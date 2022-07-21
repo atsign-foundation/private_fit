@@ -24,7 +24,7 @@ class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.shortPassword({
     required T failedValue,
   }) = ShortPassword<T>;
-  const factory ValueFailure.DateIsGreater({
+  const factory ValueFailure.dateIsGreater({
     required DateTime failedValue,
     required DateTime max,
   }) = DateIsGreater<T>;

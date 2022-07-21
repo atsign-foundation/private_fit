@@ -11,6 +11,7 @@ class SaveMenstrualDataUseCase {
   final IMenstrualFacade _iMenstrualFacade;
 
   Future<Either<AtPlatformFailure, Unit>> call(
-          MenstrualDataModel menstrualDataModel) =>
+    MenstrualDataModel menstrualDataModel,
+  ) =>
       _iMenstrualFacade.saveMenstraulData(menstrualDataModel);
 }

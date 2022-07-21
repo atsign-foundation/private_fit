@@ -31,7 +31,6 @@ class GetMenstrualDataUseCase {
             final daysBetween = timeBetween / (1000 * 60 * 60 * 24);
             final circleBetween = daysBetween / a.periodCycleDays;
 
-            var events;
             late DateTime _fertilePhaseStartDate;
             late DateTime _fertilePhaseEndDate;
             late DateTime _ovulationDayStart;
@@ -45,8 +44,8 @@ class GetMenstrualDataUseCase {
                   days: cycleDaysBetween.toInt(),
                 ),
               );
-              final bleedingEnd =
-                  _addDays(_nextPeriod, Duration(days: a.bleedingDays));
+              // final bleedingEnd =
+              //     _addDays(_nextPeriod, Duration(days: a.bleedingDays));
               _fertilePhaseStartDate =
                   _addDays(_nextPeriod, Duration(days: fertilePhaseStart));
               _fertilePhaseEndDate =
