@@ -24,7 +24,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
-    required TResult Function(DateTime failedValue, DateTime max) DateIsGreater,
+    required TResult Function(DateTime failedValue, DateTime max) dateIsGreater,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,7 +35,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,7 +46,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -58,7 +58,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
-    required TResult Function(DateIsGreater<T> value) DateIsGreater,
+    required TResult Function(DateIsGreater<T> value) dateIsGreater,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,7 +69,7 @@ mixin _$ValueFailure<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,7 +80,7 @@ mixin _$ValueFailure<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -186,7 +186,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
-    required TResult Function(DateTime failedValue, DateTime max) DateIsGreater,
+    required TResult Function(DateTime failedValue, DateTime max) dateIsGreater,
   }) {
     return exceedingLength(failedValue, max);
   }
@@ -200,7 +200,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
   }) {
     return exceedingLength?.call(failedValue, max);
   }
@@ -214,7 +214,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -232,7 +232,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
-    required TResult Function(DateIsGreater<T> value) DateIsGreater,
+    required TResult Function(DateIsGreater<T> value) dateIsGreater,
   }) {
     return exceedingLength(this);
   }
@@ -246,7 +246,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
   }) {
     return exceedingLength?.call(this);
   }
@@ -260,7 +260,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -351,7 +351,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
-    required TResult Function(DateTime failedValue, DateTime max) DateIsGreater,
+    required TResult Function(DateTime failedValue, DateTime max) dateIsGreater,
   }) {
     return empty(failedValue);
   }
@@ -365,7 +365,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
   }) {
     return empty?.call(failedValue);
   }
@@ -379,7 +379,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -397,7 +397,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
-    required TResult Function(DateIsGreater<T> value) DateIsGreater,
+    required TResult Function(DateIsGreater<T> value) dateIsGreater,
   }) {
     return empty(this);
   }
@@ -411,7 +411,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
   }) {
     return empty?.call(this);
   }
@@ -425,7 +425,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -516,7 +516,7 @@ class _$Multiline<T> implements Multiline<T> {
     required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
-    required TResult Function(DateTime failedValue, DateTime max) DateIsGreater,
+    required TResult Function(DateTime failedValue, DateTime max) dateIsGreater,
   }) {
     return multiline(failedValue);
   }
@@ -530,7 +530,7 @@ class _$Multiline<T> implements Multiline<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
   }) {
     return multiline?.call(failedValue);
   }
@@ -544,7 +544,7 @@ class _$Multiline<T> implements Multiline<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
     required TResult orElse(),
   }) {
     if (multiline != null) {
@@ -562,7 +562,7 @@ class _$Multiline<T> implements Multiline<T> {
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
-    required TResult Function(DateIsGreater<T> value) DateIsGreater,
+    required TResult Function(DateIsGreater<T> value) dateIsGreater,
   }) {
     return multiline(this);
   }
@@ -576,7 +576,7 @@ class _$Multiline<T> implements Multiline<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
   }) {
     return multiline?.call(this);
   }
@@ -590,7 +590,7 @@ class _$Multiline<T> implements Multiline<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
     required TResult orElse(),
   }) {
     if (multiline != null) {
@@ -691,7 +691,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
-    required TResult Function(DateTime failedValue, DateTime max) DateIsGreater,
+    required TResult Function(DateTime failedValue, DateTime max) dateIsGreater,
   }) {
     return listTooLong(failedValue, max);
   }
@@ -705,7 +705,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
   }) {
     return listTooLong?.call(failedValue, max);
   }
@@ -719,7 +719,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
     required TResult orElse(),
   }) {
     if (listTooLong != null) {
@@ -737,7 +737,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
-    required TResult Function(DateIsGreater<T> value) DateIsGreater,
+    required TResult Function(DateIsGreater<T> value) dateIsGreater,
   }) {
     return listTooLong(this);
   }
@@ -751,7 +751,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
   }) {
     return listTooLong?.call(this);
   }
@@ -765,7 +765,7 @@ class _$ListTooLong<T> implements ListTooLong<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
     required TResult orElse(),
   }) {
     if (listTooLong != null) {
@@ -859,7 +859,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
-    required TResult Function(DateTime failedValue, DateTime max) DateIsGreater,
+    required TResult Function(DateTime failedValue, DateTime max) dateIsGreater,
   }) {
     return invalidEmail(failedValue);
   }
@@ -873,7 +873,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -887,7 +887,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -905,7 +905,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
-    required TResult Function(DateIsGreater<T> value) DateIsGreater,
+    required TResult Function(DateIsGreater<T> value) dateIsGreater,
   }) {
     return invalidEmail(this);
   }
@@ -919,7 +919,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
   }) {
     return invalidEmail?.call(this);
   }
@@ -933,7 +933,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -1025,7 +1025,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
-    required TResult Function(DateTime failedValue, DateTime max) DateIsGreater,
+    required TResult Function(DateTime failedValue, DateTime max) dateIsGreater,
   }) {
     return shortPassword(failedValue);
   }
@@ -1039,7 +1039,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
   }) {
     return shortPassword?.call(failedValue);
   }
@@ -1053,7 +1053,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -1071,7 +1071,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
-    required TResult Function(DateIsGreater<T> value) DateIsGreater,
+    required TResult Function(DateIsGreater<T> value) dateIsGreater,
   }) {
     return shortPassword(this);
   }
@@ -1085,7 +1085,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
   }) {
     return shortPassword?.call(this);
   }
@@ -1099,7 +1099,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -1168,7 +1168,7 @@ class _$DateIsGreater<T> implements DateIsGreater<T> {
 
   @override
   String toString() {
-    return 'ValueFailure<$T>.DateIsGreater(failedValue: $failedValue, max: $max)';
+    return 'ValueFailure<$T>.dateIsGreater(failedValue: $failedValue, max: $max)';
   }
 
   @override
@@ -1201,9 +1201,9 @@ class _$DateIsGreater<T> implements DateIsGreater<T> {
     required TResult Function(T failedValue, int max) listTooLong,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
-    required TResult Function(DateTime failedValue, DateTime max) DateIsGreater,
+    required TResult Function(DateTime failedValue, DateTime max) dateIsGreater,
   }) {
-    return DateIsGreater(failedValue, max);
+    return dateIsGreater(failedValue, max);
   }
 
   @override
@@ -1215,9 +1215,9 @@ class _$DateIsGreater<T> implements DateIsGreater<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
   }) {
-    return DateIsGreater?.call(failedValue, max);
+    return dateIsGreater?.call(failedValue, max);
   }
 
   @override
@@ -1229,11 +1229,11 @@ class _$DateIsGreater<T> implements DateIsGreater<T> {
     TResult Function(T failedValue, int max)? listTooLong,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-    TResult Function(DateTime failedValue, DateTime max)? DateIsGreater,
+    TResult Function(DateTime failedValue, DateTime max)? dateIsGreater,
     required TResult orElse(),
   }) {
-    if (DateIsGreater != null) {
-      return DateIsGreater(failedValue, max);
+    if (dateIsGreater != null) {
+      return dateIsGreater(failedValue, max);
     }
     return orElse();
   }
@@ -1247,9 +1247,9 @@ class _$DateIsGreater<T> implements DateIsGreater<T> {
     required TResult Function(ListTooLong<T> value) listTooLong,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
-    required TResult Function(DateIsGreater<T> value) DateIsGreater,
+    required TResult Function(DateIsGreater<T> value) dateIsGreater,
   }) {
-    return DateIsGreater(this);
+    return dateIsGreater(this);
   }
 
   @override
@@ -1261,9 +1261,9 @@ class _$DateIsGreater<T> implements DateIsGreater<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
   }) {
-    return DateIsGreater?.call(this);
+    return dateIsGreater?.call(this);
   }
 
   @override
@@ -1275,11 +1275,11 @@ class _$DateIsGreater<T> implements DateIsGreater<T> {
     TResult Function(ListTooLong<T> value)? listTooLong,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(DateIsGreater<T> value)? DateIsGreater,
+    TResult Function(DateIsGreater<T> value)? dateIsGreater,
     required TResult orElse(),
   }) {
-    if (DateIsGreater != null) {
-      return DateIsGreater(this);
+    if (dateIsGreater != null) {
+      return dateIsGreater(this);
     }
     return orElse();
   }

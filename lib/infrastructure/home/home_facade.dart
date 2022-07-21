@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_dynamic_calls
+
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
@@ -7,11 +9,10 @@ import 'package:at_server_status/at_server_status.dart';
 import 'package:at_utils/at_utils.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:injectable/injectable.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:private_fit/domain/core/keys.dart';
 import 'package:private_fit/domain/core/at_platform_failures.dart';
+import 'package:private_fit/domain/core/keys.dart';
 import 'package:private_fit/domain/core/value_model.dart';
 import 'package:private_fit/domain/home/i_home_facade.dart';
 import 'package:private_fit/infrastructure/atplatform/platform_services.dart';
@@ -110,17 +111,17 @@ class HomeFacade implements IHomeFacade {
 
   Future<void> _showNotification(AtNotification atNotification) async {
     _logger.finer('inside show notification...');
-    const platformChannelSpecifics = NotificationDetails(
-      android: AndroidNotificationDetails(
-        'CHANNEL_ID',
-        'CHANNEL_NAME',
-        channelDescription: 'CHANNEL_DESCRIPTION',
-        importance: Importance.max,
-        priority: Priority.high,
-        showWhen: false,
-      ),
-      iOS: IOSNotificationDetails(),
-    );
+    // const platformChannelSpecifics = NotificationDetails(
+    //   android: AndroidNotificationDetails(
+    //     'CHANNEL_ID',
+    //     'CHANNEL_NAME',
+    //     channelDescription: 'CHANNEL_DESCRIPTION',
+    //     importance: Importance.max,
+    //     priority: Priority.high,
+    //     showWhen: false,
+    //   ),
+    //   iOS: IOSNotificationDetails(),
+    // );
     // if (atNotification.key.contains('report')) {
     //   await _notificationsPlugin.show(
     //     0,//todo(kzawadi): This need to wait for admin to be configured
@@ -136,28 +137,6 @@ class HomeFacade implements IHomeFacade {
   Future<AtStatus> getAtSignStatus(String atSign) async => AtStatusImpl(
         rootUrl: Constants.rootDomain,
       ).get(atSign);
-
-  Future<bool> checkUserStatus(String atSign) async {
-    List<String>? atSignsList;
-    atSignsList =
-        await KeyChainManager.getInstance().getAtSignListFromKeychain();
-    atSignsList ??= <String>[];
-    try {
-      final s = await getAtSignStatus(atSign).timeout(
-        const Duration(seconds: 30),
-        onTimeout: () {
-          _logger.warning('Timeout checking @sign status: $atSign');
-          throw 'timeOut';
-        },
-      );
-      var atSignExist = atSignsList.contains(atSign);
-      s.serverStatus == ServerStatus.teapot ? atSignExist = false : atSignExist;
-      return atSignExist;
-    } on Exception catch (e, s) {
-      _logger.severe('Error checking user status: $atSign', e, s);
-      return false;
-    }
-  }
 
   /// Checks if any @sign is onboarded and returns the result.
   Future<bool> checkIfUserAlreadyExist() async {

@@ -12,7 +12,6 @@ import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:private_fit/application/on_boarding/bloc/on_boarding_bloc.dart';
 import 'package:private_fit/domain/core/at_platform_failures.dart';
 import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
-import 'package:private_fit/infrastructure/atplatform/platform_services.dart';
 import 'package:private_fit/shared/constants.dart';
 import 'package:private_fit/shared/global_navigator_key.dart';
 

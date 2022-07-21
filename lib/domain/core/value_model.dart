@@ -55,6 +55,7 @@ class Value {
 
   @override
   String toString() {
+    // ignore: lines_longer_than_80_chars
     return 'Value{labelName: $labelName, value: $value, type: $type, createdDate: $createdDate, isHidden: $isHidden}';
   }
 }

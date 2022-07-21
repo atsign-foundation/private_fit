@@ -2,7 +2,6 @@
 import 'dart:async';
 
 // 🐦 Flutter imports:
-import 'package:at_utils/at_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -26,11 +25,6 @@ class _SettingsPageViewState extends State<SettingsPageView> {
   final TextEditingController _userNameController = TextEditingController(),
       _reportController = TextEditingController();
   final FocusNode _nameFocusNode = FocusNode(), _titleFocusNode = FocusNode();
-  bool _editing = false,
-      _saving = false,
-      _enableFingerprint = false,
-      _logsSaving = false;
-  final AtSignLogger _logger = AtSignLogger('Settings screen');
 
   final bool _isLoading = false;
   PackageInfo? packageInfo;
@@ -258,18 +252,18 @@ class _SettingsPageViewState extends State<SettingsPageView> {
                                 lable: 'Backup keys file',
                                 subLable:
                                     'Backup your keys file to a safe place',
-                                trailing: _saving
-                                    ? Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 20,
-                                        ),
-                                        child: squareWidget(
-                                          20,
-                                          child:
-                                              const CircularProgressIndicator(),
-                                        ),
-                                      )
-                                    : null,
+                                // trailing: _saving
+                                //     ? Padding(
+                                //         padding: const EdgeInsets.symmetric(
+                                //           horizontal: 20,
+                                //         ),
+                                //         child: squareWidget(
+                                //           20,
+                                //           child:
+                                //               const CircularProgressIndicator(),
+                                //         ),
+                                //       )
+                                //     : null,
                                 onTap: () async {},
                               ),
                               const Divider(

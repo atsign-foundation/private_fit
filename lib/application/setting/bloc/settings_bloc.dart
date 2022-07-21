@@ -28,7 +28,6 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
     SettingsEvent event,
     Emitter<SettingsState> emit,
   ) async {
-    Either<AtPlatformFailure, Unit> failureOrSuccess;
     await event.map(
       initialized: (e) {
         emit(

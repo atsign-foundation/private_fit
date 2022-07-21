@@ -4,7 +4,6 @@ import 'package:private_fit/infrastructure/menstrual/calendar.dart';
 import 'package:private_fit/presentation/home/home_navigator.dart';
 import 'package:private_fit/presentation/menstrual/menstrual_page.dart';
 import 'package:private_fit/presentation/on_boarding/on_boarding_page.dart';
-import 'package:private_fit/presentation/open_food/product_details_view.dart';
 import 'package:private_fit/presentation/open_food/scanner_page.dart';
 import 'package:private_fit/presentation/settings/settings_page.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_boarding/initial_route.dart';
@@ -26,7 +25,6 @@ other stuff. AutoRoute does all that for you and much more.
 
     AutoRoute<dynamic>(page: HomeNavigator),
     AutoRoute<dynamic>(page: OnBoardingPage),
-    AutoRoute<dynamic>(page: ProductDetailsView),
     AutoRoute<dynamic>(page: ScannerPage),
     AutoRoute<dynamic>(page: SettingsPage),
     AutoRoute<dynamic>(page: MenstrualPage),

@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:private_fit/domain/core/value_model.dart';
 import 'package:private_fit/domain/settings/user_name_model.dart';
 import 'package:private_fit/domain/settings/value_objects.dart';
 

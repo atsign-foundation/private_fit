@@ -32,7 +32,7 @@ class SettingsCard extends StatelessWidget {
         child: Row(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: squareWidget(
                 50,
                 child: leading,

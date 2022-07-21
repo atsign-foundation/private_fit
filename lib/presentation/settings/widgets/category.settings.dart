@@ -21,7 +21,7 @@ class _SettingsCategoryState extends State<SettingsCategory> {
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 15.0,
+            horizontal: 15,
             vertical: 7,
           ),
           child: Text(
@@ -34,7 +34,7 @@ class _SettingsCategoryState extends State<SettingsCategory> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
