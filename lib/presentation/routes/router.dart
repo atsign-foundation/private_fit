@@ -1,6 +1,5 @@
 import 'package:auto_route/annotations.dart';
 import 'package:injectable/injectable.dart';
-import 'package:private_fit/infrastructure/menstrual/calendar.dart';
 import 'package:private_fit/presentation/home/home_navigator.dart';
 import 'package:private_fit/presentation/menstrual/menstrual_page.dart';
 import 'package:private_fit/presentation/on_boarding/on_boarding_page.dart';
@@ -21,14 +20,11 @@ other stuff. AutoRoute does all that for you and much more.
 @singleton
 @CupertinoAutoRouter(
   routes: <AutoRoute>[
-    // AutoRoute<dynamic>(page: OnBoarding),
-
     AutoRoute<dynamic>(page: HomeNavigator),
     AutoRoute<dynamic>(page: OnBoardingPage),
     AutoRoute<dynamic>(page: ScannerPage),
     AutoRoute<dynamic>(page: SettingsPage),
     AutoRoute<dynamic>(page: MenstrualPage),
-    AutoRoute<dynamic>(page: Calender),
     AutoRoute<dynamic>(page: OnBoarding, initial: true),
   ],
 )

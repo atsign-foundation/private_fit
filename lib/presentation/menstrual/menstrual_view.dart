@@ -4,7 +4,7 @@ import 'package:private_fit/application/menstrual/bloc/menstrual_bloc.dart';
 import 'package:private_fit/injections.dart';
 
 import 'package:private_fit/presentation/components/calendar_utils.dart';
-import 'package:private_fit/presentation/menstrual/widgets/helpers.dart';
+import 'package:private_fit/presentation/menstrual/widgets/menstrual_widgets.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class MenstrualView extends StatelessWidget {
@@ -55,9 +55,9 @@ class MenstrualView extends StatelessWidget {
                       }
                     },
                   ),
-                  const Divider(thickness: 3),
-                  const Divider(thickness: 3),
-                  Column(),
+                  const Divider(thickness: 10),
+                  const Divider(thickness: 0, height: 10),
+                  Column(children: const [CycleAnalysis()]),
                 ],
               ),
             ),

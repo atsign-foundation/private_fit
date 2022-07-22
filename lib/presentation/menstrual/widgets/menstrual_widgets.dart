@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:private_fit/application/menstrual/bloc/menstrual_bloc.dart';
 import 'package:private_fit/domain/menstrual/menstrual_data_model.dart';
 import 'package:private_fit/domain/menstrual/value_objects.dart';
+import 'package:private_fit/injections.dart';
 import 'package:private_fit/presentation/components/calendar_utils.dart';
 import 'package:private_fit/shared/iconly_icon.dart';
 import 'package:private_fit/shared/icons_curved.dart';
@@ -283,4 +284,88 @@ class PeriodAppBar extends StatelessWidget implements PreferredSizeWidget {
   static final _appBar = AppBar();
   @override
   Size get preferredSize => _appBar.preferredSize;
+}
+
+class AverageStatsWidget extends StatelessWidget {
+  const AverageStatsWidget({
+    Key? key,
+    required this.context,
+    required this.title,
+    required this.number,
+  }) : super(key: key);
+
+  final BuildContext context;
+  final String title;
+  final String number;
+
+  @override
+  Widget build(BuildContext context) {
+    const TextStyle subHeadingStyle = TextStyle(
+        fontFamily: 'Montserrat', color: Color(0xff120023), fontSize: 17);
+    List<String> tit = [];
+    tit = title.split(' ');
+    return Container(
+      padding: const EdgeInsets.fromLTRB(5, 7, 5, 7),
+      width: MediaQuery.of(context).size.width / 3.6,
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        color: Color(0xffE7CFFF),
+      ),
+      child: Column(
+        children: [
+          Text(
+            tit[0],
+            style: subHeadingStyle,
+            softWrap: true,
+          ),
+          Text(
+            tit[1],
+            style: subHeadingStyle,
+            softWrap: true,
+          ),
+          Text(
+            number,
+            style: const TextStyle(fontSize: 28, color: Colors.deepOrange),
+          ),
+          const Text('days'),
+        ],
+      ),
+    );
+  }
+}
+
+class CycleAnalysis extends StatelessWidget {
+  const CycleAnalysis({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<MenstrualBloc, MenstrualState>(
+      bloc: getIt<MenstrualBloc>(),
+      builder: (BuildContext context, MenstrualState state) {
+        return SizedBox(
+          height: 100,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              AverageStatsWidget(
+                context: context,
+                title: 'Cycle Length',
+                number: state.menstrualDataModel.periodCycleDays.toString(),
+              ),
+              AverageStatsWidget(
+                context: context,
+                title: 'Cycle Variation',
+                number: '2.5',
+              ),
+              AverageStatsWidget(
+                context: context,
+                title: 'Period Length',
+                number: state.menstrualDataModel.bleedingDays.toString(),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 }
