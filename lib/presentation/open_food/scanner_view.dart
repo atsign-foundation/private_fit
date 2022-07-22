@@ -81,34 +81,6 @@ class OnFailures extends StatelessWidget {
   }
 }
 
-// class OnLoadSuccess extends StatelessWidget {
-//   const OnLoadSuccess({
-//     Key? key,
-//     required this.fetchedProduct,
-//   }) : super(key: key);
-//   final FetchedProduct fetchedProduct;
-//   @override
-//   Widget build(BuildContext context) {
-//     return FutureBuilder<OrderedNutrients>(
-//       future: OrderedNutrientsCache().download(context),
-//       builder: (context, snapshot) {
-//         if (snapshot.hasData) {
-//           return NutritionPageLoaded(
-//             fetchedProduct.product!,
-//             snapshot.data!,
-//           );
-//         }
-//         return const Scaffold(
-//           backgroundColor: Colors.white,
-//           body: Center(
-//             child: CupertinoActivityIndicator(),
-//           ),
-//         );
-//       },
-//     );
-//   }
-// }
-
 // ignore: must_be_immutable
 class OnInitialState extends StatelessWidget {
   OnInitialState({

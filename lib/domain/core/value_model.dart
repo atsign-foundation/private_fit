@@ -17,12 +17,13 @@
 // }
 
 class Value {
-  Value(
-      {this.value,
-      this.type,
-      this.createdDate,
-      this.labelName,
-      this.isHidden}) {
+  Value({
+    this.value,
+    this.type,
+    this.createdDate,
+    this.labelName,
+    this.isHidden,
+  }) {
     createdDate = createdDate ?? DateTime.now().toString();
     isHidden = isHidden ?? false;
   }
@@ -54,6 +55,7 @@ class Value {
 
   @override
   String toString() {
+    // ignore: lines_longer_than_80_chars
     return 'Value{labelName: $labelName, value: $value, type: $type, createdDate: $createdDate, isHidden: $isHidden}';
   }
 }

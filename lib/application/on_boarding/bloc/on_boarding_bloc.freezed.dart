@@ -546,7 +546,7 @@ mixin _$OnBoardingState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(AtClientPreference atClientPreference) loading,
-    required TResult Function(OnBoardingFailure onBoardingFailure) failure,
+    required TResult Function(AtPlatformFailure onBoardingFailure) failure,
     required TResult Function(Option<String> atSign) loadSuccess,
     required TResult Function(Object? object) onBoardingError,
   }) =>
@@ -555,7 +555,7 @@ mixin _$OnBoardingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
-    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(AtPlatformFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
   }) =>
@@ -564,7 +564,7 @@ mixin _$OnBoardingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
-    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(AtPlatformFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
     required TResult orElse(),
@@ -664,7 +664,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(AtClientPreference atClientPreference) loading,
-    required TResult Function(OnBoardingFailure onBoardingFailure) failure,
+    required TResult Function(AtPlatformFailure onBoardingFailure) failure,
     required TResult Function(Option<String> atSign) loadSuccess,
     required TResult Function(Object? object) onBoardingError,
   }) {
@@ -676,7 +676,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
-    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(AtPlatformFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
   }) {
@@ -688,7 +688,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
-    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(AtPlatformFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
     required TResult orElse(),
@@ -818,7 +818,7 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(AtClientPreference atClientPreference) loading,
-    required TResult Function(OnBoardingFailure onBoardingFailure) failure,
+    required TResult Function(AtPlatformFailure onBoardingFailure) failure,
     required TResult Function(Option<String> atSign) loadSuccess,
     required TResult Function(Object? object) onBoardingError,
   }) {
@@ -830,7 +830,7 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
-    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(AtPlatformFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
   }) {
@@ -842,7 +842,7 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
-    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(AtPlatformFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
     required TResult orElse(),
@@ -910,9 +910,9 @@ abstract class _$$_FailureCopyWith<$Res> {
   factory _$$_FailureCopyWith(
           _$_Failure value, $Res Function(_$_Failure) then) =
       __$$_FailureCopyWithImpl<$Res>;
-  $Res call({OnBoardingFailure onBoardingFailure});
+  $Res call({AtPlatformFailure onBoardingFailure});
 
-  $OnBoardingFailureCopyWith<$Res> get onBoardingFailure;
+  $AtPlatformFailureCopyWith<$Res> get onBoardingFailure;
 }
 
 /// @nodoc
@@ -932,13 +932,13 @@ class __$$_FailureCopyWithImpl<$Res> extends _$OnBoardingStateCopyWithImpl<$Res>
       onBoardingFailure == freezed
           ? _value.onBoardingFailure
           : onBoardingFailure // ignore: cast_nullable_to_non_nullable
-              as OnBoardingFailure,
+              as AtPlatformFailure,
     ));
   }
 
   @override
-  $OnBoardingFailureCopyWith<$Res> get onBoardingFailure {
-    return $OnBoardingFailureCopyWith<$Res>(_value.onBoardingFailure, (value) {
+  $AtPlatformFailureCopyWith<$Res> get onBoardingFailure {
+    return $AtPlatformFailureCopyWith<$Res>(_value.onBoardingFailure, (value) {
       return _then(_value.copyWith(onBoardingFailure: value));
     });
   }
@@ -950,7 +950,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   const _$_Failure(this.onBoardingFailure);
 
   @override
-  final OnBoardingFailure onBoardingFailure;
+  final AtPlatformFailure onBoardingFailure;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -988,7 +988,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(AtClientPreference atClientPreference) loading,
-    required TResult Function(OnBoardingFailure onBoardingFailure) failure,
+    required TResult Function(AtPlatformFailure onBoardingFailure) failure,
     required TResult Function(Option<String> atSign) loadSuccess,
     required TResult Function(Object? object) onBoardingError,
   }) {
@@ -1000,7 +1000,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
-    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(AtPlatformFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
   }) {
@@ -1012,7 +1012,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
-    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(AtPlatformFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
     required TResult orElse(),
@@ -1065,10 +1065,10 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
 }
 
 abstract class _Failure implements OnBoardingState {
-  const factory _Failure(final OnBoardingFailure onBoardingFailure) =
+  const factory _Failure(final AtPlatformFailure onBoardingFailure) =
       _$_Failure;
 
-  OnBoardingFailure get onBoardingFailure => throw _privateConstructorUsedError;
+  AtPlatformFailure get onBoardingFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_FailureCopyWith<_$_Failure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1149,7 +1149,7 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(AtClientPreference atClientPreference) loading,
-    required TResult Function(OnBoardingFailure onBoardingFailure) failure,
+    required TResult Function(AtPlatformFailure onBoardingFailure) failure,
     required TResult Function(Option<String> atSign) loadSuccess,
     required TResult Function(Object? object) onBoardingError,
   }) {
@@ -1161,7 +1161,7 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
-    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(AtPlatformFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
   }) {
@@ -1173,7 +1173,7 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
-    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(AtPlatformFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
     required TResult orElse(),
@@ -1308,7 +1308,7 @@ class _$_onBoardingError
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(AtClientPreference atClientPreference) loading,
-    required TResult Function(OnBoardingFailure onBoardingFailure) failure,
+    required TResult Function(AtPlatformFailure onBoardingFailure) failure,
     required TResult Function(Option<String> atSign) loadSuccess,
     required TResult Function(Object? object) onBoardingError,
   }) {
@@ -1320,7 +1320,7 @@ class _$_onBoardingError
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
-    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(AtPlatformFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
   }) {
@@ -1332,7 +1332,7 @@ class _$_onBoardingError
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
-    TResult Function(OnBoardingFailure onBoardingFailure)? failure,
+    TResult Function(AtPlatformFailure onBoardingFailure)? failure,
     TResult Function(Option<String> atSign)? loadSuccess,
     TResult Function(Object? object)? onBoardingError,
     required TResult orElse(),
