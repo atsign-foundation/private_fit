@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:private_fit/application/activity_tracker/bloc/pedometer_bloc.dart';
+import 'package:private_fit/application/pedometer/bloc/pedometer_bloc.dart';
 
 import 'package:private_fit/application/bot_nav_bar/bloc/bot_nav_bar_bloc.dart';
 import 'package:private_fit/application/home/bloc/home_bloc.dart';
