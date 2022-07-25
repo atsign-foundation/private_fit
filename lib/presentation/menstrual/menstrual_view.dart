@@ -18,6 +18,7 @@ class MenstrualView extends StatelessWidget {
       bloc: getIt<MenstrualBloc>()..add(const MenstrualEvent.started()),
       builder: (BuildContext context, MenstrualState state) {
         return Scaffold(
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           appBar: const PeriodAppBar(),
           floatingActionButton: const FloatingButton(),
           body: SingleChildScrollView(
@@ -56,7 +57,7 @@ class MenstrualView extends StatelessWidget {
                     },
                   ),
                   const Divider(thickness: 10),
-                  const Divider(thickness: 0, height: 10),
+                  const Divider(thickness: 5, height: 25),
                   Column(children: const [CycleAnalysis()]),
                 ],
               ),
