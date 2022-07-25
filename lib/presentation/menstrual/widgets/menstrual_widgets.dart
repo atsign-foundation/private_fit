@@ -11,64 +11,64 @@ import 'package:private_fit/shared/iconly_icon.dart';
 import 'package:private_fit/shared/icons_curved.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-// String? codeDialog;
-//   String? valueText;
-//   dynamic _displayTextInputDialog(
-//     BuildContext context,
-//     String heading,
-//     String collectionName,
-//   ) async {
-//     return showDialog<dynamic>(
-//       context: context,
-//       builder: (context) {
-//         return AlertDialog(
-//           title: Text(heading),
-//           backgroundColor: Colors.pink[50],
-//           content: TextField(
-//             onChanged: (value) {
-//               setState(() {
-//                 valueText = value;
-//               });
-//             },
-//             controller: _textFieldController,
-//             decoration: InputDecoration(hintText: 'Enter your ' + heading),
-//           ),
-//           actions: <Widget>[
-//             TextButton(
-//               style: ButtonStyle(
-//                 backgroundColor:
-//                     MaterialStateProperty.all<Color>(Colors.pink[900]!),
-//               ),
-//               child: Text(
-//                 'CANCEL',
-//                 style: TextStyle(
-//                   color: Colors.pink[50],
-//                 ),
-//               ),
-//               onPressed: () {
-//                 setState(() {
-//                   Navigator.pop(context);
-//                 });
-//               },
-//             ),
-//             TextButton(
-//               style: ButtonStyle(
-//                 backgroundColor:
-//                     MaterialStateProperty.all<Color>(Colors.pink[900]!),
-//               ),
-//               child: Text(
-//                 'SUBMIT',
-//                 style: TextStyle(
-//                   color: Colors.pink[50],
-//                 ),
-//               ),
-//               onPressed: () {},
-//             ),
-//           ],
-//         );
-//       },
-//     );
-//   }
+String? codeDialog;
+String? valueText;
+dynamic _displayTextInputDialog(
+  BuildContext context,
+  String heading,
+  String collectionName,
+) async {
+  return showDialog<dynamic>(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        title: Text(heading),
+        backgroundColor: Colors.pink[50],
+        content: TextField(
+          // onChanged: (value) {
+          //   setState(() {
+          //     valueText = value;
+          //   });
+          // },
+          // controller: _textFieldController,
+          decoration: InputDecoration(hintText: heading),
+        ),
+        actions: <Widget>[
+          TextButton(
+            style: ButtonStyle(
+              backgroundColor:
+                  MaterialStateProperty.all<Color>(Colors.pink[900]!),
+            ),
+            child: Text(
+              'CANCEL',
+              style: TextStyle(
+                color: Colors.pink[50],
+              ),
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          TextButton(
+            style: ButtonStyle(
+              backgroundColor:
+                  MaterialStateProperty.all<Color>(Colors.pink[900]!),
+            ),
+            child: Text(
+              'SUBMIT',
+              style: TextStyle(
+                color: Colors.pink[50],
+              ),
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
 
 final boxDecoration = BoxDecoration(
   gradient: LinearGradient(
@@ -129,16 +129,17 @@ class FloatingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton.extended(
       onPressed: () {
-        final testModel = MenstrualDataModel.initialState().copyWith(
-          periodStartDate: PeriodStartDate(
-            DateTime(2022, 6, 28),
-          ),
-          bleedingDays: 4,
-        );
+        // final testModel = MenstrualDataModel.initialState().copyWith(
+        //   periodStartDate: PeriodStartDate(
+        //     DateTime(2022, 6, 28),
+        //   ),
+        //   bleedingDays: 4,
+        // );
 
-        context.read<MenstrualBloc>().add(
-              MenstrualEvent.save(testModel),
-            );
+        // context.read<MenstrualBloc>().add(
+        //       MenstrualEvent.save(testModel),
+        //     );
+        _displayTextInputDialog(context, 'Pick Date', '');
       },
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
@@ -273,11 +274,15 @@ class PeriodAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: const Text(
         'My Cycles',
-        style: TextStyle(fontSize: 27),
+        style: TextStyle(
+          fontSize: 27,
+          color: Colors.black,
+        ),
       ),
-      backgroundColor: Colors.pink[900],
+      backgroundColor:
+          Theme.of(context).scaffoldBackgroundColor, //Colors.pink[900],
       centerTitle: true,
-      elevation: 5,
+      elevation: 0,
     );
   }
 

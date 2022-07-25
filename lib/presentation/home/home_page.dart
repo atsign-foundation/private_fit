@@ -2,13 +2,17 @@ import 'dart:math' as math;
 
 import 'package:at_sync_ui_flutter/services/at_sync_ui_services.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:private_fit/application/home/bloc/home_bloc.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/components/custom_sync_widget.dart';
+import 'package:private_fit/presentation/components/global.dart';
 import 'package:private_fit/presentation/components/toast.dart';
+import 'package:private_fit/presentation/menstrual/widgets/menstrual_widgets.dart';
+import 'package:private_fit/presentation/pedometer/pedometer_page.dart';
 import 'package:private_fit/shared/images.dart';
 
 class HomePage extends StatelessWidget {
@@ -42,75 +46,71 @@ class HomePage extends StatelessWidget {
           );
         },
         builder: (context, state) {
-          return Stack(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      AllImages().trainer,
-                    ),
-                    fit: BoxFit.fitHeight,
-                  ),
+          return Scaffold(
+            body: CustomScrollView(
+              physics: const BouncingScrollPhysics(),
+              slivers: [
+                const HomeAppBar(),
+                const HomeSilver(),
+                CupertinoSliverRefreshControl(
+                  onRefresh: () async {
+                    // return await context.refresh(newsFutureProvider);
+                  },
                 ),
-              ),
-              Positioned(
-                top: 700,
-                left: 30,
-                child: Transform.rotate(
-                  angle: -math.pi / 2,
-                  alignment: Alignment.centerLeft,
-                  child: AutoSizeText(
-                    l10n.app_title,
-                    style: const TextStyle(
-                      fontSize: 60,
-                      color: Color.fromARGB(255, 7, 54, 92),
-                      fontWeight: FontWeight.w800,
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                bottom: 110,
-                left: 70,
-                child: Transform.rotate(
-                  angle: -math.pi / 2,
-                  alignment: Alignment.centerLeft,
-                  child: const AutoSizeText(
-                    'Welcome @22fine90',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Color.fromARGB(255, 5, 99, 98),
-                      fontWeight: FontWeight.w300,
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                ),
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: StreamBuilder<AtSyncUIStatus>(
-                  stream: AtSyncUIService().atSyncUIListener,
-                  builder: (context, snapshot) => CustomSyncIndicator(
-                    uiStatus: snapshot.data,
-                    size: 50,
-                    child: const ClipOval(
-                      child: Image(
-                        height: 60,
-                        width: 60,
-                        fit: BoxFit.cover,
-                        gaplessPlayback: true,
-                        image: NetworkImage(
-                          'https://source.unsplash.com/random',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           );
         },
+      ),
+    );
+  }
+}
+
+class HomeAppBar extends StatelessWidget {
+  const HomeAppBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoSliverNavigationBar(
+      stretch: true,
+      border: Border.all(style: BorderStyle.none),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      largeTitle: const AutoSizeText(
+        'Kelvin',
+        minFontSize: 21,
+        maxFontSize: 30,
+      ),
+    );
+  }
+}
+
+class HomeSilver extends StatelessWidget {
+  const HomeSilver({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (context, index) {
+          if (index <= 5) {
+            switch (index) {
+              case 0:
+                return const Divider(height: 40);
+              case 1:
+                return const CycleAnalysis();
+              case 2:
+                return const Divider(height: 30);
+              default:
+                return const PedomaterPage();
+            }
+          } else {
+            return Container();
+          }
+        },
+
+        /// Sets ChildCount to one incase of error and needs to display on Item in the list
+        /// This also allows the use of the [RefreshList] widget, to refresh the feed.
+        childCount: 4,
       ),
     );
   }

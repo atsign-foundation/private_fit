@@ -104,12 +104,12 @@ class OnInitialState extends StatelessWidget {
           Container(
             height: double.infinity,
             width: double.infinity,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: Image.asset('assets/images/running.png').image,
-                fit: BoxFit.cover,
-              ),
-            ),
+            // decoration: BoxDecoration(
+            //   image: DecorationImage(
+            //     image: Image.asset('assets/images/running.png').image,
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
             child: GlassmorphicContainer(
               width: MediaQuery.of(context).size.width * 0.9,
               height: 300,
@@ -144,7 +144,7 @@ class OnInitialState extends StatelessWidget {
                 child: Container(
                   color: Colors.transparent,
                   width: MediaQuery.of(context).size.width,
-                  height: 300,
+                  height: 200,
                   child: Center(
                     child: Padding(
                       padding: const EdgeInsets.all(40),
