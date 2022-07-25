@@ -59,6 +59,7 @@ dependencies:
   openfoodfacts: ^1.19.0
   package_info_plus: ^1.4.2
   path_provider: ^2.0.5
+  pedometer: ^3.0.0
   permission_handler: ^10.0.0
   qr_mobile_vision: ^3.0.1
   rxdart: ^0.27.4
