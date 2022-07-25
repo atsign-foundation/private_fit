@@ -35,6 +35,19 @@ class Keys {
     ),
   );
 
+  /// User name key
+  static final PassKey menstrualDataKey = PassKey(
+    key: 'menstrual',
+    isPublic: false,
+    isHidden: true,
+    createdDate: DateTime.now(),
+    value: Value(
+      labelName: 'period',
+      isHidden: true,
+      type: 'menstrual',
+    ),
+  );
+
   /// Master image key
   static final PassKey masterImgKey = PassKey(
     key: 'masterpassimg',

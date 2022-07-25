@@ -25,7 +25,8 @@ void showToast(
         margin: width != null
             ? null
             : EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.2),
+                horizontal: MediaQuery.of(context).size.width * 0.2,
+              ),
         backgroundColor:
             isError ? Colors.red[700] : Theme.of(context).primaryColor,
         padding: const EdgeInsets.all(10),

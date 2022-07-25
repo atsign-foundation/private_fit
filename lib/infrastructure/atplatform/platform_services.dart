@@ -1,18 +1,17 @@
 // 🎯 Dart imports:
+// ignore_for_file: avoid_dynamic_calls
+
 import 'dart:convert';
 
 // 📦 Package imports:
 // ignore: implementation_imports
 import 'package:at_client_mobile/at_client_mobile.dart';
 import 'package:at_onboarding_flutter/services/onboarding_service.dart';
-import 'package:at_onboarding_flutter/utils/response_status.dart';
 import 'package:at_server_status/at_server_status.dart';
 import 'package:at_utils/at_utils.dart';
-import 'package:flutter/widgets.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:private_fit/domain/core/key_model.dart';
-import 'package:private_fit/domain/core/keys.dart';
 import 'package:private_fit/shared/constants.dart';
 
 // 🌎 Project imports:
@@ -49,25 +48,26 @@ class SdkServices {
       ..namespace = Constants.appNamespace;
   }
 
-  Future<bool> checkUserStatus(String atSign) async {
-    List<String>? atSignsList;
-    atSignsList =
-        await KeyChainManager.getInstance().getAtSignListFromKeychain();
-    atSignsList ??= <String>[];
-    try {
-      final s = await getAtSignStatus(atSign)
-          .timeout(const Duration(seconds: 30), onTimeout: () {
-        _logger.warning('Timeout checking @sign status: $atSign');
-        throw 'timeOut';
-      });
-      var atSignExist = atSignsList.contains(atSign);
-      s.serverStatus == ServerStatus.teapot ? atSignExist = false : atSignExist;
-      return atSignExist;
-    } on Exception catch (e, s) {
-      _logger.severe('Error checking user status: $atSign', e, s);
-      return false;
-    }
-  }
+  // Future<bool> checkUserStatus(String atSign) async {
+  //   List<String>? atSignsList;
+  //   atSignsList =
+  //       await KeyChainManager.getInstance().getAtSignListFromKeychain();
+  //   atSignsList ??= <String>[];
+  //   try {
+  //     final s = await getAtSignStatus(atSign)
+  //         .timeout(const Duration(seconds: 30), onTimeout: () {
+  //       _logger.warning('Timeout checking @sign status: $atSign');
+  //       throw 'timeOut';
+  //     });
+  //     var atSignExist = atSignsList.contains(atSign);
+  //     s.serverStatus == ServerStatus.teapot ? atSignExist = false :
+  // atSignExist;
+  //     return atSignExist;
+  //   } on Exception catch (e, s) {
+  //     _logger.severe('Error checking user status: $atSign', e, s);
+  //     return false;
+  //   }
+  // }
 
   /// Checks if any @sign is onboarded and returns the result.
   Future<bool> checkIfUserAlreadyExist() async {
@@ -84,7 +84,9 @@ class SdkServices {
 
   /// Check if user is onboarded and returns the result.
   Future<bool> checkIfAtSignExistInDevice(
-      String atSign, AtClientPreference preference) async {
+    String atSign,
+    AtClientPreference preference,
+  ) async {
     _logger.finer('Checking if @sign exist in device: $atSign');
     final isExists = await (OnboardingService.getInstance()
           ..setAtsign = atSign
@@ -102,7 +104,7 @@ class SdkServices {
     try {
       final list = await atClientManager.atClient
           .getAtKeys(regex: 'profilepic', sharedBy: currentAtSign);
-      for (var key in list) {
+      for (final key in list) {
         if (key.key == 'profilepic' &&
             key.namespace == Constants.appNamespace) {
           final img = await atClientManager.atClient.get(key);
@@ -118,7 +120,7 @@ class SdkServices {
     }
   }
 
-  Future<String?> getName() async {
+  Future<String?> getUserName() async {
     _logger.finer('Getting name');
     try {
       final _names = await getAllKeys(regex: 'name.${Constants.appNamespace}');
@@ -154,8 +156,11 @@ class SdkServices {
                   value: entity.value?.value['title'] as String,
                 ),
               )
-              .then((NotificationResult value) => _logger.finer(
-                  'Notification status: ${value.notificationStatusEnum.name}'));
+              .then(
+                (NotificationResult value) => _logger.finer(
+                  'Notification status: ${value.notificationStatusEnum.name}',
+                ),
+              );
         }
       }
       // syncData();
@@ -191,7 +196,7 @@ class SdkServices {
             .severe('Looks like you have more that one key with the keyname');
         return false;
       }
-      for (var k in a) {
+      for (final k in a) {
         _keyDeleted = await atClientManager.atClient.delete(k);
       }
       if (_keyDeleted) {

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:private_fit/application/bot_nav_bar/bloc/bot_nav_bar_bloc.dart';
-import 'package:private_fit/injections.dart';
+import 'package:private_fit/shared/iconly_icon.dart';
+import 'package:private_fit/shared/icons_curved.dart';
 
 class BotNavBar extends StatelessWidget {
   const BotNavBar({
     Key? key,
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -16,26 +16,51 @@ class BotNavBar extends StatelessWidget {
       builder: (context, index) {
         return NavigationBar(
           selectedIndex: index,
-          onDestinationSelected: (newIndex) =>
-              context.read<BotNavBarBloc>().add(BotNavBarEvent.change(newIndex)),
-          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-          animationDuration: Duration(milliseconds: 1000),
+          onDestinationSelected: (newIndex) => context
+              .read<BotNavBarBloc>()
+              .add(BotNavBarEvent.change(newIndex)),
+          // labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+          animationDuration: const Duration(milliseconds: 1000),
+
           //backgroundColor: ,
           // unselectedItemColor: Colors.grey,
           // selectedItemColor: Colors.black87,
           // showSelectedLabels: true,
           // selectedFontSize: 12.0,
-          destinations: [
+
+          destinations: const [
             NavigationDestination(
-              icon: Icon(Icons.sports_kabaddi_outlined),
-              label: "Activities",
+              icon: IconlyIcon(
+                path: IconlyCurved.Home,
+                size: 25,
+                color: Color.fromARGB(255, 12, 49, 54),
+              ),
+              label: 'Activities',
             ),
             NavigationDestination(
-                icon: Icon(Icons.sports_handball_outlined), label: "Training"),
+              icon: IconlyIcon(
+                path: IconlyCurved.Calendar,
+                size: 25,
+                color: Color.fromARGB(255, 12, 49, 54),
+              ),
+              label: 'Period',
+            ),
             NavigationDestination(
-                icon: Icon(Icons.fastfood_outlined), label: "Nutritional scan"),
+              icon: IconlyIcon(
+                path: IconlyCurved.Scan,
+                size: 25,
+                color: Color.fromARGB(255, 12, 49, 54),
+              ),
+              label: 'Nutritional scan',
+            ),
             NavigationDestination(
-                icon: Icon(Icons.history_outlined), label: "History"),
+              icon: IconlyIcon(
+                path: IconlyCurved.Setting,
+                size: 25,
+                color: Color.fromARGB(255, 12, 49, 54),
+              ),
+              label: 'History',
+            ),
           ],
         );
       },

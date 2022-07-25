@@ -1,11 +1,10 @@
 import 'package:at_client_mobile/at_client_mobile.dart';
-import 'package:at_contacts_flutter/utils/text_strings.dart';
 import 'package:at_utils/at_utils.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
+import 'package:private_fit/domain/core/at_platform_failures.dart';
 import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
-import 'package:private_fit/domain/core/onboarding_failures.dart';
 import 'package:private_fit/domain/open_food/i_open_food_facts_facade.dart';
 import 'package:private_fit/domain/open_food/open_food_facts_failures.dart';
 import 'package:private_fit/domain/open_food/open_food_fetched_product.dart';
@@ -13,7 +12,7 @@ import 'package:private_fit/domain/open_food/product_query.dart';
 import 'package:private_fit/injections.dart';
 
 @LazySingleton(as: IOpenFoodFactsFacade)
-class OpenFoodFactsServices extends IOpenFoodFactsFacade {
+class OpenFoodFactsServices implements IOpenFoodFactsFacade {
   final AtSignLogger _logger = AtSignLogger('OpenFoodFactsServices');
 
 // late  _atClientPreference;
@@ -21,13 +20,13 @@ class OpenFoodFactsServices extends IOpenFoodFactsFacade {
   late AtClientPreference atClientPreference;
   late AtClientService atClientServiceInstance;
 
-  var onBoardFacade = getIt<IAtsignOnBoardingFacade>();
+  IAtsignOnBoardingFacade onBoardFacade = getIt<IAtsignOnBoardingFacade>();
 
   ///Fetches atsign from device keychain.
   Future<String?> getAtSign() async {
     await onBoardFacade.loadAtClientPreference().then((value) {
       value.fold(
-        (l) => const OnBoardingFailure.serverError(),
+        (l) => const AtPlatformFailure.serverError(),
         (r) => atClientPreference = r,
       );
     });

@@ -1,15 +1,19 @@
 import 'package:at_client_mobile/at_client_mobile.dart';
 import 'package:at_onboarding_flutter/at_onboarding_flutter.dart';
+import 'package:at_sync_ui_flutter/at_sync_ui.dart';
+import 'package:at_sync_ui_flutter/services/at_sync_ui_services.dart';
+// import 'package:at_sync_ui_flutter/at_sync_ui_flutter.dart';
 import 'package:at_utils/at_utils.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 
 import 'package:private_fit/application/on_boarding/bloc/on_boarding_bloc.dart';
-import 'package:private_fit/domain/core/onboarding_failures.dart';
+import 'package:private_fit/domain/core/at_platform_failures.dart';
 import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
-import 'package:private_fit/infrastructure/atplatform/platform_services.dart';
 import 'package:private_fit/shared/constants.dart';
+import 'package:private_fit/shared/global_navigator_key.dart';
 
 /// Implementation of [IAtsignOnBoardingFacade] interface
 
@@ -18,10 +22,6 @@ class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
   final AtSignLogger _logger = AtSignLogger('SDK services');
   Map<String?, AtClientService> atClientServiceMap = {};
   AtClientManager atClientManager = AtClientManager.getInstance();
-
-  final SdkServices _sdkServices = SdkServices.getInstance();
-
-  late String _currentAtSign;
 
   @override
   Option<String> getOnBoardedAtSign() {
@@ -38,7 +38,7 @@ class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
   /// at this stage we delivery them to the [OnBoardingBloc] so it can be party
   /// of App logic
   @override
-  Future<Either<OnBoardingFailure, AtClientPreference>>
+  Future<Either<AtPlatformFailure, AtClientPreference>>
       loadAtClientPreference() async {
     final appDocumentDirectory =
         await path_provider.getApplicationSupportDirectory();
@@ -54,13 +54,13 @@ class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
   }
 
   @override
-  Future<Either<OnBoardingFailure, Unit>> onBoardDataWhenSuccessful(
+  Future<Either<AtPlatformFailure, Unit>> onBoardDataWhenSuccessful(
     Map<String?, AtClientService> v,
     String? atSign,
   ) async {
     return loadAtClientPreference().then(
       (value) => value.fold(
-        (l) => left(const OnBoardingFailure.failToSetOnBoardData()),
+        (l) => left(const AtPlatformFailure.failToSetOnBoardData()),
         (atClientPreference) async {
           await AtClientManager.getInstance().setCurrentAtSign(
             atSign!,
@@ -69,11 +69,25 @@ class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
           );
           atClientServiceMap = v;
           await KeychainUtil.makeAtSignPrimary(atSign);
-          AtClientManager.getInstance().syncService.sync();
-          _currentAtSign = atSign;
+          AtSyncUIService().init(
+            appNavigator: NavService.navKey,
+            onSuccessCallback: _onSuccessCallback,
+            onErrorCallback: () {},
+          );
+          await HapticFeedback.lightImpact();
+          await AtSyncUIService().sync(atSyncUIOverlay: AtSyncUIOverlay.dialog);
+
           return right(unit);
         },
       ),
     );
+  }
+
+  /// Function to be called when sync is done
+  Future<void> _onSuccessCallback(SyncResult syncResult) async {
+    _logger.finer(
+      '==================== ${syncResult.syncStatus.name} ================',
+    );
+    await HapticFeedback.lightImpact();
   }
 }

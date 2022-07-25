@@ -15,15 +15,8 @@ class FDA extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      // navigationBar: CupertinoNavigationBar(
-      //   leading: CupertinoNavigationBarBackButton(
-      //     onPressed: () {},
-      //   ),
-      //   middle: const Text('Nutrition Facts'),
-      // ),
-      // backgroundColor: Colors.white,
-
       child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
@@ -268,24 +261,22 @@ class FDA extends StatelessWidget {
                     thickness: 0.5,
                     color: Theme.of(context).dividerColor,
                   ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Sodium ${fetchedProduct.nutriments!.sodiumUnit}',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 25,
-                          ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Sodium ${fetchedProduct.nutriments!.sodiumUnit}',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 25,
                         ),
-                        Text(
-                          fetchedProduct.nutriments!.sodium.toString(),
-                          style: const TextStyle(
-                              fontWeight: FontWeight.w900, fontSize: 27),
-                        )
-                      ],
-                    ),
+                      ),
+                      Text(
+                        fetchedProduct.nutriments!.sodium.toString(),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w900, fontSize: 27),
+                      )
+                    ],
                   ),
                   Divider(
                     thickness: 0.5,

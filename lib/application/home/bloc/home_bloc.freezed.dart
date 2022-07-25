@@ -312,19 +312,19 @@ mixin _$HomeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(Either<OnBoardingFailure, bool> result) username,
+    required TResult Function(Either<AtPlatformFailure, bool> result) username,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Either<OnBoardingFailure, bool> result)? username,
+    TResult Function(Either<AtPlatformFailure, bool> result)? username,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Either<OnBoardingFailure, bool> result)? username,
+    TResult Function(Either<AtPlatformFailure, bool> result)? username,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -404,7 +404,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(Either<OnBoardingFailure, bool> result) username,
+    required TResult Function(Either<AtPlatformFailure, bool> result) username,
   }) {
     return initial();
   }
@@ -413,7 +413,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Either<OnBoardingFailure, bool> result)? username,
+    TResult Function(Either<AtPlatformFailure, bool> result)? username,
   }) {
     return initial?.call();
   }
@@ -422,7 +422,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Either<OnBoardingFailure, bool> result)? username,
+    TResult Function(Either<AtPlatformFailure, bool> result)? username,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -472,7 +472,7 @@ abstract class _$$_UsernameCopyWith<$Res> {
   factory _$$_UsernameCopyWith(
           _$_Username value, $Res Function(_$_Username) then) =
       __$$_UsernameCopyWithImpl<$Res>;
-  $Res call({Either<OnBoardingFailure, bool> result});
+  $Res call({Either<AtPlatformFailure, bool> result});
 }
 
 /// @nodoc
@@ -493,7 +493,7 @@ class __$$_UsernameCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
       result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as Either<OnBoardingFailure, bool>,
+              as Either<AtPlatformFailure, bool>,
     ));
   }
 }
@@ -504,7 +504,7 @@ class _$_Username implements _Username {
   const _$_Username(this.result);
 
   @override
-  final Either<OnBoardingFailure, bool> result;
+  final Either<AtPlatformFailure, bool> result;
 
   @override
   String toString() {
@@ -532,7 +532,7 @@ class _$_Username implements _Username {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(Either<OnBoardingFailure, bool> result) username,
+    required TResult Function(Either<AtPlatformFailure, bool> result) username,
   }) {
     return username(result);
   }
@@ -541,7 +541,7 @@ class _$_Username implements _Username {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Either<OnBoardingFailure, bool> result)? username,
+    TResult Function(Either<AtPlatformFailure, bool> result)? username,
   }) {
     return username?.call(result);
   }
@@ -550,7 +550,7 @@ class _$_Username implements _Username {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Either<OnBoardingFailure, bool> result)? username,
+    TResult Function(Either<AtPlatformFailure, bool> result)? username,
     required TResult orElse(),
   }) {
     if (username != null) {
@@ -592,10 +592,10 @@ class _$_Username implements _Username {
 }
 
 abstract class _Username implements HomeState {
-  const factory _Username(final Either<OnBoardingFailure, bool> result) =
+  const factory _Username(final Either<AtPlatformFailure, bool> result) =
       _$_Username;
 
-  Either<OnBoardingFailure, bool> get result =>
+  Either<AtPlatformFailure, bool> get result =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_UsernameCopyWith<_$_Username> get copyWith =>

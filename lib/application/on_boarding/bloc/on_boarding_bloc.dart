@@ -7,7 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:private_fit/domain/contacts/use_cases/at_contacts_use_cases.dart';
-import 'package:private_fit/domain/core/onboarding_failures.dart';
+import 'package:private_fit/domain/core/at_platform_failures.dart';
 import 'package:private_fit/domain/on_boarding/use_cases/on_boarding_use_cases.dart';
 
 part 'on_boarding_event.dart';
