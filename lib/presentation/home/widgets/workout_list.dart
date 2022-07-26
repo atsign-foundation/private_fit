@@ -1,9 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:percent_indicator/percent_indicator.dart';
-
-import 'homepage_card.dart';
+import 'package:private_fit/presentation/home/widgets/homepage_card.dart';
 
 class WorkoutList extends StatelessWidget {
   const WorkoutList({Key? key}) : super(key: key);
@@ -23,16 +19,16 @@ class WorkoutList extends StatelessWidget {
                   onPressed: () {},
                   color: Colors.blue,
                   textColor: Colors.white,
+                  shape: const CircleBorder(),
                   child: Icon(
                     Icons.camera_alt,
                     size: MediaQuery.of(context).size.height * 0.03,
                   ),
-                  shape: CircleBorder(),
                 ),
                 Divider(
                   height: MediaQuery.of(context).size.height * 0.01,
                 ),
-                Text('Activity'),
+                const Text('Activity'),
               ],
             );
           },

@@ -1,18 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
-import 'homepage_card.dart';
+import 'package:private_fit/presentation/home/widgets/homepage_card.dart';
 
 class TodaysActivity extends StatelessWidget {
   const TodaysActivity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    DateTime now = DateTime.now();
-    String formattedDate = DateFormat.MMMEd('en_US').format(now);
+    final DateTime now = DateTime.now();
+    final String formattedDate = DateFormat.MMMEd('en_US').format(now);
     return HomepageCard(
       cardChild: Row(
         children: [
@@ -26,7 +24,7 @@ class TodaysActivity extends StatelessWidget {
               percent: 0.3,
               center: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Text(
                     'Steps',
                     style: TextStyle(color: Colors.green),
@@ -50,33 +48,33 @@ class TodaysActivity extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Todays Activity',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Text('${formattedDate}'),
+                Text(formattedDate),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.directions_walk,
                       color: Colors.green,
                     ),
-                    Text('Steps'),
+                    const Text('Steps'),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.05,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.local_fire_department_rounded,
                       color: Colors.orange,
                     ),
-                    Text('Calories'),
+                    const Text('Calories'),
                   ],
                 ),
                 Row(
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           '3:25',
                           style: TextStyle(fontWeight: FontWeight.bold),
@@ -89,7 +87,7 @@ class TodaysActivity extends StatelessWidget {
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           '6.05',
                           style: TextStyle(fontWeight: FontWeight.bold),

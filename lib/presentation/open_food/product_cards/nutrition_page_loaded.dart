@@ -97,7 +97,7 @@ class FDA extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          fetchedProduct.servingSize!,
+                          fetchedProduct.servingSize ?? '',
                           style: const TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: 18,
@@ -235,27 +235,25 @@ class FDA extends StatelessWidget {
                     thickness: 0.5,
                     color: Theme.of(context).dividerColor,
                   ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'Cholesterol ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 25,
-                          ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Cholesterol ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 25,
                         ),
-                        Text(
-                          fetchedProduct.nutriments!.cholesterolServing
-                              .toString(),
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 27,
-                          ),
-                        )
-                      ],
-                    ),
+                      ),
+                      Text(
+                        fetchedProduct.nutriments!.cholesterolServing
+                            .toString(),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 27,
+                        ),
+                      )
+                    ],
                   ),
                   Divider(
                     thickness: 0.5,
@@ -274,7 +272,9 @@ class FDA extends StatelessWidget {
                       Text(
                         fetchedProduct.nutriments!.sodium.toString(),
                         style: const TextStyle(
-                            fontWeight: FontWeight.w900, fontSize: 27),
+                          fontWeight: FontWeight.w900,
+                          fontSize: 27,
+                        ),
                       )
                     ],
                   ),
@@ -282,26 +282,24 @@ class FDA extends StatelessWidget {
                     thickness: 0.5,
                     color: Theme.of(context).dividerColor,
                   ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          'Total Carbonhydrate ' '50',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 25,
-                          ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Total Carbonhydrate ' '50',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 25,
                         ),
-                        Text(
-                          '5%',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 27,
-                          ),
-                        )
-                      ],
-                    ),
+                      ),
+                      Text(
+                        '5%',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 27,
+                        ),
+                      )
+                    ],
                   ),
                   Divider(
                     thickness: 0.5,
@@ -352,95 +350,93 @@ class FDA extends StatelessWidget {
                     thickness: 0.5,
                     color: Theme.of(context).dividerColor,
                   ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          'Protein ' '5g',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 37,
-                          ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Protein ' '5g',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 37,
                         ),
-                        Text(
-                          '40',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 27,
-                          ),
-                        )
-                      ],
-                    ),
+                      ),
+                      Text(
+                        '40',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 27,
+                        ),
+                      )
+                    ],
                   ),
                   Divider(
                     thickness: 0.5,
                     color: Theme.of(context).dividerColor,
                   ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          'Calcium ' '20mg',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 25,
-                          ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Calcium ' '20mg',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 25,
                         ),
-                        Text(
-                          '2',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 27,
-                          ),
-                        )
-                      ],
-                    ),
+                      ),
+                      Text(
+                        '2',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 27,
+                        ),
+                      )
+                    ],
                   ),
                   Divider(
                     thickness: 0.5,
                     color: Theme.of(context).dividerColor,
                   ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          'Iron ' '30g',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w300, fontSize: 25),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Iron ' '30g',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 25,
                         ),
-                        Text(
-                          '8',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w900, fontSize: 25),
-                        )
-                      ],
-                    ),
+                      ),
+                      Text(
+                        '8',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 25,
+                        ),
+                      )
+                    ],
                   ),
                   Divider(
                     thickness: 0.5,
                     color: Theme.of(context).dividerColor,
                   ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          'Potassium ' '50mg',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 25,
-                          ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Potassium ' '50mg',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 25,
                         ),
-                        Text(
-                          '90',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w900, fontSize: 27),
-                        )
-                      ],
-                    ),
+                      ),
+                      Text(
+                        '90',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 27,
+                        ),
+                      )
+                    ],
                   ),
                   Container(
                     alignment: Alignment.center,

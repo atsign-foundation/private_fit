@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 
-import 'homepage_card.dart';
+import 'package:private_fit/presentation/home/widgets/homepage_card.dart';
 
 class DailyGoal extends StatelessWidget {
   const DailyGoal({Key? key}) : super(key: key);
@@ -14,9 +11,9 @@ class DailyGoal extends StatelessWidget {
       cardChild: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Your Daily Goal'),
+          const Text('Your Daily Goal'),
           Row(
-            children: [
+            children: const [
               Icon(Icons.directions_walk),
               Text('1000 Steps'),
               Icon(Icons.local_fire_department_rounded),

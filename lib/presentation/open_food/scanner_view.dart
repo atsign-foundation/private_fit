@@ -101,7 +101,7 @@ class OnInitialState extends StatelessWidget {
               painter: ScanVisorPainter(),
             ),
           ),
-          Container(
+          SizedBox(
             height: double.infinity,
             width: double.infinity,
             // decoration: BoxDecoration(

@@ -4,9 +4,9 @@ import 'package:private_fit/domain/pedometer/i_pedometer_facade.dart';
 
 @lazySingleton
 class PedestrianStatusUseCase {
-  PedestrianStatusUseCase(this._PedometerFacade);
+  PedestrianStatusUseCase(this._pedometerFacade);
 
-  final IPedometerFacade _PedometerFacade;
+  final IPedometerFacade _pedometerFacade;
 
-  Stream<PedestrianStatus> call() => _PedometerFacade.pedestrianStatusStream;
+  Stream<PedestrianStatus> call() => _pedometerFacade.pedestrianStatusStream;
 }

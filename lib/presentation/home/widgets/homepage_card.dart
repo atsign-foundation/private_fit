@@ -1,16 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomepageCard extends StatelessWidget {
-  HomepageCard({super.key, this.cardColor, required this.cardChild});
+  const HomepageCard({super.key, required this.cardChild, this.cardColor});
 
   final Widget cardChild;
-  Color? cardColor = Colors.white;
+  final Color? cardColor;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: cardColor,
+      color: cardColor ?? Colors.white,
       elevation: 10,
       margin: EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width / 25,

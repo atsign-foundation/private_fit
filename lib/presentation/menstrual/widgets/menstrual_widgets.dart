@@ -3,8 +3,6 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:private_fit/application/menstrual/bloc/menstrual_bloc.dart';
-import 'package:private_fit/domain/menstrual/menstrual_data_model.dart';
-import 'package:private_fit/domain/menstrual/value_objects.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/presentation/components/calendar_utils.dart';
 import 'package:private_fit/shared/iconly_icon.dart';
@@ -25,12 +23,6 @@ dynamic _displayTextInputDialog(
         title: Text(heading),
         backgroundColor: Colors.pink[50],
         content: TextField(
-          // onChanged: (value) {
-          //   setState(() {
-          //     valueText = value;
-          //   });
-          // },
-          // controller: _textFieldController,
           decoration: InputDecoration(hintText: heading),
         ),
         actions: <Widget>[
@@ -306,7 +298,10 @@ class AverageStatsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const TextStyle subHeadingStyle = TextStyle(
-        fontFamily: 'Montserrat', color: Color(0xff120023), fontSize: 17);
+      fontFamily: 'Montserrat',
+      color: Color(0xff120023),
+      fontSize: 17,
+    );
     List<String> tit = [];
     tit = title.split(' ');
     return Container(

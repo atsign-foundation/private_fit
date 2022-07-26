@@ -4,10 +4,10 @@ import 'package:private_fit/domain/pedometer/i_pedometer_facade.dart';
 
 @lazySingleton
 class StepsCountStreamUseCase {
-  StepsCountStreamUseCase(this._PedometerFacade);
+  StepsCountStreamUseCase(this._pedometerFacade);
 
-  final IPedometerFacade _PedometerFacade;
+  final IPedometerFacade _pedometerFacade;
 
-  Stream<StepCount> get scs => _PedometerFacade.stepCountStream;
+  Stream<StepCount> get scs => _pedometerFacade.stepCountStream;
   // Stream<StepCount> call() => _PedometerFacade.stepCountStream;
 }

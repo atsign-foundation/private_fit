@@ -252,18 +252,6 @@ class _SettingsPageViewState extends State<SettingsPageView> {
                                 lable: 'Backup keys file',
                                 subLable:
                                     'Backup your keys file to a safe place',
-                                // trailing: _saving
-                                //     ? Padding(
-                                //         padding: const EdgeInsets.symmetric(
-                                //           horizontal: 20,
-                                //         ),
-                                //         child: squareWidget(
-                                //           20,
-                                //           child:
-                                //               const CircularProgressIndicator(),
-                                //         ),
-                                //       )
-                                //     : null,
                                 onTap: () async {},
                               ),
                               const Divider(
@@ -280,12 +268,6 @@ class _SettingsPageViewState extends State<SettingsPageView> {
                                 lable: 'Fingerprint',
                                 subLable:
                                     'Use your biometric for more security',
-                                // trailing: const Padding(
-                                //   padding: EdgeInsets.symmetric(horizontal: 10),
-                                //   child: SizedBox(
-                                //     child: AutoSizeText('heelo'),
-                                //   ),
-                                // ),
                               ),
                               const Divider(
                                 height: 0,
@@ -362,13 +344,6 @@ class _SettingsPageViewState extends State<SettingsPageView> {
                             children: <TextSpan>[
                               TextSpan(
                                 text: 'Private Fit Interns Team',
-                                // recognizer: TapGestureRecognizer()
-                                //   ..onTap = () async {
-                                //     Uri _url = Uri.https('wavi.ng', '@minnu💚');
-                                //     if (await canLaunchUrl(_url)) {
-                                //       await launchUrl(_url);
-                                //     }
-                                //   },
                                 style: Theme.of(context)
                                     .textTheme
                                     .caption

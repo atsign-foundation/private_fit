@@ -134,8 +134,10 @@ class HomeSilver extends StatelessWidget {
           }
         },
 
-        /// Sets ChildCount to one incase of error and needs to display on Item in the list
-        /// This also allows the use of the [RefreshList] widget, to refresh the feed.
+        /// Sets ChildCount to one incase of error
+        /// and needs to display on Item in the list
+        /// This also allows the use of the [RefreshList] widget,
+        ///  to refresh the feed.
         childCount: 5,
       ),
     );

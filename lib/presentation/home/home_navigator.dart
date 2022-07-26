@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:private_fit/application/pedometer/bloc/pedometer_bloc.dart';
-
 import 'package:private_fit/application/bot_nav_bar/bloc/bot_nav_bar_bloc.dart';
 import 'package:private_fit/application/home/bloc/home_bloc.dart';
 import 'package:private_fit/application/menstrual/bloc/menstrual_bloc.dart';
+import 'package:private_fit/application/pedometer/bloc/pedometer_bloc.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/presentation/home/home_navigator_widget.dart';
 

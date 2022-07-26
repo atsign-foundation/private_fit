@@ -3,8 +3,8 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pedometer/pedometer.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:private_fit/domain/pedometer/pedometer_failures.dart';
 import 'package:private_fit/domain/pedometer/i_pedometer_facade.dart';
+import 'package:private_fit/domain/pedometer/pedometer_failures.dart';
 
 @LazySingleton(as: IPedometerFacade)
 class PedometerServices extends IPedometerFacade {
@@ -19,6 +19,7 @@ class PedometerServices extends IPedometerFacade {
   late Stream<PedestrianStatus> _pedestrianStatusStream;
 
   Future<void> initPlatformState() async {
+    _logger.info('=====initializing pedometer sensors activities');
     await Permission.activityRecognition.request();
     await Permission.location.request();
 
