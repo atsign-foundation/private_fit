@@ -82,7 +82,7 @@ class PedometerView extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(top: 16),
                                 child: Text(
-                                  'The step count is\$${snapshot.data!.steps.toString()}',
+                                  '${snapshot.data!.steps} Step',
                                 ),
                               ),
                             ];
