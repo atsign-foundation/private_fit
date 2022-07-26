@@ -5,9 +5,9 @@ import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pedometer/pedometer.dart';
-import 'package:private_fit/domain/activity_tracker/use_cases/get_fetched_step_use_case.dart';
-import 'package:private_fit/domain/activity_tracker/use_cases/pedestrian_status_use_case.dart';
-import 'package:private_fit/domain/activity_tracker/use_cases/steps_count_stream_use_case.dart';
+import 'package:private_fit/domain/pedometer/use_cases/get_fetched_step_use_case.dart';
+import 'package:private_fit/domain/pedometer/use_cases/pedestrian_status_use_case.dart';
+import 'package:private_fit/domain/pedometer/use_cases/steps_count_stream_use_case.dart';
 
 part 'pedometer_bloc.freezed.dart';
 part 'pedometer_event.dart';

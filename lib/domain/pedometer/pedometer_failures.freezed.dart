@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'activity_tracker_failures.dart';
+part of 'pedometer_failures.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ActivityTrackerFailures {
+mixin _$PedometerFailures {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() internetNotFound,
@@ -91,20 +91,20 @@ mixin _$ActivityTrackerFailures {
 }
 
 /// @nodoc
-abstract class $ActivityTrackerFailuresCopyWith<$Res> {
-  factory $ActivityTrackerFailuresCopyWith(ActivityTrackerFailures value,
-          $Res Function(ActivityTrackerFailures) then) =
-      _$ActivityTrackerFailuresCopyWithImpl<$Res>;
+abstract class $PedometerFailuresCopyWith<$Res> {
+  factory $PedometerFailuresCopyWith(
+          PedometerFailures value, $Res Function(PedometerFailures) then) =
+      _$PedometerFailuresCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ActivityTrackerFailuresCopyWithImpl<$Res>
-    implements $ActivityTrackerFailuresCopyWith<$Res> {
-  _$ActivityTrackerFailuresCopyWithImpl(this._value, this._then);
+class _$PedometerFailuresCopyWithImpl<$Res>
+    implements $PedometerFailuresCopyWith<$Res> {
+  _$PedometerFailuresCopyWithImpl(this._value, this._then);
 
-  final ActivityTrackerFailures _value;
+  final PedometerFailures _value;
   // ignore: unused_field
-  final $Res Function(ActivityTrackerFailures) _then;
+  final $Res Function(PedometerFailures) _then;
 }
 
 /// @nodoc
@@ -116,7 +116,7 @@ abstract class _$$_InternetNotFoundCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InternetNotFoundCopyWithImpl<$Res>
-    extends _$ActivityTrackerFailuresCopyWithImpl<$Res>
+    extends _$PedometerFailuresCopyWithImpl<$Res>
     implements _$$_InternetNotFoundCopyWith<$Res> {
   __$$_InternetNotFoundCopyWithImpl(
       _$_InternetNotFound _value, $Res Function(_$_InternetNotFound) _then)
@@ -133,7 +133,7 @@ class _$_InternetNotFound implements _InternetNotFound {
 
   @override
   String toString() {
-    return 'ActivityTrackerFailures.internetNotFound()';
+    return 'PedometerFailures.internetNotFound()';
   }
 
   @override
@@ -242,7 +242,7 @@ class _$_InternetNotFound implements _InternetNotFound {
   }
 }
 
-abstract class _InternetNotFound implements ActivityTrackerFailures {
+abstract class _InternetNotFound implements PedometerFailures {
   const factory _InternetNotFound() = _$_InternetNotFound;
 }
 
@@ -256,7 +256,7 @@ abstract class _$$_FailedToGetCameraPermissionsCopyWith<$Res> {
 
 /// @nodoc
 class __$$_FailedToGetCameraPermissionsCopyWithImpl<$Res>
-    extends _$ActivityTrackerFailuresCopyWithImpl<$Res>
+    extends _$PedometerFailuresCopyWithImpl<$Res>
     implements _$$_FailedToGetCameraPermissionsCopyWith<$Res> {
   __$$_FailedToGetCameraPermissionsCopyWithImpl(
       _$_FailedToGetCameraPermissions _value,
@@ -275,7 +275,7 @@ class _$_FailedToGetCameraPermissions implements _FailedToGetCameraPermissions {
 
   @override
   String toString() {
-    return 'ActivityTrackerFailures.failedToGetPermissions()';
+    return 'PedometerFailures.failedToGetPermissions()';
   }
 
   @override
@@ -385,8 +385,7 @@ class _$_FailedToGetCameraPermissions implements _FailedToGetCameraPermissions {
   }
 }
 
-abstract class _FailedToGetCameraPermissions
-    implements ActivityTrackerFailures {
+abstract class _FailedToGetCameraPermissions implements PedometerFailures {
   const factory _FailedToGetCameraPermissions() =
       _$_FailedToGetCameraPermissions;
 }
@@ -400,7 +399,7 @@ abstract class _$$_InternetErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InternetErrorCopyWithImpl<$Res>
-    extends _$ActivityTrackerFailuresCopyWithImpl<$Res>
+    extends _$PedometerFailuresCopyWithImpl<$Res>
     implements _$$_InternetErrorCopyWith<$Res> {
   __$$_InternetErrorCopyWithImpl(
       _$_InternetError _value, $Res Function(_$_InternetError) _then)
@@ -417,7 +416,7 @@ class _$_InternetError implements _InternetError {
 
   @override
   String toString() {
-    return 'ActivityTrackerFailures.internetError()';
+    return 'PedometerFailures.internetError()';
   }
 
   @override
@@ -526,7 +525,7 @@ class _$_InternetError implements _InternetError {
   }
 }
 
-abstract class _InternetError implements ActivityTrackerFailures {
+abstract class _InternetError implements PedometerFailures {
   const factory _InternetError() = _$_InternetError;
 }
 
@@ -539,7 +538,7 @@ abstract class _$$_UserCancelledCopyWith<$Res> {
 
 /// @nodoc
 class __$$_UserCancelledCopyWithImpl<$Res>
-    extends _$ActivityTrackerFailuresCopyWithImpl<$Res>
+    extends _$PedometerFailuresCopyWithImpl<$Res>
     implements _$$_UserCancelledCopyWith<$Res> {
   __$$_UserCancelledCopyWithImpl(
       _$_UserCancelled _value, $Res Function(_$_UserCancelled) _then)
@@ -556,7 +555,7 @@ class _$_UserCancelled implements _UserCancelled {
 
   @override
   String toString() {
-    return 'ActivityTrackerFailures.userCancelled()';
+    return 'PedometerFailures.userCancelled()';
   }
 
   @override
@@ -665,7 +664,7 @@ class _$_UserCancelled implements _UserCancelled {
   }
 }
 
-abstract class _UserCancelled implements ActivityTrackerFailures {
+abstract class _UserCancelled implements PedometerFailures {
   const factory _UserCancelled() = _$_UserCancelled;
 }
 
@@ -678,7 +677,7 @@ abstract class _$$_codeInvalidCopyWith<$Res> {
 
 /// @nodoc
 class __$$_codeInvalidCopyWithImpl<$Res>
-    extends _$ActivityTrackerFailuresCopyWithImpl<$Res>
+    extends _$PedometerFailuresCopyWithImpl<$Res>
     implements _$$_codeInvalidCopyWith<$Res> {
   __$$_codeInvalidCopyWithImpl(
       _$_codeInvalid _value, $Res Function(_$_codeInvalid) _then)
@@ -695,7 +694,7 @@ class _$_codeInvalid implements _codeInvalid {
 
   @override
   String toString() {
-    return 'ActivityTrackerFailures.codeInvalid()';
+    return 'PedometerFailures.codeInvalid()';
   }
 
   @override
@@ -804,7 +803,7 @@ class _$_codeInvalid implements _codeInvalid {
   }
 }
 
-abstract class _codeInvalid implements ActivityTrackerFailures {
+abstract class _codeInvalid implements PedometerFailures {
   const factory _codeInvalid() = _$_codeInvalid;
 }
 
@@ -817,7 +816,7 @@ abstract class _$$_onPedestrianStatusErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$_onPedestrianStatusErrorCopyWithImpl<$Res>
-    extends _$ActivityTrackerFailuresCopyWithImpl<$Res>
+    extends _$PedometerFailuresCopyWithImpl<$Res>
     implements _$$_onPedestrianStatusErrorCopyWith<$Res> {
   __$$_onPedestrianStatusErrorCopyWithImpl(_$_onPedestrianStatusError _value,
       $Res Function(_$_onPedestrianStatusError) _then)
@@ -835,7 +834,7 @@ class _$_onPedestrianStatusError implements _onPedestrianStatusError {
 
   @override
   String toString() {
-    return 'ActivityTrackerFailures.onPedestrianStatusError()';
+    return 'PedometerFailures.onPedestrianStatusError()';
   }
 
   @override
@@ -945,7 +944,7 @@ class _$_onPedestrianStatusError implements _onPedestrianStatusError {
   }
 }
 
-abstract class _onPedestrianStatusError implements ActivityTrackerFailures {
+abstract class _onPedestrianStatusError implements PedometerFailures {
   const factory _onPedestrianStatusError() = _$_onPedestrianStatusError;
 }
 
@@ -958,7 +957,7 @@ abstract class _$$_onStepCountErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$_onStepCountErrorCopyWithImpl<$Res>
-    extends _$ActivityTrackerFailuresCopyWithImpl<$Res>
+    extends _$PedometerFailuresCopyWithImpl<$Res>
     implements _$$_onStepCountErrorCopyWith<$Res> {
   __$$_onStepCountErrorCopyWithImpl(
       _$_onStepCountError _value, $Res Function(_$_onStepCountError) _then)
@@ -975,7 +974,7 @@ class _$_onStepCountError implements _onStepCountError {
 
   @override
   String toString() {
-    return 'ActivityTrackerFailures.onStepCountError()';
+    return 'PedometerFailures.onStepCountError()';
   }
 
   @override
@@ -1084,6 +1083,6 @@ class _$_onStepCountError implements _onStepCountError {
   }
 }
 
-abstract class _onStepCountError implements ActivityTrackerFailures {
+abstract class _onStepCountError implements PedometerFailures {
   const factory _onStepCountError() = _$_onStepCountError;
 }

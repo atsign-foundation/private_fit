@@ -20,15 +20,6 @@ class HomeNavigatorWidget extends StatelessWidget {
       bloc: getIt<BotNavBarBloc>(),
       builder: (context, i) {
         return Scaffold(
-          // floatingActionButton: FloatingActionButton.extended(
-          //   onPressed: () {},
-          //   shape: RoundedRectangleBorder(
-          //     borderRadius: BorderRadius.circular(24),
-          //   ),
-          //   extendedIconLabelSpacing: 16,
-          //   icon: const Icon(Icons.edit),
-          //   label: const Text('New activity'),
-          // ),
           bottomNavigationBar: NavigationBarTheme(
             data: NavigationBarThemeData(
               // indicatorColor: Theme.of(context).primaryColor,

@@ -3,15 +3,15 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pedometer/pedometer.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:private_fit/domain/activity_tracker/activity_tracker_failures.dart';
-import 'package:private_fit/domain/activity_tracker/i_activity_tracker_facade.dart';
+import 'package:private_fit/domain/pedometer/pedometer_failures.dart';
+import 'package:private_fit/domain/pedometer/i_pedometer_facade.dart';
 
-@LazySingleton(as: IActivityTrackerFacade)
-class ActivityTrackerServices extends IActivityTrackerFacade {
-  final AtSignLogger _logger = AtSignLogger('ActivityTrackerServices');
+@LazySingleton(as: IPedometerFacade)
+class PedometerServices extends IPedometerFacade {
+  final AtSignLogger _logger = AtSignLogger('PedometerServices');
 
   @override
-  Future<Either<ActivityTrackerFailures, Unit>> justPlaceHolder() {
+  Future<Either<PedometerFailures, Unit>> justPlaceHolder() {
     throw UnimplementedError();
   }
 

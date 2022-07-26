@@ -4,7 +4,7 @@
   "@app_title": {
     "description": "The title of the App"
   },
-  "on_board_atsign": "@SIGN YÜKLENİYOR",
+  "on_board_atsign": "@SIGN GİRİŞ",
   "@on_board_atsign": {
     "description": "On boarding an atsign"
   },
@@ -23,5 +23,13 @@
   "assets_loading": "VARLIKLAR YÜKLENİYOR ...",
   "@assets_loading": {
     "description": "the text seen on the splash screen when loading assets"
-  }
+  },
+  "scanner_title": "Yemek Tarayıcı",
+    "@scanner_title": {
+      "description": "the text seen on the scanner screen as a title"
+    },
+    "scanning_instructions": "Aldığınız içecek veya yiyeceklerin barkodunu bulun ve beslenme bilgilerini görmek için tarayın",
+    "@scanning_instructions": {
+      "description": "the text seen on the barcode scanning screen to guide on how to scan"
+    }
 }

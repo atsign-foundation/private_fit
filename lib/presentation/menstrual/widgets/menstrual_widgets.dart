@@ -348,7 +348,7 @@ class CycleAnalysis extends StatelessWidget {
       bloc: getIt<MenstrualBloc>(),
       builder: (BuildContext context, MenstrualState state) {
         return SizedBox(
-          height: 100,
+          height: MediaQuery.of(context).size.height * 0.13,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
