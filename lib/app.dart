@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:private_fit/application/on_boarding/bloc/on_boarding_bloc.dart';
 import 'package:private_fit/application/open_food/bloc/open_food_bloc.dart';
+import 'package:private_fit/application/setting/bloc/settings_bloc.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/routes/router.gr.dart' as app_router;
@@ -37,6 +38,10 @@ class PrivateFitApp extends StatelessWidget {
           BlocProvider(
             create: (context) => getIt<OpenFoodBloc>(),
           ),
+          BlocProvider(
+            create: (context) => getIt<SettingsBloc>(),
+            child: Container(),
+          )
         ],
         child: AnimatedTheme(
           curve: Curves.easeInOut,

@@ -9,6 +9,7 @@ import 'package:private_fit/presentation/home/widgets/bot_nav_bar.dart';
 import 'package:private_fit/presentation/menstrual/menstrual_page.dart';
 import 'package:private_fit/presentation/open_food/scanner_page.dart';
 import 'package:private_fit/presentation/settings/settings_page.dart';
+import 'package:private_fit/presentation/settings/settings_view.dart';
 
 class HomeNavigatorWidget extends StatelessWidget {
   const HomeNavigatorWidget({super.key});
@@ -41,7 +42,7 @@ class HomeNavigatorWidget extends StatelessWidget {
                   : i == 2
                       ? const ScannerPage()
                       : i == 3
-                          ? const SettingsPage()
+                          ? const SettingsPageView()
                           //  Container(
                           //     color: Colors.white,
                           //     child: const Center(

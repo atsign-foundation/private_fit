@@ -23,7 +23,7 @@ other stuff. AutoRoute does all that for you and much more.
     AutoRoute<dynamic>(page: HomeNavigator),
     AutoRoute<dynamic>(page: OnBoardingPage),
     AutoRoute<dynamic>(page: ScannerPage),
-    AutoRoute<dynamic>(page: SettingsPage),
+    // AutoRoute<dynamic>(page: SettingsPage),
     AutoRoute<dynamic>(page: MenstrualPage),
     AutoRoute<dynamic>(page: OnBoarding, initial: true),
   ],

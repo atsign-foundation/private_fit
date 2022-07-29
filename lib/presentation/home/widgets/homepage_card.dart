@@ -10,7 +10,7 @@ class HomepageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: cardColor ?? Colors.white,
-      elevation: 10,
+      elevation: 2,
       margin: EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width / 25,
         vertical: MediaQuery.of(context).size.width / 30,

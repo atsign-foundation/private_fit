@@ -32,6 +32,7 @@ class _SettingsPageViewState extends State<SettingsPageView> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   void initState() {
+    getIt<SettingsBloc>().add(const SettingsEvent.started());
     Future<void>.delayed(Duration.zero, () async {
       packageInfo = await PackageInfo.fromPlatform();
 
@@ -62,7 +63,7 @@ class _SettingsPageViewState extends State<SettingsPageView> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SettingsBloc, SettingsState>(
-      bloc: getIt<SettingsBloc>()..add(const SettingsEvent.started()),
+      bloc: getIt<SettingsBloc>(),
       listener: (context, state) {
         final t = state.userNameModel.username.getOrCrash();
         _userNameController.value = TextEditingValue(

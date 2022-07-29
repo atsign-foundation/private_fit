@@ -19,15 +19,16 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return Scaffold(
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-        ),
-        extendedIconLabelSpacing: 16,
-        icon: const Icon(Icons.edit),
-        label: const Text('New activity'),
-      ),
+      //todo(@CemTitor): we do not need this for now, do we?
+      // floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: () {},
+      //   shape: RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.circular(24),
+      //   ),
+      //   extendedIconLabelSpacing: 16,
+      //   icon: const Icon(Icons.edit),
+      //   label: const Text('New activity'),
+      // ),
       body: BlocConsumer<HomeBloc, HomeState>(
         bloc: getIt<HomeBloc>(),
         listener: (context, state) {
@@ -85,8 +86,7 @@ class HomeAppBar extends StatelessWidget {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       largeTitle: Row(
         children: const [
-          CircleAvatar(),
-          Spacer(),
+          // Spacer(),
           AutoSizeText(
             'Kelvin',
             minFontSize: 21,
@@ -96,6 +96,17 @@ class HomeAppBar extends StatelessWidget {
             flex: 15,
           ),
         ],
+      ),
+      trailing: CircleAvatar(
+        child: Image(
+          height: 70,
+          width: 70,
+          fit: BoxFit.cover,
+          gaplessPlayback: true,
+          image: Image.asset(
+            'assets/on_boarding/images/artist_1.png',
+          ).image,
+        ),
       ),
       // largeTitle: const AutoSizeText(
       //   'Kelvin',
@@ -126,12 +137,13 @@ class HomeSilver extends StatelessWidget {
                 return const WorkoutList();
               case 4:
                 return const PedomaterPage();
-              default:
-                return const PedomaterPage();
+              // default:
+              //   return const PedomaterPage();
             }
           } else {
             return Container();
           }
+          return null;
         },
 
         /// Sets ChildCount to one incase of error
