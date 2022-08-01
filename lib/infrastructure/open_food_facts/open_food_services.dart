@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:at_client_mobile/at_client_mobile.dart';
 import 'package:at_utils/at_utils.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:openfoodfacts/model/OrderedNutrients.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:private_fit/domain/core/at_platform_failures.dart';
 import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
@@ -21,20 +24,6 @@ class OpenFoodFactsServices implements IOpenFoodFactsFacade {
   late AtClientService atClientServiceInstance;
 
   IAtsignOnBoardingFacade onBoardFacade = getIt<IAtsignOnBoardingFacade>();
-
-  ///Fetches atsign from device keychain.
-  Future<String?> getAtSign() async {
-    await onBoardFacade.loadAtClientPreference().then((value) {
-      value.fold(
-        (l) => const AtPlatformFailure.serverError(),
-        (r) => atClientPreference = r,
-      );
-    });
-
-    atClientServiceInstance = AtClientService();
-
-    return atClientServiceInstance.atClientManager.atClient.getCurrentAtSign();
-  }
 
   @override
   Future<Either<OpenFoodFailures, Unit>> justplaceholder() {
@@ -75,5 +64,26 @@ class OpenFoodFactsServices implements IOpenFoodFactsFacade {
       return left(const OpenFoodFailures.codeInvalid());
     }
     return left(const OpenFoodFailures.internetNotFound());
+  }
+}
+
+/// Helper class about getting and caching the back-end ordered nutrients.
+class OrderedNutrientsCache {
+  // OrderedNutrientsCache._();
+
+  late OrderedNutrients? _orderedNutrients;
+  OrderedNutrients get orderedNutrients => _orderedNutrients!;
+
+  /// Downloads the ordered nutrients and caches them in the database.
+  Future<OrderedNutrients> download() async {
+    final string = await OpenFoodAPIClient.getOrderedNutrientsJsonString(
+      country: ProductQuery.getCountry()!,
+      language: ProductQuery.getLanguage()!,
+    );
+    final result = OrderedNutrients.fromJson(
+      jsonDecode(string) as Map<String, dynamic>,
+    );
+    // await _daoString.put(_getKey(), string);
+    return result;
   }
 }
