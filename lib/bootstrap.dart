@@ -13,6 +13,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:injectable/injectable.dart';
+import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/shared/constants.dart';
 
@@ -37,6 +38,9 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   await runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+      //we clear the keychin manager so we can onboard an atsign
+      //instead of auto onboading the atsign onboarded from other app (at_app)
+      await IAtsignOnBoardingFacade.checkFirstRun();
 
       /// Load the environment variables from the .env file.
       /// Directly calls load from the dotenv package.
