@@ -28,6 +28,8 @@ class _OnBoardingState extends State<OnBoarding> {
     });
   }
 
+//todo(kzawadi): refactor and make changes to make sure we dont show
+//todo(kzawadi): the splash screen if the user has already onboarded an atsign
   @override
   Widget build(BuildContext context) {
     return newLaunch ? const SplashPage() : const OnBoardingPage();

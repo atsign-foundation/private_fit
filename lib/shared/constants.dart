@@ -29,6 +29,9 @@ class Constants {
   static const int maxTTL = 10080 * 60;
   static const bool isDedicated = true;
 
+  /// Returns the app reporting @sign from the environment.
+  static final String reportAtsign = dotenv.env['REPORT_ATSIGN'] ?? '@';
+
   // Onboarding API key - requires different key for production
   // static String onboardApiKey = '477b-876u-bcez-c42z-6a3d';
 
