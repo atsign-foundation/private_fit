@@ -7,8 +7,6 @@ part 'menstrual_data_model.freezed.dart';
 
 @freezed
 abstract class MenstrualDataModel with _$MenstrualDataModel {
-  // factory MenstrualDataModel.fromJson(Map<String, dynamic> json) =>
-  //     _$MenstrualDataModelFromJson(json);
   factory MenstrualDataModel({
     @Default(28) int periodCycleDays,
     @Default(3) int bleedingDays,

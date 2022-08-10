@@ -43,25 +43,38 @@ class SignInFacade implements ISignInFacade {
     }
   }
 
+  @override
   Future<Either<AtPlatformFailure, AtClientPreference>> initAtClientPreference(
     String atSign,
   ) async {
     return getApplicationDocumentsDirectory().then(
       (value) async {
-        _logger.info('======= initializing  atclient preferences ========');
-        final _atClientPreference = AtClientPreference()
-          ..isLocalStoreRequired = true
-          ..commitLogPath = value.path
-          ..rootDomain = Constants.rootDomain
-          ..namespace = Constants.appNamespace
-          ..syncRegex = Constants.syncRegex
-          ..privateKey = await _keyChainManager.getEncryptionPrivateKey(atSign)
-          ..hiveStoragePath = value.path;
-        return right(_atClientPreference);
+        try {
+          _logger.info('======= initializing  atclient preferences ========');
+          final _atClientPreference = AtClientPreference()
+            ..isLocalStoreRequired = true
+            ..commitLogPath = value.path
+            ..rootDomain = Constants.rootDomain
+            ..namespace = Constants.appNamespace
+            ..syncRegex = Constants.syncRegex
+            ..privateKey =
+                await _keyChainManager.getEncryptionPrivateKey(atSign)
+            ..hiveStoragePath = value.path;
+          return right(_atClientPreference);
+        } catch (e) {
+          return left(const AtPlatformFailure.serverError());
+        }
       },
-      // onError: (dynamic e) {
-      //   return left(const AtPlatformFailure.serverError());
-      // },
     );
+  }
+
+  @override
+  Future<Either<AtPlatformFailure, bool>> onBoard() async {
+    try {
+      return _onBoardingServive.onboard().then(right);
+    } catch (e) {
+      _logger.severe('Failed to onboard this Atsign with :: $e');
+      return left(const AtPlatformFailure.failToSetOnBoardData());
+    }
   }
 }

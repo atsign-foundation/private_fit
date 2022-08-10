@@ -19,19 +19,28 @@ mixin _$SignInEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(AtClientPreference? preference) onBoardAtSign,
+    required TResult Function() onBoardAtSign,
+    required TResult Function(String atSign) initAtPreferences,
+    required TResult Function(AtClientPreference atClientPreference)
+        setAtClientPreferences,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(AtClientPreference? preference)? onBoardAtSign,
+    TResult Function()? onBoardAtSign,
+    TResult Function(String atSign)? initAtPreferences,
+    TResult Function(AtClientPreference atClientPreference)?
+        setAtClientPreferences,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(AtClientPreference? preference)? onBoardAtSign,
+    TResult Function()? onBoardAtSign,
+    TResult Function(String atSign)? initAtPreferences,
+    TResult Function(AtClientPreference atClientPreference)?
+        setAtClientPreferences,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +48,25 @@ mixin _$SignInEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_onBoardAtSign value) onBoardAtSign,
+    required TResult Function(_initAtPreferences value) initAtPreferences,
+    required TResult Function(_setAtClientPreferences value)
+        setAtClientPreferences,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_onBoardAtSign value)? onBoardAtSign,
+    TResult Function(_initAtPreferences value)? initAtPreferences,
+    TResult Function(_setAtClientPreferences value)? setAtClientPreferences,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_onBoardAtSign value)? onBoardAtSign,
+    TResult Function(_initAtPreferences value)? initAtPreferences,
+    TResult Function(_setAtClientPreferences value)? setAtClientPreferences,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,7 +128,10 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(AtClientPreference? preference) onBoardAtSign,
+    required TResult Function() onBoardAtSign,
+    required TResult Function(String atSign) initAtPreferences,
+    required TResult Function(AtClientPreference atClientPreference)
+        setAtClientPreferences,
   }) {
     return started();
   }
@@ -121,7 +140,10 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(AtClientPreference? preference)? onBoardAtSign,
+    TResult Function()? onBoardAtSign,
+    TResult Function(String atSign)? initAtPreferences,
+    TResult Function(AtClientPreference atClientPreference)?
+        setAtClientPreferences,
   }) {
     return started?.call();
   }
@@ -130,7 +152,10 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(AtClientPreference? preference)? onBoardAtSign,
+    TResult Function()? onBoardAtSign,
+    TResult Function(String atSign)? initAtPreferences,
+    TResult Function(AtClientPreference atClientPreference)?
+        setAtClientPreferences,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,6 +169,9 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_onBoardAtSign value) onBoardAtSign,
+    required TResult Function(_initAtPreferences value) initAtPreferences,
+    required TResult Function(_setAtClientPreferences value)
+        setAtClientPreferences,
   }) {
     return started(this);
   }
@@ -153,6 +181,8 @@ class _$_Started implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_onBoardAtSign value)? onBoardAtSign,
+    TResult Function(_initAtPreferences value)? initAtPreferences,
+    TResult Function(_setAtClientPreferences value)? setAtClientPreferences,
   }) {
     return started?.call(this);
   }
@@ -162,6 +192,8 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_onBoardAtSign value)? onBoardAtSign,
+    TResult Function(_initAtPreferences value)? initAtPreferences,
+    TResult Function(_setAtClientPreferences value)? setAtClientPreferences,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -180,7 +212,6 @@ abstract class _$$_onBoardAtSignCopyWith<$Res> {
   factory _$$_onBoardAtSignCopyWith(
           _$_onBoardAtSign value, $Res Function(_$_onBoardAtSign) then) =
       __$$_onBoardAtSignCopyWithImpl<$Res>;
-  $Res call({AtClientPreference? preference});
 }
 
 /// @nodoc
@@ -193,78 +224,63 @@ class __$$_onBoardAtSignCopyWithImpl<$Res>
 
   @override
   _$_onBoardAtSign get _value => super._value as _$_onBoardAtSign;
-
-  @override
-  $Res call({
-    Object? preference = freezed,
-  }) {
-    return _then(_$_onBoardAtSign(
-      preference == freezed
-          ? _value.preference
-          : preference // ignore: cast_nullable_to_non_nullable
-              as AtClientPreference?,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_onBoardAtSign implements _onBoardAtSign {
-  const _$_onBoardAtSign(this.preference);
-
-  @override
-  final AtClientPreference? preference;
+  const _$_onBoardAtSign();
 
   @override
   String toString() {
-    return 'SignInEvent.onBoardAtSign(preference: $preference)';
+    return 'SignInEvent.onBoardAtSign()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_onBoardAtSign &&
-            const DeepCollectionEquality()
-                .equals(other.preference, preference));
+        (other.runtimeType == runtimeType && other is _$_onBoardAtSign);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(preference));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_onBoardAtSignCopyWith<_$_onBoardAtSign> get copyWith =>
-      __$$_onBoardAtSignCopyWithImpl<_$_onBoardAtSign>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(AtClientPreference? preference) onBoardAtSign,
+    required TResult Function() onBoardAtSign,
+    required TResult Function(String atSign) initAtPreferences,
+    required TResult Function(AtClientPreference atClientPreference)
+        setAtClientPreferences,
   }) {
-    return onBoardAtSign(preference);
+    return onBoardAtSign();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(AtClientPreference? preference)? onBoardAtSign,
+    TResult Function()? onBoardAtSign,
+    TResult Function(String atSign)? initAtPreferences,
+    TResult Function(AtClientPreference atClientPreference)?
+        setAtClientPreferences,
   }) {
-    return onBoardAtSign?.call(preference);
+    return onBoardAtSign?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(AtClientPreference? preference)? onBoardAtSign,
+    TResult Function()? onBoardAtSign,
+    TResult Function(String atSign)? initAtPreferences,
+    TResult Function(AtClientPreference atClientPreference)?
+        setAtClientPreferences,
     required TResult orElse(),
   }) {
     if (onBoardAtSign != null) {
-      return onBoardAtSign(preference);
+      return onBoardAtSign();
     }
     return orElse();
   }
@@ -274,6 +290,9 @@ class _$_onBoardAtSign implements _onBoardAtSign {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_onBoardAtSign value) onBoardAtSign,
+    required TResult Function(_initAtPreferences value) initAtPreferences,
+    required TResult Function(_setAtClientPreferences value)
+        setAtClientPreferences,
   }) {
     return onBoardAtSign(this);
   }
@@ -283,6 +302,8 @@ class _$_onBoardAtSign implements _onBoardAtSign {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_onBoardAtSign value)? onBoardAtSign,
+    TResult Function(_initAtPreferences value)? initAtPreferences,
+    TResult Function(_setAtClientPreferences value)? setAtClientPreferences,
   }) {
     return onBoardAtSign?.call(this);
   }
@@ -292,6 +313,8 @@ class _$_onBoardAtSign implements _onBoardAtSign {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_onBoardAtSign value)? onBoardAtSign,
+    TResult Function(_initAtPreferences value)? initAtPreferences,
+    TResult Function(_setAtClientPreferences value)? setAtClientPreferences,
     required TResult orElse(),
   }) {
     if (onBoardAtSign != null) {
@@ -302,19 +325,324 @@ class _$_onBoardAtSign implements _onBoardAtSign {
 }
 
 abstract class _onBoardAtSign implements SignInEvent {
-  const factory _onBoardAtSign(final AtClientPreference? preference) =
-      _$_onBoardAtSign;
+  const factory _onBoardAtSign() = _$_onBoardAtSign;
+}
 
-  AtClientPreference? get preference => throw _privateConstructorUsedError;
+/// @nodoc
+abstract class _$$_initAtPreferencesCopyWith<$Res> {
+  factory _$$_initAtPreferencesCopyWith(_$_initAtPreferences value,
+          $Res Function(_$_initAtPreferences) then) =
+      __$$_initAtPreferencesCopyWithImpl<$Res>;
+  $Res call({String atSign});
+}
+
+/// @nodoc
+class __$$_initAtPreferencesCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res>
+    implements _$$_initAtPreferencesCopyWith<$Res> {
+  __$$_initAtPreferencesCopyWithImpl(
+      _$_initAtPreferences _value, $Res Function(_$_initAtPreferences) _then)
+      : super(_value, (v) => _then(v as _$_initAtPreferences));
+
+  @override
+  _$_initAtPreferences get _value => super._value as _$_initAtPreferences;
+
+  @override
+  $Res call({
+    Object? atSign = freezed,
+  }) {
+    return _then(_$_initAtPreferences(
+      atSign == freezed
+          ? _value.atSign
+          : atSign // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_initAtPreferences implements _initAtPreferences {
+  const _$_initAtPreferences(this.atSign);
+
+  @override
+  final String atSign;
+
+  @override
+  String toString() {
+    return 'SignInEvent.initAtPreferences(atSign: $atSign)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_initAtPreferences &&
+            const DeepCollectionEquality().equals(other.atSign, atSign));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(atSign));
+
   @JsonKey(ignore: true)
-  _$$_onBoardAtSignCopyWith<_$_onBoardAtSign> get copyWith =>
+  @override
+  _$$_initAtPreferencesCopyWith<_$_initAtPreferences> get copyWith =>
+      __$$_initAtPreferencesCopyWithImpl<_$_initAtPreferences>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() onBoardAtSign,
+    required TResult Function(String atSign) initAtPreferences,
+    required TResult Function(AtClientPreference atClientPreference)
+        setAtClientPreferences,
+  }) {
+    return initAtPreferences(atSign);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onBoardAtSign,
+    TResult Function(String atSign)? initAtPreferences,
+    TResult Function(AtClientPreference atClientPreference)?
+        setAtClientPreferences,
+  }) {
+    return initAtPreferences?.call(atSign);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onBoardAtSign,
+    TResult Function(String atSign)? initAtPreferences,
+    TResult Function(AtClientPreference atClientPreference)?
+        setAtClientPreferences,
+    required TResult orElse(),
+  }) {
+    if (initAtPreferences != null) {
+      return initAtPreferences(atSign);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_onBoardAtSign value) onBoardAtSign,
+    required TResult Function(_initAtPreferences value) initAtPreferences,
+    required TResult Function(_setAtClientPreferences value)
+        setAtClientPreferences,
+  }) {
+    return initAtPreferences(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_onBoardAtSign value)? onBoardAtSign,
+    TResult Function(_initAtPreferences value)? initAtPreferences,
+    TResult Function(_setAtClientPreferences value)? setAtClientPreferences,
+  }) {
+    return initAtPreferences?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_onBoardAtSign value)? onBoardAtSign,
+    TResult Function(_initAtPreferences value)? initAtPreferences,
+    TResult Function(_setAtClientPreferences value)? setAtClientPreferences,
+    required TResult orElse(),
+  }) {
+    if (initAtPreferences != null) {
+      return initAtPreferences(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _initAtPreferences implements SignInEvent {
+  const factory _initAtPreferences(final String atSign) = _$_initAtPreferences;
+
+  String get atSign => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_initAtPreferencesCopyWith<_$_initAtPreferences> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_setAtClientPreferencesCopyWith<$Res> {
+  factory _$$_setAtClientPreferencesCopyWith(_$_setAtClientPreferences value,
+          $Res Function(_$_setAtClientPreferences) then) =
+      __$$_setAtClientPreferencesCopyWithImpl<$Res>;
+  $Res call({AtClientPreference atClientPreference});
+}
+
+/// @nodoc
+class __$$_setAtClientPreferencesCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res>
+    implements _$$_setAtClientPreferencesCopyWith<$Res> {
+  __$$_setAtClientPreferencesCopyWithImpl(_$_setAtClientPreferences _value,
+      $Res Function(_$_setAtClientPreferences) _then)
+      : super(_value, (v) => _then(v as _$_setAtClientPreferences));
+
+  @override
+  _$_setAtClientPreferences get _value =>
+      super._value as _$_setAtClientPreferences;
+
+  @override
+  $Res call({
+    Object? atClientPreference = freezed,
+  }) {
+    return _then(_$_setAtClientPreferences(
+      atClientPreference == freezed
+          ? _value.atClientPreference
+          : atClientPreference // ignore: cast_nullable_to_non_nullable
+              as AtClientPreference,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_setAtClientPreferences implements _setAtClientPreferences {
+  const _$_setAtClientPreferences(this.atClientPreference);
+
+  @override
+  final AtClientPreference atClientPreference;
+
+  @override
+  String toString() {
+    return 'SignInEvent.setAtClientPreferences(atClientPreference: $atClientPreference)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_setAtClientPreferences &&
+            const DeepCollectionEquality()
+                .equals(other.atClientPreference, atClientPreference));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(atClientPreference));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_setAtClientPreferencesCopyWith<_$_setAtClientPreferences> get copyWith =>
+      __$$_setAtClientPreferencesCopyWithImpl<_$_setAtClientPreferences>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() onBoardAtSign,
+    required TResult Function(String atSign) initAtPreferences,
+    required TResult Function(AtClientPreference atClientPreference)
+        setAtClientPreferences,
+  }) {
+    return setAtClientPreferences(atClientPreference);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onBoardAtSign,
+    TResult Function(String atSign)? initAtPreferences,
+    TResult Function(AtClientPreference atClientPreference)?
+        setAtClientPreferences,
+  }) {
+    return setAtClientPreferences?.call(atClientPreference);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onBoardAtSign,
+    TResult Function(String atSign)? initAtPreferences,
+    TResult Function(AtClientPreference atClientPreference)?
+        setAtClientPreferences,
+    required TResult orElse(),
+  }) {
+    if (setAtClientPreferences != null) {
+      return setAtClientPreferences(atClientPreference);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_onBoardAtSign value) onBoardAtSign,
+    required TResult Function(_initAtPreferences value) initAtPreferences,
+    required TResult Function(_setAtClientPreferences value)
+        setAtClientPreferences,
+  }) {
+    return setAtClientPreferences(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_onBoardAtSign value)? onBoardAtSign,
+    TResult Function(_initAtPreferences value)? initAtPreferences,
+    TResult Function(_setAtClientPreferences value)? setAtClientPreferences,
+  }) {
+    return setAtClientPreferences?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_onBoardAtSign value)? onBoardAtSign,
+    TResult Function(_initAtPreferences value)? initAtPreferences,
+    TResult Function(_setAtClientPreferences value)? setAtClientPreferences,
+    required TResult orElse(),
+  }) {
+    if (setAtClientPreferences != null) {
+      return setAtClientPreferences(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _setAtClientPreferences implements SignInEvent {
+  const factory _setAtClientPreferences(
+      final AtClientPreference atClientPreference) = _$_setAtClientPreferences;
+
+  AtClientPreference get atClientPreference =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_setAtClientPreferencesCopyWith<_$_setAtClientPreferences> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$SignInState {
+  bool get authenticated => throw _privateConstructorUsedError;
+  AtClientPreference get atClientPreference =>
+      throw _privateConstructorUsedError;
+  bool? get isSuperAdmin => throw _privateConstructorUsedError;
+  String? get currentAtSign => throw _privateConstructorUsedError;
   bool get isAdmin => throw _privateConstructorUsedError;
-  bool get onboarded => throw _privateConstructorUsedError;
+  Option<bool> get onboarded => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   Option<AtPlatformFailure> get saveFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
@@ -330,8 +658,12 @@ abstract class $SignInStateCopyWith<$Res> {
           SignInState value, $Res Function(SignInState) then) =
       _$SignInStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isAdmin,
-      bool onboarded,
+      {bool authenticated,
+      AtClientPreference atClientPreference,
+      bool? isSuperAdmin,
+      String? currentAtSign,
+      bool isAdmin,
+      Option<bool> onboarded,
       bool showErrorMessages,
       Option<AtPlatformFailure> saveFailureOrSuccessOption});
 }
@@ -346,12 +678,32 @@ class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? authenticated = freezed,
+    Object? atClientPreference = freezed,
+    Object? isSuperAdmin = freezed,
+    Object? currentAtSign = freezed,
     Object? isAdmin = freezed,
     Object? onboarded = freezed,
     Object? showErrorMessages = freezed,
     Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
+      authenticated: authenticated == freezed
+          ? _value.authenticated
+          : authenticated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      atClientPreference: atClientPreference == freezed
+          ? _value.atClientPreference
+          : atClientPreference // ignore: cast_nullable_to_non_nullable
+              as AtClientPreference,
+      isSuperAdmin: isSuperAdmin == freezed
+          ? _value.isSuperAdmin
+          : isSuperAdmin // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      currentAtSign: currentAtSign == freezed
+          ? _value.currentAtSign
+          : currentAtSign // ignore: cast_nullable_to_non_nullable
+              as String?,
       isAdmin: isAdmin == freezed
           ? _value.isAdmin
           : isAdmin // ignore: cast_nullable_to_non_nullable
@@ -359,7 +711,7 @@ class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
       onboarded: onboarded == freezed
           ? _value.onboarded
           : onboarded // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as Option<bool>,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -380,8 +732,12 @@ abstract class _$$_SignInStateCopyWith<$Res>
       __$$_SignInStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isAdmin,
-      bool onboarded,
+      {bool authenticated,
+      AtClientPreference atClientPreference,
+      bool? isSuperAdmin,
+      String? currentAtSign,
+      bool isAdmin,
+      Option<bool> onboarded,
       bool showErrorMessages,
       Option<AtPlatformFailure> saveFailureOrSuccessOption});
 }
@@ -398,12 +754,32 @@ class __$$_SignInStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? authenticated = freezed,
+    Object? atClientPreference = freezed,
+    Object? isSuperAdmin = freezed,
+    Object? currentAtSign = freezed,
     Object? isAdmin = freezed,
     Object? onboarded = freezed,
     Object? showErrorMessages = freezed,
     Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_$_SignInState(
+      authenticated: authenticated == freezed
+          ? _value.authenticated
+          : authenticated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      atClientPreference: atClientPreference == freezed
+          ? _value.atClientPreference
+          : atClientPreference // ignore: cast_nullable_to_non_nullable
+              as AtClientPreference,
+      isSuperAdmin: isSuperAdmin == freezed
+          ? _value.isSuperAdmin
+          : isSuperAdmin // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      currentAtSign: currentAtSign == freezed
+          ? _value.currentAtSign
+          : currentAtSign // ignore: cast_nullable_to_non_nullable
+              as String?,
       isAdmin: isAdmin == freezed
           ? _value.isAdmin
           : isAdmin // ignore: cast_nullable_to_non_nullable
@@ -411,7 +787,7 @@ class __$$_SignInStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
       onboarded: onboarded == freezed
           ? _value.onboarded
           : onboarded // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as Option<bool>,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -428,15 +804,27 @@ class __$$_SignInStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
 
 class _$_SignInState implements _SignInState {
   const _$_SignInState(
-      {required this.isAdmin,
+      {required this.authenticated,
+      required this.atClientPreference,
+      this.isSuperAdmin,
+      this.currentAtSign,
+      required this.isAdmin,
       required this.onboarded,
       required this.showErrorMessages,
       required this.saveFailureOrSuccessOption});
 
   @override
+  final bool authenticated;
+  @override
+  final AtClientPreference atClientPreference;
+  @override
+  final bool? isSuperAdmin;
+  @override
+  final String? currentAtSign;
+  @override
   final bool isAdmin;
   @override
-  final bool onboarded;
+  final Option<bool> onboarded;
   @override
   final bool showErrorMessages;
   @override
@@ -444,7 +832,7 @@ class _$_SignInState implements _SignInState {
 
   @override
   String toString() {
-    return 'SignInState(isAdmin: $isAdmin, onboarded: $onboarded, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'SignInState(authenticated: $authenticated, atClientPreference: $atClientPreference, isSuperAdmin: $isSuperAdmin, currentAtSign: $currentAtSign, isAdmin: $isAdmin, onboarded: $onboarded, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -452,6 +840,14 @@ class _$_SignInState implements _SignInState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SignInState &&
+            const DeepCollectionEquality()
+                .equals(other.authenticated, authenticated) &&
+            const DeepCollectionEquality()
+                .equals(other.atClientPreference, atClientPreference) &&
+            const DeepCollectionEquality()
+                .equals(other.isSuperAdmin, isSuperAdmin) &&
+            const DeepCollectionEquality()
+                .equals(other.currentAtSign, currentAtSign) &&
             const DeepCollectionEquality().equals(other.isAdmin, isAdmin) &&
             const DeepCollectionEquality().equals(other.onboarded, onboarded) &&
             const DeepCollectionEquality()
@@ -463,6 +859,10 @@ class _$_SignInState implements _SignInState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(authenticated),
+      const DeepCollectionEquality().hash(atClientPreference),
+      const DeepCollectionEquality().hash(isSuperAdmin),
+      const DeepCollectionEquality().hash(currentAtSign),
       const DeepCollectionEquality().hash(isAdmin),
       const DeepCollectionEquality().hash(onboarded),
       const DeepCollectionEquality().hash(showErrorMessages),
@@ -476,16 +876,29 @@ class _$_SignInState implements _SignInState {
 
 abstract class _SignInState implements SignInState {
   const factory _SignInState(
-      {required final bool isAdmin,
-      required final bool onboarded,
+      {required final bool authenticated,
+      required final AtClientPreference atClientPreference,
+      final bool? isSuperAdmin,
+      final String? currentAtSign,
+      required final bool isAdmin,
+      required final Option<bool> onboarded,
       required final bool showErrorMessages,
       required final Option<AtPlatformFailure>
           saveFailureOrSuccessOption}) = _$_SignInState;
 
   @override
+  bool get authenticated => throw _privateConstructorUsedError;
+  @override
+  AtClientPreference get atClientPreference =>
+      throw _privateConstructorUsedError;
+  @override
+  bool? get isSuperAdmin => throw _privateConstructorUsedError;
+  @override
+  String? get currentAtSign => throw _privateConstructorUsedError;
+  @override
   bool get isAdmin => throw _privateConstructorUsedError;
   @override
-  bool get onboarded => throw _privateConstructorUsedError;
+  Option<bool> get onboarded => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override

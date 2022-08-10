@@ -5,6 +5,9 @@ import 'package:private_fit/presentation/menstrual/menstrual_page.dart';
 import 'package:private_fit/presentation/on_boarding/on_boarding_page.dart';
 import 'package:private_fit/presentation/open_food/scanner_page.dart';
 import 'package:private_fit/presentation/settings/settings_page.dart';
+import 'package:private_fit/presentation/sign_in/loading_screen.dart';
+import 'package:private_fit/presentation/sign_in/login_screen_page.dart';
+import 'package:private_fit/presentation/sign_in/widgets/error_widget.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/on_boarding/initial_route.dart';
 
 /*
@@ -25,7 +28,10 @@ other stuff. AutoRoute does all that for you and much more.
     AutoRoute<dynamic>(page: ScannerPage),
     // AutoRoute<dynamic>(page: SettingsPage),
     AutoRoute<dynamic>(page: MenstrualPage),
-    AutoRoute<dynamic>(page: OnBoarding, initial: true),
+    AutoRoute<dynamic>(page: LoadingScreen),
+    AutoRoute<dynamic>(page: ErrorOboarding),
+    AutoRoute<dynamic>(page: LoginScreenPage, initial: true),
+    // AutoRoute<dynamic>(page: OnBoarding, initial: true),
   ],
 )
 class $Router {}

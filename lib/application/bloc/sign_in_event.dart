@@ -4,6 +4,12 @@ part of 'sign_in_bloc.dart';
 class SignInEvent with _$SignInEvent {
   const factory SignInEvent.started() = _Started;
 
-  const factory SignInEvent.onBoardAtSign(AtClientPreference? preference) =
-      _onBoardAtSign;
+  const factory SignInEvent.onBoardAtSign() = _onBoardAtSign;
+
+  const factory SignInEvent.initAtPreferences(String atSign) =
+      _initAtPreferences;
+
+  const factory SignInEvent.setAtClientPreferences(
+    AtClientPreference atClientPreference,
+  ) = _setAtClientPreferences;
 }

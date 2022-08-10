@@ -11,4 +11,10 @@ abstract class ISignInFacade {
   Future<Either<AtPlatformFailure, Unit>> setAtClientPreference(
     AtClientPreference preference,
   );
+
+  Future<Either<AtPlatformFailure, AtClientPreference>> initAtClientPreference(
+    String atSign,
+  );
+
+  Future<Either<AtPlatformFailure, bool>> onBoard();
 }

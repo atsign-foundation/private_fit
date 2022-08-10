@@ -7,42 +7,44 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/bloc/sign_in_bloc.dart' as _i45;
+import 'application/bloc/sign_in_bloc.dart' as _i47;
 import 'application/bot_nav_bar/bloc/bot_nav_bar_bloc.dart' as _i4;
 import 'application/home/bloc/home_bloc.dart' as _i5;
-import 'application/menstrual/bloc/menstrual_bloc.dart' as _i41;
-import 'application/on_boarding/bloc/on_boarding_bloc.dart' as _i26;
-import 'application/open_food/bloc/open_food_bloc.dart' as _i42;
-import 'application/pedometer/bloc/pedometer_bloc.dart' as _i43;
-import 'application/setting/bloc/settings_bloc.dart' as _i44;
+import 'application/menstrual/bloc/menstrual_bloc.dart' as _i43;
+import 'application/on_boarding/bloc/on_boarding_bloc.dart' as _i28;
+import 'application/open_food/bloc/open_food_bloc.dart' as _i44;
+import 'application/pedometer/bloc/pedometer_bloc.dart' as _i45;
+import 'application/setting/bloc/settings_bloc.dart' as _i46;
 import 'domain/contacts/i_contacts_facade.dart' as _i8;
 import 'domain/contacts/use_cases/at_contact_initialization_use_case.dart'
-    as _i34;
-import 'domain/contacts/use_cases/at_contacts_use_cases.dart' as _i28;
-import 'domain/contacts/use_cases/get_active_atsign_use_case.dart' as _i35;
+    as _i36;
+import 'domain/contacts/use_cases/at_contacts_use_cases.dart' as _i30;
+import 'domain/contacts/use_cases/get_active_atsign_use_case.dart' as _i37;
 import 'domain/home/i_home_facade.dart' as _i10;
 import 'domain/menstrual/i_menstrual_facade.dart' as _i12;
-import 'domain/menstrual/use_cases/get_mentrual_data_use_case.dart' as _i38;
-import 'domain/menstrual/use_cases/save_menstrual_data_use_case.dart' as _i30;
+import 'domain/menstrual/use_cases/get_mentrual_data_use_case.dart' as _i40;
+import 'domain/menstrual/use_cases/save_menstrual_data_use_case.dart' as _i32;
 import 'domain/on_boarding/i_atsign_on_boarding_facade.dart' as _i6;
 import 'domain/on_boarding/use_cases/get_on_boarded_at_sign_use_case.dart'
-    as _i39;
+    as _i41;
 import 'domain/on_boarding/use_cases/load_client_prefs_use_case.dart' as _i23;
 import 'domain/on_boarding/use_cases/on_board_data_when_succesful_use_case.dart'
-    as _i25;
-import 'domain/on_boarding/use_cases/on_boarding_use_cases.dart' as _i27;
+    as _i26;
+import 'domain/on_boarding/use_cases/on_boarding_use_cases.dart' as _i29;
 import 'domain/open_food/i_open_food_facts_facade.dart' as _i14;
-import 'domain/open_food/use_cases/get_fetched_food_use_case.dart' as _i37;
+import 'domain/open_food/use_cases/get_fetched_food_use_case.dart' as _i39;
 import 'domain/pedometer/i_pedometer_facade.dart' as _i16;
 import 'domain/pedometer/use_cases/get_fetched_step_use_case.dart' as _i22;
-import 'domain/pedometer/use_cases/pedestrian_status_use_case.dart' as _i29;
-import 'domain/pedometer/use_cases/steps_count_stream_use_case.dart' as _i33;
+import 'domain/pedometer/use_cases/pedestrian_status_use_case.dart' as _i31;
+import 'domain/pedometer/use_cases/steps_count_stream_use_case.dart' as _i35;
 import 'domain/settings/i_settings_facade.dart' as _i18;
-import 'domain/settings/use_cases/get_name_use_case.dart' as _i40;
-import 'domain/settings/use_cases/user_name_use_case.dart' as _i32;
+import 'domain/settings/use_cases/get_name_use_case.dart' as _i42;
+import 'domain/settings/use_cases/user_name_use_case.dart' as _i34;
 import 'domain/sign_in/i_sign_in_facade.dart' as _i20;
-import 'domain/sign_in/use_cases/get_atsign_with_status_use_case.dart' as _i36;
-import 'domain/sign_in/use_cases/set_atclient_prefs_use_case.dart' as _i31;
+import 'domain/sign_in/use_cases/get_atsign_with_status_use_case.dart' as _i38;
+import 'domain/sign_in/use_cases/load_client_prefs_use_case.dart' as _i24;
+import 'domain/sign_in/use_cases/on_board_use_case.dart' as _i27;
+import 'domain/sign_in/use_cases/set_atclient_prefs_use_case.dart' as _i33;
 import 'infrastructure/contacts/contacts_facade.dart' as _i9;
 import 'infrastructure/home/home_facade.dart' as _i11;
 import 'infrastructure/menstrual/menstrual_facade.dart' as _i13;
@@ -53,7 +55,7 @@ import 'infrastructure/setting/settings_facade.dart' as _i19;
 import 'infrastructure/sign_in/sign_in_facade.dart' as _i21;
 import 'presentation/routes/router.dart' as _i3;
 import 'shared/global_navigator_key.dart'
-    as _i24; // ignore_for_file: unnecessary_lambdas
+    as _i25; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -77,52 +79,58 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i22.InitPedometerUseCase(get<_i16.IPedometerFacade>()));
   gh.factory<_i23.LoadAtClientPreferenceUseCase>(() =>
       _i23.LoadAtClientPreferenceUseCase(get<_i6.IAtsignOnBoardingFacade>()));
-  gh.factory<_i24.NavService>(() => _i24.NavService());
-  gh.factory<_i25.OnBoardDataWhenSuccessfulUseCase>(() =>
-      _i25.OnBoardDataWhenSuccessfulUseCase(
+  gh.factory<_i24.LoadAtClientPreferenceUseCase>(
+      () => _i24.LoadAtClientPreferenceUseCase(get<_i20.ISignInFacade>()));
+  gh.factory<_i25.NavService>(() => _i25.NavService());
+  gh.factory<_i26.OnBoardDataWhenSuccessfulUseCase>(() =>
+      _i26.OnBoardDataWhenSuccessfulUseCase(
           get<_i6.IAtsignOnBoardingFacade>()));
-  gh.lazySingleton<_i26.OnBoardingBloc>(() => _i26.OnBoardingBloc(
-      get<_i27.LoadAtClientPreferenceUseCase>(),
-      get<_i27.GetOnBoardedAtSignUseCase>(),
-      get<_i27.OnBoardDataWhenSuccessfulUseCase>(),
-      get<_i28.AtContactInitializationUseCase>()));
-  gh.lazySingleton<_i29.PedestrianStatusUseCase>(
-      () => _i29.PedestrianStatusUseCase(get<_i16.IPedometerFacade>()));
-  gh.lazySingleton<_i30.SaveMenstrualDataUseCase>(
-      () => _i30.SaveMenstrualDataUseCase(get<_i12.IMenstrualFacade>()));
-  gh.lazySingleton<_i31.SetAtClienPreferencesUseCase>(
-      () => _i31.SetAtClienPreferencesUseCase(get<_i20.ISignInFacade>()));
-  gh.lazySingleton<_i32.SettingUserNameUseCase>(
-      () => _i32.SettingUserNameUseCase(get<_i18.ISettingsFacade>()));
-  gh.lazySingleton<_i33.StepsCountStreamUseCase>(
-      () => _i33.StepsCountStreamUseCase(get<_i16.IPedometerFacade>()));
-  gh.factory<_i34.AtContactInitializationUseCase>(
-      () => _i34.AtContactInitializationUseCase(get<_i8.IContactsFacade>()));
-  gh.factory<_i35.GetActiveAtsignUseCase>(
-      () => _i35.GetActiveAtsignUseCase(get<_i8.IContactsFacade>()));
-  gh.lazySingleton<_i36.GetAtSignWithStatus>(
-      () => _i36.GetAtSignWithStatus(get<_i20.ISignInFacade>()));
-  gh.factory<_i37.GetFetchedFood>(
-      () => _i37.GetFetchedFood(get<_i14.IOpenFoodFactsFacade>()));
-  gh.lazySingleton<_i38.GetMenstrualDataUseCase>(
-      () => _i38.GetMenstrualDataUseCase(get<_i12.IMenstrualFacade>()));
-  gh.factory<_i39.GetOnBoardedAtSignUseCase>(
-      () => _i39.GetOnBoardedAtSignUseCase(get<_i6.IAtsignOnBoardingFacade>()));
-  gh.lazySingleton<_i40.GettgUserNameUseCase>(
-      () => _i40.GettgUserNameUseCase(get<_i18.ISettingsFacade>()));
-  gh.lazySingleton<_i41.MenstrualBloc>(() => _i41.MenstrualBloc(
-      get<_i30.SaveMenstrualDataUseCase>(),
-      get<_i38.GetMenstrualDataUseCase>()));
-  gh.lazySingleton<_i42.OpenFoodBloc>(
-      () => _i42.OpenFoodBloc(get<_i37.GetFetchedFood>()));
-  gh.lazySingleton<_i43.PedometerBloc>(() => _i43.PedometerBloc(
+  gh.lazySingleton<_i27.OnBoardUseCase>(
+      () => _i27.OnBoardUseCase(get<_i20.ISignInFacade>()));
+  gh.lazySingleton<_i28.OnBoardingBloc>(() => _i28.OnBoardingBloc(
+      get<_i29.LoadAtClientPreferenceUseCase>(),
+      get<_i29.GetOnBoardedAtSignUseCase>(),
+      get<_i29.OnBoardDataWhenSuccessfulUseCase>(),
+      get<_i30.AtContactInitializationUseCase>()));
+  gh.lazySingleton<_i31.PedestrianStatusUseCase>(
+      () => _i31.PedestrianStatusUseCase(get<_i16.IPedometerFacade>()));
+  gh.lazySingleton<_i32.SaveMenstrualDataUseCase>(
+      () => _i32.SaveMenstrualDataUseCase(get<_i12.IMenstrualFacade>()));
+  gh.lazySingleton<_i33.SetAtClienPreferencesUseCase>(
+      () => _i33.SetAtClienPreferencesUseCase(get<_i20.ISignInFacade>()));
+  gh.lazySingleton<_i34.SettingUserNameUseCase>(
+      () => _i34.SettingUserNameUseCase(get<_i18.ISettingsFacade>()));
+  gh.lazySingleton<_i35.StepsCountStreamUseCase>(
+      () => _i35.StepsCountStreamUseCase(get<_i16.IPedometerFacade>()));
+  gh.factory<_i36.AtContactInitializationUseCase>(
+      () => _i36.AtContactInitializationUseCase(get<_i8.IContactsFacade>()));
+  gh.factory<_i37.GetActiveAtsignUseCase>(
+      () => _i37.GetActiveAtsignUseCase(get<_i8.IContactsFacade>()));
+  gh.lazySingleton<_i38.GetAtSignWithStatus>(
+      () => _i38.GetAtSignWithStatus(get<_i20.ISignInFacade>()));
+  gh.factory<_i39.GetFetchedFood>(
+      () => _i39.GetFetchedFood(get<_i14.IOpenFoodFactsFacade>()));
+  gh.lazySingleton<_i40.GetMenstrualDataUseCase>(
+      () => _i40.GetMenstrualDataUseCase(get<_i12.IMenstrualFacade>()));
+  gh.factory<_i41.GetOnBoardedAtSignUseCase>(
+      () => _i41.GetOnBoardedAtSignUseCase(get<_i6.IAtsignOnBoardingFacade>()));
+  gh.lazySingleton<_i42.GettgUserNameUseCase>(
+      () => _i42.GettgUserNameUseCase(get<_i18.ISettingsFacade>()));
+  gh.lazySingleton<_i43.MenstrualBloc>(() => _i43.MenstrualBloc(
+      get<_i32.SaveMenstrualDataUseCase>(),
+      get<_i40.GetMenstrualDataUseCase>()));
+  gh.lazySingleton<_i44.OpenFoodBloc>(
+      () => _i44.OpenFoodBloc(get<_i39.GetFetchedFood>()));
+  gh.lazySingleton<_i45.PedometerBloc>(() => _i45.PedometerBloc(
       get<_i22.InitPedometerUseCase>(),
-      get<_i29.PedestrianStatusUseCase>(),
-      get<_i33.StepsCountStreamUseCase>()));
-  gh.lazySingleton<_i44.SettingsBloc>(() => _i44.SettingsBloc(
-      get<_i32.SettingUserNameUseCase>(), get<_i40.GettgUserNameUseCase>()));
-  gh.factory<_i45.SignInBloc>(() => _i45.SignInBloc(
-      get<_i36.GetAtSignWithStatus>(),
-      get<_i31.SetAtClienPreferencesUseCase>()));
+      get<_i31.PedestrianStatusUseCase>(),
+      get<_i35.StepsCountStreamUseCase>()));
+  gh.lazySingleton<_i46.SettingsBloc>(() => _i46.SettingsBloc(
+      get<_i34.SettingUserNameUseCase>(), get<_i42.GettgUserNameUseCase>()));
+  gh.lazySingleton<_i47.SignInBloc>(() => _i47.SignInBloc(
+      get<_i38.GetAtSignWithStatus>(),
+      get<_i33.SetAtClienPreferencesUseCase>(),
+      get<_i24.LoadAtClientPreferenceUseCase>(),
+      get<_i27.OnBoardUseCase>()));
   return get;
 }
