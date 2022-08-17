@@ -1,7 +1,13 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:at_client_mobile/at_client_mobile.dart';
 import 'package:at_onboarding_flutter/services/onboarding_service.dart';
+import 'package:at_onboarding_flutter/utils/response_status.dart';
+import 'package:at_server_status/src/model/at_status.dart';
 import 'package:at_utils/at_utils.dart';
 import 'package:dartz/dartz.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:private_fit/domain/core/at_platform_failures.dart';
@@ -76,5 +82,43 @@ class SignInFacade implements ISignInFacade {
       _logger.severe('Failed to onboard this Atsign with :: $e');
       return left(const AtPlatformFailure.failToSetOnBoardData());
     }
+  }
+
+  @override
+  Future<AtStatus> getAtSignStatus(String atSign) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<ResponseStatus> onboardWithAtKeys(
+    String atSign,
+    String keysData,
+  ) async {
+    _logger.finer('Onboarding with @sign: $atSign using atKeys file');
+    try {
+      final status = await _onBoardingServive.authenticate(
+        atSign,
+        jsonData: keysData,
+        decryptKey: json.decode(keysData)[atSign] as String,
+      );
+      _logger.finer('Onboarding with atKeys file result: $status');
+
+      return status as ResponseStatus;
+    } on Exception catch (e, s) {
+      _logger.severe('Error onboarding with @sign: $atSign', e, s);
+      return ResponseStatus.authFailed;
+    }
+  }
+
+  @override
+  Future<String> readAtKeysFile(String filePath) {
+    final Set<PlatformFile> _list = <PlatformFile>{};
+
+    return File(_list.first.path!).readAsString();
+  }
+
+  Future<void> login() async {
+    readAtKeysFile('filePath')
+        .then((atKeysData) => onboardWithAtKeys('atSign', atKeysData));
   }
 }

@@ -27,7 +27,7 @@ import 'domain/menstrual/use_cases/save_menstrual_data_use_case.dart' as _i32;
 import 'domain/on_boarding/i_atsign_on_boarding_facade.dart' as _i6;
 import 'domain/on_boarding/use_cases/get_on_boarded_at_sign_use_case.dart'
     as _i41;
-import 'domain/on_boarding/use_cases/load_client_prefs_use_case.dart' as _i23;
+import 'domain/on_boarding/use_cases/load_client_prefs_use_case.dart' as _i24;
 import 'domain/on_boarding/use_cases/on_board_data_when_succesful_use_case.dart'
     as _i26;
 import 'domain/on_boarding/use_cases/on_boarding_use_cases.dart' as _i29;
@@ -42,7 +42,7 @@ import 'domain/settings/use_cases/get_name_use_case.dart' as _i42;
 import 'domain/settings/use_cases/user_name_use_case.dart' as _i34;
 import 'domain/sign_in/i_sign_in_facade.dart' as _i20;
 import 'domain/sign_in/use_cases/get_atsign_with_status_use_case.dart' as _i38;
-import 'domain/sign_in/use_cases/load_client_prefs_use_case.dart' as _i24;
+import 'domain/sign_in/use_cases/load_client_prefs_use_case.dart' as _i23;
 import 'domain/sign_in/use_cases/on_board_use_case.dart' as _i27;
 import 'domain/sign_in/use_cases/set_atclient_prefs_use_case.dart' as _i33;
 import 'infrastructure/contacts/contacts_facade.dart' as _i9;
@@ -77,10 +77,10 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i20.ISignInFacade>(() => _i21.SignInFacade());
   gh.lazySingleton<_i22.InitPedometerUseCase>(
       () => _i22.InitPedometerUseCase(get<_i16.IPedometerFacade>()));
-  gh.factory<_i23.LoadAtClientPreferenceUseCase>(() =>
-      _i23.LoadAtClientPreferenceUseCase(get<_i6.IAtsignOnBoardingFacade>()));
-  gh.factory<_i24.LoadAtClientPreferenceUseCase>(
-      () => _i24.LoadAtClientPreferenceUseCase(get<_i20.ISignInFacade>()));
+  gh.factory<_i23.LoadAtClientPreferenceUseCase>(
+      () => _i23.LoadAtClientPreferenceUseCase(get<_i20.ISignInFacade>()));
+  gh.factory<_i24.LoadAtClientPreferenceUseCase>(() =>
+      _i24.LoadAtClientPreferenceUseCase(get<_i6.IAtsignOnBoardingFacade>()));
   gh.factory<_i25.NavService>(() => _i25.NavService());
   gh.factory<_i26.OnBoardDataWhenSuccessfulUseCase>(() =>
       _i26.OnBoardDataWhenSuccessfulUseCase(
@@ -106,8 +106,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i36.AtContactInitializationUseCase(get<_i8.IContactsFacade>()));
   gh.factory<_i37.GetActiveAtsignUseCase>(
       () => _i37.GetActiveAtsignUseCase(get<_i8.IContactsFacade>()));
-  gh.lazySingleton<_i38.GetAtSignWithStatus>(
-      () => _i38.GetAtSignWithStatus(get<_i20.ISignInFacade>()));
+  gh.lazySingleton<_i38.GetAtSignWithStatusUseCase>(
+      () => _i38.GetAtSignWithStatusUseCase(get<_i20.ISignInFacade>()));
   gh.factory<_i39.GetFetchedFood>(
       () => _i39.GetFetchedFood(get<_i14.IOpenFoodFactsFacade>()));
   gh.lazySingleton<_i40.GetMenstrualDataUseCase>(
@@ -128,9 +128,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i46.SettingsBloc>(() => _i46.SettingsBloc(
       get<_i34.SettingUserNameUseCase>(), get<_i42.GettgUserNameUseCase>()));
   gh.lazySingleton<_i47.SignInBloc>(() => _i47.SignInBloc(
-      get<_i38.GetAtSignWithStatus>(),
+      get<_i38.GetAtSignWithStatusUseCase>(),
       get<_i33.SetAtClienPreferencesUseCase>(),
-      get<_i24.LoadAtClientPreferenceUseCase>(),
+      get<_i23.LoadAtClientPreferenceUseCase>(),
       get<_i27.OnBoardUseCase>()));
   return get;
 }

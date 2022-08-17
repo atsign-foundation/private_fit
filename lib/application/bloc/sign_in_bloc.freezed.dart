@@ -636,6 +636,10 @@ abstract class _setAtClientPreferences implements SignInEvent {
 
 /// @nodoc
 mixin _$SignInState {
+  bool get isValidAtsign => throw _privateConstructorUsedError;
+  bool get checkedAtSign => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get uploading => throw _privateConstructorUsedError; //
   bool get authenticated => throw _privateConstructorUsedError;
   AtClientPreference get atClientPreference =>
       throw _privateConstructorUsedError;
@@ -658,7 +662,11 @@ abstract class $SignInStateCopyWith<$Res> {
           SignInState value, $Res Function(SignInState) then) =
       _$SignInStateCopyWithImpl<$Res>;
   $Res call(
-      {bool authenticated,
+      {bool isValidAtsign,
+      bool checkedAtSign,
+      bool isLoading,
+      bool uploading,
+      bool authenticated,
       AtClientPreference atClientPreference,
       bool? isSuperAdmin,
       String? currentAtSign,
@@ -678,6 +686,10 @@ class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? isValidAtsign = freezed,
+    Object? checkedAtSign = freezed,
+    Object? isLoading = freezed,
+    Object? uploading = freezed,
     Object? authenticated = freezed,
     Object? atClientPreference = freezed,
     Object? isSuperAdmin = freezed,
@@ -688,6 +700,22 @@ class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
     Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
+      isValidAtsign: isValidAtsign == freezed
+          ? _value.isValidAtsign
+          : isValidAtsign // ignore: cast_nullable_to_non_nullable
+              as bool,
+      checkedAtSign: checkedAtSign == freezed
+          ? _value.checkedAtSign
+          : checkedAtSign // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      uploading: uploading == freezed
+          ? _value.uploading
+          : uploading // ignore: cast_nullable_to_non_nullable
+              as bool,
       authenticated: authenticated == freezed
           ? _value.authenticated
           : authenticated // ignore: cast_nullable_to_non_nullable
@@ -732,7 +760,11 @@ abstract class _$$_SignInStateCopyWith<$Res>
       __$$_SignInStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool authenticated,
+      {bool isValidAtsign,
+      bool checkedAtSign,
+      bool isLoading,
+      bool uploading,
+      bool authenticated,
       AtClientPreference atClientPreference,
       bool? isSuperAdmin,
       String? currentAtSign,
@@ -754,6 +786,10 @@ class __$$_SignInStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? isValidAtsign = freezed,
+    Object? checkedAtSign = freezed,
+    Object? isLoading = freezed,
+    Object? uploading = freezed,
     Object? authenticated = freezed,
     Object? atClientPreference = freezed,
     Object? isSuperAdmin = freezed,
@@ -764,6 +800,22 @@ class __$$_SignInStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
     Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_$_SignInState(
+      isValidAtsign: isValidAtsign == freezed
+          ? _value.isValidAtsign
+          : isValidAtsign // ignore: cast_nullable_to_non_nullable
+              as bool,
+      checkedAtSign: checkedAtSign == freezed
+          ? _value.checkedAtSign
+          : checkedAtSign // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      uploading: uploading == freezed
+          ? _value.uploading
+          : uploading // ignore: cast_nullable_to_non_nullable
+              as bool,
       authenticated: authenticated == freezed
           ? _value.authenticated
           : authenticated // ignore: cast_nullable_to_non_nullable
@@ -804,7 +856,11 @@ class __$$_SignInStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
 
 class _$_SignInState implements _SignInState {
   const _$_SignInState(
-      {required this.authenticated,
+      {required this.isValidAtsign,
+      required this.checkedAtSign,
+      required this.isLoading,
+      required this.uploading,
+      required this.authenticated,
       required this.atClientPreference,
       this.isSuperAdmin,
       this.currentAtSign,
@@ -813,6 +869,15 @@ class _$_SignInState implements _SignInState {
       required this.showErrorMessages,
       required this.saveFailureOrSuccessOption});
 
+  @override
+  final bool isValidAtsign;
+  @override
+  final bool checkedAtSign;
+  @override
+  final bool isLoading;
+  @override
+  final bool uploading;
+//
   @override
   final bool authenticated;
   @override
@@ -832,7 +897,7 @@ class _$_SignInState implements _SignInState {
 
   @override
   String toString() {
-    return 'SignInState(authenticated: $authenticated, atClientPreference: $atClientPreference, isSuperAdmin: $isSuperAdmin, currentAtSign: $currentAtSign, isAdmin: $isAdmin, onboarded: $onboarded, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'SignInState(isValidAtsign: $isValidAtsign, checkedAtSign: $checkedAtSign, isLoading: $isLoading, uploading: $uploading, authenticated: $authenticated, atClientPreference: $atClientPreference, isSuperAdmin: $isSuperAdmin, currentAtSign: $currentAtSign, isAdmin: $isAdmin, onboarded: $onboarded, showErrorMessages: $showErrorMessages, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -840,6 +905,12 @@ class _$_SignInState implements _SignInState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SignInState &&
+            const DeepCollectionEquality()
+                .equals(other.isValidAtsign, isValidAtsign) &&
+            const DeepCollectionEquality()
+                .equals(other.checkedAtSign, checkedAtSign) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.uploading, uploading) &&
             const DeepCollectionEquality()
                 .equals(other.authenticated, authenticated) &&
             const DeepCollectionEquality()
@@ -859,6 +930,10 @@ class _$_SignInState implements _SignInState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(isValidAtsign),
+      const DeepCollectionEquality().hash(checkedAtSign),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(uploading),
       const DeepCollectionEquality().hash(authenticated),
       const DeepCollectionEquality().hash(atClientPreference),
       const DeepCollectionEquality().hash(isSuperAdmin),
@@ -876,7 +951,11 @@ class _$_SignInState implements _SignInState {
 
 abstract class _SignInState implements SignInState {
   const factory _SignInState(
-      {required final bool authenticated,
+      {required final bool isValidAtsign,
+      required final bool checkedAtSign,
+      required final bool isLoading,
+      required final bool uploading,
+      required final bool authenticated,
       required final AtClientPreference atClientPreference,
       final bool? isSuperAdmin,
       final String? currentAtSign,
@@ -887,6 +966,14 @@ abstract class _SignInState implements SignInState {
           saveFailureOrSuccessOption}) = _$_SignInState;
 
   @override
+  bool get isValidAtsign => throw _privateConstructorUsedError;
+  @override
+  bool get checkedAtSign => throw _privateConstructorUsedError;
+  @override
+  bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  bool get uploading => throw _privateConstructorUsedError;
+  @override //
   bool get authenticated => throw _privateConstructorUsedError;
   @override
   AtClientPreference get atClientPreference =>

@@ -41,6 +41,7 @@ dependencies:
   flutter_calendar_carousel: ^2.4.0
   flutter_colorpicker: ^1.0.3
   flutter_dotenv: ^5.0.2
+  flutter_hooks: ^0.18.5+1
   flutter_isolate: ^2.0.2
   flutter_local_notifications: ^9.6.1
   flutter_localizations:

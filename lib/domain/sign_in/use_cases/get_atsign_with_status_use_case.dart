@@ -4,8 +4,8 @@ import 'package:private_fit/domain/core/at_platform_failures.dart';
 import 'package:private_fit/domain/sign_in/i_sign_in_facade.dart';
 
 @lazySingleton
-class GetAtSignWithStatus {
-  GetAtSignWithStatus(this._iSignInFacade);
+class GetAtSignWithStatusUseCase {
+  GetAtSignWithStatusUseCase(this._iSignInFacade);
 
   final ISignInFacade _iSignInFacade;
 

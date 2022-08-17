@@ -27,7 +27,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     on<SignInEvent>(_signInHandler);
   }
 
-  final GetAtSignWithStatus _getAtSignWithStatus;
+  final GetAtSignWithStatusUseCase _getAtSignWithStatus;
   final SetAtClienPreferencesUseCase _setAtClienPreferencesUseCase;
   final LoadAtClientPreferenceUseCase _loadAtClientPreferenceUseCase;
   final OnBoardUseCase _onBoardUseCase;
