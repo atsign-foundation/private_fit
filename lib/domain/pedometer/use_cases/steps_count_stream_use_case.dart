@@ -8,6 +8,6 @@ class StepsCountStreamUseCase {
 
   final IPedometerFacade _pedometerFacade;
 
-  Stream<StepCount> get scs => _pedometerFacade.stepCountStream;
+  Stream<StepCount> get call => _pedometerFacade.stepCountStream;
   // Stream<StepCount> call() => _PedometerFacade.stepCountStream;
 }

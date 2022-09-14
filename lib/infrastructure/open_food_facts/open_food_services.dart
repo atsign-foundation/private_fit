@@ -63,14 +63,12 @@ class OpenFoodFactsServices implements IOpenFoodFactsFacade {
         (result.barcode == null || result.barcode!.isEmpty)) {
       return left(const OpenFoodFailures.codeInvalid());
     }
-    return left(const OpenFoodFailures.internetNotFound());
+    return left(const OpenFoodFailures.codeInvalid());
   }
 }
 
 /// Helper class about getting and caching the back-end ordered nutrients.
 class OrderedNutrientsCache {
-  // OrderedNutrientsCache._();
-
   late OrderedNutrients? _orderedNutrients;
   OrderedNutrients get orderedNutrients => _orderedNutrients!;
 

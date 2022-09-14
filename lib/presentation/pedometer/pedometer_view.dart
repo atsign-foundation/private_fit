@@ -110,7 +110,101 @@ class PedometerView extends StatelessWidget {
                       ),
                     );
                   },
-                )
+                ),
+              StreamBuilder<PedestrianStatus>(
+                stream: state.pedistrianStatusStream,
+                builder: (
+                  BuildContext context,
+                  AsyncSnapshot<PedestrianStatus> snapshot,
+                ) {
+                  List<Widget> _children;
+
+                  if (snapshot.hasError) {
+                    _children = [
+                      const Icon(
+                        Icons.error_outline,
+                        color: Colors.red,
+                        size: 60,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 16),
+                        child: Text('Error: ${snapshot.error}'),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8),
+                        child: Text('Stack trace: ${snapshot.stackTrace}'),
+                      ),
+                    ];
+                  } else {
+                    switch (snapshot.connectionState) {
+                      case ConnectionState.none:
+                        _children = [
+                          const Icon(
+                            Icons.info,
+                            color: Colors.red,
+                            size: 60,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 16),
+                            child: Text('Select a lot'),
+                          ),
+                        ];
+                        break;
+                      case ConnectionState.waiting:
+                        _children = [
+                          const SizedBox(
+                            width: 60,
+                            height: 60,
+                            child: CircularProgressIndicator(),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 16),
+                            child: Text('Awaiting ...'),
+                          ),
+                        ];
+
+                        break;
+                      case ConnectionState.active:
+                        _children = [
+                          const Icon(
+                            Icons.check_circle_outline,
+                            color: Colors.green,
+                            size: 60,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 16),
+                            child: Text(
+                              '${snapshot.data!.status} Step',
+                            ),
+                          ),
+                        ];
+                        break;
+                      case ConnectionState.done:
+                        _children = [
+                          const Icon(
+                            Icons.info,
+                            color: Colors.blue,
+                            size: 60,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 16),
+                            child: Text(
+                              '\$${snapshot.data!.status} (closed)',
+                            ),
+                          ),
+                        ];
+
+                        break;
+                    }
+                  }
+
+                  return Center(
+                    child: Column(
+                      children: _children,
+                    ),
+                  );
+                },
+              )
             ],
           ),
         );

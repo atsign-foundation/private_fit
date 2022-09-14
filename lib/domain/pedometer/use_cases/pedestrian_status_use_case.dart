@@ -8,5 +8,5 @@ class PedestrianStatusUseCase {
 
   final IPedometerFacade _pedometerFacade;
 
-  Stream<PedestrianStatus> call() => _pedometerFacade.pedestrianStatusStream;
+  Stream<PedestrianStatus> get call => _pedometerFacade.pedestrianStatusStream;
 }

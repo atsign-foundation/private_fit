@@ -59,9 +59,9 @@ class FDA extends StatelessWidget {
                   // ),
                   Container(
                     alignment: Alignment.centerLeft,
-                    child: const Text(
-                      'The Coca Cola Company',
-                      style: TextStyle(
+                    child: Text(
+                      fetchedProduct.brandsTags!.first,
+                      style: const TextStyle(
                         fontWeight: FontWeight.w800,
                         fontSize: 32,
                         // color: Theme.of(context).cardColor,

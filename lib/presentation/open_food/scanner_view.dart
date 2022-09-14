@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,9 +9,8 @@ import 'package:private_fit/application/open_food/bloc/open_food_bloc.dart';
 import 'package:private_fit/domain/open_food/open_food_facts_failures.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
-import 'package:private_fit/presentation/open_food/product_cards/nutrition_page_loaded.dart';
 import 'package:private_fit/presentation/open_food/product_cards/ordered_nutrients_cache.dart';
-import 'package:private_fit/presentation/open_food/utils/scanner_visor_painter.dart';
+import 'package:private_fit/presentation/routes/router.gr.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/app_styles.dart';
 
 class ScannerView extends StatelessWidget {
@@ -25,16 +25,27 @@ class ScannerView extends StatelessWidget {
       builder: (context, state) {
         return state.map(
           initial: (_) {
-            return OnInitialState(i10n: i10n);
+            return ScannerFoodWidget(
+              i10n: i10n,
+            ); //OnInitialState(i10n: i10n);
           },
           loadSuccess: (value) {
             return FutureBuilder<OrderedNutrients>(
               future: OrderedNutrientsCache().download(context),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  return FDA(
-                    fetchedProduct: value.fetchedProduct.product!,
+                  AutoRouter.of(context).navigate(
+                    FDARoute(fetchedProduct: value.fetchedProduct.product!),
                   );
+                  // FDA(
+                  //   fetchedProduct: value.fetchedProduct.product!,
+                  // );
+                  //   const Scaffold(
+                  //   backgroundColor: Colors.white,
+                  //   body: Center(
+                  //     child: CupertinoActivityIndicator(),
+                  //   ),
+                  // );
                 }
                 return const Scaffold(
                   backgroundColor: Colors.white,
@@ -92,6 +103,7 @@ class OnInitialState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.pink,
       body: QrReaderView(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -107,6 +119,33 @@ class OnInitialState extends StatelessWidget {
               },
             );
         },
+      ),
+    );
+  }
+}
+
+class ScannerFoodWidget extends StatelessWidget {
+  const ScannerFoodWidget({Key? key, required this.i10n}) : super(key: key);
+
+  final AppLocalizations i10n;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.amber,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const AutoSizeText('data'),
+            ElevatedButton(
+              onPressed: () {
+                AutoRouter.of(context)
+                    .navigate(OnInitialStateRoute(i10n: i10n));
+              },
+              child: const Icon(Icons.scanner),
+            ),
+          ],
+        ),
       ),
     );
   }

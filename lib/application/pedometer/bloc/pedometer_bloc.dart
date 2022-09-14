@@ -33,7 +33,8 @@ class PedometerBloc extends Bloc<PedometerEvent, PedometerState> {
       stepDataOnSuccess: (_) async {
         emit(
           state.copyWith(
-            stepCountStream: _stepsCountStreamUseCase.scs,
+            stepCountStream: _stepsCountStreamUseCase.call,
+            pedistrianStatusStream: _pedestrianStatusUseCase.call,
           ),
         );
       },
@@ -41,7 +42,7 @@ class PedometerBloc extends Bloc<PedometerEvent, PedometerState> {
         await _initPedometerUseCase.call().whenComplete(
               () => emit(
                 state.copyWith(
-                  stepCountStream: _stepsCountStreamUseCase.scs,
+                  stepCountStream: _stepsCountStreamUseCase.call,
                   liveData: true,
                 ),
               ),
