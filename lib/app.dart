@@ -1,6 +1,6 @@
 // import 'package:atsign_location_app/l10n/l10n.dart';
+
 import 'package:auto_route/auto_route.dart';
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,13 +8,16 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:private_fit/application/on_boarding/bloc/on_boarding_bloc.dart';
 import 'package:private_fit/application/open_food/bloc/open_food_bloc.dart';
 import 'package:private_fit/application/setting/bloc/settings_bloc.dart';
+import 'package:private_fit/application/theme/theme.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/routes/router.gr.dart' as app_router;
 import 'package:private_fit/presentation/routes/routes_observer.dart';
 
 class PrivateFitApp extends StatelessWidget {
-  PrivateFitApp({super.key});
+  PrivateFitApp({
+    super.key,
+  });
 
   final _appRouter = app_router.Router();
 
@@ -41,17 +44,16 @@ class PrivateFitApp extends StatelessWidget {
           BlocProvider(
             create: (context) => getIt<SettingsBloc>(),
             child: Container(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<ThemeCubit>(),
+            child: Container(),
           )
         ],
-        child: AnimatedTheme(
-          curve: Curves.easeInOut,
-          duration: const Duration(milliseconds: 300),
-          data: FlexThemeData.light(
-            scheme: FlexScheme.blueWhale,
-            visualDensity: VisualDensity.standard,
-            useMaterial3: true,
-          ),
-          child: MaterialApp.router(
+        child: BlocConsumer<ThemeCubit, ThemeState>(
+          listener: (context, state) => null,
+          builder: (context, state) => MaterialApp.router(
+            //todo theme cubit
             title: 'Priv@te Fit',
             debugShowCheckedModeBanner: false,
             localizationsDelegates: const [
@@ -65,9 +67,13 @@ class PrivateFitApp extends StatelessWidget {
             ),
             routeInformationParser: _appRouter.defaultRouteParser(),
             builder: (context, router) => router!,
+            theme: context.watch<ThemeCubit>().lightTheme,
+            darkTheme: context.watch<ThemeCubit>().darkTheme,
+            themeMode: context.watch<ThemeCubit>().themeMode,
           ),
         ),
       ),
     );
   }
 }
+// }

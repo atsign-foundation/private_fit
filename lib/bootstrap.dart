@@ -10,9 +10,12 @@ import 'dart:developer';
 
 import 'package:at_utils/at_utils.dart';
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/shared/constants.dart';
@@ -38,6 +41,10 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   await runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+
+      final storage = await HydratedStorage.build(
+        storageDirectory: await getApplicationSupportDirectory(),
+      );
       //we clear the keychin manager so we can onboard an atsign
       //instead of auto onboading the atsign onboarded from other app (at_app)
       await IAtsignOnBoardingFacade.checkFirstRun();
@@ -48,7 +55,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
       configureInjection(Environment.prod);
       AtSignLogger.root_level = 'all';
 
-      await BlocOverrides.runZoned(
+      await HydratedBlocOverrides.runZoned(
         () async {
           await SystemChrome.setPreferredOrientations([
             DeviceOrientation.portraitUp,
@@ -60,6 +67,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
             },
           );
         },
+        storage: storage,
         blocObserver: AppBlocObserver(),
       );
     },
