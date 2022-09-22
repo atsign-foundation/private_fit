@@ -10,4 +10,5 @@ class OpenFoodFailures with _$OpenFoodFailures {
   const factory OpenFoodFailures.internetError() = _InternetError;
   const factory OpenFoodFailures.userCancelled() = _UserCancelled;
   const factory OpenFoodFailures.codeInvalid() = _codeInvalid;
+  const factory OpenFoodFailures.failToSaveData() = _failToSaveData;
 }

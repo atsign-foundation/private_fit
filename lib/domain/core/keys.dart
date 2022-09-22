@@ -48,6 +48,19 @@ class Keys {
     ),
   );
 
+  /// Product information key
+  static final PassKey productNutritionDataKey = PassKey(
+    key: 'nutritionKey',
+    isPublic: false,
+    isHidden: true,
+    createdDate: DateTime.now(),
+    value: Value(
+      labelName: 'nutrition',
+      isHidden: true,
+      type: 'nutrition',
+    ),
+  );
+
   /// Master image key
   static final PassKey masterImgKey = PassKey(
     key: 'masterpassimg',

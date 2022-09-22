@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
+import 'package:private_fit/application/open_food/bloc/open_food_bloc.dart';
 
 /// Actual nutrition page, with data already loaded.
 
@@ -14,8 +15,8 @@ class FDA extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      child: SingleChildScrollView(
+    return Scaffold(
+      body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -23,13 +24,29 @@ class FDA extends StatelessWidget {
             Container(
               alignment: Alignment.center,
               height: 70,
-              child: const Text(
-                'Nutrition Facts',
-                style: TextStyle(
-                  color: Colors.teal,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Nutrition Facts',
+                    style: TextStyle(
+                      color: Colors.teal,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: IconButton(
+                      onPressed: () {
+                        context.read<OpenFoodBloc>().add(
+                              OpenFoodEvent.saveProductData(fetchedProduct),
+                            );
+                      },
+                      icon: const Icon(Icons.upload_rounded),
+                    ),
+                  )
+                ],
               ),
             ),
             Container(
@@ -60,7 +77,7 @@ class FDA extends StatelessWidget {
                   Container(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      fetchedProduct.brandsTags!.first,
+                      fetchedProduct.brandsTags?.first ?? '',
                       style: const TextStyle(
                         fontWeight: FontWeight.w800,
                         fontSize: 32,
@@ -97,7 +114,7 @@ class FDA extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          fetchedProduct.servingSize ?? '',
+                          fetchedProduct.quantity ?? '',
                           style: const TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: 18,

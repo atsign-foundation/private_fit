@@ -6,12 +6,14 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:openfoodfacts/model/OrderedNutrients.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
-import 'package:private_fit/domain/core/at_platform_failures.dart';
+import 'package:private_fit/domain/core/keys.dart';
+import 'package:private_fit/domain/core/value_model.dart';
 import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
 import 'package:private_fit/domain/open_food/i_open_food_facts_facade.dart';
 import 'package:private_fit/domain/open_food/open_food_facts_failures.dart';
 import 'package:private_fit/domain/open_food/open_food_fetched_product.dart';
 import 'package:private_fit/domain/open_food/product_query.dart';
+import 'package:private_fit/infrastructure/atplatform/platform_services.dart';
 import 'package:private_fit/injections.dart';
 
 @LazySingleton(as: IOpenFoodFactsFacade)
@@ -22,6 +24,9 @@ class OpenFoodFactsServices implements IOpenFoodFactsFacade {
   Map<String, AtClientService> atClientServiceMap = {};
   late AtClientPreference atClientPreference;
   late AtClientService atClientServiceInstance;
+
+  AtClientManager atClientManager = AtClientManager.getInstance();
+  final SdkServices _sdkServices = SdkServices.getInstance();
 
   IAtsignOnBoardingFacade onBoardFacade = getIt<IAtsignOnBoardingFacade>();
 
@@ -57,6 +62,8 @@ class OpenFoodFactsServices implements IOpenFoodFactsFacade {
         // await daoProduct.put(product);
         _logger.info('Successful got the Product associated with the Barcode');
         return right(FetchedProduct(product));
+      } else {
+        return left(const OpenFoodFailures.codeInvalid());
       }
     }
     if (barcode.trim().isNotEmpty &&
@@ -64,6 +71,31 @@ class OpenFoodFactsServices implements IOpenFoodFactsFacade {
       return left(const OpenFoodFailures.codeInvalid());
     }
     return left(const OpenFoodFailures.codeInvalid());
+  }
+
+  @override
+  Future<Either<OpenFoodFailures, Unit>> saveNutritionalData(
+    Product product,
+  ) async {
+    _logger.shout(product.toJson());
+    // final _userNameDto = UserNameDto.fromDomain(userNameModel);
+    final _productNutritionDataKey = Keys.productNutritionDataKey
+      ..sharedWith = atClientManager.atClient.getCurrentAtSign()
+      ..sharedBy = atClientManager.atClient.getCurrentAtSign()
+      ..value = Value(
+        value: product.toJson(),
+        labelName: 'nutrition',
+        type: 'health',
+      );
+
+    try {
+      _logger.info('saving prosuct Data to atsign Dess $product');
+      final t = await _sdkServices.put(_productNutritionDataKey);
+      _logger.shout(t);
+      return right(unit);
+    } catch (e) {
+      return left(const OpenFoodFailures.failToSaveData());
+    }
   }
 }
 

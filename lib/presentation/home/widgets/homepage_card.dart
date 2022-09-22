@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomepageCard extends StatelessWidget {
-  const HomepageCard({super.key, required this.cardChild, this.cardColor});
+class PrivateFitCard extends StatelessWidget {
+  const PrivateFitCard({super.key, required this.cardChild, this.cardColor});
 
   final Widget cardChild;
   final Color? cardColor;
@@ -9,8 +9,8 @@ class HomepageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: cardColor ?? Colors.white,
-      elevation: 2,
+      color: cardColor ?? Theme.of(context).cardColor,
+      elevation: 1,
       margin: EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width / 25,
         vertical: MediaQuery.of(context).size.width / 30,

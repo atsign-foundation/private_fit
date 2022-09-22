@@ -11,9 +11,8 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i11;
-import 'package:flutter/cupertino.dart' as _i13;
 import 'package:flutter/material.dart' as _i12;
-import 'package:openfoodfacts/openfoodfacts.dart' as _i14;
+import 'package:openfoodfacts/openfoodfacts.dart' as _i13;
 
 import '../home/home_navigator.dart' as _i1;
 import '../menstrual/menstrual_page.dart' as _i4;
@@ -159,7 +158,7 @@ class LoginViewRoute extends _i11.PageRouteInfo<void> {
 /// generated route for
 /// [_i8.FDA]
 class FDARoute extends _i11.PageRouteInfo<FDARouteArgs> {
-  FDARoute({_i13.Key? key, required _i14.Product fetchedProduct})
+  FDARoute({_i12.Key? key, required _i13.Product fetchedProduct})
       : super(FDARoute.name,
             path: '/f-dA',
             args: FDARouteArgs(key: key, fetchedProduct: fetchedProduct));
@@ -170,9 +169,9 @@ class FDARoute extends _i11.PageRouteInfo<FDARouteArgs> {
 class FDARouteArgs {
   const FDARouteArgs({this.key, required this.fetchedProduct});
 
-  final _i13.Key? key;
+  final _i12.Key? key;
 
-  final _i14.Product fetchedProduct;
+  final _i13.Product fetchedProduct;
 
   @override
   String toString() {
@@ -183,7 +182,7 @@ class FDARouteArgs {
 /// generated route for
 /// [_i9.OnInitialState]
 class OnInitialStateRoute extends _i11.PageRouteInfo<OnInitialStateRouteArgs> {
-  OnInitialStateRoute({_i13.Key? key, required dynamic i10n})
+  OnInitialStateRoute({_i12.Key? key, required dynamic i10n})
       : super(OnInitialStateRoute.name,
             path: '/on-initial-state',
             args: OnInitialStateRouteArgs(key: key, i10n: i10n));
@@ -194,7 +193,7 @@ class OnInitialStateRoute extends _i11.PageRouteInfo<OnInitialStateRouteArgs> {
 class OnInitialStateRouteArgs {
   const OnInitialStateRouteArgs({this.key, required this.i10n});
 
-  final _i13.Key? key;
+  final _i12.Key? key;
 
   final dynamic i10n;
 

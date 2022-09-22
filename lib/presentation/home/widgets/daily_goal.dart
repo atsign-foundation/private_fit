@@ -7,7 +7,7 @@ class DailyGoal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HomepageCard(
+    return PrivateFitCard(
       cardChild: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

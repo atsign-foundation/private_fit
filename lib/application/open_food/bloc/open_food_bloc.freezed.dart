@@ -16,42 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$OpenFoodEvent {
-  String get qRdata => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String qRdata) qrDataOnSuccess,
+    required TResult Function(Product product) saveProductData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String qRdata)? qrDataOnSuccess,
+    TResult Function(Product product)? saveProductData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String qRdata)? qrDataOnSuccess,
+    TResult Function(Product product)? saveProductData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_QrDataOnSuccess value) qrDataOnSuccess,
+    required TResult Function(_saveProductData value) saveProductData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_QrDataOnSuccess value)? qrDataOnSuccess,
+    TResult Function(_saveProductData value)? saveProductData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_QrDataOnSuccess value)? qrDataOnSuccess,
+    TResult Function(_saveProductData value)? saveProductData,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $OpenFoodEventCopyWith<OpenFoodEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,7 +61,6 @@ abstract class $OpenFoodEventCopyWith<$Res> {
   factory $OpenFoodEventCopyWith(
           OpenFoodEvent value, $Res Function(OpenFoodEvent) then) =
       _$OpenFoodEventCopyWithImpl<$Res>;
-  $Res call({String qRdata});
 }
 
 /// @nodoc
@@ -71,27 +71,13 @@ class _$OpenFoodEventCopyWithImpl<$Res>
   final OpenFoodEvent _value;
   // ignore: unused_field
   final $Res Function(OpenFoodEvent) _then;
-
-  @override
-  $Res call({
-    Object? qRdata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      qRdata: qRdata == freezed
-          ? _value.qRdata
-          : qRdata // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class _$$_QrDataOnSuccessCopyWith<$Res>
-    implements $OpenFoodEventCopyWith<$Res> {
+abstract class _$$_QrDataOnSuccessCopyWith<$Res> {
   factory _$$_QrDataOnSuccessCopyWith(
           _$_QrDataOnSuccess value, $Res Function(_$_QrDataOnSuccess) then) =
       __$$_QrDataOnSuccessCopyWithImpl<$Res>;
-  @override
   $Res call({String qRdata});
 }
 
@@ -153,6 +139,7 @@ class _$_QrDataOnSuccess implements _QrDataOnSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String qRdata) qrDataOnSuccess,
+    required TResult Function(Product product) saveProductData,
   }) {
     return qrDataOnSuccess(qRdata);
   }
@@ -161,6 +148,7 @@ class _$_QrDataOnSuccess implements _QrDataOnSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String qRdata)? qrDataOnSuccess,
+    TResult Function(Product product)? saveProductData,
   }) {
     return qrDataOnSuccess?.call(qRdata);
   }
@@ -169,6 +157,7 @@ class _$_QrDataOnSuccess implements _QrDataOnSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String qRdata)? qrDataOnSuccess,
+    TResult Function(Product product)? saveProductData,
     required TResult orElse(),
   }) {
     if (qrDataOnSuccess != null) {
@@ -181,6 +170,7 @@ class _$_QrDataOnSuccess implements _QrDataOnSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_QrDataOnSuccess value) qrDataOnSuccess,
+    required TResult Function(_saveProductData value) saveProductData,
   }) {
     return qrDataOnSuccess(this);
   }
@@ -189,6 +179,7 @@ class _$_QrDataOnSuccess implements _QrDataOnSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_QrDataOnSuccess value)? qrDataOnSuccess,
+    TResult Function(_saveProductData value)? saveProductData,
   }) {
     return qrDataOnSuccess?.call(this);
   }
@@ -197,6 +188,7 @@ class _$_QrDataOnSuccess implements _QrDataOnSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_QrDataOnSuccess value)? qrDataOnSuccess,
+    TResult Function(_saveProductData value)? saveProductData,
     required TResult orElse(),
   }) {
     if (qrDataOnSuccess != null) {
@@ -209,11 +201,143 @@ class _$_QrDataOnSuccess implements _QrDataOnSuccess {
 abstract class _QrDataOnSuccess implements OpenFoodEvent {
   const factory _QrDataOnSuccess(final String qRdata) = _$_QrDataOnSuccess;
 
-  @override
   String get qRdata => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$$_QrDataOnSuccessCopyWith<_$_QrDataOnSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_saveProductDataCopyWith<$Res> {
+  factory _$$_saveProductDataCopyWith(
+          _$_saveProductData value, $Res Function(_$_saveProductData) then) =
+      __$$_saveProductDataCopyWithImpl<$Res>;
+  $Res call({Product product});
+}
+
+/// @nodoc
+class __$$_saveProductDataCopyWithImpl<$Res>
+    extends _$OpenFoodEventCopyWithImpl<$Res>
+    implements _$$_saveProductDataCopyWith<$Res> {
+  __$$_saveProductDataCopyWithImpl(
+      _$_saveProductData _value, $Res Function(_$_saveProductData) _then)
+      : super(_value, (v) => _then(v as _$_saveProductData));
+
+  @override
+  _$_saveProductData get _value => super._value as _$_saveProductData;
+
+  @override
+  $Res call({
+    Object? product = freezed,
+  }) {
+    return _then(_$_saveProductData(
+      product == freezed
+          ? _value.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as Product,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_saveProductData implements _saveProductData {
+  const _$_saveProductData(this.product);
+
+  @override
+  final Product product;
+
+  @override
+  String toString() {
+    return 'OpenFoodEvent.saveProductData(product: $product)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_saveProductData &&
+            const DeepCollectionEquality().equals(other.product, product));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(product));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_saveProductDataCopyWith<_$_saveProductData> get copyWith =>
+      __$$_saveProductDataCopyWithImpl<_$_saveProductData>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String qRdata) qrDataOnSuccess,
+    required TResult Function(Product product) saveProductData,
+  }) {
+    return saveProductData(product);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String qRdata)? qrDataOnSuccess,
+    TResult Function(Product product)? saveProductData,
+  }) {
+    return saveProductData?.call(product);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String qRdata)? qrDataOnSuccess,
+    TResult Function(Product product)? saveProductData,
+    required TResult orElse(),
+  }) {
+    if (saveProductData != null) {
+      return saveProductData(product);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_QrDataOnSuccess value) qrDataOnSuccess,
+    required TResult Function(_saveProductData value) saveProductData,
+  }) {
+    return saveProductData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_QrDataOnSuccess value)? qrDataOnSuccess,
+    TResult Function(_saveProductData value)? saveProductData,
+  }) {
+    return saveProductData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_QrDataOnSuccess value)? qrDataOnSuccess,
+    TResult Function(_saveProductData value)? saveProductData,
+    required TResult orElse(),
+  }) {
+    if (saveProductData != null) {
+      return saveProductData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _saveProductData implements OpenFoodEvent {
+  const factory _saveProductData(final Product product) = _$_saveProductData;
+
+  Product get product => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_saveProductDataCopyWith<_$_saveProductData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -225,6 +349,7 @@ mixin _$OpenFoodState {
     required TResult Function(OpenFoodFailures openFoodfailures)
         failureGettingFood,
     required TResult Function(FetchedProduct fetchedProduct) loadSuccess,
+    required TResult Function() dataSavedSuccesful,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -232,6 +357,7 @@ mixin _$OpenFoodState {
     TResult Function()? initial,
     TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
+    TResult Function()? dataSavedSuccesful,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -239,6 +365,7 @@ mixin _$OpenFoodState {
     TResult Function()? initial,
     TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
+    TResult Function()? dataSavedSuccesful,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -247,6 +374,7 @@ mixin _$OpenFoodState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_FailureGettingFood value) failureGettingFood,
     required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_dataSavedSuccesful value) dataSavedSuccesful,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -254,6 +382,7 @@ mixin _$OpenFoodState {
     TResult Function(_Initial value)? initial,
     TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_dataSavedSuccesful value)? dataSavedSuccesful,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -261,6 +390,7 @@ mixin _$OpenFoodState {
     TResult Function(_Initial value)? initial,
     TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_dataSavedSuccesful value)? dataSavedSuccesful,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -326,6 +456,7 @@ class _$_Initial implements _Initial {
     required TResult Function(OpenFoodFailures openFoodfailures)
         failureGettingFood,
     required TResult Function(FetchedProduct fetchedProduct) loadSuccess,
+    required TResult Function() dataSavedSuccesful,
   }) {
     return initial();
   }
@@ -336,6 +467,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
+    TResult Function()? dataSavedSuccesful,
   }) {
     return initial?.call();
   }
@@ -346,6 +478,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
+    TResult Function()? dataSavedSuccesful,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -360,6 +493,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_FailureGettingFood value) failureGettingFood,
     required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_dataSavedSuccesful value) dataSavedSuccesful,
   }) {
     return initial(this);
   }
@@ -370,6 +504,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_dataSavedSuccesful value)? dataSavedSuccesful,
   }) {
     return initial?.call(this);
   }
@@ -380,6 +515,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_dataSavedSuccesful value)? dataSavedSuccesful,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -473,6 +609,7 @@ class _$_FailureGettingFood implements _FailureGettingFood {
     required TResult Function(OpenFoodFailures openFoodfailures)
         failureGettingFood,
     required TResult Function(FetchedProduct fetchedProduct) loadSuccess,
+    required TResult Function() dataSavedSuccesful,
   }) {
     return failureGettingFood(openFoodfailures);
   }
@@ -483,6 +620,7 @@ class _$_FailureGettingFood implements _FailureGettingFood {
     TResult Function()? initial,
     TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
+    TResult Function()? dataSavedSuccesful,
   }) {
     return failureGettingFood?.call(openFoodfailures);
   }
@@ -493,6 +631,7 @@ class _$_FailureGettingFood implements _FailureGettingFood {
     TResult Function()? initial,
     TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
+    TResult Function()? dataSavedSuccesful,
     required TResult orElse(),
   }) {
     if (failureGettingFood != null) {
@@ -507,6 +646,7 @@ class _$_FailureGettingFood implements _FailureGettingFood {
     required TResult Function(_Initial value) initial,
     required TResult Function(_FailureGettingFood value) failureGettingFood,
     required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_dataSavedSuccesful value) dataSavedSuccesful,
   }) {
     return failureGettingFood(this);
   }
@@ -517,6 +657,7 @@ class _$_FailureGettingFood implements _FailureGettingFood {
     TResult Function(_Initial value)? initial,
     TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_dataSavedSuccesful value)? dataSavedSuccesful,
   }) {
     return failureGettingFood?.call(this);
   }
@@ -527,6 +668,7 @@ class _$_FailureGettingFood implements _FailureGettingFood {
     TResult Function(_Initial value)? initial,
     TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_dataSavedSuccesful value)? dataSavedSuccesful,
     required TResult orElse(),
   }) {
     if (failureGettingFood != null) {
@@ -616,6 +758,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     required TResult Function(OpenFoodFailures openFoodfailures)
         failureGettingFood,
     required TResult Function(FetchedProduct fetchedProduct) loadSuccess,
+    required TResult Function() dataSavedSuccesful,
   }) {
     return loadSuccess(fetchedProduct);
   }
@@ -626,6 +769,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult Function()? initial,
     TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
+    TResult Function()? dataSavedSuccesful,
   }) {
     return loadSuccess?.call(fetchedProduct);
   }
@@ -636,6 +780,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult Function()? initial,
     TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
     TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
+    TResult Function()? dataSavedSuccesful,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -650,6 +795,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     required TResult Function(_Initial value) initial,
     required TResult Function(_FailureGettingFood value) failureGettingFood,
     required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_dataSavedSuccesful value) dataSavedSuccesful,
   }) {
     return loadSuccess(this);
   }
@@ -660,6 +806,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult Function(_Initial value)? initial,
     TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_dataSavedSuccesful value)? dataSavedSuccesful,
   }) {
     return loadSuccess?.call(this);
   }
@@ -670,6 +817,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult Function(_Initial value)? initial,
     TResult Function(_FailureGettingFood value)? failureGettingFood,
     TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_dataSavedSuccesful value)? dataSavedSuccesful,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -687,4 +835,122 @@ abstract class _LoadSuccess implements OpenFoodState {
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_dataSavedSuccesfulCopyWith<$Res> {
+  factory _$$_dataSavedSuccesfulCopyWith(_$_dataSavedSuccesful value,
+          $Res Function(_$_dataSavedSuccesful) then) =
+      __$$_dataSavedSuccesfulCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_dataSavedSuccesfulCopyWithImpl<$Res>
+    extends _$OpenFoodStateCopyWithImpl<$Res>
+    implements _$$_dataSavedSuccesfulCopyWith<$Res> {
+  __$$_dataSavedSuccesfulCopyWithImpl(
+      _$_dataSavedSuccesful _value, $Res Function(_$_dataSavedSuccesful) _then)
+      : super(_value, (v) => _then(v as _$_dataSavedSuccesful));
+
+  @override
+  _$_dataSavedSuccesful get _value => super._value as _$_dataSavedSuccesful;
+}
+
+/// @nodoc
+
+class _$_dataSavedSuccesful implements _dataSavedSuccesful {
+  const _$_dataSavedSuccesful();
+
+  @override
+  String toString() {
+    return 'OpenFoodState.dataSavedSuccesful()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_dataSavedSuccesful);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(OpenFoodFailures openFoodfailures)
+        failureGettingFood,
+    required TResult Function(FetchedProduct fetchedProduct) loadSuccess,
+    required TResult Function() dataSavedSuccesful,
+  }) {
+    return dataSavedSuccesful();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
+    TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
+    TResult Function()? dataSavedSuccesful,
+  }) {
+    return dataSavedSuccesful?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(OpenFoodFailures openFoodfailures)? failureGettingFood,
+    TResult Function(FetchedProduct fetchedProduct)? loadSuccess,
+    TResult Function()? dataSavedSuccesful,
+    required TResult orElse(),
+  }) {
+    if (dataSavedSuccesful != null) {
+      return dataSavedSuccesful();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_FailureGettingFood value) failureGettingFood,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_dataSavedSuccesful value) dataSavedSuccesful,
+  }) {
+    return dataSavedSuccesful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FailureGettingFood value)? failureGettingFood,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_dataSavedSuccesful value)? dataSavedSuccesful,
+  }) {
+    return dataSavedSuccesful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_FailureGettingFood value)? failureGettingFood,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_dataSavedSuccesful value)? dataSavedSuccesful,
+    required TResult orElse(),
+  }) {
+    if (dataSavedSuccesful != null) {
+      return dataSavedSuccesful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _dataSavedSuccesful implements OpenFoodState {
+  const factory _dataSavedSuccesful() = _$_dataSavedSuccesful;
 }

@@ -46,31 +46,31 @@ mixin _$AtPlatformFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(FailedToGetgetApplicationSupportDirectory value)
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_FailedToGetgetApplicationSupportDirectory value)
         failedToGetgetApplicationSupportDirectory,
-    required TResult Function(ServerError value) serverError,
-    required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
+    required TResult Function(Se_rverError value) serverError,
+    required TResult Function(_FailToSetOnBoardData value) failToSetOnBoardData,
     required TResult Function(_FailToSetUsername value) failToSetUsername,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_FailedToGetgetApplicationSupportDirectory value)?
         failedToGetgetApplicationSupportDirectory,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(Se_rverError value)? serverError,
+    TResult Function(_FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_FailedToGetgetApplicationSupportDirectory value)?
         failedToGetgetApplicationSupportDirectory,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(Se_rverError value)? serverError,
+    TResult Function(_FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
     required TResult orElse(),
   }) =>
@@ -95,28 +95,28 @@ class _$AtPlatformFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$CancelledByUserCopyWith<$Res> {
-  factory _$$CancelledByUserCopyWith(
-          _$CancelledByUser value, $Res Function(_$CancelledByUser) then) =
-      __$$CancelledByUserCopyWithImpl<$Res>;
+abstract class _$$_CancelledByUserCopyWith<$Res> {
+  factory _$$_CancelledByUserCopyWith(
+          _$_CancelledByUser value, $Res Function(_$_CancelledByUser) then) =
+      __$$_CancelledByUserCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CancelledByUserCopyWithImpl<$Res>
+class __$$_CancelledByUserCopyWithImpl<$Res>
     extends _$AtPlatformFailureCopyWithImpl<$Res>
-    implements _$$CancelledByUserCopyWith<$Res> {
-  __$$CancelledByUserCopyWithImpl(
-      _$CancelledByUser _value, $Res Function(_$CancelledByUser) _then)
-      : super(_value, (v) => _then(v as _$CancelledByUser));
+    implements _$$_CancelledByUserCopyWith<$Res> {
+  __$$_CancelledByUserCopyWithImpl(
+      _$_CancelledByUser _value, $Res Function(_$_CancelledByUser) _then)
+      : super(_value, (v) => _then(v as _$_CancelledByUser));
 
   @override
-  _$CancelledByUser get _value => super._value as _$CancelledByUser;
+  _$_CancelledByUser get _value => super._value as _$_CancelledByUser;
 }
 
 /// @nodoc
 
-class _$CancelledByUser implements CancelledByUser {
-  const _$CancelledByUser();
+class _$_CancelledByUser implements _CancelledByUser {
+  const _$_CancelledByUser();
 
   @override
   String toString() {
@@ -126,7 +126,7 @@ class _$CancelledByUser implements CancelledByUser {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CancelledByUser);
+        (other.runtimeType == runtimeType && other is _$_CancelledByUser);
   }
 
   @override
@@ -175,11 +175,11 @@ class _$CancelledByUser implements CancelledByUser {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(FailedToGetgetApplicationSupportDirectory value)
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_FailedToGetgetApplicationSupportDirectory value)
         failedToGetgetApplicationSupportDirectory,
-    required TResult Function(ServerError value) serverError,
-    required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
+    required TResult Function(Se_rverError value) serverError,
+    required TResult Function(_FailToSetOnBoardData value) failToSetOnBoardData,
     required TResult Function(_FailToSetUsername value) failToSetUsername,
   }) {
     return cancelledByUser(this);
@@ -188,11 +188,11 @@ class _$CancelledByUser implements CancelledByUser {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_FailedToGetgetApplicationSupportDirectory value)?
         failedToGetgetApplicationSupportDirectory,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(Se_rverError value)? serverError,
+    TResult Function(_FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
   }) {
     return cancelledByUser?.call(this);
@@ -201,11 +201,11 @@ class _$CancelledByUser implements CancelledByUser {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_FailedToGetgetApplicationSupportDirectory value)?
         failedToGetgetApplicationSupportDirectory,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(Se_rverError value)? serverError,
+    TResult Function(_FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
     required TResult orElse(),
   }) {
@@ -216,38 +216,38 @@ class _$CancelledByUser implements CancelledByUser {
   }
 }
 
-abstract class CancelledByUser implements AtPlatformFailure {
-  const factory CancelledByUser() = _$CancelledByUser;
+abstract class _CancelledByUser implements AtPlatformFailure {
+  const factory _CancelledByUser() = _$_CancelledByUser;
 }
 
 /// @nodoc
-abstract class _$$FailedToGetgetApplicationSupportDirectoryCopyWith<$Res> {
-  factory _$$FailedToGetgetApplicationSupportDirectoryCopyWith(
-          _$FailedToGetgetApplicationSupportDirectory value,
-          $Res Function(_$FailedToGetgetApplicationSupportDirectory) then) =
-      __$$FailedToGetgetApplicationSupportDirectoryCopyWithImpl<$Res>;
+abstract class _$$_FailedToGetgetApplicationSupportDirectoryCopyWith<$Res> {
+  factory _$$_FailedToGetgetApplicationSupportDirectoryCopyWith(
+          _$_FailedToGetgetApplicationSupportDirectory value,
+          $Res Function(_$_FailedToGetgetApplicationSupportDirectory) then) =
+      __$$_FailedToGetgetApplicationSupportDirectoryCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FailedToGetgetApplicationSupportDirectoryCopyWithImpl<$Res>
+class __$$_FailedToGetgetApplicationSupportDirectoryCopyWithImpl<$Res>
     extends _$AtPlatformFailureCopyWithImpl<$Res>
-    implements _$$FailedToGetgetApplicationSupportDirectoryCopyWith<$Res> {
-  __$$FailedToGetgetApplicationSupportDirectoryCopyWithImpl(
-      _$FailedToGetgetApplicationSupportDirectory _value,
-      $Res Function(_$FailedToGetgetApplicationSupportDirectory) _then)
+    implements _$$_FailedToGetgetApplicationSupportDirectoryCopyWith<$Res> {
+  __$$_FailedToGetgetApplicationSupportDirectoryCopyWithImpl(
+      _$_FailedToGetgetApplicationSupportDirectory _value,
+      $Res Function(_$_FailedToGetgetApplicationSupportDirectory) _then)
       : super(_value,
-            (v) => _then(v as _$FailedToGetgetApplicationSupportDirectory));
+            (v) => _then(v as _$_FailedToGetgetApplicationSupportDirectory));
 
   @override
-  _$FailedToGetgetApplicationSupportDirectory get _value =>
-      super._value as _$FailedToGetgetApplicationSupportDirectory;
+  _$_FailedToGetgetApplicationSupportDirectory get _value =>
+      super._value as _$_FailedToGetgetApplicationSupportDirectory;
 }
 
 /// @nodoc
 
-class _$FailedToGetgetApplicationSupportDirectory
-    implements FailedToGetgetApplicationSupportDirectory {
-  const _$FailedToGetgetApplicationSupportDirectory();
+class _$_FailedToGetgetApplicationSupportDirectory
+    implements _FailedToGetgetApplicationSupportDirectory {
+  const _$_FailedToGetgetApplicationSupportDirectory();
 
   @override
   String toString() {
@@ -258,7 +258,7 @@ class _$FailedToGetgetApplicationSupportDirectory
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FailedToGetgetApplicationSupportDirectory);
+            other is _$_FailedToGetgetApplicationSupportDirectory);
   }
 
   @override
@@ -307,11 +307,11 @@ class _$FailedToGetgetApplicationSupportDirectory
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(FailedToGetgetApplicationSupportDirectory value)
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_FailedToGetgetApplicationSupportDirectory value)
         failedToGetgetApplicationSupportDirectory,
-    required TResult Function(ServerError value) serverError,
-    required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
+    required TResult Function(Se_rverError value) serverError,
+    required TResult Function(_FailToSetOnBoardData value) failToSetOnBoardData,
     required TResult Function(_FailToSetUsername value) failToSetUsername,
   }) {
     return failedToGetgetApplicationSupportDirectory(this);
@@ -320,11 +320,11 @@ class _$FailedToGetgetApplicationSupportDirectory
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_FailedToGetgetApplicationSupportDirectory value)?
         failedToGetgetApplicationSupportDirectory,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(Se_rverError value)? serverError,
+    TResult Function(_FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
   }) {
     return failedToGetgetApplicationSupportDirectory?.call(this);
@@ -333,11 +333,11 @@ class _$FailedToGetgetApplicationSupportDirectory
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_FailedToGetgetApplicationSupportDirectory value)?
         failedToGetgetApplicationSupportDirectory,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(Se_rverError value)? serverError,
+    TResult Function(_FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
     required TResult orElse(),
   }) {
@@ -348,35 +348,35 @@ class _$FailedToGetgetApplicationSupportDirectory
   }
 }
 
-abstract class FailedToGetgetApplicationSupportDirectory
+abstract class _FailedToGetgetApplicationSupportDirectory
     implements AtPlatformFailure {
-  const factory FailedToGetgetApplicationSupportDirectory() =
-      _$FailedToGetgetApplicationSupportDirectory;
+  const factory _FailedToGetgetApplicationSupportDirectory() =
+      _$_FailedToGetgetApplicationSupportDirectory;
 }
 
 /// @nodoc
-abstract class _$$ServerErrorCopyWith<$Res> {
-  factory _$$ServerErrorCopyWith(
-          _$ServerError value, $Res Function(_$ServerError) then) =
-      __$$ServerErrorCopyWithImpl<$Res>;
+abstract class _$$Se_rverErrorCopyWith<$Res> {
+  factory _$$Se_rverErrorCopyWith(
+          _$Se_rverError value, $Res Function(_$Se_rverError) then) =
+      __$$Se_rverErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ServerErrorCopyWithImpl<$Res>
+class __$$Se_rverErrorCopyWithImpl<$Res>
     extends _$AtPlatformFailureCopyWithImpl<$Res>
-    implements _$$ServerErrorCopyWith<$Res> {
-  __$$ServerErrorCopyWithImpl(
-      _$ServerError _value, $Res Function(_$ServerError) _then)
-      : super(_value, (v) => _then(v as _$ServerError));
+    implements _$$Se_rverErrorCopyWith<$Res> {
+  __$$Se_rverErrorCopyWithImpl(
+      _$Se_rverError _value, $Res Function(_$Se_rverError) _then)
+      : super(_value, (v) => _then(v as _$Se_rverError));
 
   @override
-  _$ServerError get _value => super._value as _$ServerError;
+  _$Se_rverError get _value => super._value as _$Se_rverError;
 }
 
 /// @nodoc
 
-class _$ServerError implements ServerError {
-  const _$ServerError();
+class _$Se_rverError implements Se_rverError {
+  const _$Se_rverError();
 
   @override
   String toString() {
@@ -386,7 +386,7 @@ class _$ServerError implements ServerError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ServerError);
+        (other.runtimeType == runtimeType && other is _$Se_rverError);
   }
 
   @override
@@ -435,11 +435,11 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(FailedToGetgetApplicationSupportDirectory value)
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_FailedToGetgetApplicationSupportDirectory value)
         failedToGetgetApplicationSupportDirectory,
-    required TResult Function(ServerError value) serverError,
-    required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
+    required TResult Function(Se_rverError value) serverError,
+    required TResult Function(_FailToSetOnBoardData value) failToSetOnBoardData,
     required TResult Function(_FailToSetUsername value) failToSetUsername,
   }) {
     return serverError(this);
@@ -448,11 +448,11 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_FailedToGetgetApplicationSupportDirectory value)?
         failedToGetgetApplicationSupportDirectory,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(Se_rverError value)? serverError,
+    TResult Function(_FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
   }) {
     return serverError?.call(this);
@@ -461,11 +461,11 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_FailedToGetgetApplicationSupportDirectory value)?
         failedToGetgetApplicationSupportDirectory,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(Se_rverError value)? serverError,
+    TResult Function(_FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
     required TResult orElse(),
   }) {
@@ -476,33 +476,33 @@ class _$ServerError implements ServerError {
   }
 }
 
-abstract class ServerError implements AtPlatformFailure {
-  const factory ServerError() = _$ServerError;
+abstract class Se_rverError implements AtPlatformFailure {
+  const factory Se_rverError() = _$Se_rverError;
 }
 
 /// @nodoc
-abstract class _$$FailToSetOnBoardDataCopyWith<$Res> {
-  factory _$$FailToSetOnBoardDataCopyWith(_$FailToSetOnBoardData value,
-          $Res Function(_$FailToSetOnBoardData) then) =
-      __$$FailToSetOnBoardDataCopyWithImpl<$Res>;
+abstract class _$$_FailToSetOnBoardDataCopyWith<$Res> {
+  factory _$$_FailToSetOnBoardDataCopyWith(_$_FailToSetOnBoardData value,
+          $Res Function(_$_FailToSetOnBoardData) then) =
+      __$$_FailToSetOnBoardDataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FailToSetOnBoardDataCopyWithImpl<$Res>
+class __$$_FailToSetOnBoardDataCopyWithImpl<$Res>
     extends _$AtPlatformFailureCopyWithImpl<$Res>
-    implements _$$FailToSetOnBoardDataCopyWith<$Res> {
-  __$$FailToSetOnBoardDataCopyWithImpl(_$FailToSetOnBoardData _value,
-      $Res Function(_$FailToSetOnBoardData) _then)
-      : super(_value, (v) => _then(v as _$FailToSetOnBoardData));
+    implements _$$_FailToSetOnBoardDataCopyWith<$Res> {
+  __$$_FailToSetOnBoardDataCopyWithImpl(_$_FailToSetOnBoardData _value,
+      $Res Function(_$_FailToSetOnBoardData) _then)
+      : super(_value, (v) => _then(v as _$_FailToSetOnBoardData));
 
   @override
-  _$FailToSetOnBoardData get _value => super._value as _$FailToSetOnBoardData;
+  _$_FailToSetOnBoardData get _value => super._value as _$_FailToSetOnBoardData;
 }
 
 /// @nodoc
 
-class _$FailToSetOnBoardData implements FailToSetOnBoardData {
-  const _$FailToSetOnBoardData();
+class _$_FailToSetOnBoardData implements _FailToSetOnBoardData {
+  const _$_FailToSetOnBoardData();
 
   @override
   String toString() {
@@ -512,7 +512,7 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FailToSetOnBoardData);
+        (other.runtimeType == runtimeType && other is _$_FailToSetOnBoardData);
   }
 
   @override
@@ -561,11 +561,11 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(FailedToGetgetApplicationSupportDirectory value)
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_FailedToGetgetApplicationSupportDirectory value)
         failedToGetgetApplicationSupportDirectory,
-    required TResult Function(ServerError value) serverError,
-    required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
+    required TResult Function(Se_rverError value) serverError,
+    required TResult Function(_FailToSetOnBoardData value) failToSetOnBoardData,
     required TResult Function(_FailToSetUsername value) failToSetUsername,
   }) {
     return failToSetOnBoardData(this);
@@ -574,11 +574,11 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_FailedToGetgetApplicationSupportDirectory value)?
         failedToGetgetApplicationSupportDirectory,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(Se_rverError value)? serverError,
+    TResult Function(_FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
   }) {
     return failToSetOnBoardData?.call(this);
@@ -587,11 +587,11 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_FailedToGetgetApplicationSupportDirectory value)?
         failedToGetgetApplicationSupportDirectory,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(Se_rverError value)? serverError,
+    TResult Function(_FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
     required TResult orElse(),
   }) {
@@ -602,8 +602,8 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
   }
 }
 
-abstract class FailToSetOnBoardData implements AtPlatformFailure {
-  const factory FailToSetOnBoardData() = _$FailToSetOnBoardData;
+abstract class _FailToSetOnBoardData implements AtPlatformFailure {
+  const factory _FailToSetOnBoardData() = _$_FailToSetOnBoardData;
 }
 
 /// @nodoc
@@ -687,11 +687,11 @@ class _$_FailToSetUsername implements _FailToSetUsername {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(FailedToGetgetApplicationSupportDirectory value)
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_FailedToGetgetApplicationSupportDirectory value)
         failedToGetgetApplicationSupportDirectory,
-    required TResult Function(ServerError value) serverError,
-    required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
+    required TResult Function(Se_rverError value) serverError,
+    required TResult Function(_FailToSetOnBoardData value) failToSetOnBoardData,
     required TResult Function(_FailToSetUsername value) failToSetUsername,
   }) {
     return failToSetUsername(this);
@@ -700,11 +700,11 @@ class _$_FailToSetUsername implements _FailToSetUsername {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_FailedToGetgetApplicationSupportDirectory value)?
         failedToGetgetApplicationSupportDirectory,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(Se_rverError value)? serverError,
+    TResult Function(_FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
   }) {
     return failToSetUsername?.call(this);
@@ -713,11 +713,11 @@ class _$_FailToSetUsername implements _FailToSetUsername {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_FailedToGetgetApplicationSupportDirectory value)?
         failedToGetgetApplicationSupportDirectory,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(Se_rverError value)? serverError,
+    TResult Function(_FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
     required TResult orElse(),
   }) {

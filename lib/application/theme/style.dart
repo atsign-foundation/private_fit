@@ -16,7 +16,6 @@ class Style {
 
   /// Light style
   static final ThemeData light = ThemeData(
-    useMaterial3: true,
     brightness: Brightness.light,
     appBarTheme:
         const AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle.light),
@@ -39,7 +38,6 @@ class Style {
 
   /// Dark style
   static final ThemeData dark = ThemeData(
-    useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: darkPrimaryColor,
     canvasColor: darkCanvasColor,
@@ -64,7 +62,6 @@ class Style {
 
   /// Black style (OLED)
   static final ThemeData black = ThemeData(
-    useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: blackPrimaryColor,
     canvasColor: blackPrimaryColor,

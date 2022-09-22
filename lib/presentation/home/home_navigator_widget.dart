@@ -8,7 +8,6 @@ import 'package:private_fit/presentation/home/home_page.dart';
 import 'package:private_fit/presentation/home/widgets/bot_nav_bar.dart';
 import 'package:private_fit/presentation/menstrual/menstrual_page.dart';
 import 'package:private_fit/presentation/open_food/scanner_page.dart';
-import 'package:private_fit/presentation/settings/settings_page.dart';
 import 'package:private_fit/presentation/settings/settings_view.dart';
 
 class HomeNavigatorWidget extends StatelessWidget {
@@ -19,7 +18,7 @@ class HomeNavigatorWidget extends StatelessWidget {
     final l10n = context.l10n;
     return BlocBuilder<BotNavBarBloc, int>(
       bloc: getIt<BotNavBarBloc>(),
-      builder: (context, i) {
+      builder: (BuildContext context, i) {
         return Scaffold(
           bottomNavigationBar: NavigationBarTheme(
             data: NavigationBarThemeData(

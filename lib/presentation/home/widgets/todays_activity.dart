@@ -1,4 +1,6 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
@@ -11,7 +13,7 @@ class TodaysActivity extends StatelessWidget {
   Widget build(BuildContext context) {
     final DateTime now = DateTime.now();
     final String formattedDate = DateFormat.MMMEd('en_US').format(now);
-    return HomepageCard(
+    return PrivateFitCard(
       cardChild: Row(
         children: [
           CircularPercentIndicator(
@@ -25,11 +27,11 @@ class TodaysActivity extends StatelessWidget {
               center: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Text(
+                  AutoSizeText(
                     'Steps',
                     style: TextStyle(color: Colors.green),
                   ),
-                  Text(
+                  AutoSizeText(
                     'Calories',
                     style: TextStyle(color: Colors.orange),
                   ),
@@ -39,67 +41,74 @@ class TodaysActivity extends StatelessWidget {
             ),
             progressColor: Colors.green,
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.04,
+          // SizedBox(
+          //   width: MediaQuery.of(context).size.width * 0.04,
+          // ),
+          const Gap(10),
+          // SizedBox(
+          // height: MediaQuery.of(context).size.width * 0.35,
+          // child:
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              const AutoSizeText(
+                'Todays Activity',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              const Gap(8),
+              AutoSizeText(formattedDate),
+              const Gap(12),
+              Row(
+                children: const [
+                  Icon(
+                    Icons.directions_walk,
+                    color: Colors.green,
+                  ),
+                  AutoSizeText('Steps'),
+                  // SizedBox(
+                  //   width: MediaQuery.of(context).size.width * 0.05,
+                  // ),
+                  Gap(12),
+                  Icon(
+                    Icons.local_fire_department_rounded,
+                    color: Colors.orange,
+                  ),
+                  AutoSizeText('Calories'),
+                ],
+              ),
+              const Gap(12),
+              Row(
+                children: [
+                  Column(
+                    children: const [
+                      AutoSizeText(
+                        '3:25',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      AutoSizeText('Hours'),
+                    ],
+                  ),
+                  // SizedBox(
+                  //   width: MediaQuery.of(context).size.width * 0.1,
+                  // ),
+                  // const Spacer(),
+                  const Gap(12),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      AutoSizeText(
+                        '6.05',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      AutoSizeText('Kilometers'),
+                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.width * 0.35,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Todays Activity',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Text(formattedDate),
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.directions_walk,
-                      color: Colors.green,
-                    ),
-                    const Text('Steps'),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.05,
-                    ),
-                    const Icon(
-                      Icons.local_fire_department_rounded,
-                      color: Colors.orange,
-                    ),
-                    const Text('Calories'),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          '3:25',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text('Hours'),
-                      ],
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.1,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          '6.05',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text('Kilometers'),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+          // ),
         ],
       ),
     );

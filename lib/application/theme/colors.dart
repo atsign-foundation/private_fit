@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 /// Contains app colors to used them all around the app
 
 // Light theme
-const lightPrimaryColor = Color(0xFF1E1E1E);
-const lightAccentColor = Color(0xFF1E5185);
+const lightPrimaryColor = Colors.teal;
+const lightAccentColor = Colors.tealAccent;
 
 // Dark theme
-const darkPrimaryColor = Color(0xFF121212);
+final darkPrimaryColor = Colors.teal.shade900;
 const darkAccentColor = Color(0xFFDFAB00);
-const darkBackgroundColor = Color(0xFF1F1F1F);
+const darkBackgroundColor = Color.fromARGB(255, 17, 34, 32);
 const darkCanvasColor = Color(0xFF242424);
-const darkCardColor = Color(0xFF272727);
+const darkCardColor = Color.fromARGB(255, 2, 26, 24);
 const darkDividerColor = Color(0xFF545454);
 
 // Black theme

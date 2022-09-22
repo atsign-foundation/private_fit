@@ -8,7 +8,7 @@ class WorkoutList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HomepageCard(
+    return PrivateFitCard(
       cardChild: SizedBox(
         height: MediaQuery.of(context).size.height * 0.11,
         child: ListView.separated(

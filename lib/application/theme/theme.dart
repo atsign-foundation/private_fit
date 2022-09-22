@@ -42,7 +42,7 @@ class ThemeCubit extends HydratedCubit<ThemeState> {
       case ThemeState.dark:
       case ThemeState.black:
         return ThemeMode.dark;
-      default:
+      case ThemeState.system:
         return ThemeMode.system;
     }
   }

@@ -23,6 +23,7 @@ mixin _$OpenFoodFailures {
     required TResult Function() internetError,
     required TResult Function() userCancelled,
     required TResult Function() codeInvalid,
+    required TResult Function() failToSaveData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$OpenFoodFailures {
     TResult Function()? internetError,
     TResult Function()? userCancelled,
     TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$OpenFoodFailures {
     TResult Function()? internetError,
     TResult Function()? userCancelled,
     TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,6 +55,7 @@ mixin _$OpenFoodFailures {
     required TResult Function(_InternetError value) internetError,
     required TResult Function(_UserCancelled value) userCancelled,
     required TResult Function(_codeInvalid value) codeInvalid,
+    required TResult Function(_failToSaveData value) failToSaveData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +66,7 @@ mixin _$OpenFoodFailures {
     TResult Function(_InternetError value)? internetError,
     TResult Function(_UserCancelled value)? userCancelled,
     TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +77,7 @@ mixin _$OpenFoodFailures {
     TResult Function(_InternetError value)? internetError,
     TResult Function(_UserCancelled value)? userCancelled,
     TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,6 +146,7 @@ class _$_InternetNotFound implements _InternetNotFound {
     required TResult Function() internetError,
     required TResult Function() userCancelled,
     required TResult Function() codeInvalid,
+    required TResult Function() failToSaveData,
   }) {
     return internetNotFound();
   }
@@ -152,6 +159,7 @@ class _$_InternetNotFound implements _InternetNotFound {
     TResult Function()? internetError,
     TResult Function()? userCancelled,
     TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
   }) {
     return internetNotFound?.call();
   }
@@ -164,6 +172,7 @@ class _$_InternetNotFound implements _InternetNotFound {
     TResult Function()? internetError,
     TResult Function()? userCancelled,
     TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
     required TResult orElse(),
   }) {
     if (internetNotFound != null) {
@@ -181,6 +190,7 @@ class _$_InternetNotFound implements _InternetNotFound {
     required TResult Function(_InternetError value) internetError,
     required TResult Function(_UserCancelled value) userCancelled,
     required TResult Function(_codeInvalid value) codeInvalid,
+    required TResult Function(_failToSaveData value) failToSaveData,
   }) {
     return internetNotFound(this);
   }
@@ -194,6 +204,7 @@ class _$_InternetNotFound implements _InternetNotFound {
     TResult Function(_InternetError value)? internetError,
     TResult Function(_UserCancelled value)? userCancelled,
     TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
   }) {
     return internetNotFound?.call(this);
   }
@@ -207,6 +218,7 @@ class _$_InternetNotFound implements _InternetNotFound {
     TResult Function(_InternetError value)? internetError,
     TResult Function(_UserCancelled value)? userCancelled,
     TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
     required TResult orElse(),
   }) {
     if (internetNotFound != null) {
@@ -270,6 +282,7 @@ class _$_FailedToGetCameraPermissions implements _FailedToGetCameraPermissions {
     required TResult Function() internetError,
     required TResult Function() userCancelled,
     required TResult Function() codeInvalid,
+    required TResult Function() failToSaveData,
   }) {
     return failedToGetCameraPermissions();
   }
@@ -282,6 +295,7 @@ class _$_FailedToGetCameraPermissions implements _FailedToGetCameraPermissions {
     TResult Function()? internetError,
     TResult Function()? userCancelled,
     TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
   }) {
     return failedToGetCameraPermissions?.call();
   }
@@ -294,6 +308,7 @@ class _$_FailedToGetCameraPermissions implements _FailedToGetCameraPermissions {
     TResult Function()? internetError,
     TResult Function()? userCancelled,
     TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
     required TResult orElse(),
   }) {
     if (failedToGetCameraPermissions != null) {
@@ -311,6 +326,7 @@ class _$_FailedToGetCameraPermissions implements _FailedToGetCameraPermissions {
     required TResult Function(_InternetError value) internetError,
     required TResult Function(_UserCancelled value) userCancelled,
     required TResult Function(_codeInvalid value) codeInvalid,
+    required TResult Function(_failToSaveData value) failToSaveData,
   }) {
     return failedToGetCameraPermissions(this);
   }
@@ -324,6 +340,7 @@ class _$_FailedToGetCameraPermissions implements _FailedToGetCameraPermissions {
     TResult Function(_InternetError value)? internetError,
     TResult Function(_UserCancelled value)? userCancelled,
     TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
   }) {
     return failedToGetCameraPermissions?.call(this);
   }
@@ -337,6 +354,7 @@ class _$_FailedToGetCameraPermissions implements _FailedToGetCameraPermissions {
     TResult Function(_InternetError value)? internetError,
     TResult Function(_UserCancelled value)? userCancelled,
     TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
     required TResult orElse(),
   }) {
     if (failedToGetCameraPermissions != null) {
@@ -397,6 +415,7 @@ class _$_InternetError implements _InternetError {
     required TResult Function() internetError,
     required TResult Function() userCancelled,
     required TResult Function() codeInvalid,
+    required TResult Function() failToSaveData,
   }) {
     return internetError();
   }
@@ -409,6 +428,7 @@ class _$_InternetError implements _InternetError {
     TResult Function()? internetError,
     TResult Function()? userCancelled,
     TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
   }) {
     return internetError?.call();
   }
@@ -421,6 +441,7 @@ class _$_InternetError implements _InternetError {
     TResult Function()? internetError,
     TResult Function()? userCancelled,
     TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
     required TResult orElse(),
   }) {
     if (internetError != null) {
@@ -438,6 +459,7 @@ class _$_InternetError implements _InternetError {
     required TResult Function(_InternetError value) internetError,
     required TResult Function(_UserCancelled value) userCancelled,
     required TResult Function(_codeInvalid value) codeInvalid,
+    required TResult Function(_failToSaveData value) failToSaveData,
   }) {
     return internetError(this);
   }
@@ -451,6 +473,7 @@ class _$_InternetError implements _InternetError {
     TResult Function(_InternetError value)? internetError,
     TResult Function(_UserCancelled value)? userCancelled,
     TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
   }) {
     return internetError?.call(this);
   }
@@ -464,6 +487,7 @@ class _$_InternetError implements _InternetError {
     TResult Function(_InternetError value)? internetError,
     TResult Function(_UserCancelled value)? userCancelled,
     TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
     required TResult orElse(),
   }) {
     if (internetError != null) {
@@ -523,6 +547,7 @@ class _$_UserCancelled implements _UserCancelled {
     required TResult Function() internetError,
     required TResult Function() userCancelled,
     required TResult Function() codeInvalid,
+    required TResult Function() failToSaveData,
   }) {
     return userCancelled();
   }
@@ -535,6 +560,7 @@ class _$_UserCancelled implements _UserCancelled {
     TResult Function()? internetError,
     TResult Function()? userCancelled,
     TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
   }) {
     return userCancelled?.call();
   }
@@ -547,6 +573,7 @@ class _$_UserCancelled implements _UserCancelled {
     TResult Function()? internetError,
     TResult Function()? userCancelled,
     TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
     required TResult orElse(),
   }) {
     if (userCancelled != null) {
@@ -564,6 +591,7 @@ class _$_UserCancelled implements _UserCancelled {
     required TResult Function(_InternetError value) internetError,
     required TResult Function(_UserCancelled value) userCancelled,
     required TResult Function(_codeInvalid value) codeInvalid,
+    required TResult Function(_failToSaveData value) failToSaveData,
   }) {
     return userCancelled(this);
   }
@@ -577,6 +605,7 @@ class _$_UserCancelled implements _UserCancelled {
     TResult Function(_InternetError value)? internetError,
     TResult Function(_UserCancelled value)? userCancelled,
     TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
   }) {
     return userCancelled?.call(this);
   }
@@ -590,6 +619,7 @@ class _$_UserCancelled implements _UserCancelled {
     TResult Function(_InternetError value)? internetError,
     TResult Function(_UserCancelled value)? userCancelled,
     TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
     required TResult orElse(),
   }) {
     if (userCancelled != null) {
@@ -649,6 +679,7 @@ class _$_codeInvalid implements _codeInvalid {
     required TResult Function() internetError,
     required TResult Function() userCancelled,
     required TResult Function() codeInvalid,
+    required TResult Function() failToSaveData,
   }) {
     return codeInvalid();
   }
@@ -661,6 +692,7 @@ class _$_codeInvalid implements _codeInvalid {
     TResult Function()? internetError,
     TResult Function()? userCancelled,
     TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
   }) {
     return codeInvalid?.call();
   }
@@ -673,6 +705,7 @@ class _$_codeInvalid implements _codeInvalid {
     TResult Function()? internetError,
     TResult Function()? userCancelled,
     TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
     required TResult orElse(),
   }) {
     if (codeInvalid != null) {
@@ -690,6 +723,7 @@ class _$_codeInvalid implements _codeInvalid {
     required TResult Function(_InternetError value) internetError,
     required TResult Function(_UserCancelled value) userCancelled,
     required TResult Function(_codeInvalid value) codeInvalid,
+    required TResult Function(_failToSaveData value) failToSaveData,
   }) {
     return codeInvalid(this);
   }
@@ -703,6 +737,7 @@ class _$_codeInvalid implements _codeInvalid {
     TResult Function(_InternetError value)? internetError,
     TResult Function(_UserCancelled value)? userCancelled,
     TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
   }) {
     return codeInvalid?.call(this);
   }
@@ -716,6 +751,7 @@ class _$_codeInvalid implements _codeInvalid {
     TResult Function(_InternetError value)? internetError,
     TResult Function(_UserCancelled value)? userCancelled,
     TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
     required TResult orElse(),
   }) {
     if (codeInvalid != null) {
@@ -727,4 +763,136 @@ class _$_codeInvalid implements _codeInvalid {
 
 abstract class _codeInvalid implements OpenFoodFailures {
   const factory _codeInvalid() = _$_codeInvalid;
+}
+
+/// @nodoc
+abstract class _$$_failToSaveDataCopyWith<$Res> {
+  factory _$$_failToSaveDataCopyWith(
+          _$_failToSaveData value, $Res Function(_$_failToSaveData) then) =
+      __$$_failToSaveDataCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_failToSaveDataCopyWithImpl<$Res>
+    extends _$OpenFoodFailuresCopyWithImpl<$Res>
+    implements _$$_failToSaveDataCopyWith<$Res> {
+  __$$_failToSaveDataCopyWithImpl(
+      _$_failToSaveData _value, $Res Function(_$_failToSaveData) _then)
+      : super(_value, (v) => _then(v as _$_failToSaveData));
+
+  @override
+  _$_failToSaveData get _value => super._value as _$_failToSaveData;
+}
+
+/// @nodoc
+
+class _$_failToSaveData implements _failToSaveData {
+  const _$_failToSaveData();
+
+  @override
+  String toString() {
+    return 'OpenFoodFailures.failToSaveData()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_failToSaveData);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() internetNotFound,
+    required TResult Function() failedToGetCameraPermissions,
+    required TResult Function() internetError,
+    required TResult Function() userCancelled,
+    required TResult Function() codeInvalid,
+    required TResult Function() failToSaveData,
+  }) {
+    return failToSaveData();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? internetNotFound,
+    TResult Function()? failedToGetCameraPermissions,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
+  }) {
+    return failToSaveData?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? internetNotFound,
+    TResult Function()? failedToGetCameraPermissions,
+    TResult Function()? internetError,
+    TResult Function()? userCancelled,
+    TResult Function()? codeInvalid,
+    TResult Function()? failToSaveData,
+    required TResult orElse(),
+  }) {
+    if (failToSaveData != null) {
+      return failToSaveData();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InternetNotFound value) internetNotFound,
+    required TResult Function(_FailedToGetCameraPermissions value)
+        failedToGetCameraPermissions,
+    required TResult Function(_InternetError value) internetError,
+    required TResult Function(_UserCancelled value) userCancelled,
+    required TResult Function(_codeInvalid value) codeInvalid,
+    required TResult Function(_failToSaveData value) failToSaveData,
+  }) {
+    return failToSaveData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
+        failedToGetCameraPermissions,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
+  }) {
+    return failToSaveData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InternetNotFound value)? internetNotFound,
+    TResult Function(_FailedToGetCameraPermissions value)?
+        failedToGetCameraPermissions,
+    TResult Function(_InternetError value)? internetError,
+    TResult Function(_UserCancelled value)? userCancelled,
+    TResult Function(_codeInvalid value)? codeInvalid,
+    TResult Function(_failToSaveData value)? failToSaveData,
+    required TResult orElse(),
+  }) {
+    if (failToSaveData != null) {
+      return failToSaveData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _failToSaveData implements OpenFoodFailures {
+  const factory _failToSaveData() = _$_failToSaveData;
 }

@@ -327,7 +327,10 @@ class AverageStatsWidget extends StatelessWidget {
             number,
             style: const TextStyle(fontSize: 28, color: Colors.deepOrange),
           ),
-          const Text('days'),
+          const Text(
+            'days',
+            style: subHeadingStyle,
+          ),
         ],
       ),
     );
@@ -343,7 +346,6 @@ class CycleAnalysis extends StatelessWidget {
       bloc: getIt<MenstrualBloc>(),
       builder: (BuildContext context, MenstrualState state) {
         return SizedBox(
-          height: MediaQuery.of(context).size.height * 0.13,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
