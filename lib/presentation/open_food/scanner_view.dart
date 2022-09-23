@@ -1,17 +1,21 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cherry_components/cherry_components.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_qr_reader/flutter_qr_reader.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:openfoodfacts/model/OrderedNutrients.dart';
 import 'package:private_fit/application/open_food/bloc/open_food_bloc.dart';
 import 'package:private_fit/domain/open_food/open_food_facts_failures.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/l10n/l10n.dart';
+import 'package:private_fit/presentation/components/custom_pages/custom_pages.dart';
 import 'package:private_fit/presentation/open_food/product_cards/ordered_nutrients_cache.dart';
 import 'package:private_fit/presentation/routes/router.gr.dart';
+import 'package:private_fit/presentation/splash/splash_widgets/app_assets.dart';
 import 'package:private_fit/presentation/splash/splash_widgets/on_boarding/app_styles.dart';
 
 class ScannerView extends StatelessWidget {
@@ -121,63 +125,19 @@ class OnInitialState extends StatelessWidget {
 }
 
 class ScannerFoodWidget extends StatelessWidget {
-  const ScannerFoodWidget({Key? key, required this.i10n}) : super(key: key);
+  const ScannerFoodWidget({super.key, required this.i10n});
+
+  // const ScannerFoodWidget({Key? key, required this.i10n}) : super(key: key);
 
   final AppLocalizations i10n;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Nutritional facts'),
-      ),
-      body: Stack(
-        children: [
-          // Padding(
-          //   padding: const EdgeInsets.all(3),
-          //   child:
-
-          Positioned(
-            bottom: 50,
-            child: Card(
-              margin: const EdgeInsets.all(8),
-              // color: Theme.of(context).cardColor,
-              child: Text(
-                'Scan any Food or Drink product using the product '
-                "barcode and get all the information about it's "
-                'nutriosinal contents',
-                style: GoogleFonts.poppins(
-                  fontSize: 15,
-                ),
-              ),
-            ),
-          ),
-          // ),
-          // Align(
-          //   alignment: Alignment.topLeft,
-          //   child: Padding(
-          //     padding: const EdgeInsets.only(left: 24, bottom: 8),
-          //     child: AutoSizeText(
-          //       'History',
-          //       style: GoogleFonts.poppins(
-          //         fontSize: 15,
-          //       ),
-          //     ),
-          //   ),
-          // ), //todo(kzawadi): fetch the saved nutritional data from dess
-
-          // Positioned(
-          //   bottom: 200,
-          //   // flex: 5,
-          //   child: ListView.builder(
-          //     shrinkWrap: true,
-          //     itemCount: 50,
-          //     padding: const EdgeInsets.all(15),
-          //     itemBuilder: (context, i) {
-          //       return const Text('data');
-          //     },
-          //   ),
-          // ),
-        ],
+      body: SliverPage(
+        header:
+            SvgPicture.asset(AppAssets.openfoodfacts), //Open food facts assets
+        title: 'Scanner',
+        children: const [HistoryView()],
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
@@ -192,6 +152,40 @@ class ScannerFoodWidget extends StatelessWidget {
         icon: const Icon(
           Icons.qr_code_scanner_rounded,
         ),
+      ),
+    );
+  }
+}
+
+class HistoryView extends StatelessWidget {
+  const HistoryView({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverToBoxAdapter(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const HeaderText(
+            'spacex.company.tab.achievements',
+            head: true,
+          ),
+          ListView.builder(
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            primary: false,
+            itemBuilder: (context, index) => ListCell.icon(
+              icon: Icons.location_on,
+              title: 'spacex.home.tab.launchpad.title',
+              subtitle: 'sub Title',
+              onTap: () {},
+            ),
+            // Separator.divider(indent: 72),
+            itemCount: 3,
+          ),
+        ],
       ),
     );
   }

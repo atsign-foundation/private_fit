@@ -34,6 +34,7 @@ other stuff. AutoRoute does all that for you and much more.
     AutoRoute<dynamic>(page: LoginView),
     AutoRoute<dynamic>(page: FDA),
     AutoRoute<dynamic>(page: OnInitialState),
+    // AutoRoute<dynamic>(page: SettingView, initial: true),
 
     // AutoRoute<dynamic>(page: LoginScreenPage, initial: true),
     AutoRoute<dynamic>(page: OnBoarding, initial: true),

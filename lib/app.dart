@@ -43,15 +43,12 @@ class PrivateFitApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => getIt<SettingsBloc>(),
-            child: Container(),
           ),
           BlocProvider(
             create: (context) => getIt<ThemeCubit>(),
-            child: Container(),
           )
         ],
-        child: BlocConsumer<ThemeCubit, ThemeState>(
-          listener: (context, state) => null,
+        child: BlocBuilder<ThemeCubit, ThemeState>(
           builder: (context, state) => MaterialApp.router(
             //todo theme cubit
             title: 'Priv@te Fit',

@@ -3,6 +3,7 @@ class AppAssets {
   static const String artist2 = 'assets/on_boarding/images/artist_2.png';
   static const String artist3 = 'assets/on_boarding/images/artist_3.png';
   static const String noise = 'assets/on_boarding/images/noise.png';
+  static const String openfoodfacts = 'assets/images/scan.svg';
 
   static const String cube = 'assets/on_boarding/assets/cube.obj';
   static const String star = 'assets/on_boarding/assets/star.obj';

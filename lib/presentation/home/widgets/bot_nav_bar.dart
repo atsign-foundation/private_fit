@@ -19,15 +19,7 @@ class BotNavBar extends StatelessWidget {
           onDestinationSelected: (newIndex) => context
               .read<BotNavBarBloc>()
               .add(BotNavBarEvent.change(newIndex)),
-          // labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           animationDuration: const Duration(milliseconds: 1000),
-
-          //backgroundColor: ,
-          // unselectedItemColor: Colors.grey,
-          // selectedItemColor: Colors.black87,
-          // showSelectedLabels: true,
-          // selectedFontSize: 12.0,
-
           destinations: const [
             NavigationDestination(
               icon: IconlyIcon(
