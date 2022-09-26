@@ -330,8 +330,7 @@ class _$_save implements _save {
 abstract class _save implements MenstrualEvent {
   const factory _save(final MenstrualDataModel menstrualDataModel) = _$_save;
 
-  MenstrualDataModel get menstrualDataModel =>
-      throw _privateConstructorUsedError;
+  MenstrualDataModel get menstrualDataModel;
   @JsonKey(ignore: true)
   _$$_saveCopyWith<_$_save> get copyWith => throw _privateConstructorUsedError;
 }
@@ -472,7 +471,7 @@ abstract class _CalendarFormatChange implements MenstrualEvent {
   const factory _CalendarFormatChange(final CalendarFormat format) =
       _$_CalendarFormatChange;
 
-  CalendarFormat get format => throw _privateConstructorUsedError;
+  CalendarFormat get format;
   @JsonKey(ignore: true)
   _$$_CalendarFormatChangeCopyWith<_$_CalendarFormatChange> get copyWith =>
       throw _privateConstructorUsedError;
@@ -706,19 +705,17 @@ abstract class _MenstrualState implements MenstrualState {
       required final CalendarFormat calendarFormat}) = _$_MenstrualState;
 
   @override
-  MenstrualDataModel get menstrualDataModel =>
-      throw _privateConstructorUsedError;
+  MenstrualDataModel get menstrualDataModel;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSaving => throw _privateConstructorUsedError;
+  bool get isSaving;
   @override
-  bool get liveData => throw _privateConstructorUsedError;
+  bool get liveData;
   @override
-  Option<Either<AtPlatformFailure, Unit>> get saveFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AtPlatformFailure, Unit>> get saveFailureOrSuccessOption;
   @override
-  CalendarFormat get calendarFormat => throw _privateConstructorUsedError;
+  CalendarFormat get calendarFormat;
   @override
   @JsonKey(ignore: true)
   _$$_MenstrualStateCopyWith<_$_MenstrualState> get copyWith =>

@@ -123,7 +123,7 @@ abstract class _UserNameModel extends UserNameModel {
   _UserNameModel._() : super._();
 
   @override
-  UserName get username => throw _privateConstructorUsedError;
+  UserName get username;
   @override
   @JsonKey(ignore: true)
   _$$_UserNameModelCopyWith<_$_UserNameModel> get copyWith =>

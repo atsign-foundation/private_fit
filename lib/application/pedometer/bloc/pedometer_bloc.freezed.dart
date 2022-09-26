@@ -458,14 +458,13 @@ abstract class _PedometerState implements PedometerState {
       _$_PedometerState;
 
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get liveData => throw _privateConstructorUsedError;
+  bool get liveData;
   @override
-  Stream<StepCount>? get stepCountStream => throw _privateConstructorUsedError;
+  Stream<StepCount>? get stepCountStream;
   @override
-  Stream<PedestrianStatus>? get pedistrianStatusStream =>
-      throw _privateConstructorUsedError;
+  Stream<PedestrianStatus>? get pedistrianStatusStream;
   @override
   @JsonKey(ignore: true)
   _$$_PedometerStateCopyWith<_$_PedometerState> get copyWith =>

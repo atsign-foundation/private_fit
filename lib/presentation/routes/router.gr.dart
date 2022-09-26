@@ -10,6 +10,7 @@
 //
 // ignore_for_file: type=lint
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i11;
 import 'package:flutter/material.dart' as _i12;
 import 'package:openfoodfacts/openfoodfacts.dart' as _i13;
@@ -34,62 +35,116 @@ class Router extends _i11.RootStackRouter {
   final Map<String, _i11.PageFactory> pagesMap = {
     HomeNavigatorRoute.name: (routeData) {
       return _i11.CupertinoPageX<dynamic>(
-          routeData: routeData, child: const _i1.HomeNavigator());
+        routeData: routeData,
+        child: const _i1.HomeNavigator(),
+      );
     },
     OnBoardingPageRoute.name: (routeData) {
       return _i11.CupertinoPageX<dynamic>(
-          routeData: routeData, child: const _i2.OnBoardingPage());
+        routeData: routeData,
+        child: const _i2.OnBoardingPage(),
+      );
     },
     ScannerPageRoute.name: (routeData) {
       return _i11.CupertinoPageX<dynamic>(
-          routeData: routeData, child: const _i3.ScannerPage());
+        routeData: routeData,
+        child: const _i3.ScannerPage(),
+      );
     },
     MenstrualPageRoute.name: (routeData) {
       return _i11.CupertinoPageX<dynamic>(
-          routeData: routeData, child: const _i4.MenstrualPage());
+        routeData: routeData,
+        child: const _i4.MenstrualPage(),
+      );
     },
     LoadingScreenRoute.name: (routeData) {
       return _i11.CupertinoPageX<dynamic>(
-          routeData: routeData, child: const _i5.LoadingScreen());
+        routeData: routeData,
+        child: const _i5.LoadingScreen(),
+      );
     },
     ErrorOboardingRoute.name: (routeData) {
       return _i11.CupertinoPageX<dynamic>(
-          routeData: routeData, child: const _i6.ErrorOboarding());
+        routeData: routeData,
+        child: const _i6.ErrorOboarding(),
+      );
     },
     LoginViewRoute.name: (routeData) {
       return _i11.CupertinoPageX<dynamic>(
-          routeData: routeData, child: const _i7.LoginView());
+        routeData: routeData,
+        child: const _i7.LoginView(),
+      );
     },
     FDARoute.name: (routeData) {
       final args = routeData.argsAs<FDARouteArgs>();
       return _i11.CupertinoPageX<dynamic>(
-          routeData: routeData,
-          child: _i8.FDA(key: args.key, fetchedProduct: args.fetchedProduct));
+        routeData: routeData,
+        child: _i8.FDA(
+          key: args.key,
+          fetchedProduct: args.fetchedProduct,
+        ),
+      );
     },
     OnInitialStateRoute.name: (routeData) {
       final args = routeData.argsAs<OnInitialStateRouteArgs>();
       return _i11.CupertinoPageX<dynamic>(
-          routeData: routeData,
-          child: _i9.OnInitialState(key: args.key, i10n: args.i10n));
+        routeData: routeData,
+        child: _i9.OnInitialState(
+          key: args.key,
+          i10n: args.i10n,
+        ),
+      );
     },
     OnBoardingRoute.name: (routeData) {
       return _i11.CupertinoPageX<dynamic>(
-          routeData: routeData, child: const _i10.OnBoarding());
-    }
+        routeData: routeData,
+        child: const _i10.OnBoarding(),
+      );
+    },
   };
 
   @override
   List<_i11.RouteConfig> get routes => [
-        _i11.RouteConfig(HomeNavigatorRoute.name, path: '/home-navigator'),
-        _i11.RouteConfig(OnBoardingPageRoute.name, path: '/on-boarding-page'),
-        _i11.RouteConfig(ScannerPageRoute.name, path: '/scanner-page'),
-        _i11.RouteConfig(MenstrualPageRoute.name, path: '/menstrual-page'),
-        _i11.RouteConfig(LoadingScreenRoute.name, path: '/loading-screen'),
-        _i11.RouteConfig(ErrorOboardingRoute.name, path: '/error-oboarding'),
-        _i11.RouteConfig(LoginViewRoute.name, path: '/login-view'),
-        _i11.RouteConfig(FDARoute.name, path: '/f-dA'),
-        _i11.RouteConfig(OnInitialStateRoute.name, path: '/on-initial-state'),
-        _i11.RouteConfig(OnBoardingRoute.name, path: '/')
+        _i11.RouteConfig(
+          HomeNavigatorRoute.name,
+          path: '/home-navigator',
+        ),
+        _i11.RouteConfig(
+          OnBoardingPageRoute.name,
+          path: '/on-boarding-page',
+        ),
+        _i11.RouteConfig(
+          ScannerPageRoute.name,
+          path: '/scanner-page',
+        ),
+        _i11.RouteConfig(
+          MenstrualPageRoute.name,
+          path: '/menstrual-page',
+        ),
+        _i11.RouteConfig(
+          LoadingScreenRoute.name,
+          path: '/loading-screen',
+        ),
+        _i11.RouteConfig(
+          ErrorOboardingRoute.name,
+          path: '/error-oboarding',
+        ),
+        _i11.RouteConfig(
+          LoginViewRoute.name,
+          path: '/login-view',
+        ),
+        _i11.RouteConfig(
+          FDARoute.name,
+          path: '/f-dA',
+        ),
+        _i11.RouteConfig(
+          OnInitialStateRoute.name,
+          path: '/on-initial-state',
+        ),
+        _i11.RouteConfig(
+          OnBoardingRoute.name,
+          path: '/',
+        ),
       ];
 }
 
@@ -97,7 +152,10 @@ class Router extends _i11.RootStackRouter {
 /// [_i1.HomeNavigator]
 class HomeNavigatorRoute extends _i11.PageRouteInfo<void> {
   const HomeNavigatorRoute()
-      : super(HomeNavigatorRoute.name, path: '/home-navigator');
+      : super(
+          HomeNavigatorRoute.name,
+          path: '/home-navigator',
+        );
 
   static const String name = 'HomeNavigatorRoute';
 }
@@ -106,7 +164,10 @@ class HomeNavigatorRoute extends _i11.PageRouteInfo<void> {
 /// [_i2.OnBoardingPage]
 class OnBoardingPageRoute extends _i11.PageRouteInfo<void> {
   const OnBoardingPageRoute()
-      : super(OnBoardingPageRoute.name, path: '/on-boarding-page');
+      : super(
+          OnBoardingPageRoute.name,
+          path: '/on-boarding-page',
+        );
 
   static const String name = 'OnBoardingPageRoute';
 }
@@ -115,7 +176,10 @@ class OnBoardingPageRoute extends _i11.PageRouteInfo<void> {
 /// [_i3.ScannerPage]
 class ScannerPageRoute extends _i11.PageRouteInfo<void> {
   const ScannerPageRoute()
-      : super(ScannerPageRoute.name, path: '/scanner-page');
+      : super(
+          ScannerPageRoute.name,
+          path: '/scanner-page',
+        );
 
   static const String name = 'ScannerPageRoute';
 }
@@ -124,7 +188,10 @@ class ScannerPageRoute extends _i11.PageRouteInfo<void> {
 /// [_i4.MenstrualPage]
 class MenstrualPageRoute extends _i11.PageRouteInfo<void> {
   const MenstrualPageRoute()
-      : super(MenstrualPageRoute.name, path: '/menstrual-page');
+      : super(
+          MenstrualPageRoute.name,
+          path: '/menstrual-page',
+        );
 
   static const String name = 'MenstrualPageRoute';
 }
@@ -133,7 +200,10 @@ class MenstrualPageRoute extends _i11.PageRouteInfo<void> {
 /// [_i5.LoadingScreen]
 class LoadingScreenRoute extends _i11.PageRouteInfo<void> {
   const LoadingScreenRoute()
-      : super(LoadingScreenRoute.name, path: '/loading-screen');
+      : super(
+          LoadingScreenRoute.name,
+          path: '/loading-screen',
+        );
 
   static const String name = 'LoadingScreenRoute';
 }
@@ -142,7 +212,10 @@ class LoadingScreenRoute extends _i11.PageRouteInfo<void> {
 /// [_i6.ErrorOboarding]
 class ErrorOboardingRoute extends _i11.PageRouteInfo<void> {
   const ErrorOboardingRoute()
-      : super(ErrorOboardingRoute.name, path: '/error-oboarding');
+      : super(
+          ErrorOboardingRoute.name,
+          path: '/error-oboarding',
+        );
 
   static const String name = 'ErrorOboardingRoute';
 }
@@ -150,7 +223,11 @@ class ErrorOboardingRoute extends _i11.PageRouteInfo<void> {
 /// generated route for
 /// [_i7.LoginView]
 class LoginViewRoute extends _i11.PageRouteInfo<void> {
-  const LoginViewRoute() : super(LoginViewRoute.name, path: '/login-view');
+  const LoginViewRoute()
+      : super(
+          LoginViewRoute.name,
+          path: '/login-view',
+        );
 
   static const String name = 'LoginViewRoute';
 }
@@ -158,16 +235,26 @@ class LoginViewRoute extends _i11.PageRouteInfo<void> {
 /// generated route for
 /// [_i8.FDA]
 class FDARoute extends _i11.PageRouteInfo<FDARouteArgs> {
-  FDARoute({_i12.Key? key, required _i13.Product fetchedProduct})
-      : super(FDARoute.name,
-            path: '/f-dA',
-            args: FDARouteArgs(key: key, fetchedProduct: fetchedProduct));
+  FDARoute({
+    _i12.Key? key,
+    required _i13.Product fetchedProduct,
+  }) : super(
+          FDARoute.name,
+          path: '/f-dA',
+          args: FDARouteArgs(
+            key: key,
+            fetchedProduct: fetchedProduct,
+          ),
+        );
 
   static const String name = 'FDARoute';
 }
 
 class FDARouteArgs {
-  const FDARouteArgs({this.key, required this.fetchedProduct});
+  const FDARouteArgs({
+    this.key,
+    required this.fetchedProduct,
+  });
 
   final _i12.Key? key;
 
@@ -182,16 +269,26 @@ class FDARouteArgs {
 /// generated route for
 /// [_i9.OnInitialState]
 class OnInitialStateRoute extends _i11.PageRouteInfo<OnInitialStateRouteArgs> {
-  OnInitialStateRoute({_i12.Key? key, required dynamic i10n})
-      : super(OnInitialStateRoute.name,
-            path: '/on-initial-state',
-            args: OnInitialStateRouteArgs(key: key, i10n: i10n));
+  OnInitialStateRoute({
+    _i12.Key? key,
+    required dynamic i10n,
+  }) : super(
+          OnInitialStateRoute.name,
+          path: '/on-initial-state',
+          args: OnInitialStateRouteArgs(
+            key: key,
+            i10n: i10n,
+          ),
+        );
 
   static const String name = 'OnInitialStateRoute';
 }
 
 class OnInitialStateRouteArgs {
-  const OnInitialStateRouteArgs({this.key, required this.i10n});
+  const OnInitialStateRouteArgs({
+    this.key,
+    required this.i10n,
+  });
 
   final _i12.Key? key;
 
@@ -206,7 +303,11 @@ class OnInitialStateRouteArgs {
 /// generated route for
 /// [_i10.OnBoarding]
 class OnBoardingRoute extends _i11.PageRouteInfo<void> {
-  const OnBoardingRoute() : super(OnBoardingRoute.name, path: '/');
+  const OnBoardingRoute()
+      : super(
+          OnBoardingRoute.name,
+          path: '/',
+        );
 
   static const String name = 'OnBoardingRoute';
 }

@@ -229,7 +229,9 @@ class _$_MenstrualDto extends _MenstrualDto {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MenstrualDtoToJson(this);
+    return _$$_MenstrualDtoToJson(
+      this,
+    );
   }
 }
 
@@ -247,17 +249,17 @@ abstract class _MenstrualDto extends MenstrualDto {
       _$_MenstrualDto.fromJson;
 
   @override
-  int get periodCycleDays => throw _privateConstructorUsedError;
+  int get periodCycleDays;
   @override
-  int get bleedingDays => throw _privateConstructorUsedError;
+  int get bleedingDays;
   @override
-  DateTime? get fertilephaseStart => throw _privateConstructorUsedError;
+  DateTime? get fertilephaseStart;
   @override
-  DateTime? get fertilephaseEnd => throw _privateConstructorUsedError;
+  DateTime? get fertilephaseEnd;
   @override
-  DateTime? get ovulation => throw _privateConstructorUsedError;
+  DateTime? get ovulation;
   @override
-  DateTime get periodStartDate => throw _privateConstructorUsedError;
+  DateTime get periodStartDate;
   @override
   @JsonKey(ignore: true)
   _$$_MenstrualDtoCopyWith<_$_MenstrualDto> get copyWith =>

@@ -19,8 +19,7 @@ mixin _$OnBoardingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onBoardingAtSign,
-    required TResult Function(
-            Map<String?, AtClientService> value, String? atsign)
+    required TResult Function(AtOnboardingResult atOnboardingResult)
         atSignOnBoardingSucces,
     required TResult Function(Object? object) onBoardingError,
   }) =>
@@ -28,7 +27,7 @@ mixin _$OnBoardingEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? onBoardingAtSign,
-    TResult Function(Map<String?, AtClientService> value, String? atsign)?
+    TResult Function(AtOnboardingResult atOnboardingResult)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
   }) =>
@@ -36,7 +35,7 @@ mixin _$OnBoardingEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onBoardingAtSign,
-    TResult Function(Map<String?, AtClientService> value, String? atsign)?
+    TResult Function(AtOnboardingResult atOnboardingResult)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
     required TResult orElse(),
@@ -105,21 +104,12 @@ class __$$_OnBoardingAtSignCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnBoardingAtSign
-    with DiagnosticableTreeMixin
-    implements _OnBoardingAtSign {
+class _$_OnBoardingAtSign implements _OnBoardingAtSign {
   const _$_OnBoardingAtSign();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OnBoardingEvent.onBoardingAtSign()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-        .add(DiagnosticsProperty('type', 'OnBoardingEvent.onBoardingAtSign'));
   }
 
   @override
@@ -135,8 +125,7 @@ class _$_OnBoardingAtSign
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onBoardingAtSign,
-    required TResult Function(
-            Map<String?, AtClientService> value, String? atsign)
+    required TResult Function(AtOnboardingResult atOnboardingResult)
         atSignOnBoardingSucces,
     required TResult Function(Object? object) onBoardingError,
   }) {
@@ -147,7 +136,7 @@ class _$_OnBoardingAtSign
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? onBoardingAtSign,
-    TResult Function(Map<String?, AtClientService> value, String? atsign)?
+    TResult Function(AtOnboardingResult atOnboardingResult)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
   }) {
@@ -158,7 +147,7 @@ class _$_OnBoardingAtSign
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onBoardingAtSign,
-    TResult Function(Map<String?, AtClientService> value, String? atsign)?
+    TResult Function(AtOnboardingResult atOnboardingResult)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
     required TResult orElse(),
@@ -214,7 +203,7 @@ abstract class _$$_AtSignOnBoardingSuccesCopyWith<$Res> {
   factory _$$_AtSignOnBoardingSuccesCopyWith(_$_AtSignOnBoardingSucces value,
           $Res Function(_$_AtSignOnBoardingSucces) then) =
       __$$_AtSignOnBoardingSuccesCopyWithImpl<$Res>;
-  $Res call({Map<String?, AtClientService> value, String? atsign});
+  $Res call({AtOnboardingResult atOnboardingResult});
 }
 
 /// @nodoc
@@ -231,54 +220,28 @@ class __$$_AtSignOnBoardingSuccesCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? value = freezed,
-    Object? atsign = freezed,
+    Object? atOnboardingResult = freezed,
   }) {
     return _then(_$_AtSignOnBoardingSucces(
-      value == freezed
-          ? _value._value
-          : value // ignore: cast_nullable_to_non_nullable
-              as Map<String?, AtClientService>,
-      atsign == freezed
-          ? _value.atsign
-          : atsign // ignore: cast_nullable_to_non_nullable
-              as String?,
+      atOnboardingResult == freezed
+          ? _value.atOnboardingResult
+          : atOnboardingResult // ignore: cast_nullable_to_non_nullable
+              as AtOnboardingResult,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_AtSignOnBoardingSucces
-    with DiagnosticableTreeMixin
-    implements _AtSignOnBoardingSucces {
-  const _$_AtSignOnBoardingSucces(
-      final Map<String?, AtClientService> value, this.atsign)
-      : _value = value;
-
-  final Map<String?, AtClientService> _value;
-  @override
-  Map<String?, AtClientService> get value {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_value);
-  }
+class _$_AtSignOnBoardingSucces implements _AtSignOnBoardingSucces {
+  const _$_AtSignOnBoardingSucces(this.atOnboardingResult);
 
   @override
-  final String? atsign;
+  final AtOnboardingResult atOnboardingResult;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnBoardingEvent.atSignOnBoardingSucces(value: $value, atsign: $atsign)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'OnBoardingEvent.atSignOnBoardingSucces'))
-      ..add(DiagnosticsProperty('value', value))
-      ..add(DiagnosticsProperty('atsign', atsign));
+  String toString() {
+    return 'OnBoardingEvent.atSignOnBoardingSucces(atOnboardingResult: $atOnboardingResult)';
   }
 
   @override
@@ -286,15 +249,13 @@ class _$_AtSignOnBoardingSucces
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AtSignOnBoardingSucces &&
-            const DeepCollectionEquality().equals(other._value, _value) &&
-            const DeepCollectionEquality().equals(other.atsign, atsign));
+            const DeepCollectionEquality()
+                .equals(other.atOnboardingResult, atOnboardingResult));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_value),
-      const DeepCollectionEquality().hash(atsign));
+      runtimeType, const DeepCollectionEquality().hash(atOnboardingResult));
 
   @JsonKey(ignore: true)
   @override
@@ -306,36 +267,35 @@ class _$_AtSignOnBoardingSucces
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onBoardingAtSign,
-    required TResult Function(
-            Map<String?, AtClientService> value, String? atsign)
+    required TResult Function(AtOnboardingResult atOnboardingResult)
         atSignOnBoardingSucces,
     required TResult Function(Object? object) onBoardingError,
   }) {
-    return atSignOnBoardingSucces(value, atsign);
+    return atSignOnBoardingSucces(atOnboardingResult);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? onBoardingAtSign,
-    TResult Function(Map<String?, AtClientService> value, String? atsign)?
+    TResult Function(AtOnboardingResult atOnboardingResult)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
   }) {
-    return atSignOnBoardingSucces?.call(value, atsign);
+    return atSignOnBoardingSucces?.call(atOnboardingResult);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onBoardingAtSign,
-    TResult Function(Map<String?, AtClientService> value, String? atsign)?
+    TResult Function(AtOnboardingResult atOnboardingResult)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
     required TResult orElse(),
   }) {
     if (atSignOnBoardingSucces != null) {
-      return atSignOnBoardingSucces(value, atsign);
+      return atSignOnBoardingSucces(atOnboardingResult);
     }
     return orElse();
   }
@@ -378,11 +338,9 @@ class _$_AtSignOnBoardingSucces
 
 abstract class _AtSignOnBoardingSucces implements OnBoardingEvent {
   const factory _AtSignOnBoardingSucces(
-          final Map<String?, AtClientService> value, final String? atsign) =
-      _$_AtSignOnBoardingSucces;
+      final AtOnboardingResult atOnboardingResult) = _$_AtSignOnBoardingSucces;
 
-  Map<String?, AtClientService> get value => throw _privateConstructorUsedError;
-  String? get atsign => throw _privateConstructorUsedError;
+  AtOnboardingResult get atOnboardingResult;
   @JsonKey(ignore: true)
   _$$_AtSignOnBoardingSuccesCopyWith<_$_AtSignOnBoardingSucces> get copyWith =>
       throw _privateConstructorUsedError;
@@ -419,25 +377,15 @@ class __$$_OnBoardingErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnBoardingError
-    with DiagnosticableTreeMixin
-    implements _OnBoardingError {
+class _$_OnBoardingError implements _OnBoardingError {
   const _$_OnBoardingError(this.object);
 
   @override
   final Object? object;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OnBoardingEvent.onBoardingError(object: $object)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OnBoardingEvent.onBoardingError'))
-      ..add(DiagnosticsProperty('object', object));
   }
 
   @override
@@ -461,8 +409,7 @@ class _$_OnBoardingError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onBoardingAtSign,
-    required TResult Function(
-            Map<String?, AtClientService> value, String? atsign)
+    required TResult Function(AtOnboardingResult atOnboardingResult)
         atSignOnBoardingSucces,
     required TResult Function(Object? object) onBoardingError,
   }) {
@@ -473,7 +420,7 @@ class _$_OnBoardingError
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? onBoardingAtSign,
-    TResult Function(Map<String?, AtClientService> value, String? atsign)?
+    TResult Function(AtOnboardingResult atOnboardingResult)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
   }) {
@@ -484,7 +431,7 @@ class _$_OnBoardingError
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onBoardingAtSign,
-    TResult Function(Map<String?, AtClientService> value, String? atsign)?
+    TResult Function(AtOnboardingResult atOnboardingResult)?
         atSignOnBoardingSucces,
     TResult Function(Object? object)? onBoardingError,
     required TResult orElse(),
@@ -534,7 +481,7 @@ class _$_OnBoardingError
 abstract class _OnBoardingError implements OnBoardingEvent {
   const factory _OnBoardingError(final Object? object) = _$_OnBoardingError;
 
-  Object? get object => throw _privateConstructorUsedError;
+  Object? get object;
   @JsonKey(ignore: true)
   _$$_OnBoardingErrorCopyWith<_$_OnBoardingError> get copyWith =>
       throw _privateConstructorUsedError;
@@ -547,8 +494,8 @@ mixin _$OnBoardingState {
     required TResult Function() initial,
     required TResult Function(AtClientPreference atClientPreference) loading,
     required TResult Function(AtPlatformFailure onBoardingFailure) failure,
-    required TResult Function(Option<String> atSign) loadSuccess,
-    required TResult Function(Object? object) onBoardingError,
+    required TResult Function() loadSuccess,
+    required TResult Function(Object? error) onBoardingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -556,8 +503,8 @@ mixin _$OnBoardingState {
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
     TResult Function(AtPlatformFailure onBoardingFailure)? failure,
-    TResult Function(Option<String> atSign)? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function()? loadSuccess,
+    TResult Function(Object? error)? onBoardingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -565,8 +512,8 @@ mixin _$OnBoardingState {
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
     TResult Function(AtPlatformFailure onBoardingFailure)? failure,
-    TResult Function(Option<String> atSign)? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function()? loadSuccess,
+    TResult Function(Object? error)? onBoardingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -636,18 +583,12 @@ class __$$_InitialCopyWithImpl<$Res> extends _$OnBoardingStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initial with DiagnosticableTreeMixin implements _Initial {
+class _$_Initial implements _Initial {
   const _$_Initial();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OnBoardingState.initial()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'OnBoardingState.initial'));
   }
 
   @override
@@ -665,8 +606,8 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     required TResult Function() initial,
     required TResult Function(AtClientPreference atClientPreference) loading,
     required TResult Function(AtPlatformFailure onBoardingFailure) failure,
-    required TResult Function(Option<String> atSign) loadSuccess,
-    required TResult Function(Object? object) onBoardingError,
+    required TResult Function() loadSuccess,
+    required TResult Function(Object? error) onBoardingError,
   }) {
     return initial();
   }
@@ -677,8 +618,8 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
     TResult Function(AtPlatformFailure onBoardingFailure)? failure,
-    TResult Function(Option<String> atSign)? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function()? loadSuccess,
+    TResult Function(Object? error)? onBoardingError,
   }) {
     return initial?.call();
   }
@@ -689,8 +630,8 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
     TResult Function(AtPlatformFailure onBoardingFailure)? failure,
-    TResult Function(Option<String> atSign)? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function()? loadSuccess,
+    TResult Function(Object? error)? onBoardingError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -776,23 +717,15 @@ class __$$_LoadingCopyWithImpl<$Res> extends _$OnBoardingStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loading with DiagnosticableTreeMixin implements _Loading {
+class _$_Loading implements _Loading {
   const _$_Loading(this.atClientPreference);
 
   @override
   final AtClientPreference atClientPreference;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OnBoardingState.loading(atClientPreference: $atClientPreference)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OnBoardingState.loading'))
-      ..add(DiagnosticsProperty('atClientPreference', atClientPreference));
   }
 
   @override
@@ -819,8 +752,8 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
     required TResult Function() initial,
     required TResult Function(AtClientPreference atClientPreference) loading,
     required TResult Function(AtPlatformFailure onBoardingFailure) failure,
-    required TResult Function(Option<String> atSign) loadSuccess,
-    required TResult Function(Object? object) onBoardingError,
+    required TResult Function() loadSuccess,
+    required TResult Function(Object? error) onBoardingError,
   }) {
     return loading(atClientPreference);
   }
@@ -831,8 +764,8 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
     TResult Function(AtPlatformFailure onBoardingFailure)? failure,
-    TResult Function(Option<String> atSign)? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function()? loadSuccess,
+    TResult Function(Object? error)? onBoardingError,
   }) {
     return loading?.call(atClientPreference);
   }
@@ -843,8 +776,8 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
     TResult Function(AtPlatformFailure onBoardingFailure)? failure,
-    TResult Function(Option<String> atSign)? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function()? loadSuccess,
+    TResult Function(Object? error)? onBoardingError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -898,8 +831,7 @@ abstract class _Loading implements OnBoardingState {
   const factory _Loading(final AtClientPreference atClientPreference) =
       _$_Loading;
 
-  AtClientPreference get atClientPreference =>
-      throw _privateConstructorUsedError;
+  AtClientPreference get atClientPreference;
   @JsonKey(ignore: true)
   _$$_LoadingCopyWith<_$_Loading> get copyWith =>
       throw _privateConstructorUsedError;
@@ -946,23 +878,15 @@ class __$$_FailureCopyWithImpl<$Res> extends _$OnBoardingStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Failure with DiagnosticableTreeMixin implements _Failure {
+class _$_Failure implements _Failure {
   const _$_Failure(this.onBoardingFailure);
 
   @override
   final AtPlatformFailure onBoardingFailure;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OnBoardingState.failure(onBoardingFailure: $onBoardingFailure)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OnBoardingState.failure'))
-      ..add(DiagnosticsProperty('onBoardingFailure', onBoardingFailure));
   }
 
   @override
@@ -989,8 +913,8 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     required TResult Function() initial,
     required TResult Function(AtClientPreference atClientPreference) loading,
     required TResult Function(AtPlatformFailure onBoardingFailure) failure,
-    required TResult Function(Option<String> atSign) loadSuccess,
-    required TResult Function(Object? object) onBoardingError,
+    required TResult Function() loadSuccess,
+    required TResult Function(Object? error) onBoardingError,
   }) {
     return failure(onBoardingFailure);
   }
@@ -1001,8 +925,8 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
     TResult Function(AtPlatformFailure onBoardingFailure)? failure,
-    TResult Function(Option<String> atSign)? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function()? loadSuccess,
+    TResult Function(Object? error)? onBoardingError,
   }) {
     return failure?.call(onBoardingFailure);
   }
@@ -1013,8 +937,8 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
     TResult Function(AtPlatformFailure onBoardingFailure)? failure,
-    TResult Function(Option<String> atSign)? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function()? loadSuccess,
+    TResult Function(Object? error)? onBoardingError,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -1068,7 +992,7 @@ abstract class _Failure implements OnBoardingState {
   const factory _Failure(final AtPlatformFailure onBoardingFailure) =
       _$_Failure;
 
-  AtPlatformFailure get onBoardingFailure => throw _privateConstructorUsedError;
+  AtPlatformFailure get onBoardingFailure;
   @JsonKey(ignore: true)
   _$$_FailureCopyWith<_$_Failure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1079,7 +1003,6 @@ abstract class _$$_LoadSuccessCopyWith<$Res> {
   factory _$$_LoadSuccessCopyWith(
           _$_LoadSuccess value, $Res Function(_$_LoadSuccess) then) =
       __$$_LoadSuccessCopyWithImpl<$Res>;
-  $Res call({Option<String> atSign});
 }
 
 /// @nodoc
@@ -1092,57 +1015,26 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
 
   @override
   _$_LoadSuccess get _value => super._value as _$_LoadSuccess;
-
-  @override
-  $Res call({
-    Object? atSign = freezed,
-  }) {
-    return _then(_$_LoadSuccess(
-      atSign == freezed
-          ? _value.atSign
-          : atSign // ignore: cast_nullable_to_non_nullable
-              as Option<String>,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
-  const _$_LoadSuccess(this.atSign);
+class _$_LoadSuccess implements _LoadSuccess {
+  const _$_LoadSuccess();
 
   @override
-  final Option<String> atSign;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnBoardingState.loadSuccess(atSign: $atSign)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OnBoardingState.loadSuccess'))
-      ..add(DiagnosticsProperty('atSign', atSign));
+  String toString() {
+    return 'OnBoardingState.loadSuccess()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_LoadSuccess &&
-            const DeepCollectionEquality().equals(other.atSign, atSign));
+        (other.runtimeType == runtimeType && other is _$_LoadSuccess);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(atSign));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
-      __$$_LoadSuccessCopyWithImpl<_$_LoadSuccess>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -1150,10 +1042,10 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
     required TResult Function() initial,
     required TResult Function(AtClientPreference atClientPreference) loading,
     required TResult Function(AtPlatformFailure onBoardingFailure) failure,
-    required TResult Function(Option<String> atSign) loadSuccess,
-    required TResult Function(Object? object) onBoardingError,
+    required TResult Function() loadSuccess,
+    required TResult Function(Object? error) onBoardingError,
   }) {
-    return loadSuccess(atSign);
+    return loadSuccess();
   }
 
   @override
@@ -1162,10 +1054,10 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
     TResult Function(AtPlatformFailure onBoardingFailure)? failure,
-    TResult Function(Option<String> atSign)? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function()? loadSuccess,
+    TResult Function(Object? error)? onBoardingError,
   }) {
-    return loadSuccess?.call(atSign);
+    return loadSuccess?.call();
   }
 
   @override
@@ -1174,12 +1066,12 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
     TResult Function(AtPlatformFailure onBoardingFailure)? failure,
-    TResult Function(Option<String> atSign)? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function()? loadSuccess,
+    TResult Function(Object? error)? onBoardingError,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess(atSign);
+      return loadSuccess();
     }
     return orElse();
   }
@@ -1226,12 +1118,7 @@ class _$_LoadSuccess with DiagnosticableTreeMixin implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements OnBoardingState {
-  const factory _LoadSuccess(final Option<String> atSign) = _$_LoadSuccess;
-
-  Option<String> get atSign => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _LoadSuccess() = _$_LoadSuccess;
 }
 
 /// @nodoc
@@ -1239,7 +1126,7 @@ abstract class _$$_onBoardingErrorCopyWith<$Res> {
   factory _$$_onBoardingErrorCopyWith(
           _$_onBoardingError value, $Res Function(_$_onBoardingError) then) =
       __$$_onBoardingErrorCopyWithImpl<$Res>;
-  $Res call({Object? object});
+  $Res call({Object? error});
 }
 
 /// @nodoc
@@ -1255,35 +1142,25 @@ class __$$_onBoardingErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? object = freezed,
+    Object? error = freezed,
   }) {
     return _then(_$_onBoardingError(
-      object == freezed ? _value.object : object,
+      error: error == freezed ? _value.error : error,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_onBoardingError
-    with DiagnosticableTreeMixin
-    implements _onBoardingError {
-  const _$_onBoardingError(this.object);
+class _$_onBoardingError implements _onBoardingError {
+  const _$_onBoardingError({this.error});
 
   @override
-  final Object? object;
+  final Object? error;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnBoardingState.onBoardingError(object: $object)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OnBoardingState.onBoardingError'))
-      ..add(DiagnosticsProperty('object', object));
+  String toString() {
+    return 'OnBoardingState.onBoardingError(error: $error)';
   }
 
   @override
@@ -1291,12 +1168,12 @@ class _$_onBoardingError
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_onBoardingError &&
-            const DeepCollectionEquality().equals(other.object, object));
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(object));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
@@ -1309,10 +1186,10 @@ class _$_onBoardingError
     required TResult Function() initial,
     required TResult Function(AtClientPreference atClientPreference) loading,
     required TResult Function(AtPlatformFailure onBoardingFailure) failure,
-    required TResult Function(Option<String> atSign) loadSuccess,
-    required TResult Function(Object? object) onBoardingError,
+    required TResult Function() loadSuccess,
+    required TResult Function(Object? error) onBoardingError,
   }) {
-    return onBoardingError(object);
+    return onBoardingError(error);
   }
 
   @override
@@ -1321,10 +1198,10 @@ class _$_onBoardingError
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
     TResult Function(AtPlatformFailure onBoardingFailure)? failure,
-    TResult Function(Option<String> atSign)? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function()? loadSuccess,
+    TResult Function(Object? error)? onBoardingError,
   }) {
-    return onBoardingError?.call(object);
+    return onBoardingError?.call(error);
   }
 
   @override
@@ -1333,12 +1210,12 @@ class _$_onBoardingError
     TResult Function()? initial,
     TResult Function(AtClientPreference atClientPreference)? loading,
     TResult Function(AtPlatformFailure onBoardingFailure)? failure,
-    TResult Function(Option<String> atSign)? loadSuccess,
-    TResult Function(Object? object)? onBoardingError,
+    TResult Function()? loadSuccess,
+    TResult Function(Object? error)? onBoardingError,
     required TResult orElse(),
   }) {
     if (onBoardingError != null) {
-      return onBoardingError(object);
+      return onBoardingError(error);
     }
     return orElse();
   }
@@ -1385,9 +1262,9 @@ class _$_onBoardingError
 }
 
 abstract class _onBoardingError implements OnBoardingState {
-  const factory _onBoardingError(final Object? object) = _$_onBoardingError;
+  const factory _onBoardingError({final Object? error}) = _$_onBoardingError;
 
-  Object? get object => throw _privateConstructorUsedError;
+  Object? get error;
   @JsonKey(ignore: true)
   _$$_onBoardingErrorCopyWith<_$_onBoardingError> get copyWith =>
       throw _privateConstructorUsedError;

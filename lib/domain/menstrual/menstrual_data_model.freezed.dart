@@ -232,17 +232,17 @@ abstract class _MenstrualDataModel extends MenstrualDataModel {
   _MenstrualDataModel._() : super._();
 
   @override
-  int get periodCycleDays => throw _privateConstructorUsedError;
+  int get periodCycleDays;
   @override
-  int get bleedingDays => throw _privateConstructorUsedError;
+  int get bleedingDays;
   @override
-  DateTime? get fertilephaseStart => throw _privateConstructorUsedError;
+  DateTime? get fertilephaseStart;
   @override
-  DateTime? get fertilephaseEnd => throw _privateConstructorUsedError;
+  DateTime? get fertilephaseEnd;
   @override
-  DateTime? get ovulation => throw _privateConstructorUsedError;
+  DateTime? get ovulation;
   @override
-  PeriodStartDate get periodStartDate => throw _privateConstructorUsedError;
+  PeriodStartDate get periodStartDate;
   @override
   @JsonKey(ignore: true)
   _$$_MenstrualDataModelCopyWith<_$_MenstrualDataModel> get copyWith =>

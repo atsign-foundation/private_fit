@@ -6,6 +6,8 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:openfoodfacts/model/OrderedNutrients.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
+import 'package:private_fit/domain/core/at_platform_failures.dart';
+import 'package:private_fit/domain/core/key_model.dart';
 import 'package:private_fit/domain/core/keys.dart';
 import 'package:private_fit/domain/core/value_model.dart';
 import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
@@ -15,6 +17,7 @@ import 'package:private_fit/domain/open_food/open_food_fetched_product.dart';
 import 'package:private_fit/domain/open_food/product_query.dart';
 import 'package:private_fit/infrastructure/atplatform/platform_services.dart';
 import 'package:private_fit/injections.dart';
+import 'package:private_fit/shared/constants.dart';
 
 @LazySingleton(as: IOpenFoodFactsFacade)
 class OpenFoodFactsServices implements IOpenFoodFactsFacade {
@@ -95,6 +98,60 @@ class OpenFoodFactsServices implements IOpenFoodFactsFacade {
       return right(unit);
     } catch (e) {
       return left(const OpenFoodFailures.failToSaveData());
+    }
+  }
+
+  @override
+  Future<Either<AtPlatformFailure, Product>> getSavedFood() async {
+    _logger.finer('Getting name');
+
+    return getAllKeys(
+      regex: '${Keys.productNutritionDataKey.key}.${Constants.appNamespace}',
+    ).then(
+      (value) => get(PassKey.fromAtKey(value.first)).then((value) {
+        return value.fold(
+          left,
+          (r) {
+            final d = jsonDecode(r.value as String)['value'];
+            return right(
+              Product.fromJson(d as Map<String, dynamic>),
+            );
+          },
+        );
+      }),
+    );
+  }
+
+  Future<List<AtKey>> getAllKeys({
+    String? regex,
+    String? sharedBy,
+    String? sharedWith,
+  }) async {
+    try {
+      final result = await atClientManager.atClient
+          .getAtKeys(regex: regex, sharedBy: sharedBy, sharedWith: sharedWith);
+      return result;
+    } on Exception catch (e, s) {
+      _logger.severe('Error while fetching keys', e, s);
+      return <AtKey>[];
+    }
+  }
+
+  /// Get the value of the key.
+  Future<Either<AtPlatformFailure, AtValue>> get(PassKey entity) async {
+    try {
+      final _value = await atClientManager.atClient.get(entity.toAtKey());
+      return right(_value);
+      // return jsonDecode(_value.value as String)['value'];
+    } on KeyNotFoundException catch (e, s) {
+      _logger.severe('Key not found with message ${e.message}', e, s);
+      return left(const AtPlatformFailure.cancelledByUser());
+    } on FormatException catch (e, s) {
+      _logger.severe('FormatError: $e', e, s);
+      return left(const AtPlatformFailure.cancelledByUser());
+    } on Exception catch (e, s) {
+      _logger.severe('Error while getting data, Error: $e', e, s);
+      return left(const AtPlatformFailure.cancelledByUser());
     }
   }
 }

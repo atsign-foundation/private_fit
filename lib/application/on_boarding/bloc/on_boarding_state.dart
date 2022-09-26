@@ -7,8 +7,7 @@ class OnBoardingState with _$OnBoardingState {
       _Loading;
   const factory OnBoardingState.failure(AtPlatformFailure onBoardingFailure) =
       _Failure;
-  const factory OnBoardingState.loadSuccess(Option<String> atSign) =
-      _LoadSuccess;
-  const factory OnBoardingState.onBoardingError(Object? object) =
+  const factory OnBoardingState.loadSuccess() = _LoadSuccess;
+  const factory OnBoardingState.onBoardingError({Object? error}) =
       _onBoardingError;
 }

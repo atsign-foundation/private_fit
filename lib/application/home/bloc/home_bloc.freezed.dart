@@ -301,7 +301,7 @@ class _$_SetUserName implements _SetUserName {
 abstract class _SetUserName implements HomeEvent {
   const factory _SetUserName(final String username) = _$_SetUserName;
 
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @JsonKey(ignore: true)
   _$$_SetUserNameCopyWith<_$_SetUserName> get copyWith =>
       throw _privateConstructorUsedError;
@@ -595,8 +595,7 @@ abstract class _Username implements HomeState {
   const factory _Username(final Either<AtPlatformFailure, bool> result) =
       _$_Username;
 
-  Either<AtPlatformFailure, bool> get result =>
-      throw _privateConstructorUsedError;
+  Either<AtPlatformFailure, bool> get result;
   @JsonKey(ignore: true)
   _$$_UsernameCopyWith<_$_Username> get copyWith =>
       throw _privateConstructorUsedError;

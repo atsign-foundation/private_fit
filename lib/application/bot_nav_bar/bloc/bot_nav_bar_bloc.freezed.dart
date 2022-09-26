@@ -210,7 +210,7 @@ abstract class _BnbChange implements BotNavBarEvent {
   const factory _BnbChange(final int newIndex) = _$_BnbChange;
 
   @override
-  int get newIndex => throw _privateConstructorUsedError;
+  int get newIndex;
   @override
   @JsonKey(ignore: true)
   _$$_BnbChangeCopyWith<_$_BnbChange> get copyWith =>

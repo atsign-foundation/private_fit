@@ -133,7 +133,7 @@ class __$$_AdminCopyWithImpl<$Res> extends _$AdminCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Admin with DiagnosticableTreeMixin implements _Admin {
+class _$_Admin implements _Admin {
   const _$_Admin(
       {required this.id,
       required this.atSign,
@@ -156,20 +156,8 @@ class _$_Admin with DiagnosticableTreeMixin implements _Admin {
   final bool isSuperAdmin;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Admin(id: $id, atSign: $atSign, name: $name, img: $img, isSuperAdmin: $isSuperAdmin)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Admin'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('atSign', atSign))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('img', img))
-      ..add(DiagnosticsProperty('isSuperAdmin', isSuperAdmin));
   }
 
   @override
@@ -202,7 +190,9 @@ class _$_Admin with DiagnosticableTreeMixin implements _Admin {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AdminToJson(this);
+    return _$$_AdminToJson(
+      this,
+    );
   }
 }
 
@@ -217,15 +207,15 @@ abstract class _Admin implements Admin {
   factory _Admin.fromJson(Map<String, dynamic> json) = _$_Admin.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get atSign => throw _privateConstructorUsedError;
+  String get atSign;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String? get img => throw _privateConstructorUsedError;
+  String? get img;
   @override
-  bool get isSuperAdmin => throw _privateConstructorUsedError;
+  bool get isSuperAdmin;
   @override
   @JsonKey(ignore: true)
   _$$_AdminCopyWith<_$_Admin> get copyWith =>

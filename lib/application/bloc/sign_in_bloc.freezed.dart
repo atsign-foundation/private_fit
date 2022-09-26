@@ -473,7 +473,7 @@ class _$_initAtPreferences implements _initAtPreferences {
 abstract class _initAtPreferences implements SignInEvent {
   const factory _initAtPreferences(final String atSign) = _$_initAtPreferences;
 
-  String get atSign => throw _privateConstructorUsedError;
+  String get atSign;
   @JsonKey(ignore: true)
   _$$_initAtPreferencesCopyWith<_$_initAtPreferences> get copyWith =>
       throw _privateConstructorUsedError;
@@ -627,8 +627,7 @@ abstract class _setAtClientPreferences implements SignInEvent {
   const factory _setAtClientPreferences(
       final AtClientPreference atClientPreference) = _$_setAtClientPreferences;
 
-  AtClientPreference get atClientPreference =>
-      throw _privateConstructorUsedError;
+  AtClientPreference get atClientPreference;
   @JsonKey(ignore: true)
   _$$_setAtClientPreferencesCopyWith<_$_setAtClientPreferences> get copyWith =>
       throw _privateConstructorUsedError;
@@ -966,31 +965,29 @@ abstract class _SignInState implements SignInState {
           saveFailureOrSuccessOption}) = _$_SignInState;
 
   @override
-  bool get isValidAtsign => throw _privateConstructorUsedError;
+  bool get isValidAtsign;
   @override
-  bool get checkedAtSign => throw _privateConstructorUsedError;
+  bool get checkedAtSign;
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
-  bool get uploading => throw _privateConstructorUsedError;
+  bool get uploading;
   @override //
-  bool get authenticated => throw _privateConstructorUsedError;
+  bool get authenticated;
   @override
-  AtClientPreference get atClientPreference =>
-      throw _privateConstructorUsedError;
+  AtClientPreference get atClientPreference;
   @override
-  bool? get isSuperAdmin => throw _privateConstructorUsedError;
+  bool? get isSuperAdmin;
   @override
-  String? get currentAtSign => throw _privateConstructorUsedError;
+  String? get currentAtSign;
   @override
-  bool get isAdmin => throw _privateConstructorUsedError;
+  bool get isAdmin;
   @override
-  Option<bool> get onboarded => throw _privateConstructorUsedError;
+  Option<bool> get onboarded;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  Option<AtPlatformFailure> get saveFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<AtPlatformFailure> get saveFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_SignInStateCopyWith<_$_SignInState> get copyWith =>

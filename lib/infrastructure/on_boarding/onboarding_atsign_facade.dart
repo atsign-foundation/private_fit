@@ -23,14 +23,6 @@ class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
   Map<String?, AtClientService> atClientServiceMap = {};
   AtClientManager atClientManager = AtClientManager.getInstance();
 
-  @override
-  Option<String> getOnBoardedAtSign() {
-    final _currentAtSign =
-        AtClientManager.getInstance().atClient.getCurrentAtSign();
-    // _currentAtSign = currentAtSign!;
-    return optionOf(_currentAtSign);
-  }
-
   ///This Functional (using functinal programming Haskel like) function
   /// return the [AtClientPreference] instance to be used in [Onboarding]
   /// function also if failures arise (showing a @user an exactly failures
@@ -55,27 +47,19 @@ class OnBoardingAtsignFacade implements IAtsignOnBoardingFacade {
 
   @override
   Future<Either<AtPlatformFailure, Unit>> onBoardDataWhenSuccessful(
-    Map<String?, AtClientService> v,
-    String? atSign,
+    AtOnboardingResult atOnboardingResult,
   ) async {
     return loadAtClientPreference().then(
       (value) => value.fold(
         (l) => left(const AtPlatformFailure.failToSetOnBoardData()),
         (atClientPreference) async {
-          await AtClientManager.getInstance().setCurrentAtSign(
-            atSign!,
-            Constants.appNamespace,
-            atClientPreference,
-          );
-          atClientServiceMap = v;
-          await KeychainUtil.makeAtSignPrimary(atSign);
           AtSyncUIService().init(
             appNavigator: NavService.navKey,
             onSuccessCallback: _onSuccessCallback,
             onErrorCallback: () {},
           );
           await HapticFeedback.lightImpact();
-          await AtSyncUIService().sync(atSyncUIOverlay: AtSyncUIOverlay.dialog);
+          AtSyncUIService().sync(atSyncUIOverlay: AtSyncUIOverlay.dialog);
 
           return right(unit);
         },

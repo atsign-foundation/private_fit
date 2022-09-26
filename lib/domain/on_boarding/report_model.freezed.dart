@@ -279,7 +279,9 @@ class _$_Report implements _Report {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ReportToJson(this);
+    return _$$_ReportToJson(
+      this,
+    );
   }
 }
 
@@ -298,23 +300,23 @@ abstract class _Report implements Report {
   factory _Report.fromJson(Map<String, dynamic> json) = _$_Report.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  String get content => throw _privateConstructorUsedError;
+  String get content;
   @override
-  String get from => throw _privateConstructorUsedError;
+  String get from;
   @override
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  String? get experience => throw _privateConstructorUsedError;
+  String? get experience;
   @override
-  String? get logFileData => throw _privateConstructorUsedError;
+  String? get logFileData;
   @override
-  Map<String, dynamic>? get deviceInfo => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get deviceInfo;
   @override
   @JsonKey(ignore: true)
   _$$_ReportCopyWith<_$_Report> get copyWith =>

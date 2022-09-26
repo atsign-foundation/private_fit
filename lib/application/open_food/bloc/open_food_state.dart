@@ -13,4 +13,7 @@ class OpenFoodState with _$OpenFoodState {
   // const factory OpenFoodState.onBoardingError(Object? object) =
   //     _onBoardingError;
   const factory OpenFoodState.dataSavedSuccesful() = _dataSavedSuccesful;
+  const factory OpenFoodState.failureFetchingFromoDess(
+    AtPlatformFailure failure,
+  ) = _failureFetchingFromoDess;
 }

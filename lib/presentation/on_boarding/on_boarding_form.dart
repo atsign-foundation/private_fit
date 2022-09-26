@@ -15,8 +15,8 @@ class OnBoardingForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<OnBoardingBloc, OnBoardingState>(
-      listener: (context, state) {
-        state.mapOrNull(
+      listener: (context, state) async {
+        await state.mapOrNull(
           failure: (state) {
             // todo(kzawadi):  make snack bar or something to show these errors
             Logger(printer: PrettyPrinter()).e(
@@ -30,24 +30,18 @@ class OnBoardingForm extends StatelessWidget {
               ),
             );
           },
-          loading: (state) {
-            Onboarding(
+          loading: (state) async {
+            await AtOnboarding.onboard(
               context: context,
-              onboard: (value, atsign) {
-                context.read<OnBoardingBloc>().add(
-                      OnBoardingEvent.atSignOnBoardingSucces(value, atsign),
-                    );
-              },
-              onError: (error) {
-                context.read<OnBoardingBloc>().add(
-                      OnBoardingEvent.onBoardingError(error),
-                    );
-              },
-              atClientPreference: state.atClientPreference,
-              rootEnvironment: RootEnvironment.Staging,
-              // appAPIKey: Constants.appApiKey,
-              domain: Constants.rootDomain,
-              appColor: Colors.cyan,
+              config: AtOnboardingConfig(
+                atClientPreference: state.atClientPreference,
+                domain: Constants.rootDomain,
+                rootEnvironment: RootEnvironment.Staging,
+                appAPIKey: Constants.appApiKey,
+              ),
+            ).then(
+              (value) => context.read<OnBoardingBloc>()
+                ..add(OnBoardingEvent.atSignOnBoardingSucces(value)),
             );
           },
           loadSuccess: (state) {

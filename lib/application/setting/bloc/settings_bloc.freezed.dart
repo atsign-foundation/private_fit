@@ -345,8 +345,7 @@ abstract class _initialized implements SettingsEvent {
   const factory _initialized(
       final Option<UserNameModel> initialUserNameOption) = _$_initialized;
 
-  Option<UserNameModel> get initialUserNameOption =>
-      throw _privateConstructorUsedError;
+  Option<UserNameModel> get initialUserNameOption;
   @JsonKey(ignore: true)
   _$$_initializedCopyWith<_$_initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -493,7 +492,7 @@ class _$_userNameChanged implements _userNameChanged {
 abstract class _userNameChanged implements SettingsEvent {
   const factory _userNameChanged(final String username) = _$_userNameChanged;
 
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @JsonKey(ignore: true)
   _$$_userNameChangedCopyWith<_$_userNameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -842,19 +841,17 @@ abstract class _SettingsState implements SettingsState {
       _$_SettingsState;
 
   @override
-  UserNameModel get userNameModel => throw _privateConstructorUsedError;
+  UserNameModel get userNameModel;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isEditing;
   @override
-  bool get isSaving => throw _privateConstructorUsedError;
+  bool get isSaving;
   @override
-  Option<Either<AtPlatformFailure, Unit>> get saveFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AtPlatformFailure, Unit>> get saveFailureOrSuccessOption;
   @override
-  Option<AtPlatformFailure> get getFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<AtPlatformFailure> get getFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_SettingsStateCopyWith<_$_SettingsState> get copyWith =>

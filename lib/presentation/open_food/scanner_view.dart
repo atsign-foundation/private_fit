@@ -58,6 +58,9 @@ class ScannerView extends StatelessWidget {
           failureGettingFood: (failures) {
             return OnFailures(openFoodFailures: failures.openFoodfailures);
           },
+          failureFetchingFromoDess: (_) {
+            return Container();
+          },
         );
       },
     );
@@ -141,7 +144,10 @@ class ScannerFoodWidget extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          AutoRouter.of(context).navigate(OnInitialStateRoute(i10n: i10n));
+          context
+              .read<OpenFoodBloc>()
+              .add(const OpenFoodEvent.getFoodFromDess());
+          // AutoRouter.of(context).navigate(OnInitialStateRoute(i10n: i10n));
         },
         label: AutoSizeText(
           'scan',

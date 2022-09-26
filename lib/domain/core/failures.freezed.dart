@@ -275,8 +275,8 @@ abstract class ExceedingLength<T> implements ValueFailure<T> {
       {required final T failedValue,
       required final int max}) = _$ExceedingLength<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
-  int get max => throw _privateConstructorUsedError;
+  T get failedValue;
+  int get max;
   @JsonKey(ignore: true)
   _$$ExceedingLengthCopyWith<T, _$ExceedingLength<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -438,7 +438,7 @@ class _$Empty<T> implements Empty<T> {
 abstract class Empty<T> implements ValueFailure<T> {
   const factory Empty({required final T failedValue}) = _$Empty<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   _$$EmptyCopyWith<T, _$Empty<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -603,7 +603,7 @@ class _$Multiline<T> implements Multiline<T> {
 abstract class Multiline<T> implements ValueFailure<T> {
   const factory Multiline({required final T failedValue}) = _$Multiline<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   _$$MultilineCopyWith<T, _$Multiline<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -780,8 +780,8 @@ abstract class ListTooLong<T> implements ValueFailure<T> {
       {required final T failedValue,
       required final int max}) = _$ListTooLong<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
-  int get max => throw _privateConstructorUsedError;
+  T get failedValue;
+  int get max;
   @JsonKey(ignore: true)
   _$$ListTooLongCopyWith<T, _$ListTooLong<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -947,7 +947,7 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
   const factory InvalidEmail({required final T failedValue}) =
       _$InvalidEmail<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   _$$InvalidEmailCopyWith<T, _$InvalidEmail<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1113,7 +1113,7 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
   const factory ShortPassword({required final T failedValue}) =
       _$ShortPassword<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   _$$ShortPasswordCopyWith<T, _$ShortPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1290,8 +1290,8 @@ abstract class DateIsGreater<T> implements ValueFailure<T> {
       {required final DateTime failedValue,
       required final DateTime max}) = _$DateIsGreater<T>;
 
-  DateTime get failedValue => throw _privateConstructorUsedError;
-  DateTime get max => throw _privateConstructorUsedError;
+  DateTime get failedValue;
+  DateTime get max;
   @JsonKey(ignore: true)
   _$$DateIsGreaterCopyWith<T, _$DateIsGreater<T>> get copyWith =>
       throw _privateConstructorUsedError;

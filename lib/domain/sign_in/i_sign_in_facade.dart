@@ -1,5 +1,5 @@
 import 'package:at_client_mobile/at_client_mobile.dart';
-import 'package:at_onboarding_flutter/utils/response_status.dart';
+// import 'package:at_onboarding_flutter/utils/response_status.dart';
 import 'package:at_server_status/at_server_status.dart';
 import 'package:dartz/dartz.dart';
 
@@ -22,5 +22,5 @@ abstract class ISignInFacade {
 
   Future<AtStatus> getAtSignStatus(String atSign);
   Future<String> readAtKeysFile(String filePath);
-  Future<ResponseStatus> onboardWithAtKeys(String atSign, String keysData);
+  // Future<ResponseStatus> onboardWithAtKeys(String atSign, String keysData);
 }

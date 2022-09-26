@@ -1,4 +1,5 @@
 import 'package:at_client_mobile/at_client_mobile.dart';
+import 'package:at_onboarding_flutter/at_onboarding_result.dart';
 import 'package:injectable/injectable.dart';
 import 'package:private_fit/domain/on_boarding/i_atsign_on_boarding_facade.dart';
 
@@ -9,8 +10,7 @@ class OnBoardDataWhenSuccessfulUseCase {
   final IAtsignOnBoardingFacade _iAtsignOnBoardingFacade;
 
   void call(
-    Map<String?, AtClientService> value,
-    String? atSign,
+    AtOnboardingResult atOnboardingResult,
   ) =>
-      _iAtsignOnBoardingFacade.onBoardDataWhenSuccessful(value, atSign);
+      _iAtsignOnBoardingFacade.onBoardDataWhenSuccessful(atOnboardingResult);
 }

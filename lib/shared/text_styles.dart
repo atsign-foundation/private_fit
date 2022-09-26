@@ -1,5 +1,5 @@
+import 'package:at_contacts_flutter/at_contacts_flutter.dart';
 import 'package:at_contacts_group_flutter/utils/colors.dart';
-import 'package:at_onboarding_flutter/services/size_config.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextStyles {

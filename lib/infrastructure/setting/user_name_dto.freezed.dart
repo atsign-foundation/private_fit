@@ -126,7 +126,9 @@ class _$_UserNameDto extends _UserNameDto {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserNameDtoToJson(this);
+    return _$$_UserNameDtoToJson(
+      this,
+    );
   }
 }
 
@@ -138,7 +140,7 @@ abstract class _UserNameDto extends UserNameDto {
       _$_UserNameDto.fromJson;
 
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
   @JsonKey(ignore: true)
   _$$_UserNameDtoCopyWith<_$_UserNameDto> get copyWith =>
