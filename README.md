@@ -171,7 +171,7 @@ for detailed guidance on how to setup tools, tests and make a pull request.
 
 ## Acknowledgement/attribution
 
-This project was originally created by [Kelvin Zawadi](https://github.com/kzawadi).
+This project idea came from a hackathon and the repo was created by [Kelvin Zawadi](https://github.com/kzawadi).
 
 ### Copyright notice
 
@@ -184,7 +184,7 @@ Please see the original license [here](https://github.com/flutter/flutter/blob/m
 
 ## Maintainers
 
-This project is currently maintained by [Kelvin Zawadi](https://github.com/kzawadi)
+This project is currently maintained by [Jatin Pandya](https://github.com/Jatinpandya26), [Tinashe Seremwe](https://github.com/tinashe404) and [Kelvin Zawadi](https://github.com/kzawadi)
 
 [coverage_badge]: coverage_badge.svg
 [flutter_localizations_link]: https://api.flutter.dev/flutter/flutter_localizations/flutter_localizations-library.html
