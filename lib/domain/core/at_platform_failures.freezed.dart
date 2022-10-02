@@ -23,6 +23,7 @@ mixin _$AtPlatformFailure {
     required TResult Function() serverError,
     required TResult Function() failToSetOnBoardData,
     required TResult Function() failToSetUsername,
+    required TResult Function() unExpectedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$AtPlatformFailure {
     TResult Function()? serverError,
     TResult Function()? failToSetOnBoardData,
     TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$AtPlatformFailure {
     TResult Function()? serverError,
     TResult Function()? failToSetOnBoardData,
     TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,6 +55,7 @@ mixin _$AtPlatformFailure {
     required TResult Function(ServerError value) serverError,
     required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
     required TResult Function(_FailToSetUsername value) failToSetUsername,
+    required TResult Function(_UnExpectedError value) unExpectedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +66,7 @@ mixin _$AtPlatformFailure {
     TResult Function(ServerError value)? serverError,
     TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +77,7 @@ mixin _$AtPlatformFailure {
     TResult Function(ServerError value)? serverError,
     TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,6 +146,7 @@ class _$CancelledByUser implements CancelledByUser {
     required TResult Function() serverError,
     required TResult Function() failToSetOnBoardData,
     required TResult Function() failToSetUsername,
+    required TResult Function() unExpectedError,
   }) {
     return cancelledByUser();
   }
@@ -152,6 +159,7 @@ class _$CancelledByUser implements CancelledByUser {
     TResult Function()? serverError,
     TResult Function()? failToSetOnBoardData,
     TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
   }) {
     return cancelledByUser?.call();
   }
@@ -164,6 +172,7 @@ class _$CancelledByUser implements CancelledByUser {
     TResult Function()? serverError,
     TResult Function()? failToSetOnBoardData,
     TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
     required TResult orElse(),
   }) {
     if (cancelledByUser != null) {
@@ -181,6 +190,7 @@ class _$CancelledByUser implements CancelledByUser {
     required TResult Function(ServerError value) serverError,
     required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
     required TResult Function(_FailToSetUsername value) failToSetUsername,
+    required TResult Function(_UnExpectedError value) unExpectedError,
   }) {
     return cancelledByUser(this);
   }
@@ -194,6 +204,7 @@ class _$CancelledByUser implements CancelledByUser {
     TResult Function(ServerError value)? serverError,
     TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
   }) {
     return cancelledByUser?.call(this);
   }
@@ -207,6 +218,7 @@ class _$CancelledByUser implements CancelledByUser {
     TResult Function(ServerError value)? serverError,
     TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
     required TResult orElse(),
   }) {
     if (cancelledByUser != null) {
@@ -272,6 +284,7 @@ class _$FailedToGetgetApplicationSupportDirectory
     required TResult Function() serverError,
     required TResult Function() failToSetOnBoardData,
     required TResult Function() failToSetUsername,
+    required TResult Function() unExpectedError,
   }) {
     return failedToGetgetApplicationSupportDirectory();
   }
@@ -284,6 +297,7 @@ class _$FailedToGetgetApplicationSupportDirectory
     TResult Function()? serverError,
     TResult Function()? failToSetOnBoardData,
     TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
   }) {
     return failedToGetgetApplicationSupportDirectory?.call();
   }
@@ -296,6 +310,7 @@ class _$FailedToGetgetApplicationSupportDirectory
     TResult Function()? serverError,
     TResult Function()? failToSetOnBoardData,
     TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
     required TResult orElse(),
   }) {
     if (failedToGetgetApplicationSupportDirectory != null) {
@@ -313,6 +328,7 @@ class _$FailedToGetgetApplicationSupportDirectory
     required TResult Function(ServerError value) serverError,
     required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
     required TResult Function(_FailToSetUsername value) failToSetUsername,
+    required TResult Function(_UnExpectedError value) unExpectedError,
   }) {
     return failedToGetgetApplicationSupportDirectory(this);
   }
@@ -326,6 +342,7 @@ class _$FailedToGetgetApplicationSupportDirectory
     TResult Function(ServerError value)? serverError,
     TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
   }) {
     return failedToGetgetApplicationSupportDirectory?.call(this);
   }
@@ -339,6 +356,7 @@ class _$FailedToGetgetApplicationSupportDirectory
     TResult Function(ServerError value)? serverError,
     TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
     required TResult orElse(),
   }) {
     if (failedToGetgetApplicationSupportDirectory != null) {
@@ -400,6 +418,7 @@ class _$ServerError implements ServerError {
     required TResult Function() serverError,
     required TResult Function() failToSetOnBoardData,
     required TResult Function() failToSetUsername,
+    required TResult Function() unExpectedError,
   }) {
     return serverError();
   }
@@ -412,6 +431,7 @@ class _$ServerError implements ServerError {
     TResult Function()? serverError,
     TResult Function()? failToSetOnBoardData,
     TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
   }) {
     return serverError?.call();
   }
@@ -424,6 +444,7 @@ class _$ServerError implements ServerError {
     TResult Function()? serverError,
     TResult Function()? failToSetOnBoardData,
     TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -441,6 +462,7 @@ class _$ServerError implements ServerError {
     required TResult Function(ServerError value) serverError,
     required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
     required TResult Function(_FailToSetUsername value) failToSetUsername,
+    required TResult Function(_UnExpectedError value) unExpectedError,
   }) {
     return serverError(this);
   }
@@ -454,6 +476,7 @@ class _$ServerError implements ServerError {
     TResult Function(ServerError value)? serverError,
     TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
   }) {
     return serverError?.call(this);
   }
@@ -467,6 +490,7 @@ class _$ServerError implements ServerError {
     TResult Function(ServerError value)? serverError,
     TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -526,6 +550,7 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
     required TResult Function() serverError,
     required TResult Function() failToSetOnBoardData,
     required TResult Function() failToSetUsername,
+    required TResult Function() unExpectedError,
   }) {
     return failToSetOnBoardData();
   }
@@ -538,6 +563,7 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
     TResult Function()? serverError,
     TResult Function()? failToSetOnBoardData,
     TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
   }) {
     return failToSetOnBoardData?.call();
   }
@@ -550,6 +576,7 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
     TResult Function()? serverError,
     TResult Function()? failToSetOnBoardData,
     TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
     required TResult orElse(),
   }) {
     if (failToSetOnBoardData != null) {
@@ -567,6 +594,7 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
     required TResult Function(ServerError value) serverError,
     required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
     required TResult Function(_FailToSetUsername value) failToSetUsername,
+    required TResult Function(_UnExpectedError value) unExpectedError,
   }) {
     return failToSetOnBoardData(this);
   }
@@ -580,6 +608,7 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
     TResult Function(ServerError value)? serverError,
     TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
   }) {
     return failToSetOnBoardData?.call(this);
   }
@@ -593,6 +622,7 @@ class _$FailToSetOnBoardData implements FailToSetOnBoardData {
     TResult Function(ServerError value)? serverError,
     TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
     required TResult orElse(),
   }) {
     if (failToSetOnBoardData != null) {
@@ -652,6 +682,7 @@ class _$_FailToSetUsername implements _FailToSetUsername {
     required TResult Function() serverError,
     required TResult Function() failToSetOnBoardData,
     required TResult Function() failToSetUsername,
+    required TResult Function() unExpectedError,
   }) {
     return failToSetUsername();
   }
@@ -664,6 +695,7 @@ class _$_FailToSetUsername implements _FailToSetUsername {
     TResult Function()? serverError,
     TResult Function()? failToSetOnBoardData,
     TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
   }) {
     return failToSetUsername?.call();
   }
@@ -676,6 +708,7 @@ class _$_FailToSetUsername implements _FailToSetUsername {
     TResult Function()? serverError,
     TResult Function()? failToSetOnBoardData,
     TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
     required TResult orElse(),
   }) {
     if (failToSetUsername != null) {
@@ -693,6 +726,7 @@ class _$_FailToSetUsername implements _FailToSetUsername {
     required TResult Function(ServerError value) serverError,
     required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
     required TResult Function(_FailToSetUsername value) failToSetUsername,
+    required TResult Function(_UnExpectedError value) unExpectedError,
   }) {
     return failToSetUsername(this);
   }
@@ -706,6 +740,7 @@ class _$_FailToSetUsername implements _FailToSetUsername {
     TResult Function(ServerError value)? serverError,
     TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
   }) {
     return failToSetUsername?.call(this);
   }
@@ -719,6 +754,7 @@ class _$_FailToSetUsername implements _FailToSetUsername {
     TResult Function(ServerError value)? serverError,
     TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
     TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
     required TResult orElse(),
   }) {
     if (failToSetUsername != null) {
@@ -730,4 +766,136 @@ class _$_FailToSetUsername implements _FailToSetUsername {
 
 abstract class _FailToSetUsername implements AtPlatformFailure {
   const factory _FailToSetUsername() = _$_FailToSetUsername;
+}
+
+/// @nodoc
+abstract class _$$_UnExpectedErrorCopyWith<$Res> {
+  factory _$$_UnExpectedErrorCopyWith(
+          _$_UnExpectedError value, $Res Function(_$_UnExpectedError) then) =
+      __$$_UnExpectedErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_UnExpectedErrorCopyWithImpl<$Res>
+    extends _$AtPlatformFailureCopyWithImpl<$Res>
+    implements _$$_UnExpectedErrorCopyWith<$Res> {
+  __$$_UnExpectedErrorCopyWithImpl(
+      _$_UnExpectedError _value, $Res Function(_$_UnExpectedError) _then)
+      : super(_value, (v) => _then(v as _$_UnExpectedError));
+
+  @override
+  _$_UnExpectedError get _value => super._value as _$_UnExpectedError;
+}
+
+/// @nodoc
+
+class _$_UnExpectedError implements _UnExpectedError {
+  const _$_UnExpectedError();
+
+  @override
+  String toString() {
+    return 'AtPlatformFailure.unExpectedError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_UnExpectedError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() failedToGetgetApplicationSupportDirectory,
+    required TResult Function() serverError,
+    required TResult Function() failToSetOnBoardData,
+    required TResult Function() failToSetUsername,
+    required TResult Function() unExpectedError,
+  }) {
+    return unExpectedError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? failedToGetgetApplicationSupportDirectory,
+    TResult Function()? serverError,
+    TResult Function()? failToSetOnBoardData,
+    TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
+  }) {
+    return unExpectedError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? failedToGetgetApplicationSupportDirectory,
+    TResult Function()? serverError,
+    TResult Function()? failToSetOnBoardData,
+    TResult Function()? failToSetUsername,
+    TResult Function()? unExpectedError,
+    required TResult orElse(),
+  }) {
+    if (unExpectedError != null) {
+      return unExpectedError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(FailedToGetgetApplicationSupportDirectory value)
+        failedToGetgetApplicationSupportDirectory,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(FailToSetOnBoardData value) failToSetOnBoardData,
+    required TResult Function(_FailToSetUsername value) failToSetUsername,
+    required TResult Function(_UnExpectedError value) unExpectedError,
+  }) {
+    return unExpectedError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+        failedToGetgetApplicationSupportDirectory,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
+  }) {
+    return unExpectedError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(FailedToGetgetApplicationSupportDirectory value)?
+        failedToGetgetApplicationSupportDirectory,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(FailToSetOnBoardData value)? failToSetOnBoardData,
+    TResult Function(_FailToSetUsername value)? failToSetUsername,
+    TResult Function(_UnExpectedError value)? unExpectedError,
+    required TResult orElse(),
+  }) {
+    if (unExpectedError != null) {
+      return unExpectedError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UnExpectedError implements AtPlatformFailure {
+  const factory _UnExpectedError() = _$_UnExpectedError;
 }
