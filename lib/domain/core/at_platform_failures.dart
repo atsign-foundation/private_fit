@@ -10,4 +10,5 @@ class AtPlatformFailure with _$AtPlatformFailure {
   const factory AtPlatformFailure.serverError() = ServerError;
   const factory AtPlatformFailure.failToSetOnBoardData() = FailToSetOnBoardData;
   const factory AtPlatformFailure.failToSetUsername() = _FailToSetUsername;
+  const factory AtPlatformFailure.unExpectedError() = _UnExpectedError;
 }
