@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:at_client_mobile/at_client_mobile.dart';
 import 'package:at_utils/at_utils.dart';
+import 'package:collection/collection.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:private_fit/domain/core/at_platform_failures.dart';
@@ -52,17 +53,23 @@ class SettingsFacade implements ISettingsFacade {
 
     return getAllKeys(regex: '${Keys.nameKey.key}.${Constants.appNamespace}')
         .then(
-      (value) => get(PassKey.fromAtKey(value.first)).then((value) {
-        return value.fold(
-          left,
-          (r) {
-            final d = jsonDecode(r.value as String)['value'];
-            return right(
-              UserNameDto.fromJson(d as Map<String, dynamic>).toDomain(),
-            );
-          },
-        );
-      }),
+      (value) {
+        final atKey = value.firstOrNull;
+        if (atKey == null) {
+          return left(const AtPlatformFailure.unExpectedError());
+        }
+        return get(PassKey.fromAtKey(atKey)).then((value) {
+          return value.fold(
+            left,
+            (r) {
+              final d = jsonDecode(r.value as String)['value'];
+              return right(
+                UserNameDto.fromJson(d as Map<String, dynamic>).toDomain(),
+              );
+            },
+          );
+        });
+      },
     );
   }
 
