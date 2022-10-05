@@ -16,8 +16,6 @@ import 'package:private_fit/presentation/routes/routes_observer.dart';
 class PrivateFitApp extends StatelessWidget {
   PrivateFitApp({super.key});
 
-  final _appRouter = app_router.Router();
-
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -50,21 +48,6 @@ class PrivateFitApp extends StatelessWidget {
             scheme: FlexScheme.blueWhale,
             visualDensity: VisualDensity.standard,
             useMaterial3: true,
-          ),
-          child: MaterialApp.router(
-            title: 'Priv@te Fit',
-            debugShowCheckedModeBanner: false,
-            localizationsDelegates: const [
-              AppLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-            ],
-            supportedLocales: AppLocalizations.supportedLocales,
-            routerDelegate: AutoRouterDelegate(
-              _appRouter,
-              navigatorObservers: () => [PrivateFitRouteObserver()],
-            ),
-            routeInformationParser: _appRouter.defaultRouteParser(),
-            builder: (context, router) => router!,
           ),
         ),
       ),
