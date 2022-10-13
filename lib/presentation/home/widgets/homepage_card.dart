@@ -11,7 +11,9 @@ class HomepageCard extends StatelessWidget {
     return Card(
       color: cardColor ?? Colors.white,
       elevation: 2,
-      margin: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
+      margin: EdgeInsets.all(
+        MediaQuery.of(context).size.width * 0.02,
+      ),
       shape: RoundedRectangleBorder(
         side: BorderSide(
           color: Theme.of(context).colorScheme.outline,
