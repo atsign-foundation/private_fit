@@ -1,98 +1,205 @@
+import 'dart:developer';
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:private_fit/application/open_food/bloc/open_food_bloc.dart';
+import 'package:qr_code_scanner/qr_code_scanner.dart';
 
-class ScanVisorPainter extends CustomPainter {
-  ScanVisorPainter();
-
-  static const double strokeWidth = 3;
-  static const double _fullCornerSize = 31;
-  static const double _halfCornerSize = _fullCornerSize / 2;
-  static const Radius _borderRadius = Radius.circular(15);
-
-  final Paint _paint = Paint()
-    ..strokeWidth = strokeWidth
-    ..color = Colors.yellow
-    ..style = PaintingStyle.stroke;
+class QRViewExample extends StatefulWidget {
+  const QRViewExample({Key? key}) : super(key: key);
 
   @override
-  void paint(Canvas canvas, Size size) {
-    final rect = Rect.fromLTRB(0, 0, size.width, size.height);
-    canvas.drawPath(getPath(rect, false), _paint);
+  State<StatefulWidget> createState() => _QRViewExampleState();
+}
+
+class _QRViewExampleState extends State<QRViewExample> {
+  Barcode? result;
+  QRViewController? controller;
+  final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
+
+  // In order to get hot reload to work we need to pause the camera if the platform
+  // is android, or resume the camera if the platform is iOS.
+  @override
+  void reassemble() {
+    super.reassemble();
+    if (Platform.isAndroid) {
+      controller!.pauseCamera();
+    }
+    controller!.resumeCamera();
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: <Widget>[
+          Expanded(flex: 4, child: _buildQrView(context)),
+          Expanded(
+            child: FittedBox(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  if (result != null)
+                    Text(
+                      'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}',
+                    )
+                  else
+                    const Text('Scan a code'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        margin: const EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () async {
+                            await controller?.toggleFlash();
+                            setState(() {});
+                          },
+                          child: FutureBuilder(
+                            future: controller?.getFlashStatus(),
+                            builder: (context, snapshot) {
+                              return Text('Flash: ${snapshot.data}');
+                            },
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () async {
+                            await controller?.flipCamera();
+                            setState(() {});
+                          },
+                          child: FutureBuilder(
+                            future: controller?.getCameraInfo(),
+                            builder: (context, snapshot) {
+                              if (snapshot.data != null) {
+                                return Text(
+                                  'Camera facing ${describeEnum(snapshot.data!)}',
+                                );
+                              } else {
+                                return const Text('loading');
+                              }
+                            },
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        margin: const EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () async {
+                            await controller?.pauseCamera();
+                          },
+                          child: const Text(
+                            'pause',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.all(8),
+                        child: ElevatedButton(
+                          onPressed: () async {
+                            await controller?.resumeCamera();
+                          },
+                          child: const Text(
+                            'resume',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
 
-  /// Returns a path to draw the visor
-  /// [includeLineBetweenCorners] will draw lines between each corner, instead
-  /// of moving the cursor
-  // ignore: avoid_positional_boolean_parameters
-  static Path getPath(Rect rect, bool includeLineBetweenCorners) {
-    final double bottomPosition;
-    if (includeLineBetweenCorners) {
-      bottomPosition = rect.bottom - strokeWidth;
-    } else {
-      bottomPosition = rect.bottom;
+  Widget _buildQrView(BuildContext context) {
+    // For this example we check how width or tall the device is and change the scanArea and overlay accordingly.
+    final scanArea = (MediaQuery.of(context).size.width < 400 ||
+            MediaQuery.of(context).size.height < 400)
+        ? 150.0
+        : 300.0;
+    // To ensure the Scanner view is properly sizes after rotation
+    // we need to listen for Flutter SizeChanged notification and update controller
+    return QRView(
+      key: qrKey,
+      onQRViewCreated: _onQRViewCreated,
+      overlay: QrScannerOverlayShape(
+        borderRadius: 10,
+        borderLength: 30,
+        borderWidth: 10,
+        cutOutSize: scanArea,
+      ),
+      onPermissionSet: (ctrl, p) => _onPermissionSet(context, ctrl, p),
+    );
+  }
+
+  void _onQRViewCreated(QRViewController controller) {
+    setState(() {
+      this.controller = controller;
+    });
+    controller.scannedDataStream.listen((scanData) {
+      setState(() {
+        result = scanData;
+        onScannedData(scanData.code);
+      });
+    });
+  }
+
+  void onScannedData(String? qrCode) {
+    // if (isDetecting) {
+    //   return;
+    // }
+
+    // isDetecting = true;
+    if ((qrCode ?? '').isNotEmpty) {
+      // final List<String> values = (qrCode ?? '').split(':');
+      // if (values.length == 2) {
+      controller?.pauseCamera();
+      //It's issue from camera library so we need to add a delay to waiting for pause camera
+      // await Future.delayed(const Duration(milliseconds: 400));
+      // if (!mounted) return;
+      context.read<OpenFoodBloc>().add(
+            OpenFoodEvent.qrDataOnSuccess(qrCode!),
+          );
+      // Navigator.pop(
+      //   context,
+      // );
+      //   AtOnboardingQRCodeResult(atSign: values[0], secret: values[1]),
+      // );
+      // } else {
+      //   controller?.pauseCamera();
+      // await _controller?.resumeCamera();
+      // }
     }
+    // isDetecting = false;
+  }
 
-    final path = Path()
-      // Top left
-      ..moveTo(rect.left, rect.top + _fullCornerSize)
-      ..lineTo(rect.left, rect.top + _halfCornerSize)
-      ..arcToPoint(
-        Offset(rect.left + _halfCornerSize, rect.top),
-        radius: _borderRadius,
-      )
-      ..lineTo(rect.left + _fullCornerSize, rect.top);
-
-    // Top right
-    if (includeLineBetweenCorners) {
-      path.lineTo(rect.right - _fullCornerSize, rect.top);
-    } else {
-      path.moveTo(rect.right - _fullCornerSize, rect.top);
+  void _onPermissionSet(BuildContext context, QRViewController ctrl, bool p) {
+    log('${DateTime.now().toIso8601String()}_onPermissionSet $p');
+    if (!p) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('no Permission')),
+      );
     }
+  }
 
-    path
-      ..lineTo(rect.right - _halfCornerSize, rect.top)
-      ..arcToPoint(
-        Offset(rect.right, _halfCornerSize),
-        radius: _borderRadius,
-      )
-      ..lineTo(rect.right, rect.top + _fullCornerSize);
-
-    // Bottom right
-    if (includeLineBetweenCorners) {
-      path.lineTo(rect.right, bottomPosition - _fullCornerSize);
-    } else {
-      path.moveTo(rect.right, bottomPosition - _fullCornerSize);
-    }
-
-    path
-      ..lineTo(rect.right, bottomPosition - _halfCornerSize)
-      ..arcToPoint(
-        Offset(rect.right - _halfCornerSize, bottomPosition),
-        radius: _borderRadius,
-      )
-      ..lineTo(rect.right - _fullCornerSize, bottomPosition);
-
-    // Bottom left
-    if (includeLineBetweenCorners) {
-      path.lineTo(rect.left + _fullCornerSize, bottomPosition);
-    } else {
-      path.moveTo(rect.left + _fullCornerSize, bottomPosition);
-    }
-
-    path
-      ..lineTo(rect.left + _halfCornerSize, bottomPosition)
-      ..arcToPoint(
-        Offset(rect.left, bottomPosition - _halfCornerSize),
-        radius: _borderRadius,
-      )
-      ..lineTo(rect.left, bottomPosition - _fullCornerSize);
-
-    if (includeLineBetweenCorners) {
-      path.lineTo(rect.left, rect.top + _halfCornerSize);
-    }
-
-    return path;
+  @override
+  void dispose() {
+    controller?.dispose();
+    super.dispose();
   }
 }

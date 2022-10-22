@@ -22,10 +22,10 @@ class MenstrualView extends StatelessWidget {
           appBar: const PeriodAppBar(),
           floatingActionButton: const FloatingButton(),
           body: SingleChildScrollView(
-            child: Container(
+            child: SizedBox(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
-              decoration: boxDecoration,
+              // decoration: boxDecoration,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -56,8 +56,8 @@ class MenstrualView extends StatelessWidget {
                       }
                     },
                   ),
-                  const Divider(thickness: 10),
-                  const Divider(thickness: 5, height: 25),
+                  // const Divider(thickness: 10),
+                  const Divider(thickness: 5, height: 40),
                   Column(children: const [CycleAnalysis()]),
                 ],
               ),

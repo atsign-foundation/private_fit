@@ -14,8 +14,9 @@ import 'application/home/bloc/home_bloc.dart' as _i7;
 import 'application/menstrual/bloc/menstrual_bloc.dart' as _i41;
 import 'application/on_boarding/bloc/on_boarding_bloc.dart' as _i42;
 import 'application/open_food/bloc/open_food_bloc.dart' as _i44;
-import 'application/pedometer/bloc/pedometer_bloc.dart' as _i45;
-import 'application/setting/bloc/settings_bloc.dart' as _i46;
+import 'application/open_food/bloc/open_food_dess_bloc.dart' as _i45;
+import 'application/pedometer/bloc/pedometer_bloc.dart' as _i46;
+import 'application/setting/bloc/settings_bloc.dart' as _i47;
 import 'application/theme/theme.dart' as _i34;
 import 'domain/contacts/i_contacts_facade.dart' as _i10;
 import 'domain/contacts/use_cases/at_contact_initialization_use_case.dart'
@@ -138,12 +139,14 @@ _i1.GetIt $initGetIt(
         get<_i29.SaveProductDataUseCase>(),
         get<_i39.GetProductFromDessUseCase>(),
       ));
-  gh.lazySingleton<_i45.PedometerBloc>(() => _i45.PedometerBloc(
+  gh.factory<_i45.OpenFoodDessBloc>(
+      () => _i45.OpenFoodDessBloc(get<_i39.GetProductFromDessUseCase>()));
+  gh.lazySingleton<_i46.PedometerBloc>(() => _i46.PedometerBloc(
         get<_i22.InitPedometerUseCase>(),
         get<_i27.PedestrianStatusUseCase>(),
         get<_i33.StepsCountStreamUseCase>(),
       ));
-  gh.lazySingleton<_i46.SettingsBloc>(() => _i46.SettingsBloc(
+  gh.lazySingleton<_i47.SettingsBloc>(() => _i47.SettingsBloc(
         get<_i31.SettingUserNameUseCase>(),
         get<_i40.GettgUserNameUseCase>(),
       ));

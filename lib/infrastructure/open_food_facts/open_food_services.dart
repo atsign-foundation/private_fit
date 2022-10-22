@@ -80,11 +80,13 @@ class OpenFoodFactsServices implements IOpenFoodFactsFacade {
   Future<Either<OpenFoodFailures, Unit>> saveNutritionalData(
     Product product,
   ) async {
-    _logger.shout(product.toJson());
+    _logger.shout('-------------------saving Data to Dess------------');
     // final _userNameDto = UserNameDto.fromDomain(userNameModel);
-    final _productNutritionDataKey = Keys.productNutritionDataKey
+    final _productNutritionDataKey = Keys.foodDatakey
       ..sharedWith = atClientManager.atClient.getCurrentAtSign()
       ..sharedBy = atClientManager.atClient.getCurrentAtSign()
+      ..namespace = Constants.appNamespace
+      ..key = atClientManager.atClient.getCurrentAtSign()
       ..value = Value(
         value: product.toJson(),
         labelName: 'nutrition',
@@ -103,15 +105,17 @@ class OpenFoodFactsServices implements IOpenFoodFactsFacade {
 
   @override
   Future<Either<AtPlatformFailure, Product>> getSavedFood() async {
-    _logger.finer('Getting name');
+    _logger.info('----Getting nutrition Data--------');
 
     return getAllKeys(
-      regex: '${Keys.productNutritionDataKey.key}.${Constants.appNamespace}',
+      // regex: 'fooddatakey.22fine90',
+      regex: '${Keys.foodDatakey.key}.${Constants.appNamespace}',
     ).then(
       (value) => get(PassKey.fromAtKey(value.first)).then((value) {
         return value.fold(
           left,
           (r) {
+            // ignore: avoid_dynamic_calls
             final d = jsonDecode(r.value as String)['value'];
             return right(
               Product.fromJson(d as Map<String, dynamic>),
@@ -128,8 +132,7 @@ class OpenFoodFactsServices implements IOpenFoodFactsFacade {
     String? sharedWith,
   }) async {
     try {
-      final result = await atClientManager.atClient
-          .getAtKeys(regex: regex, sharedBy: sharedBy, sharedWith: sharedWith);
+      final result = await atClientManager.atClient.getAtKeys(regex: regex);
       return result;
     } on Exception catch (e, s) {
       _logger.severe('Error while fetching keys', e, s);

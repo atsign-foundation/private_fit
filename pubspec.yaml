@@ -36,6 +36,7 @@ dependencies:
       url: https://github.com/kzawadi/cherry_components.git
   cupertino_icons: ^1.0.5
   dartz: ^0.10.1
+  flex_color_scheme: ^6.0.1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
@@ -53,6 +54,7 @@ dependencies:
   injectable: ^1.5.3
   intl: ^0.17.0
   json_annotation: ^4.4.0
+  line_icons: ^2.0.1
   logger: ^1.1.0
   openfoodfacts: ^1.19.0
   package_info_plus: ^1.4.2

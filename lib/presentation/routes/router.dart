@@ -6,6 +6,7 @@ import 'package:private_fit/presentation/on_boarding/on_boarding_page.dart';
 import 'package:private_fit/presentation/open_food/product_cards/nutrition_page_loaded.dart';
 import 'package:private_fit/presentation/open_food/scanner_page.dart';
 import 'package:private_fit/presentation/open_food/scanner_view.dart';
+import 'package:private_fit/presentation/open_food/utils/scanner_visor_painter.dart';
 import 'package:private_fit/presentation/sign_in/loading_screen.dart';
 import 'package:private_fit/presentation/sign_in/login_view.dart';
 import 'package:private_fit/presentation/sign_in/widgets/error_widget.dart';
@@ -34,6 +35,7 @@ other stuff. AutoRoute does all that for you and much more.
     AutoRoute<dynamic>(page: LoginView),
     AutoRoute<dynamic>(page: FDA),
     AutoRoute<dynamic>(page: OnInitialState),
+    AutoRoute<dynamic>(page: QRViewExample),
     // AutoRoute<dynamic>(page: SettingView, initial: true),
 
     // AutoRoute<dynamic>(page: LoginScreenPage, initial: true),

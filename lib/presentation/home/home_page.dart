@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,7 +7,6 @@ import 'package:private_fit/l10n/l10n.dart';
 import 'package:private_fit/presentation/components/toast.dart';
 import 'package:private_fit/presentation/home/widgets/daily_goal.dart';
 import 'package:private_fit/presentation/home/widgets/todays_activity.dart';
-import 'package:private_fit/presentation/home/widgets/workout_list.dart';
 import 'package:private_fit/presentation/menstrual/widgets/menstrual_widgets.dart';
 import 'package:private_fit/presentation/pedometer/pedometer_page.dart';
 
@@ -45,7 +43,7 @@ class HomePage extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
             body: CustomScrollView(
-              physics: const BouncingScrollPhysics(),
+              // physics: const BouncingScrollPhysics(),
               slivers: [
                 const HomeAppBar(),
                 const HomeSilver(),
@@ -68,6 +66,8 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return CupertinoSliverNavigationBar(
       // trailing: Icon(Icons.notifications),
       // leading:
@@ -75,14 +75,21 @@ class HomeAppBar extends StatelessWidget {
       border: Border.all(style: BorderStyle.none),
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       largeTitle: Row(
-        children: const [
+        children: [
           // Spacer(),
-          AutoSizeText(
-            'Kelvin',
-            minFontSize: 21,
-            maxFontSize: 30,
+          Text.rich(
+            TextSpan(
+              text: 'Hello, ',
+              style: theme.textTheme.headlineLarge,
+              children: [
+                TextSpan(
+                  text: 'KELVIN',
+                  style: theme.textTheme.headlineLarge,
+                ),
+              ],
+            ),
           ),
-          Spacer(
+          const Spacer(
             flex: 15,
           ),
         ],
@@ -124,7 +131,7 @@ class HomeSilver extends StatelessWidget {
               case 2:
                 return const CycleAnalysis();
               case 3:
-                return const WorkoutList();
+                return const SizedBox(); //const WorkoutList();
               case 4:
                 return const PedomaterPage();
               // default:

@@ -3,6 +3,8 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:private_fit/application/menstrual/bloc/menstrual_bloc.dart';
+import 'package:private_fit/domain/menstrual/menstrual_data_model.dart';
+import 'package:private_fit/domain/menstrual/value_objects.dart';
 import 'package:private_fit/injections.dart';
 import 'package:private_fit/presentation/components/calendar_utils.dart';
 import 'package:private_fit/shared/iconly_icon.dart';
@@ -128,18 +130,22 @@ class FloatingButton extends StatelessWidget {
         //   bleedingDays: 4,
         // );
 
-        // context.read<MenstrualBloc>().add(
-        //       MenstrualEvent.save(testModel),
-        //     );
-        _displayTextInputDialog(context, 'Pick Date', '');
+        context.read<MenstrualBloc>().add(
+              MenstrualEvent.save(
+                MenstrualDataModel(
+                  periodStartDate: PeriodStartDate(DateTime(2022, 09, 18)),
+                ),
+              ),
+            );
+        // _displayTextInputDialog(context, 'Pick Date', '');
       },
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-        side: BorderSide(
-          color: Theme.of(context).dividerColor,
-          // width: 1,
-        ),
-      ),
+      // shape: RoundedRectangleBorder(
+      //   borderRadius: BorderRadius.circular(12),
+      //   side: BorderSide(
+      //     color: Theme.of(context).dividerColor,
+      //     // width: 1,
+      //   ),
+      // ),
       extendedIconLabelSpacing: 16,
       icon: IconlyIcon(
         path: IconlyCurved.Play,

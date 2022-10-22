@@ -35,7 +35,7 @@ class Keys {
     ),
   );
 
-  /// User name key
+  /// menstrual name key
   static final PassKey menstrualDataKey = PassKey(
     key: 'menstrual',
     isPublic: false,
@@ -45,6 +45,17 @@ class Keys {
       labelName: 'period',
       isHidden: true,
       type: 'menstrual',
+    ),
+  );
+  static final PassKey foodDatakey = PassKey(
+    key: 'fooddatakey',
+    isPublic: false,
+    isHidden: true,
+    createdDate: DateTime.now(),
+    value: Value(
+      labelName: 'foodDatakey',
+      isHidden: true,
+      type: 'foodDatakey',
     ),
   );
 
@@ -57,7 +68,6 @@ class Keys {
     value: Value(
       labelName: 'nutrition',
       isHidden: true,
-      type: 'nutrition',
     ),
   );
 
